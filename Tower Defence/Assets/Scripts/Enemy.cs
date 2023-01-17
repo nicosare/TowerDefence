@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
@@ -45,6 +44,7 @@ public abstract class Enemy : MonoBehaviour
     {
         var dir = target.position - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime);
+        transform.GetChild(0).rotation = Quaternion.Slerp(transform.GetChild(0).rotation, Quaternion.LookRotation(target.position - transform.position), 3 * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, target.position) <= 0.01f)
         {
