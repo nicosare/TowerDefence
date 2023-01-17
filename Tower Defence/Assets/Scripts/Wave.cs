@@ -6,5 +6,5 @@ using UnityEngine;
 public class Wave : ScriptableObject
 {
     public List<Enemy> Enemies;
-    public float TimeBetweenSpawn;
+    public int TimeBetweenSpawn;
 }

@@ -16,7 +16,7 @@ public class Place : MonoBehaviour, IPointerExitHandler
     public void SetUnit(Unit unit)
     {
         var newUnit = Instantiate(unit.gameObject);
-        newUnit.transform.position = new Vector3(transform.position.x, .5f, transform.position.z);
+        newUnit.transform.position = new Vector3(transform.position.x, .8f, transform.position.z);
         isFree = false;
     }
 
