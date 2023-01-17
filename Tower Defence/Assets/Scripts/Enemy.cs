@@ -7,6 +7,7 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected int health;
     [SerializeField] protected int speed;
     [SerializeField] protected bool isArmored;
+    [SerializeField] protected int coinKill;
 
     private Queue<Transform> way;
     private Transform target;
@@ -38,6 +39,7 @@ public abstract class Enemy : MonoBehaviour
     private void Die()
     {
         Destroy(gameObject);
+        EconomicModel.instance.Increase—ountCoint(coinKill);
     }
 
     private void MoveToPoints()

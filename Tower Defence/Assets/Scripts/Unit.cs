@@ -7,19 +7,24 @@ public abstract class Unit : MonoBehaviour
     public string nameUnit;
     public int damage;
 
-    private int attackSpeed;
+    [SerializeField] protected int attackSpeed;
     private int levelUnit = 1;
     private int maxLevelUnit = 3;
-    private int purchaseCost;
-    private int improvementCost;
-    private bool isPiercingAttack;
-    private int upDamage;
-    private int upAttackSpeed;
+    [SerializeField] protected int purchaseCost;
+    [SerializeField] protected int improvementCost;
+    [SerializeField] protected bool isPiercingAttack;
+    [SerializeField] protected int upDamage;
+    [SerializeField] protected int upAttackSpeed;
     public bool isMaxLevel { get => levelUnit == maxLevelUnit; }
 
     public void UpLevel()
     {
         damage += upDamage;
         attackSpeed += upAttackSpeed;
+    }
+
+    public void BuyUnit()
+    {
+        EconomicModel.instance.Reduce—ountCoint(purchaseCost);
     }
 }
