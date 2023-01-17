@@ -4,8 +4,9 @@ using UnityEngine;
 
 public abstract class Unit : MonoBehaviour
 {
-    private string nameUnit;
-    private int damage;
+    public string nameUnit;
+    public int damage;
+
     private int attackSpeed;
     private int levelUnit = 1;
     private int maxLevelUnit = 3;

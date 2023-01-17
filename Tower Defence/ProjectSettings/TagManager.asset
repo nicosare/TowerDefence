@@ -5,14 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - Way
+  - Place
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
+  - Place
   - 
   - 
   - 

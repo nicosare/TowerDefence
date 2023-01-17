@@ -38,7 +38,7 @@ public abstract class Enemy : MonoBehaviour
 
     private void Die()
     {
-        Destroy(this);
+        Destroy(gameObject);
     }
 
     private void MoveToPoints()
