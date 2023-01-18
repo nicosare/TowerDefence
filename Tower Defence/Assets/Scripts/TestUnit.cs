@@ -12,11 +12,13 @@ public class TestUnit : Unit
     [SerializeField] private Bullet bullet;
     private GameObject target;
     private bool canShoot = true;
+    private Queue<GameObject> targets;
 
     private void Awake()
     {
         GetComponent<BoxCollider>().size *= attackRange;
         target = null;
+        targets = new Queue<GameObject>();
     }
 
     private void Update()
@@ -27,20 +29,20 @@ public class TestUnit : Unit
 
     private void OnTriggerEnter(Collider other)
     {
-        if (target == null)
-            target = other.gameObject;
+        targets.Enqueue(other.gameObject);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (target == other.gameObject)
-            target = null;
+        target = null;
     }
 
     IEnumerator Shooting()
     {
         canShoot = false;
-        if (target != null)
+        if (target == null && targets.Count > 0)
+            target = targets.Dequeue();
+        else
         {
             Shoot();
             yield return new WaitForSeconds(10 / attackSpeed);

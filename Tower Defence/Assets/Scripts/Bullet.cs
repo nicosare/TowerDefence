@@ -11,9 +11,13 @@ public class Bullet : MonoBehaviour
 
     private void MoveToTarget()
     {
-        var dir = target.transform.position - transform.position;
-        transform.Translate(dir.normalized * ShootSpeed * Time.deltaTime);
-
+        if (target != null)
+        {
+            var dir = target.transform.position - transform.position;
+            transform.Translate(dir.normalized * ShootSpeed * Time.deltaTime);
+        }
+        else
+            Destroy(gameObject);
     }
     private void Update()
     {
