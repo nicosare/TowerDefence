@@ -26,12 +26,12 @@ public abstract class Enemy : MonoBehaviour
         target = way.Dequeue();
     }
 
-    public void GetDamsge(int damage, bool isPiercingAttack)
+    public void GetDamage(int damage, bool isPiercingAttack)
     {
         if (!isArmored || isPiercingAttack)
             health -= damage;
         else
-            Debug.Log("броня не добита"); //Сделать вывод на экран сообщения, что броня не пробита
+            Message.Instance.LoadMessage("броня не пробита"); //Сделать вывод на экран сообщения, что броня не пробита
 
         if (health <= 0)
             Die();
@@ -40,7 +40,7 @@ public abstract class Enemy : MonoBehaviour
     private void Die()
     {
         Destroy(gameObject);
-        EconomicModel.instance.IncreaseСountCoint(coinKill);
+        EconomicModel.Instance.IncreaseСountCoin(coinKill);
     }
 
     private void MoveToPoints()

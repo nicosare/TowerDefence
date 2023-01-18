@@ -6,11 +6,12 @@ public abstract class Unit : MonoBehaviour
 {
     public string nameUnit;
     public int damage;
+    public int purchaseCost;
 
-    [SerializeField] protected int attackSpeed;
     private int levelUnit = 1;
     private int maxLevelUnit = 3;
-    [SerializeField] protected int purchaseCost;
+    [Range(1, 100)]
+    [SerializeField] protected int attackSpeed;
     [SerializeField] protected int improvementCost;
     [SerializeField] protected bool isPiercingAttack;
     [SerializeField] protected int upDamage;
@@ -25,6 +26,6 @@ public abstract class Unit : MonoBehaviour
 
     public void BuyUnit()
     {
-        EconomicModel.instance.Reduce—ountCoint(purchaseCost);
+        EconomicModel.Instance.Reduce—ountCoin(purchaseCost);
     }
 }

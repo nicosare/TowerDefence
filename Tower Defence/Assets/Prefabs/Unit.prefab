@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3458855691046493350}
   - component: {fileID: 5121124600328190044}
   - component: {fileID: 6860882329598109772}
-  - component: {fileID: 2141282614668957507}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -84,19 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2141282614668957507
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3167941562905760565}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5238088668359076294
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2384772261347970720}
   - component: {fileID: 2587485916891076603}
+  - component: {fileID: 4346333169862521140}
   m_Layer: 0
   m_Name: Unit
   m_TagString: Untagged
@@ -143,11 +130,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameUnit: "\u041B\u0443\u0447\u043D\u0438\u043A"
-  damage: 10
-  attackSpeed: 2
-  purchaseCost: 0
+  damage: 4
+  purchaseCost: 7
+  attackSpeed: 10
   improvementCost: 0
   isPiercingAttack: 0
   upDamage: 0
   upAttackSpeed: 0
-  bullet: {fileID: 4113185229487608721, guid: 5464e80b7657a1d4ebdcbbc24a592362, type: 3}
+  attackRange: 3
+  shootSpeed: 10
+  bullet: {fileID: 8557735036113504614, guid: 5464e80b7657a1d4ebdcbbc24a592362, type: 3}
+  targets: []
+--- !u!65 &4346333169862521140
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5238088668359076294}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

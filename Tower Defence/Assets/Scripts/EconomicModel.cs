@@ -5,26 +5,27 @@ using UnityEngine.UI;
 
 public class EconomicModel : MonoBehaviour
 {
-    public static EconomicModel instance;
-    private int countCoins = 10;
-    private Text textCountCoint;
+    public static EconomicModel Instance;
+    public int countCoins { get; private set; }
+    private Text textCountCoin;
 
     private void Start()
     {
-        instance = this;
-        textCountCoint = GameObject.FindGameObjectWithTag("textCountCoint").GetComponent<Text>();
-        textCountCoint.text = countCoins.ToString();
+        countCoins = 10;
+        Instance = this;
+        textCountCoin = GameObject.FindGameObjectWithTag("textCountCoint").GetComponent<Text>();
+        textCountCoin.text = countCoins.ToString();
     }
 
-    public void Increase—ountCoint(int coints)
+    public void Increase—ountCoin(int coins)
     {
-        countCoins += coints;
-        textCountCoint.text = countCoins.ToString();
+        countCoins += coins;
+        textCountCoin.text = countCoins.ToString();
     }
 
-    public void Reduce—ountCoint(int coints)
+    public void Reduce—ountCoin(int coints)
     {
         countCoins -= coints;
-        textCountCoint.text = countCoins.ToString();
+        textCountCoin.text = countCoins.ToString();
     }
 }

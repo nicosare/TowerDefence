@@ -9,10 +9,11 @@ public class UnitCell : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField] private Unit unit;
     private Interact interact;
+
     public UnityEvent OnPointerDown;
 
     private void Awake()
-    {    
+    {
         interact = FindObjectOfType<Interact>();
 
         transform.GetChild(0).GetComponent<Text>().text = unit.nameUnit;
@@ -21,7 +22,10 @@ public class UnitCell : MonoBehaviour, IPointerDownHandler
 
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
     {
-        OnPointerDown?.Invoke();
+        if (EconomicModel.Instance.countCoins >= unit.purchaseCost)
+            OnPointerDown?.Invoke();
+        else
+            Message.Instance.LoadMessage("Недостаточно денег!");
     }
 
     public void ChooseUnit()

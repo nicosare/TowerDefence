@@ -35,11 +35,14 @@ public class Interact : MonoBehaviour
     private void Setunit(Unit unit)
     {
         var place = hit.transform.gameObject.GetComponent<Place>();
+
         if (place.isFree)
         {
             place.Preview();
+
             if (Input.GetMouseButtonDown(0))
             {
+                unit.BuyUnit();
                 place.SetUnit(unit);
                 UnitToSpawn = null;
             }
