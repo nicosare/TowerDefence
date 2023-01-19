@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public int Damage;
     public bool isPiercingAttack;
-    public GameObject target;
+    public Transform target;
     public float ShootSpeed;
 
     private void MoveToTarget()

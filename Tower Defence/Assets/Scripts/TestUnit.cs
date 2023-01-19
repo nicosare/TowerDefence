@@ -20,7 +20,7 @@ public class TestUnit : Unit
         newBullet.transform.localPosition = Vector3.zero;
         newBullet.Damage = damage;
         newBullet.isPiercingAttack = isPiercingAttack;
-        newBullet.target = target;
+        newBullet.target = target.transform;
         newBullet.ShootSpeed = shootSpeed;
 
     }

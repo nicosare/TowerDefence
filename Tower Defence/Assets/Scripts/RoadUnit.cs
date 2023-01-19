@@ -11,6 +11,7 @@ public class RoadUnit : Unit
 
     private void Beat()
     {
-        target.GetComponent<Enemy>().GetDamage(damage, isPiercingAttack);
+        target.GetDamage(damage, isPiercingAttack);
+        Message.Instance.LoadMessage("Hit", .5f);
     }
 }

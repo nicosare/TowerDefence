@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public abstract class Unit : MonoBehaviour
 {
@@ -11,8 +12,8 @@ public abstract class Unit : MonoBehaviour
     private int levelUnit = 1;
     private int maxLevelUnit = 3;
 
-    [Range(1, 100)]
-    [SerializeField] protected int attackSpeed;
+    [Range(0.1f, 100)]
+    [SerializeField] protected float attackSpeed;
     [Range(0, 10)]
     [SerializeField] protected int attackRange;
     [SerializeField] protected int improvementCost;
@@ -21,8 +22,8 @@ public abstract class Unit : MonoBehaviour
     [SerializeField] protected int upAttackSpeed;
     protected abstract void Attack();
 
-    protected Queue<GameObject> targets;
-    protected GameObject target;
+    [SerializeField] protected Queue<Enemy> targets;
+    protected Enemy target;
     protected bool canAttack = true;
 
     public bool isMaxLevel { get => levelUnit == maxLevelUnit; }
@@ -33,12 +34,14 @@ public abstract class Unit : MonoBehaviour
                                                        GetComponent<BoxCollider>().size.y,
                                                        GetComponent<BoxCollider>().size.z * 2 * attackRange + 1);
         target = null;
-        targets = new Queue<GameObject>();
+        targets = new Queue<Enemy>();
     }
     private void Update()
     {
         if (canAttack)
             StartCoroutine(Attacking());
+        if (target == null && targets.Count > 0)
+            target = targets.Dequeue();
     }
 
     public void UpLevel()
@@ -54,21 +57,20 @@ public abstract class Unit : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy")
-            targets.Enqueue(other.gameObject);
+        Debug.Log("Enter");
+        targets.Enqueue(other.gameObject.GetComponent<Enemy>());
     }
 
     private void OnTriggerExit(Collider other)
     {
+        Debug.Log("Exit");
         target = null;
     }
 
     IEnumerator Attacking()
     {
         canAttack = false;
-        if (target == null && targets.Count > 0)
-            target = targets.Dequeue();
-        else if (target != null)
+        if (target != null)
         {
             Attack();
             yield return new WaitForSeconds(1 / attackSpeed);
