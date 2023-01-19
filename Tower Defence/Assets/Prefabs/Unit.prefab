@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameUnit: "\u041B\u0443\u0447\u043D\u0438\u043A"
   damage: 5
-  purchaseCost: 5
+  purchaseCost: 7
   isRoadUnit: 0
   attackSpeed: 0.5
   attackRange: 1
@@ -139,7 +139,7 @@ MonoBehaviour:
   isPiercingAttack: 0
   upDamage: 0
   upAttackSpeed: 0
-  shootSpeed: 10
+  shootSpeed: 1
   bullet: {fileID: 8557735036113504614, guid: 5464e80b7657a1d4ebdcbbc24a592362, type: 3}
 --- !u!65 &4346333169862521140
 BoxCollider:

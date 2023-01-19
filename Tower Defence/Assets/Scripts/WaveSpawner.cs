@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEditor.VersionControl;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
@@ -13,14 +15,29 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] private int startTime;
     [SerializeField] private Text timerText;
 
+    private int enemiesCounter;
     private int wavesCounter;
     private int timer;
+    private List<GameObject> enemies;
 
-    private void Start()
+    private void Awake()
     {
         wavesCounter = 0;
         timer = startTime;
+        enemiesCounter = waves.Sum(wave => wave.Enemies.Count);
+    }
+
+    private void Start()
+    {
+        Debug.Log(enemiesCounter);
+        enemies = new List<GameObject>();
         StartCoroutine(SpawnWaves(waves, timeBetweenSpawn));
+    }
+
+    private void Update()
+    {
+        if (enemies.Count == enemiesCounter && enemies.All(enemy => enemy.IsDestroyed()))
+            Message.Instance.LoadMessage("Победа!");
     }
 
     IEnumerator SpawnWaves(List<Wave> waves, int timeBetweenSpawn)
@@ -32,12 +49,15 @@ public class WaveSpawner : MonoBehaviour
         {
             wavesCounter++;
             timer = wave.TimeBetweenSpawn * wave.Enemies.Count + timeBetweenSpawn;
+
             if (wavesCounter != waves.Count)
                 StartCoroutine(Timer());
+
             foreach (var enemy in wave.Enemies)
             {
                 var newEnemy = Instantiate(enemy.gameObject);
                 newEnemy.transform.position = new Vector3(transform.position.x, .35f, transform.position.z);
+                enemies.Add(newEnemy);
                 yield return new WaitForSeconds(wave.TimeBetweenSpawn);
             }
             yield return new WaitForSeconds(timeBetweenSpawn);
@@ -51,9 +71,7 @@ public class WaveSpawner : MonoBehaviour
             timerText.text = i.ToString();
 
             if (i == 0)
-            {
                 timerText.text = wavesCounter == waves.Count ? "Финальная волна!" : wavesCounter + "-я волна!";
-            }
             yield return new WaitForSeconds(1);
         }
     }

@@ -57,13 +57,11 @@ public abstract class Unit : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Enter");
         targets.Enqueue(other.gameObject.GetComponent<Enemy>());
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Exit");
         target = null;
     }
 
