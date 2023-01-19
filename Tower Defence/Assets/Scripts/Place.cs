@@ -3,20 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Place : MonoBehaviour, IPointerExitHandler
+public class Place : MonoBehaviour
 {
     public bool isFree;
     private Transform glow;
+    private Transform spawnPoint;
     private void Awake()
     {
         isFree = true;
         glow = transform.GetChild(0);
         glow.gameObject.SetActive(false);
+        spawnPoint = transform.GetChild(1).transform;
     }
     public void SetUnit(Unit unit)
     {
         var newUnit = Instantiate(unit.gameObject);
-        newUnit.transform.position = new Vector3(transform.position.x, .8f, transform.position.z);
+        newUnit.transform.position = new Vector3(spawnPoint.position.x,
+                                                 spawnPoint.position.y + newUnit.transform.localScale.y / 2,
+                                                 spawnPoint.position.z);
+        newUnit.transform.SetParent(transform);
         isFree = false;
     }
 
@@ -24,8 +29,7 @@ public class Place : MonoBehaviour, IPointerExitHandler
     {
         glow.gameObject.SetActive(true);
     }
-
-    public void OnPointerExit(PointerEventData eventData)
+    private void Update()
     {
         glow.gameObject.SetActive(false);
     }

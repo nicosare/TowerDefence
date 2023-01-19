@@ -9,7 +9,7 @@ public class Interact : MonoBehaviour
     private Ray ray;
     private RaycastHit hit;
     public Unit UnitToSpawn;
-
+    [SerializeField] private LayerMask layerMask;
     private void Update()
     {
         Ray();
@@ -23,18 +23,22 @@ public class Interact : MonoBehaviour
     }
     private void Interactive()
     {
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
         {
-            if (hit.collider.gameObject.tag == "Place" && UnitToSpawn != null)
+            if (UnitToSpawn != null)
             {
-                Setunit(UnitToSpawn);
+                if (hit.collider.gameObject.tag == "Place" && !UnitToSpawn.isRoadUnit)
+                    Setunit(UnitToSpawn);
+
+                if (hit.collider.gameObject.tag == "Road" && UnitToSpawn.isRoadUnit)
+                    Setunit(UnitToSpawn);
             }
         }
     }
 
     private void Setunit(Unit unit)
     {
-        var place = hit.transform.gameObject.GetComponent<Place>();
+        var place = hit.transform.GetComponent<Place>();
 
         if (place.isFree)
         {
