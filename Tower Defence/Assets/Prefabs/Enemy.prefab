@@ -134,6 +134,8 @@ MonoBehaviour:
   speed: 1
   isArmored: 0
   coinKill: 5
+  attackSpeed: 0
+  damage: 1
 --- !u!135 &1213479353503544560
 SphereCollider:
   m_ObjectHideFlags: 0

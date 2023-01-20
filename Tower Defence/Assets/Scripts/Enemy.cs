@@ -19,16 +19,12 @@ public abstract class Enemy : MonoBehaviour
     private Transform wayPointTarget;
     private IHealth attackTarget;
 
-    private void Awake()
-    {
-        var Waypoints = GameObject.FindGameObjectWithTag("Way").transform;
-        way = new Queue<Transform>();
-        foreach (Transform point in Waypoints)
-            way.Enqueue(point);
-    }
-
     private void Start()
     {
+        var Waypoints = transform.parent.GetComponent<WaveSpawner>().WayPoints;
+        way = new Queue<Transform>();
+        foreach (var point in Waypoints)
+            way.Enqueue(point);
         wayPointTarget = way.Dequeue();
     }
 
