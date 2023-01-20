@@ -9,6 +9,7 @@ TagManager:
   - textCountCoint
   - Enemy
   - Road
+  - RoadUnit
   layers:
   - Default
   - TransparentFX
