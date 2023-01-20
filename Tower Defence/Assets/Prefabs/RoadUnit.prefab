@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6150514722654142863}
   m_Layer: 0
   m_Name: RoadUnit
-  m_TagString: RoadUnit
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,7 +56,6 @@ MonoBehaviour:
   isPiercingAttack: 1
   upDamage: 0
   upAttackSpeed: 0
-  health: 1
 --- !u!65 &6150514722654142863
 BoxCollider:
   m_ObjectHideFlags: 0

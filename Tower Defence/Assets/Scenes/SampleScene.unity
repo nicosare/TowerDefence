@@ -4024,9 +4024,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - {fileID: 11400000, guid: 18e5c90df9560b94fa598a0834dc4485, type: 2}
-  - {fileID: 11400000, guid: 18e5c90df9560b94fa598a0834dc4485, type: 2}
-  - {fileID: 11400000, guid: 18e5c90df9560b94fa598a0834dc4485, type: 2}
+=======
+>>>>>>> a90ab0711b148aa4ebaba165f94b8f0567f2e225
+=======
+  - {fileID: 11400000, guid: 4b204e5bb545c294881f0d4721c112a8, type: 2}
+>>>>>>> parent of a90ab07 (Враги атакуют башню и юнитов на дороге)
   timeBetweenSpawn: 3
   startTime: 5
   timerText: {fileID: 2094780800}
