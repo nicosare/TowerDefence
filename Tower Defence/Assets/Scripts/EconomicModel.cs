@@ -17,7 +17,7 @@ public class EconomicModel : MonoBehaviour
         textCountCoin.text = countCoins.ToString();
     }
 
-    public void Increase—ountCoin(int coins)
+    public void IncreaseCountCoin(int coins)
     {
         countCoins += coins;
         textCountCoin.text = countCoins.ToString();

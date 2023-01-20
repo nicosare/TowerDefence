@@ -1,7 +1,7 @@
+п»їusing System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public abstract class Enemy : MonoBehaviour
 {
     [SerializeField] protected int health;
@@ -9,9 +9,15 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected float speed;
     [SerializeField] protected bool isArmored;
     [SerializeField] protected int coinKill;
+    protected bool canAttack = true;
+    protected bool isEndWay = false;
+    [Range(0.1f, 100)]
+    [SerializeField] protected float attackSpeed;
+    public int damage;
 
     private Queue<Transform> way;
-    private Transform target;
+    private Transform wayPointTarget;
+    private IHealth attackTarget;
 
     private void Awake()
     {
@@ -23,7 +29,7 @@ public abstract class Enemy : MonoBehaviour
 
     private void Start()
     {
-        target = way.Dequeue();
+        wayPointTarget = way.Dequeue();
     }
 
     public void GetDamage(int damage, bool isPiercingAttack)
@@ -31,35 +37,62 @@ public abstract class Enemy : MonoBehaviour
         if (!isArmored || isPiercingAttack)
             health -= damage;
         else
-            Message.Instance.LoadMessage("броня не пробита"); //Сделать вывод на экран сообщения, что броня не пробита
-
+            Message.Instance.LoadMessage("Р‘СЂРѕРЅСЏ РЅРµ РїСЂРѕР±РёС‚Р°");
         if (health <= 0)
             Die();
     }
-
     private void Die()
     {
         Destroy(gameObject);
-        EconomicModel.Instance.IncreaseСountCoin(coinKill);
+        EconomicModel.Instance.IncreaseCountCoin(coinKill);
     }
 
     private void MoveToPoints()
     {
-        var dir = target.position - transform.position;
+        var dir = wayPointTarget.position - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime);
-        transform.GetChild(0).rotation = Quaternion.Slerp(transform.GetChild(0).rotation, Quaternion.LookRotation(target.position - transform.position), 3 * Time.deltaTime);
+        transform.GetChild(0).rotation = Quaternion.Slerp(transform.GetChild(0).rotation, Quaternion.LookRotation(wayPointTarget.position - transform.position), 3 * Time.deltaTime);
 
-        if (Vector3.Distance(transform.position, target.position) <= 0.1f)
+        if (Vector3.Distance(transform.position, wayPointTarget.position) <= 0.1f)
         {
             if (way.Count > 0)
-                target = way.Dequeue();
+                wayPointTarget = way.Dequeue();
             else
-                Die();
+                isEndWay = true;
         }
     }
 
     private void Update()
     {
-        MoveToPoints();
+        if (canAttack)
+        {
+            if (attackTarget != null)
+                StartCoroutine(Attacking());
+            if (!isEndWay)
+                MoveToPoints();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "RoadUnit")
+            attackTarget = other.gameObject.GetComponent<IHealth>();
+        Debug.Log("collision");
+    }
+
+    IEnumerator Attacking()
+    {
+        canAttack = false;
+        if (attackTarget != null)
+        {
+            Attack();
+            yield return new WaitForSeconds(1 / attackSpeed);
+        }
+        canAttack = true;
+    }
+
+    private void Attack()
+    {
+        attackTarget.GetDamage(damage);
     }
 }
