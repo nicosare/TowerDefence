@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7314175799369424859}
   - component: {fileID: 4002678161426939878}
   m_Layer: 5
-  m_Name: Power
+  m_Name: Price
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -171,6 +171,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0980b33115e8a694b91878b24dcc5f78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unit: {fileID: 0}
+  OnPointerDown:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8152024105341526574
 GameObject:
   m_ObjectHideFlags: 0

@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2481e8803eccca7499b1929e9b1d1985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 100
   speed: 1
   isArmored: 0
   coinKill: 5

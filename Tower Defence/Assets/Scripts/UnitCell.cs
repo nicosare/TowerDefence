@@ -17,7 +17,7 @@ public class UnitCell : MonoBehaviour, IPointerDownHandler
         interact = FindObjectOfType<Interact>();
 
         transform.GetChild(0).GetComponent<Text>().text = unit.nameUnit;
-        transform.GetChild(1).GetComponent<Text>().text = unit.damage.ToString();
+        transform.GetChild(1).GetComponent<Text>().text = unit.purchaseCost.ToString();
     }
 
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)

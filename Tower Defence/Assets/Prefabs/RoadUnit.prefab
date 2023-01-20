@@ -47,10 +47,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameUnit: "\u041C\u0435\u0447\u043D\u0438\u043A"
-  damage: 3
+  damage: 20
   purchaseCost: 5
   isRoadUnit: 1
-  attackSpeed: 0.5
+  attackSpeed: 1
   attackRange: 0
   improvementCost: 0
   isPiercingAttack: 1
