@@ -19,7 +19,7 @@ public class Place : MonoBehaviour
     {
         var newUnit = Instantiate(unit.gameObject);
         newUnit.transform.position = new Vector3(spawnPoint.position.x,
-                                                 spawnPoint.position.y + newUnit.transform.localScale.y / 2,
+                                                 spawnPoint.position.y + newUnit.transform.GetChild(0).localScale.y,
                                                  spawnPoint.position.z);
         newUnit.transform.SetParent(transform);
         isFree = false;

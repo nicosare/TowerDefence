@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -63,12 +65,18 @@ public abstract class Unit : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        targets.Enqueue(other.gameObject.GetComponent<Enemy>());
+        if (other.tag == "Enemy")
+        {
+            Debug.Log("Enter " + other.name);
+            targets.Enqueue(other.gameObject.GetComponent<Enemy>());
+        }
     }
-
     private void OnTriggerExit(Collider other)
     {
-        target = null;
+        if (other.tag == "Enemy")
+        {
+            target = null;
+        }
     }
 
     IEnumerator Attacking()
@@ -81,9 +89,10 @@ public abstract class Unit : MonoBehaviour
         }
         canAttack = true;
     }
+
     void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(transform.position + .5f * Vector3.up, GetComponent<BoxCollider>().size);
+        Gizmos.DrawWireCube(transform.position, GetComponent<BoxCollider>().size);
     }
 }

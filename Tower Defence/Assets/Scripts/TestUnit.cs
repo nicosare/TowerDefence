@@ -11,11 +11,6 @@ public class TestUnit : Unit
 
     protected override void Attack()
     {
-        Shoot();
-    }
-
-    private void Shoot()
-    {
         var newBullet = Instantiate(bullet.gameObject).GetComponent<Bullet>();
         newBullet.transform.position = new Vector3(transform.position.x,
                                                  1f,

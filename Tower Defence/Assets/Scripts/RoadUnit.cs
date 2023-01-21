@@ -11,10 +11,6 @@ public class RoadUnit : Unit, IHealth
 
     protected override void Attack()
     {
-        Beat();
-    }
-    private void Beat()
-    {
         target.GetDamage(damage, isPiercingAttack);
     }
 

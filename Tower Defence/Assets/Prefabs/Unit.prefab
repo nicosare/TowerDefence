@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3167941562905760565}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -130,17 +130,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameUnit: "\u041B\u0443\u0447\u043D\u0438\u043A"
-  damage: 50
+  damage: 1
   purchaseCost: 10
   isRoadUnit: 0
-  attackSpeed: 0.5
+  attackSpeed: 20.2
   attackRange: 2
   improvementCost: 0
   isPiercingAttack: 0
   upDamage: 0
   upAttackSpeed: 0
-  shootSpeed: 2
-  bullet: {fileID: 1152198129349464519, guid: 5464e80b7657a1d4ebdcbbc24a592362, type: 3}
+  shootSpeed: 6
+  bullet: {fileID: -3781357432163968571, guid: 7afe8fbd5c08b8a4a83359e77addcc5a, type: 3}
 --- !u!65 &4346333169862521140
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -153,4 +153,4 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 1}
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
