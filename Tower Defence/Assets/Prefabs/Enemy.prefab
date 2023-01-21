@@ -134,12 +134,12 @@ MonoBehaviour:
   speed: 1
   isArmored: 0
   coinKill: 5
-  rangeAttack: 0.1
+  rangeAttack: 0.2
   attackSpeed: 2
   damage: 1
   layerMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 320
 --- !u!135 &1213479353503544560
 SphereCollider:
   m_ObjectHideFlags: 0
