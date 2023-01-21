@@ -9,7 +9,9 @@ public class Interact : MonoBehaviour
     private Ray ray;
     private RaycastHit hit;
     public Unit UnitToSpawn;
-    [SerializeField] private LayerMask layerMask;
+    [SerializeField] private LayerMask placeLayerMask;
+    [SerializeField] private LayerMask UnitLayerMask;
+
     private void Update()
     {
         Ray();
@@ -23,17 +25,31 @@ public class Interact : MonoBehaviour
     }
     private void Interactive()
     {
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, placeLayerMask))
         {
             if (UnitToSpawn != null)
             {
-                if (hit.collider.gameObject.tag == "Place" && !UnitToSpawn.isRoadUnit)
+                if (hit.collider.gameObject.tag == "Place" && !UnitToSpawn.IsRoadUnit)
                     Setunit(UnitToSpawn);
 
-                if (hit.collider.gameObject.tag == "Road" && UnitToSpawn.isRoadUnit)
+                if (hit.collider.gameObject.tag == "Road" && UnitToSpawn.IsRoadUnit)
                     Setunit(UnitToSpawn);
             }
         }
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, UnitLayerMask))
+        {
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                OpenMenu();
+            }
+        }
+    }
+
+    private void OpenMenu()
+    {
+        var unit = hit.transform.parent.GetComponent<Unit>();
+        UnitOnFieldMenu.Instance.Open(unit);
     }
 
     private void Setunit(Unit unit)
@@ -51,5 +67,7 @@ public class Interact : MonoBehaviour
                 UnitToSpawn = null;
             }
         }
+        else if (Input.GetMouseButtonDown(0))
+            Message.Instance.LoadMessage("Это место занято!");
     }
 }

@@ -11,7 +11,7 @@ public class RoadUnit : Unit, IHealth
 
     protected override void Attack()
     {
-        target.GetDamage(damage, isPiercingAttack);
+        target.GetDamage(Damage, isPiercingAttack);
     }
 
     public void GetDamage(int damage)
@@ -25,5 +25,6 @@ public class RoadUnit : Unit, IHealth
     public void Die()
     {
         Destroy(gameObject);
+        transform.parent.GetComponent<Place>().isFree = true;
     }
 }

@@ -4,21 +4,23 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static UnityEngine.UI.CanvasScaler;
 
 public abstract class Unit : MonoBehaviour
 {
-    public string nameUnit;
-    public int damage;
-    public int purchaseCost;
-    public bool isRoadUnit;
-    private int levelUnit = 1;
+    public string NameUnit;
+    public int Damage;
+    public int PurchaseCost;
+    public int ImprovementCost;
+    public int SellCost;
+    public bool IsRoadUnit;
+    private int levelUnit = 0;
     private int maxLevelUnit = 3;
 
     [Range(0.1f, 100)]
     [SerializeField] protected float attackSpeed;
     [Range(0, 10)]
     [SerializeField] protected int attackRange;
-    [SerializeField] protected int improvementCost;
     [SerializeField] protected bool isPiercingAttack;
     [SerializeField] protected int upDamage;
     [SerializeField] protected int upAttackSpeed;
@@ -38,7 +40,6 @@ public abstract class Unit : MonoBehaviour
 
     private void Start()
     {
-
         GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x * 2 * attackRange + 1,
                                                        GetComponent<BoxCollider>().size.y,
                                                        GetComponent<BoxCollider>().size.z * 2 * attackRange + 1);
@@ -54,13 +55,31 @@ public abstract class Unit : MonoBehaviour
 
     public void UpLevel()
     {
-        damage += upDamage;
-        attackSpeed += upAttackSpeed;
+        if (EconomicModel.Instance.countCoins >= PurchaseCost)
+        {
+            var coef = 0.5f;
+            levelUnit++;
+            Damage += upDamage;
+            attackSpeed += upAttackSpeed;
+            EconomicModel.Instance.Reduce—ountCoin(ImprovementCost);
+            ImprovementCost += (int)Mathf.Ceil(ImprovementCost * levelUnit * coef);
+            SellCost += (int)Mathf.Ceil(ImprovementCost * levelUnit * coef);
+        }
+        else
+            Message.Instance.LoadMessage("ÕÂ‰ÓÒÚ‡ÚÓ˜ÌÓ ‰ÂÌÂ„!");
     }
 
     public void BuyUnit()
     {
-        EconomicModel.Instance.Reduce—ountCoin(purchaseCost);
+        if (EconomicModel.Instance.countCoins >= PurchaseCost)
+            EconomicModel.Instance.Reduce—ountCoin(PurchaseCost);
+    }
+
+    public void SellUnit()
+    {
+        EconomicModel.Instance.IncreaseCountCoin(SellCost);
+        transform.parent.GetComponent<Place>().isFree = true;
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
