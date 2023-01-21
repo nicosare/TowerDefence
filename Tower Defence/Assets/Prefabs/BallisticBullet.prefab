@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 2534174065540837649}
   - component: {fileID: 8536717902712459152}
   - component: {fileID: 52447869703124272}
-  - component: {fileID: 8085654322084497949}
-  - component: {fileID: 8557735036113504614}
+  - component: {fileID: -3781357432163968571}
+  - component: {fileID: 990816880067395959}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: BallisticBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,7 +85,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &8085654322084497949
+--- !u!114 &-3781357432163968571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8091036875839873726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 485fb16a7b9d2e64aa9ddc8ca06561e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 0
+  isPiercingAttack: 0
+  target: {fileID: 0}
+  ShootSpeed: 0
+  RadiusAttack: 5
+--- !u!135 &990816880067395959
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,21 +113,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.49999997
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8557735036113504614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8091036875839873726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39a35ba406704194ab1df9d861b178f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Damage: 0
-  IsPiercingAttack: 0
-  Target: {fileID: 0}
-  ShootSpeed: 0

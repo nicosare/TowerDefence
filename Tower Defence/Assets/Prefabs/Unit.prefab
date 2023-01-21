@@ -134,13 +134,13 @@ MonoBehaviour:
   purchaseCost: 10
   isRoadUnit: 0
   attackSpeed: 0.5
-  attackRange: 1
+  attackRange: 2
   improvementCost: 0
   isPiercingAttack: 0
   upDamage: 0
   upAttackSpeed: 0
-  shootSpeed: 5
-  bullet: {fileID: 8557735036113504614, guid: 5464e80b7657a1d4ebdcbbc24a592362, type: 3}
+  shootSpeed: 2
+  bullet: {fileID: 1152198129349464519, guid: 5464e80b7657a1d4ebdcbbc24a592362, type: 3}
 --- !u!65 &4346333169862521140
 BoxCollider:
   m_ObjectHideFlags: 0

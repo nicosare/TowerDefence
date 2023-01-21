@@ -1,33 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public abstract class Bullet : MonoBehaviour
 {
     public int Damage;
     public bool isPiercingAttack;
     public Transform target;
     public float ShootSpeed;
 
-    private void MoveToTarget()
+    protected abstract void MoveToTarget();
+    protected abstract void Hit();
+
+
+    private void Update()
     {
         if (target != null)
         {
-            var dir = target.transform.position - transform.position;
-            transform.Translate(dir.normalized * ShootSpeed * Time.deltaTime);
+            MoveToTarget();
         }
         else
             Destroy(gameObject);
-    }
-    private void Update()
-    {
-        MoveToTarget();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Enemy")
-            other.GetComponent<Enemy>().GetDamage(Damage, isPiercingAttack);
-        Destroy(gameObject);
+            Hit();
+        else
+            Destroy(gameObject);
     }
 }
