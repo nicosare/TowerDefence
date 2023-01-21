@@ -5,19 +5,23 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour
 {
     [SerializeField] protected int health;
-    [Range(0.5f, 4f)]
+    [Range(0f, 4f)]
     [SerializeField] protected float speed;
     [SerializeField] protected bool isArmored;
     [SerializeField] protected int coinKill;
+    [SerializeField] protected float rangeAttack;
     protected bool canAttack = true;
+    protected bool canMove = true;
     protected bool isEndWay = false;
     [Range(0.1f, 100)]
     [SerializeField] protected float attackSpeed;
     public int damage;
+    public LayerMask layerMask;
 
     private Queue<Transform> way;
     private Transform wayPointTarget;
     private IHealth attackTarget;
+
 
     private void Awake()
     {
@@ -25,6 +29,7 @@ public abstract class Enemy : MonoBehaviour
         way = new Queue<Transform>();
         foreach (Transform point in Waypoints)
             way.Enqueue(point);
+        attackTarget = null;
     }
 
     private void Start()
@@ -64,20 +69,13 @@ public abstract class Enemy : MonoBehaviour
 
     private void Update()
     {
-        if (canAttack)
-        {
-            if (attackTarget != null)
-                StartCoroutine(Attacking());
-            if (!isEndWay)
-                MoveToPoints();
-        }
-    }
+        FindAttackTarget();
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "RoadUnit")
-            attackTarget = other.gameObject.GetComponent<IHealth>();
-        Debug.Log("collision");
+        if (canAttack && attackTarget != null)
+            StartCoroutine(Attacking());
+
+        if (canMove && !isEndWay)
+            MoveToPoints();
     }
 
     IEnumerator Attacking()
@@ -91,8 +89,38 @@ public abstract class Enemy : MonoBehaviour
         canAttack = true;
     }
 
+    public void StopMove(int timeStoppingInSeconds)
+    {
+        canMove = false;
+        StartCoroutine(Stopping(timeStoppingInSeconds));
+    }
+
+    IEnumerator Stopping(int timeStoppingInSeconds)
+    {
+        yield return new WaitForSeconds(timeStoppingInSeconds);
+        canMove = true;
+    }
+
     private void Attack()
     {
         attackTarget.GetDamage(damage);
+    }
+
+    private void FindAttackTarget()
+    {
+        var ray = new Ray(transform.position, transform.GetChild(0).forward * rangeAttack);
+        Debug.DrawRay(transform.position, transform.GetChild(0).forward * rangeAttack, Color.red);
+
+        RaycastHit raycastHit;
+        if (Physics.Raycast(ray, out raycastHit, rangeAttack, layerMask))
+        {
+            attackTarget = raycastHit.collider.gameObject.GetComponent<IHealth>();
+            canMove = false;
+        }
+        else
+        {
+            canMove = true;
+            attackTarget = null;
+        }
     }
 }

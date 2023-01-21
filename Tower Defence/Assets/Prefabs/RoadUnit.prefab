@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5193261476682579483}
   - component: {fileID: 6549081175648220340}
   - component: {fileID: 6150514722654142863}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RoadUnit
   m_TagString: RoadUnit
   m_Icon: {fileID: 0}
@@ -50,13 +50,13 @@ MonoBehaviour:
   damage: 20
   purchaseCost: 5
   isRoadUnit: 1
-  attackSpeed: 1
+  attackSpeed: 3
   attackRange: 0
   improvementCost: 0
   isPiercingAttack: 1
   upDamage: 0
   upAttackSpeed: 0
-  health: 0
+  health: 10
 --- !u!65 &6150514722654142863
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -81,7 +81,7 @@ GameObject:
   - component: {fileID: 6415958881588046877}
   - component: {fileID: 3322426997088979175}
   - component: {fileID: 3908141856789649655}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
