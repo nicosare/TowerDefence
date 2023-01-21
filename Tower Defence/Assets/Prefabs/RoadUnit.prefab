@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameUnit: "\u041C\u0435\u0447\u043D\u0438\u043A"
-  damage: 20
+  damage: 100
   purchaseCost: 5
   isRoadUnit: 1
   attackSpeed: 3

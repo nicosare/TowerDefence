@@ -3,23 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Way
-  - Place
-  - textCountCoint
-  - Enemy
-  - Road
-  - RoadUnit
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - 
   - Water
   - UI
-  - Place
-  - Unit
-  - RoadUnit
+  - 
+  - 
+  - 
   - 
   - 
   - 

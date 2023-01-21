@@ -16,12 +16,15 @@ public class TestUnit : Unit
 
     private void Shoot()
     {
-        var newBullet = Instantiate(bullet.gameObject, transform).GetComponent<Bullet>();
+        var newBullet = Instantiate(bullet.gameObject).GetComponent<Bullet>();
+        newBullet.transform.position = new Vector3(transform.position.x,
+                                                 1f,
+                                                 transform.position.z);
+        newBullet.transform.SetParent(transform);
         newBullet.transform.localPosition = Vector3.zero;
         newBullet.Damage = damage;
         newBullet.isPiercingAttack = isPiercingAttack;
         newBullet.target = target.transform;
         newBullet.ShootSpeed = shootSpeed;
-
     }
 }

@@ -14,14 +14,17 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] private int timeBetweenSpawn;
     [SerializeField] private int startTime;
     [SerializeField] private Text timerText;
+    [SerializeField] private Way Way;
 
     private int enemiesCounter;
     private int wavesCounter;
     private int timer;
     private List<GameObject> enemies;
+    public List<Transform> WayPoints;
 
     private void Awake()
     {
+        WayPoints = Way.WayPoints;
         wavesCounter = 0;
         timer = startTime;
         enemiesCounter = waves.Sum(wave => wave.Enemies.Count);
@@ -56,7 +59,11 @@ public class WaveSpawner : MonoBehaviour
             foreach (var enemy in wave.Enemies)
             {
                 var newEnemy = Instantiate(enemy.gameObject);
-                newEnemy.transform.position = new Vector3(transform.position.x, .35f, transform.position.z);
+                newEnemy.transform.position = new Vector3(transform.position.x,
+                                                         .35f,
+                                                         transform.position.z);
+                newEnemy.transform.SetParent(transform);
+
                 enemies.Add(newEnemy);
                 yield return new WaitForSeconds(wave.TimeBetweenSpawn);
             }

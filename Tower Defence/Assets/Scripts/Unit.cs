@@ -30,12 +30,18 @@ public abstract class Unit : MonoBehaviour
 
     private void Awake()
     {
-        GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x * 2 * attackRange + 1,
-                                                       GetComponent<BoxCollider>().size.y,
-                                                       GetComponent<BoxCollider>().size.z * 2 * attackRange + 1);
         target = null;
         targets = new Queue<Enemy>();
     }
+
+    private void Start()
+    {
+
+        GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x * 2 * attackRange + 1,
+                                                       GetComponent<BoxCollider>().size.y,
+                                                       GetComponent<BoxCollider>().size.z * 2 * attackRange + 1);
+    }
+
     private void Update()
     {
         if (canAttack)
@@ -74,5 +80,10 @@ public abstract class Unit : MonoBehaviour
             yield return new WaitForSeconds(1 / attackSpeed);
         }
         canAttack = true;
+    }
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(transform.position + .5f * Vector3.up, GetComponent<BoxCollider>().size);
     }
 }
