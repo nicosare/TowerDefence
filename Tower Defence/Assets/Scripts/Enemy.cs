@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 public abstract class Enemy : MonoBehaviour
 {
     [SerializeField] protected int health;
@@ -17,10 +18,12 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected float attackSpeed;
     public int damage;
     public LayerMask layerMask;
+    [SerializeField] private Slider healthBar;
 
     private Queue<Transform> way;
     private Transform wayPointTarget;
     private IHealth attackTarget;
+    private bool isShowHealthBar;
 
     private void Start()
     {
@@ -30,16 +33,33 @@ public abstract class Enemy : MonoBehaviour
             way.Enqueue(point);
         wayPointTarget = way.Dequeue();
         attackTarget = null;
+        healthBar.maxValue = health;
+        healthBar.value = health;
+        healthBar.gameObject.SetActive(false);
     }
 
     public void GetDamage(int damage, bool isPiercingAttack)
     {
         if (!isArmored || isPiercingAttack)
+        {
             health -= damage;
+            if (!isShowHealthBar)
+                StartCoroutine(ShowHealthBar());
+            healthBar.value = health;
+        }
         else
             Message.Instance.LoadMessage("Броня не пробита");
         if (health <= 0)
             Die();
+    }
+
+    IEnumerator ShowHealthBar()
+    {
+        isShowHealthBar = true;
+        healthBar.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1);
+        healthBar.gameObject.SetActive(false);
+        isShowHealthBar = false;
     }
     private void Die()
     {
