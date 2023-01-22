@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 6549081175648220340}
   - component: {fileID: 6150514722654142863}
   m_Layer: 6
-  m_Name: RoadUnit
+  m_Name: Trap
   m_TagString: RoadUnit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
