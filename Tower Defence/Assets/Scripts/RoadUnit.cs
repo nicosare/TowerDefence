@@ -18,8 +18,8 @@ public class RoadUnit : Unit, IHealth
 
     private void Start()
     {
-        healthBar.maxValue = health;
-        healthBar.value = health;
+        healthBar.maxValue = Health;
+        healthBar.value = Health;
     }
     public void GetDamage(int damage)
     {
