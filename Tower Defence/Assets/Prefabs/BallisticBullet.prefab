@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RadiusAttack: 10
+  hitCount: 1
 --- !u!135 &990816880067395959
 SphereCollider:
   m_ObjectHideFlags: 0

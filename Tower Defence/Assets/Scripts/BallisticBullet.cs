@@ -28,6 +28,8 @@ public class BallisticBullet : Bullet
         transform.position = Vector3.MoveTowards(transform.position, point2, step);
 
         if (transform.position == targetPosition)
+        {
             Hit();
+        }
     }
 }
