@@ -148,17 +148,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80a1e5864317e5f47ac767dc48252cba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameUnit: "\u041B\u043E\u0432\u0443\u0448\u043A\u0430"
-  Damage: 100
-  PurchaseCost: 10
-  ImprovementCost: 0
-  SellCost: 0
-  IsRoadUnit: 1
+  nameUnit: "\u041B\u043E\u0432\u0443\u0448\u043A\u0430"
+  damage: 100
+  buyPrice: 10
+  isRoadUnit: 1
   attackSpeed: 0.25
   attackRange: 0
   isPiercingAttack: 1
-  upDamage: 0
-  upAttackSpeed: 0
   canAttack: 1
   health: 60
   healthBar: {fileID: 4225388113473841727}
