@@ -513,7 +513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   speed: 1
-  isArmored: 0
+  isArmored: 1
   coinKill: 5
   rangeAttack: 0.2
   attackSpeed: 2

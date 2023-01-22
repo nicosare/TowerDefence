@@ -8,7 +8,7 @@ public class StraightBullet : Bullet
     protected override void MoveToTarget()
     {
         var dir = target.position - transform.position;
-        transform.Translate(dir.normalized * ShootSpeed * Time.deltaTime);
+        transform.Translate(dir.normalized * shootSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)

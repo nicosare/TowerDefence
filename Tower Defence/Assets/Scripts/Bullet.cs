@@ -5,12 +5,22 @@ using UnityEngine;
 
 public abstract class Bullet : MonoBehaviour
 {
-    public int Damage;
-    public bool isPiercingAttack;
-    public Transform target;
-    public float ShootSpeed;
+    protected int damage;
+    protected bool isPiercingAttack;
+    protected Transform target;
+    protected float shootSpeed;
+
     [Range(1, 10)]
     [SerializeField] protected float RadiusAttack;
+
+    public void ApplyUnitParameters(int damage, bool isPiercingAttack, Transform target, float shootSpeed)
+    {
+        this.damage = damage;
+        this.isPiercingAttack = isPiercingAttack;
+        this.target = target;
+        this.shootSpeed = shootSpeed;
+    }
+
     protected abstract void MoveToTarget();
 
     private void Update()
@@ -28,7 +38,7 @@ public abstract class Bullet : MonoBehaviour
                                     .Select(damagedEnemy => damagedEnemy.gameObject.GetComponent<Enemy>());
 
         foreach (var damagedEnemy in damagedEnemies)
-            damagedEnemy.GetDamage(Damage, isPiercingAttack);
+            damagedEnemy.GetDamage(damage, isPiercingAttack);
         Destroy(gameObject);
     }
 

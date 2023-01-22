@@ -16,13 +16,14 @@ public class UnitCell : MonoBehaviour, IPointerDownHandler
     {
         interact = FindObjectOfType<Interact>();
 
-        transform.GetChild(0).GetComponent<Text>().text = unit.nameUnit;
-        transform.GetChild(1).GetComponent<Text>().text = unit.purchaseCost.ToString();
+        transform.GetChild(0).GetComponent<Text>().text = unit.NameUnit;
+        transform.GetChild(1).GetComponent<Text>().text = unit.PurchaseCost.ToString();
     }
 
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
     {
-        if (EconomicModel.Instance.countCoins >= unit.purchaseCost)
+
+        if (EconomicModel.Instance.countCoins >= unit.PurchaseCost)
             OnPointerDown?.Invoke();
         else
             Message.Instance.LoadMessage("Недостаточно денег!");

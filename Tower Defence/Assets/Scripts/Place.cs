@@ -8,6 +8,8 @@ public class Place : MonoBehaviour
     public bool isFree;
     private Transform glow;
     private Transform spawnPoint;
+    public Unit UnitOnPlace;
+
     private void Awake()
     {
         isFree = true;
@@ -15,6 +17,7 @@ public class Place : MonoBehaviour
         glow.gameObject.SetActive(false);
         spawnPoint = transform.GetChild(1).transform;
     }
+
     public void SetUnit(Unit unit)
     {
         var newUnit = Instantiate(unit.gameObject);
@@ -22,6 +25,7 @@ public class Place : MonoBehaviour
                                                  spawnPoint.position.y + newUnit.transform.GetChild(0).localScale.y,
                                                  spawnPoint.position.z);
         newUnit.transform.SetParent(transform);
+        UnitOnPlace = newUnit.GetComponent<Unit>();
         isFree = false;
     }
 
@@ -29,6 +33,8 @@ public class Place : MonoBehaviour
     {
         glow.gameObject.SetActive(true);
     }
+
+
     private void Update()
     {
         glow.gameObject.SetActive(false);

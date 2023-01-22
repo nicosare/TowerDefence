@@ -11,9 +11,10 @@ public class BallisticBullet : Bullet
     private float step;
 
     private Vector3 targetPosition;
+
     private void Start()
     {
-        step = ShootSpeed * 0.01f;
+        step = shootSpeed * 0.01f;
         targetPosition = target.position;
         middlePoint = Vector3.Lerp(transform.parent.position, targetPosition, .5f) + 2 * Vector3.up.normalized;
         point1 = transform.parent.position;

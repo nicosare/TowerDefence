@@ -148,13 +148,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abca6aa3db248964193822da5cbd8e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameUnit: "\u041C\u0435\u0447\u043D\u0438\u043A"
-  damage: 50
-  purchaseCost: 5
-  isRoadUnit: 1
+  NameUnit: "\u041C\u0435\u0447\u043D\u0438\u043A"
+  Damage: 5
+  PurchaseCost: 5
+  ImprovementCost: 2
+  SellCost: 0
+  IsRoadUnit: 1
   attackSpeed: 3
   attackRange: 0
-  improvementCost: 0
   isPiercingAttack: 1
   upDamage: 0
   upAttackSpeed: 0
@@ -350,7 +351,8 @@ GameObject:
   - component: {fileID: 6415958881588046877}
   - component: {fileID: 3322426997088979175}
   - component: {fileID: 3908141856789649655}
-  m_Layer: 6
+  - component: {fileID: 8111048809046263891}
+  m_Layer: 8
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -422,8 +424,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &4953028837295924426
-GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
