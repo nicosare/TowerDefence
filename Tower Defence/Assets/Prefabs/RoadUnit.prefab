@@ -232,7 +232,7 @@ MonoBehaviour:
   attackRange: 0
   isPiercingAttack: 1
   canAttack: 1
-  health: 2
+  health: 10
   healthBar: {fileID: 2426965272496243187}
 --- !u!65 &6150514722654142863
 BoxCollider:

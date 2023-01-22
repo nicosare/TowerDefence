@@ -110,7 +110,10 @@ public abstract class Unit : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            target = null;
+            if (targets.Count > 0)
+                target = targets.Dequeue();
+            else
+                target = null;
         }
     }
 
