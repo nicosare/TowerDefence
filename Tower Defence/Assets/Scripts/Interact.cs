@@ -68,5 +68,10 @@ public class Interact : MonoBehaviour
                 UnitToSpawn = null;
             }
         }
+        else if (Input.GetMouseButtonDown(0))
+        {
+            Message.Instance.LoadMessage("Место занято!");
+            UnitToSpawn = null;
+        }
     }
 }
