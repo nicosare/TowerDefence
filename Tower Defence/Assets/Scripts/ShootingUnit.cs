@@ -4,9 +4,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class TestUnit : Unit
+public class ShootingUnit : Unit
 {
-    [Range(1f, 10)]
+    [Range(1, 10)]
     [SerializeField] private int shootSpeed;
     [SerializeField] private Bullet bulletPrefab;
 

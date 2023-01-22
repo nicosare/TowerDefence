@@ -143,18 +143,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4390294bfa544c046a428794de010d0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameUnit: "\u041A\u0430\u0442\u0430\u043F\u0443\u043B\u044C\u0442\u0430"
-  Damage: 1
-  PurchaseCost: 15
-  ImprovementCost: 10
-  SellCost: 0
-  IsRoadUnit: 0
-  attackSpeed: 5
-  attackRange: 10
+  nameUnit: "\u041A\u0430\u0442\u0430\u043F\u0443\u043B\u044C\u0442\u0430"
+  damage: 20
+  buyPrice: 20
+  isRoadUnit: 0
+  attackSpeed: 0.2
+  attackRange: 2
   isPiercingAttack: 1
-  upDamage: 2
-  upAttackSpeed: 2
-  shootSpeed: 1
+  shootSpeed: 5
   bulletPrefab: {fileID: -3781357432163968571, guid: 7afe8fbd5c08b8a4a83359e77addcc5a, type: 3}
 --- !u!65 &4346333169862521140
 BoxCollider:

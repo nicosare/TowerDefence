@@ -8,34 +8,44 @@ using static UnityEngine.UI.CanvasScaler;
 
 public abstract class Unit : MonoBehaviour
 {
-    public string NameUnit;
-    public int Damage;
-    public int PurchaseCost;
-    public int ImprovementCost;
-    public int SellCost;
-    public bool IsRoadUnit;
-    private int levelUnit = 0;
-    private int maxLevelUnit = 3;
-
-    [Range(0.1f, 100)]
-    [SerializeField] protected float attackSpeed;
+    [SerializeField] private string nameUnit;
+    [SerializeField] private int damage;
+    [SerializeField] private int buyPrice;
+    [SerializeField] private bool isRoadUnit;
+    [Range(0.1f, 10)]
+    public float attackSpeed;
     [Range(0, 10)]
     [SerializeField] protected int attackRange;
     [SerializeField] protected bool isPiercingAttack;
-    [SerializeField] protected int upDamage;
-    [SerializeField] protected int upAttackSpeed;
+    private int levelUnit = 0;
+    private int maxLevelUnit = 3;
+
     protected abstract void Attack();
 
-    [SerializeField] protected Queue<Enemy> targets;
+    protected Queue<Enemy> targets;
     protected Enemy target;
     protected bool canAttack = true;
 
-    public bool isMaxLevel { get => levelUnit == maxLevelUnit; }
+    public bool IsMaxLevel { get => levelUnit == maxLevelUnit; }
+    public int BuyPrice { get => buyPrice; }
+    public int UpgradePrice { get => upgradePrice; private set => upgradePrice = value; }
+    public int SellPrice { get => sellPrice; private set => sellPrice = value; }
+    public int Damage { get => damage; private set => damage = value; }
+    public string NameUnit { get => nameUnit; }
+    public bool IsRoadUnit { get => isRoadUnit; }
+
+    private int upgradePrice;
+    private int sellPrice;
+    private float sellPriceCoef = 0.5f;
+    private float upgradePriceCoef = 0.6f;
+    private float upgradeCoef = 1.5f;
+
 
     private void Awake()
     {
         target = null;
         targets = new Queue<Enemy>();
+        SetPrices();
     }
 
     private void Start()
@@ -55,29 +65,35 @@ public abstract class Unit : MonoBehaviour
 
     public void UpLevel()
     {
-        if (EconomicModel.Instance.countCoins >= PurchaseCost)
+        if (EconomicModel.Instance.countCoins >= BuyPrice)
         {
-            var coef = 0.5f;
+            EconomicModel.Instance.Reduce—ountCoin(UpgradePrice);
             levelUnit++;
-            Damage += upDamage;
-            attackSpeed += upAttackSpeed;
-            EconomicModel.Instance.Reduce—ountCoin(ImprovementCost);
-            ImprovementCost += (int)Mathf.Ceil(ImprovementCost * levelUnit * coef);
-            SellCost += (int)Mathf.Ceil(ImprovementCost * levelUnit * coef);
+            Damage = Mathf.CeilToInt(Damage * upgradeCoef);
+            attackSpeed = attackSpeed * upgradeCoef;
+            SetPrices();
         }
         else
             Message.Instance.LoadMessage("ÕÂ‰ÓÒÚ‡ÚÓ˜ÌÓ ‰ÂÌÂ„!");
     }
 
+    private void SetPrices()
+    {
+        UpgradePrice += Mathf.CeilToInt(BuyPrice * upgradePriceCoef);
+        SellPrice = Mathf.CeilToInt((BuyPrice + UpgradePrice) * sellPriceCoef);
+    }
+
     public void BuyUnit()
     {
-        if (EconomicModel.Instance.countCoins >= PurchaseCost)
-            EconomicModel.Instance.Reduce—ountCoin(PurchaseCost);
+        if (EconomicModel.Instance.countCoins >= BuyPrice)
+            EconomicModel.Instance.Reduce—ountCoin(BuyPrice);
+        else
+            Message.Instance.LoadMessage("ÕÂ‰ÓÒÚ‡ÚÓ˜ÌÓ ‰ÂÌÂ„!");
     }
 
     public void SellUnit()
     {
-        EconomicModel.Instance.IncreaseCountCoin(SellCost);
+        EconomicModel.Instance.IncreaseCountCoin(SellPrice);
         transform.parent.GetComponent<Place>().isFree = true;
         Destroy(gameObject);
     }

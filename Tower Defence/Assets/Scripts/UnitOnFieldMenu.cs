@@ -43,21 +43,22 @@ public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler
     }
     private void UpdateMenu()
     {
-        if (!unitOnPlace.isMaxLevel)
+        if (!unitOnPlace.IsMaxLevel)
         {
-            sellButton.transform.GetChild(0).GetComponent<Text>().text = "Продать (" + unitOnPlace.SellCost.ToString() + ")";
-            upgradeButton.transform.GetChild(0).GetComponent<Text>().text = "Улучшить (" + unitOnPlace.ImprovementCost.ToString() + ")";
+            sellButton.transform.GetChild(0).GetComponent<Text>().text = "Продать (" + unitOnPlace.SellPrice.ToString() + ")";
+            upgradeButton.interactable = true;
+            upgradeButton.transform.GetChild(0).GetComponent<Text>().text = "Улучшить (" + unitOnPlace.UpgradePrice.ToString() + ")";
         }
         else
         {
-            sellButton.transform.GetChild(0).GetComponent<Text>().text = "Продать (" + unitOnPlace.SellCost.ToString() + ")";
+            sellButton.transform.GetChild(0).GetComponent<Text>().text = "Продать (" + unitOnPlace.SellPrice.ToString() + ")";
             upgradeButton.interactable = false;
             upgradeButton.transform.GetChild(0).GetComponent<Text>().text = "Максимальный \n уровень";
         }
     }
     public void UpgradeUnit()
     {
-        if (!unitOnPlace.isMaxLevel)
+        if (!unitOnPlace.IsMaxLevel)
             unitOnPlace.UpLevel();
         UpdateMenu();
     }
