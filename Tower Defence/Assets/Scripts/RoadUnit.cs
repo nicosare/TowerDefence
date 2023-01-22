@@ -25,7 +25,6 @@ public class RoadUnit : Unit, IHealth
     {
         health -= damage;
         healthBar.value = health;
-        Debug.Log(health);
         if (health <= 0)
             Die();
     }

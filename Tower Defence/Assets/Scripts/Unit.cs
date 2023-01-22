@@ -28,7 +28,7 @@ public abstract class Unit : MonoBehaviour
 
     [SerializeField] protected Queue<Enemy> targets;
     protected Enemy target;
-    protected bool canAttack = true;
+    [SerializeField] protected bool canAttack = true;
 
     public bool isMaxLevel { get => levelUnit == maxLevelUnit; }
 
