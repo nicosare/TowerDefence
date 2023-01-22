@@ -15,6 +15,9 @@ public abstract class Bullet : MonoBehaviour
     [SerializeField] protected float RadiusAttack;
     [Range(1, 3)]
     [SerializeField] protected int hitCount;
+    [SerializeField] private bool isStunning;
+    [Range(1, 3)]
+    [SerializeField] protected int stunTime;
     public void ApplyUnitParameters(int damage, bool isPiercingAttack, Transform target, float shootSpeed)
     {
         this.damage = damage;
@@ -50,6 +53,8 @@ public abstract class Bullet : MonoBehaviour
 
             foreach (var damagedEnemy in damagedEnemies)
             {
+                if (isStunning)
+                    damagedEnemy.StopMove(stunTime);
                 damagedEnemy.GetDamage(damage, isPiercingAttack);
             }
             if (hitCount == 1)

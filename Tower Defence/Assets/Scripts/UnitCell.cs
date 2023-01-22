@@ -24,6 +24,11 @@ public class UnitCell : MonoBehaviour, IPointerDownHandler
 
         if (EconomicModel.Instance.countCoins >= unit.BuyPrice)
             OnPointerDown?.Invoke();
+        else
+        {
+            Message.Instance.LoadMessage("Недостаточно денег!");
+            interact.UnitToSpawn = null;
+        }
     }
 
     public void ChooseUnit()

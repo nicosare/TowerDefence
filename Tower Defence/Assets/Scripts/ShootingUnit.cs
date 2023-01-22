@@ -6,8 +6,8 @@ using static UnityEngine.GraphicsBuffer;
 
 public class ShootingUnit : Unit
 {
-    [Range(1, 10)]
-    [SerializeField] private int shootSpeed;
+    [Range(1, 100)]
+    [SerializeField] private int bulletSpeed;
     [SerializeField] private Bullet bulletPrefab;
 
     protected override void Attack()
@@ -18,6 +18,6 @@ public class ShootingUnit : Unit
                                                  transform.position.z);
         newBullet.transform.SetParent(transform);
         newBullet.transform.localPosition = Vector3.zero;
-        newBullet.ApplyUnitParameters(Damage, isPiercingAttack, target.transform, shootSpeed);
+        newBullet.ApplyUnitParameters(Damage, isPiercingAttack, target.transform, bulletSpeed);
     }
 }

@@ -17,17 +17,19 @@ public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler
 
     private void Awake()
     {
-        unitOnPlace = null;
         menu.gameObject.SetActive(false);
         Instance = this;
     }
 
     public void Open(Unit unit)
     {
-        menu.gameObject.SetActive(true);
-        transform.position = Input.mousePosition;
-        unitOnPlace = unit;
-        UpdateMenu();
+        if (!menu.gameObject.activeSelf)
+        {
+            menu.gameObject.SetActive(true);
+            transform.position = Input.mousePosition;
+            unitOnPlace = unit;
+            UpdateMenu();
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)

@@ -12,7 +12,7 @@ public abstract class Unit : MonoBehaviour
     [SerializeField] private int damage;
     [SerializeField] private int buyPrice;
     [SerializeField] private bool isRoadUnit;
-    [Range(0.1f, 10)]
+    [Range(0.1f, 100)]
     public float attackSpeed;
     [Range(0, 10)]
     [SerializeField] protected int attackRange;
@@ -65,7 +65,7 @@ public abstract class Unit : MonoBehaviour
 
     public void UpLevel()
     {
-        if (EconomicModel.Instance.countCoins >= BuyPrice)
+        if (EconomicModel.Instance.countCoins >= UpgradePrice)
         {
             EconomicModel.Instance.ReduceÑountCoin(UpgradePrice);
             levelUnit++;
@@ -87,8 +87,6 @@ public abstract class Unit : MonoBehaviour
     {
         if (EconomicModel.Instance.countCoins >= BuyPrice)
             EconomicModel.Instance.ReduceÑountCoin(BuyPrice);
-        else
-            Message.Instance.LoadMessage("Íåäîñòàòî÷íî äåíåã!");
     }
 
     public void SellUnit()

@@ -35,13 +35,14 @@ public class Interact : MonoBehaviour
                 if (hit.collider.gameObject.tag == "Road" && UnitToSpawn.IsRoadUnit)
                     Setunit(UnitToSpawn);
             }
-        }
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, UnitLayerMask))
-        {
-
-            if (Input.GetMouseButtonDown(0))
+            else if (Physics.Raycast(ray, out hit, Mathf.Infinity, UnitLayerMask))
             {
-                OpenMenu();
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    UnitToSpawn = null;
+                    OpenMenu();
+                }
             }
         }
     }
@@ -67,7 +68,5 @@ public class Interact : MonoBehaviour
                 UnitToSpawn = null;
             }
         }
-        else if (Input.GetMouseButtonDown(0))
-            Message.Instance.LoadMessage("Это место занято!");
     }
 }

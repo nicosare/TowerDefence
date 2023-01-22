@@ -13,6 +13,7 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected float rangeAttack;
     protected bool canAttack = true;
     protected bool canMove = true;
+    protected bool isStun = false;
     protected bool isEndWay = false;
     [Range(0.1f, 100)]
     [SerializeField] protected float attackSpeed;
@@ -84,13 +85,16 @@ public abstract class Enemy : MonoBehaviour
 
     private void Update()
     {
-        FindAttackTarget();
+        if (!isStun)
+        {
+            FindAttackTarget();
 
-        if (canAttack && attackTarget != null)
-            StartCoroutine(Attacking());
+            if (canAttack && attackTarget != null)
+                StartCoroutine(Attacking());
 
-        if (canMove && !isEndWay)
-            MoveToPoints();
+            if (canMove && !isEndWay)
+                MoveToPoints();
+        }
     }
 
     IEnumerator Attacking()
@@ -106,14 +110,14 @@ public abstract class Enemy : MonoBehaviour
 
     public void StopMove(int timeStoppingInSeconds)
     {
-        canMove = false;
+        isStun = true;
         StartCoroutine(Stopping(timeStoppingInSeconds));
     }
 
     IEnumerator Stopping(int timeStoppingInSeconds)
     {
         yield return new WaitForSeconds(timeStoppingInSeconds);
-        canMove = true;
+        isStun = false;
     }
 
     private void Attack()

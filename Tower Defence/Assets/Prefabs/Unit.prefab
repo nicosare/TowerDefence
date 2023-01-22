@@ -147,11 +147,11 @@ MonoBehaviour:
   damage: 5
   buyPrice: 10
   isRoadUnit: 0
-  attackSpeed: 0.5
-  attackRange: 1
+  attackSpeed: 10
+  attackRange: 2
   isPiercingAttack: 0
   canAttack: 1
-  shootSpeed: 10
+  bulletSpeed: 10
   bulletPrefab: {fileID: 1152198129349464519, guid: 5464e80b7657a1d4ebdcbbc24a592362, type: 3}
 --- !u!65 &4346333169862521140
 BoxCollider:

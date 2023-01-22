@@ -332,6 +332,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d894c9a1c3391f94fb7e8f51184ab761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menu: {fileID: 0}
+  sellButton: {fileID: 0}
+  upgradeButton: {fileID: 0}
 --- !u!1 &2644758001950496657
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,7 +633,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &7585120296453338464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,3 +663,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d894c9a1c3391f94fb7e8f51184ab761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menu: {fileID: 0}
+  sellButton: {fileID: 0}
+  upgradeButton: {fileID: 0}

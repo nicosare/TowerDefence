@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 2534174065540837649}
   - component: {fileID: 8536717902712459152}
   - component: {fileID: 52447869703124272}
-  - component: {fileID: 1152198129349464519}
+  - component: {fileID: -3781357432163968571}
   - component: {fileID: 990816880067395959}
   m_Layer: 0
-  m_Name: StraightBullet
+  m_Name: StunBallisticBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5dc99f8363f26e44cb381711e5b0f133, type: 2}
+  - {fileID: 2100000, guid: 67332775a9f471f4997a09bf03ffe2cc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1152198129349464519
+--- !u!114 &-3781357432163968571
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,12 +94,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8091036875839873726}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d7d25be7bfacc64eab97fa4d17a65bf, type: 3}
+  m_Script: {fileID: 11500000, guid: 485fb16a7b9d2e64aa9ddc8ca06561e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RadiusAttack: 1
+  RadiusAttack: 10
   hitCount: 1
-  isStunning: 0
+  isStunning: 1
   stunTime: 1
 --- !u!135 &990816880067395959
 SphereCollider:

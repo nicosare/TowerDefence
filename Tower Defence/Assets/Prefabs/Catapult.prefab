@@ -151,7 +151,7 @@ MonoBehaviour:
   attackRange: 2
   isPiercingAttack: 1
   canAttack: 1
-  shootSpeed: 5
+  bulletSpeed: 5
   bulletPrefab: {fileID: -3781357432163968571, guid: 7afe8fbd5c08b8a4a83359e77addcc5a, type: 3}
 --- !u!65 &4346333169862521140
 BoxCollider:
