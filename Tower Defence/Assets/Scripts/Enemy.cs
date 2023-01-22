@@ -27,9 +27,9 @@ public abstract class Enemy : MonoBehaviour
 
     private void Start()
     {
-        var Waypoints = transform.parent.GetComponent<WaveSpawner>().WayPoints;
+        var wayPoints = transform.parent.GetComponent<WaveSpawner>().WayPoints;
         way = new Queue<Transform>();
-        foreach (var point in Waypoints)
+        foreach (var point in wayPoints)
             way.Enqueue(point);
         wayPointTarget = way.Dequeue();
         attackTarget = null;

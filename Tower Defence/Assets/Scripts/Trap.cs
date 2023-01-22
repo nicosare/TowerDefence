@@ -18,4 +18,11 @@ public class Trap : RoadUnit
         GetDamage(1);
         isWaitSecond = false;
     }
+
+    protected override void Attack()
+    {
+        target.GetDamage(Damage, isPiercingAttack);
+        foreach (var target in targets)
+            target.GetDamage(Damage, isPiercingAttack);
+    }
 }
