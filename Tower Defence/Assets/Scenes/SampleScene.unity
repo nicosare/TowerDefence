@@ -17203,7 +17203,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0980b33115e8a694b91878b24dcc5f78, type: 3}
   m_Name: 
-  m_EditorClassIdentifier:
+  m_EditorClassIdentifier: 
 --- !u!1 &1190342749
 GameObject:
   m_ObjectHideFlags: 0
@@ -17618,7 +17618,7 @@ MonoBehaviour:
   UltimateAttackButton: {fileID: 1190342751}
   Way: {fileID: 1070251112}
   WayPoints: []
-  ultimateBullet: {fileID: 3064311776625512654, guid: 060dbacaffc9ae442a84beb67e987532, type: 3}
+  ultimateBullet: {fileID: 3064311776625512654, guid: 4dfab607f51b6ea42af49d21a63d0af1, type: 3}
   cooldownTime: 10
 --- !u!4 &1248683716 stripped
 Transform:

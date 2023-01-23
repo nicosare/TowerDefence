@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3458855691046493350}
   - component: {fileID: 5121124600328190044}
   - component: {fileID: 6860882329598109772}
-  - component: {fileID: 5211337832841357448}
+  - component: {fileID: 1937000401839667744}
   m_Layer: 8
   m_Name: Model
   m_TagString: Untagged
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3167941562905760565}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
-  m_LocalScale: {x: 0.5, y: 1, z: 0.5}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
+  m_LocalScale: {x: 0.75, y: 0.5, z: 0.75}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2384772261347970720}
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5211337832841357448
+--- !u!65 &1937000401839667744
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 2587485916891076603}
   - component: {fileID: 4346333169862521140}
   m_Layer: 0
-  m_Name: PoisonUnit
+  m_Name: PoisonCatapult
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,16 +143,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4390294bfa544c046a428794de010d0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameUnit: "\u041B\u0443\u0447\u043D\u0438\u043A \u0441 \u044F\u0434\u043E\u043C"
-  damage: 5
-  buyPrice: 10
+  nameUnit: "\u041A\u0430\u0442\u0430\u043F\u0443\u043B\u044C\u0442\u0430 \u0441
+    \u044F\u0434\u043E\u043C"
+  damage: 10
+  buyPrice: 20
   isRoadUnit: 0
-  attackSpeed: 0.5
-  attackRange: 1
-  isPiercingAttack: 0
+  attackSpeed: 0.2
+  attackRange: 2
+  isPiercingAttack: 1
   canAttack: 1
-  bulletSpeed: 10
-  bulletPrefab: {fileID: 1152198129349464519, guid: 6da58c014802aa943a34a48421da49fe, type: 3}
+  bulletSpeed: 5
+  bulletPrefab: {fileID: -3781357432163968571, guid: 08011ead420d0da4ca96c17e8b265745, type: 3}
 --- !u!65 &4346333169862521140
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -164,5 +165,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 1}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}

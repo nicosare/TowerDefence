@@ -29,6 +29,7 @@ public class BallisticBullet : Bullet
 
         if (transform.position == targetPosition)
         {
+            transform.GetChild(0).gameObject.SetActive(false);
             Hit();
         }
     }

@@ -13,6 +13,7 @@ public class StraightBullet : Bullet
 
     private void OnTriggerEnter(Collider other)
     {
+        transform.GetChild(0).gameObject.SetActive(false);
         Hit();
     }
 }
