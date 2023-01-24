@@ -7,16 +7,21 @@ using UnityEngine.UI;
 
 public class UnitCell : MonoBehaviour, IPointerDownHandler
 {
-    [SerializeField] private Unit unit;
     private Interact interact;
     public UnityEvent OnPointerDown;
+    private Unit unit;
 
-    private void Awake()
+    private void Start()
     {
         interact = FindObjectOfType<Interact>();
 
         transform.GetChild(0).GetComponent<Text>().text = unit.NameUnit;
         transform.GetChild(1).GetComponent<Text>().text = unit.BuyPrice.ToString();
+    }
+
+    public void ApplyParameters(Unit unitFromFraction)
+    {
+        unit = unitFromFraction;
     }
 
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
