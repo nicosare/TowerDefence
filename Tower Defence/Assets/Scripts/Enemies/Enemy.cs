@@ -21,7 +21,7 @@ public abstract class Enemy : MonoBehaviour
     public LayerMask layerMask;
     [SerializeField] private Slider healthBar;
 
-    private Queue<Transform> way;
+    public Queue<Transform> way;
     private Transform wayPointTarget;
     private IHealth attackTarget;
     private bool isShowHealthBar;
@@ -74,7 +74,7 @@ public abstract class Enemy : MonoBehaviour
         transform.Translate(dir.normalized * speed * Time.deltaTime);
         transform.GetChild(0).rotation = Quaternion.Slerp(transform.GetChild(0).rotation, Quaternion.LookRotation(wayPointTarget.position - transform.position), 3 * Time.deltaTime);
 
-        if (Vector3.Distance(transform.position, wayPointTarget.position) <= 0.1f)
+        if (Vector3.Distance(transform.position, wayPointTarget.position) <= 0.01f)
         {
             if (way.Count > 0)
                 wayPointTarget = way.Dequeue();

@@ -22,7 +22,7 @@ public abstract class Unit : MonoBehaviour
 
     protected abstract void Attack();
 
-    protected Queue<Enemy> targets;
+    protected List<Enemy> targets;
     protected Enemy target;
     [SerializeField] protected bool canAttack = true;
 
@@ -44,7 +44,7 @@ public abstract class Unit : MonoBehaviour
     private void Awake()
     {
         target = null;
-        targets = new Queue<Enemy>();
+        targets = new List<Enemy>();
         SetPrices();
     }
 
@@ -53,14 +53,6 @@ public abstract class Unit : MonoBehaviour
         GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x * 2 * attackRange + 1,
                                                        GetComponent<BoxCollider>().size.y,
                                                        GetComponent<BoxCollider>().size.z * 2 * attackRange + 1);
-    }
-
-    private void Update()
-    {
-        if (canAttack)
-            StartCoroutine(Attacking());
-        if (target == null && targets.Count > 0)
-            target = targets.Dequeue();
     }
 
     public void UpLevel()
@@ -96,22 +88,35 @@ public abstract class Unit : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private void Update()
+    {
+        if (canAttack && target != null)
+            StartCoroutine(Attacking());
+        target = FindTarget();
+    }
+
+    private Enemy FindTarget()
+    {
+        return Physics.OverlapBox(transform.position, GetComponent<BoxCollider>().size / 2)
+                                    .Where(target => target.tag == "Enemy")
+                                    .Select(target => target.gameObject.GetComponent<Enemy>())
+                                    .OrderBy(target => target.way.Count)
+                                    .FirstOrDefault();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Enemy")
         {
-            Debug.Log("Enter " + other.name);
-            targets.Enqueue(other.gameObject.GetComponent<Enemy>());
+            targets.Add(other.gameObject.GetComponent<Enemy>());
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Enemy")
         {
-            if (targets.Count > 0)
-                target = targets.Dequeue();
-            else
-                target = null;
+            targets.Remove(other.gameObject.GetComponent<Enemy>());
         }
     }
 
@@ -130,5 +135,11 @@ public abstract class Unit : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(transform.position, GetComponent<BoxCollider>().size);
+
+        if (target != null)
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawLine(transform.position, target.transform.position);
+        }
     }
 }

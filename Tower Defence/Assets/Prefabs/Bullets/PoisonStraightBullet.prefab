@@ -4939,7 +4939,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2534174065540837649}
   - component: {fileID: 1152198129349464519}
-  - component: {fileID: 990816880067395959}
+  - component: {fileID: 8789929317200990371}
   m_Layer: 0
   m_Name: PoisonStraightBullet
   m_TagString: Untagged
@@ -4975,12 +4975,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d7d25be7bfacc64eab97fa4d17a65bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RadiusAttack: 0.5
+  radiusAttack: 0.25
   hitCount: 3
   isStunning: 0
   stunTime: 0
---- !u!135 &990816880067395959
-SphereCollider:
+--- !u!65 &8789929317200990371
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4990,5 +4990,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.49999997
+  m_Size: {x: 0.25, y: 0.25, z: 0.25}
   m_Center: {x: 0, y: 0, z: 0}

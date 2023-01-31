@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6039403486446533122}
   - component: {fileID: 6366408779776277330}
   - component: {fileID: 8551758921066716718}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 3882643915761885226}
   - component: {fileID: 6347101206050592862}
   - component: {fileID: 3236636778564603965}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,11 +214,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameUnit: "\u041B\u0443\u0447\u043D\u0438\u043A"
-  damage: 1
+  damage: 0
   buyPrice: 10
   isRoadUnit: 0
   attackSpeed: 0.75
-  attackRange: 2
+  attackRange: 1
   isPiercingAttack: 0
   canAttack: 1
   bulletSpeed: 10
@@ -245,7 +245,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5055312912334694219}
-  m_Layer: 0
+  - component: {fileID: 1595113245856516963}
+  m_Layer: 8
   m_Name: weapon_ballista
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,6 +271,19 @@ Transform:
   m_Father: {fileID: 2384772261347970720}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1595113245856516963
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5576517246518820337}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5671696521433369361
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +295,7 @@ GameObject:
   - component: {fileID: 7527742342071374769}
   - component: {fileID: 3188294846507950206}
   - component: {fileID: 23648199929095101}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: weapon_ballista
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -23,7 +23,6 @@ public class AreaUnit : Unit
         canShoot = false;
         for (int i = 0; i < bulletCount; i++)
         {
-            Shoot(target);
             foreach (var target in targets)
                 Shoot(target);
             yield return new WaitForSeconds(1 / attackSpeed);
