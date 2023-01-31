@@ -7,7 +7,7 @@ public class Trap : RoadUnit
     private bool isWaitSecond = false;
     private void LateUpdate()
     {
-        if(!isWaitSecond)
+        if (!isWaitSecond)
             StartCoroutine(DamageInSecond());
     }
 
@@ -21,8 +21,9 @@ public class Trap : RoadUnit
 
     protected override void Attack()
     {
-        target.GetDamage(Damage, isPiercingAttack);
         foreach (var target in targets)
+        {
             target.GetDamage(Damage, isPiercingAttack);
+        }
     }
 }

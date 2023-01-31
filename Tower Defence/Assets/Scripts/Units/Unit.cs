@@ -22,7 +22,7 @@ public abstract class Unit : MonoBehaviour
 
     protected abstract void Attack();
 
-    protected List<Enemy> targets;
+    protected Queue<Enemy> targets;
     protected Enemy target;
     [SerializeField] protected bool canAttack = true;
 
@@ -44,7 +44,7 @@ public abstract class Unit : MonoBehaviour
     private void Awake()
     {
         target = null;
-        targets = new List<Enemy>();
+        targets = new Queue<Enemy>();
         SetPrices();
     }
 
@@ -108,7 +108,7 @@ public abstract class Unit : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            targets.Add(other.gameObject.GetComponent<Enemy>());
+            targets.Enqueue(other.gameObject.GetComponent<Enemy>());
         }
     }
 
@@ -116,18 +116,15 @@ public abstract class Unit : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            targets.Remove(other.gameObject.GetComponent<Enemy>());
+            targets.Dequeue();
         }
     }
 
     IEnumerator Attacking()
     {
         canAttack = false;
-        if (target != null)
-        {
-            Attack();
-            yield return new WaitForSeconds(1 / attackSpeed);
-        }
+        Attack();
+        yield return new WaitForSeconds(1 / attackSpeed);
         canAttack = true;
     }
 
