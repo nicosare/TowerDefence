@@ -15,9 +15,11 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] private int startTime;
     [SerializeField] private Text timerText;
     [SerializeField] private Way Way;
+    [SerializeField] private Text WaveText;
 
     private int enemiesCounter;
     private int wavesCounter;
+    private int countWave;
     private int timer;
     private List<GameObject> enemies;
     public List<Transform> WayPoints;
@@ -28,6 +30,8 @@ public class WaveSpawner : MonoBehaviour
         wavesCounter = 0;
         timer = startTime;
         enemiesCounter = waves.Sum(wave => wave.Enemies.Count);
+        countWave = waves.Count();
+        PrintNumberWave();
     }
 
     private void Start()
@@ -51,6 +55,7 @@ public class WaveSpawner : MonoBehaviour
         foreach (var wave in waves)
         {
             wavesCounter++;
+            PrintNumberWave();
             timer = wave.TimeBetweenSpawn * wave.Enemies.Count + timeBetweenSpawn;
 
             if (wavesCounter != waves.Count)
@@ -81,5 +86,10 @@ public class WaveSpawner : MonoBehaviour
                 timerText.text = wavesCounter == waves.Count ? "Финальная волна!" : wavesCounter + "-я волна!";
             yield return new WaitForSeconds(1);
         }
+    }
+
+    private void PrintNumberWave()
+    {
+        WaveText.text = String.Format("{0}/{1}", wavesCounter, countWave);
     }
 }
