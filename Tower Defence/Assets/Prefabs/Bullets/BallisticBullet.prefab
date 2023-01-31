@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5392356568639344055}
   - component: {fileID: 4330115410377291543}
   m_Layer: 0
-  m_Name: BallisticBullet
+  m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5540798782790131865}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2534174065540837649}
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5dc99f8363f26e44cb381711e5b0f133, type: 2}
+  - {fileID: 2100000, guid: 573509611ae1da844a40433668d57650, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -109,8 +109,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8091036875839873726}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2271729473848832822}
@@ -129,10 +129,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 485fb16a7b9d2e64aa9ddc8ca06561e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RadiusAttack: 10
+  radiusAttack: 3
   hitCount: 1
   isStunning: 0
   stunTime: 0
+  areaParticles: {fileID: 0}
 --- !u!135 &990816880067395959
 SphereCollider:
   m_ObjectHideFlags: 0

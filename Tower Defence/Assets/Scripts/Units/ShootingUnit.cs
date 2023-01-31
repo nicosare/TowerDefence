@@ -13,11 +13,23 @@ public class ShootingUnit : Unit
     protected override void Attack()
     {
         var newBullet = Instantiate(bulletPrefab.gameObject).GetComponent<Bullet>();
-        newBullet.transform.position = new Vector3(transform.position.x,
-                                                 1f,
-                                                 transform.position.z);
         newBullet.transform.SetParent(transform);
-        newBullet.transform.localPosition = Vector3.zero;
+        newBullet.transform.GetChild(0).localRotation = transform.GetChild(0).rotation;
         newBullet.ApplyUnitParameters(Damage, isPiercingAttack, target.transform, bulletSpeed);
+
+    }
+
+    private void LateUpdate()
+    {
+        Rotating();
+    }
+
+    private void Rotating()
+    {
+        if (target != null)
+        {
+            var newDir = Vector3.RotateTowards(transform.GetChild(0).forward, (target.transform.position - transform.GetChild(0).position), 1, 0);
+            transform.GetChild(0).rotation = Quaternion.LookRotation(newDir);
+        }
     }
 }

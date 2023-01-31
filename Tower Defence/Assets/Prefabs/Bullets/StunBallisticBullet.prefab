@@ -129,10 +129,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 485fb16a7b9d2e64aa9ddc8ca06561e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RadiusAttack: 10
+  radiusAttack: 3
   hitCount: 1
   isStunning: 1
   stunTime: 1
+  areaParticles: {fileID: 0}
 --- !u!135 &990816880067395959
 SphereCollider:
   m_ObjectHideFlags: 0

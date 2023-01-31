@@ -11,8 +11,8 @@ public abstract class Bullet : MonoBehaviour
     protected float shootSpeed;
     private bool isHitting = true;
 
-    [Range(1, 10)]
-    [SerializeField] protected float RadiusAttack;
+    [Range(0.1f, 10)]
+    [SerializeField] protected float radiusAttack;
     [Range(1, 3)]
     [SerializeField] protected int hitCount;
     [SerializeField] private bool isStunning;
@@ -47,7 +47,7 @@ public abstract class Bullet : MonoBehaviour
         isHitting = false;
         for (var i = 0; i < hitCount; i++)
         {
-            var damagedEnemies = Physics.OverlapBox(transform.position, transform.lossyScale * RadiusAttack / 2)
+            var damagedEnemies = Physics.OverlapBox(transform.position, transform.lossyScale * radiusAttack / 2)
                                     .Where(damagedEnemy => damagedEnemy.tag == "Enemy")
                                     .Select(damagedEnemy => damagedEnemy.gameObject.GetComponent<Enemy>());
 
@@ -58,7 +58,9 @@ public abstract class Bullet : MonoBehaviour
                 damagedEnemy.GetDamage(damage, isPiercingAttack);
             }
             if (hitCount == 1)
+            {
                 Destroy(gameObject);
+            }
             else
                 yield return new WaitForSeconds(1);
         }
@@ -68,6 +70,6 @@ public abstract class Bullet : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, transform.lossyScale * RadiusAttack);
+        Gizmos.DrawWireCube(transform.position, transform.lossyScale * radiusAttack);
     }
 }

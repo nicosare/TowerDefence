@@ -7,13 +7,21 @@ public class StraightBullet : Bullet
 {
     protected override void MoveToTarget()
     {
-        var dir = target.position - transform.position;
-        transform.Translate(dir.normalized * shootSpeed * Time.deltaTime);
+        var moveDir = target.position - transform.position;
+        transform.Translate(moveDir.normalized * shootSpeed * Time.deltaTime);
+
+        var rotateDir = Vector3.RotateTowards(transform.GetChild(0).forward, (target.transform.position - transform.GetChild(0).position), 1, 0);
+        transform.GetChild(0).rotation = Quaternion.LookRotation(rotateDir);
+    }
+
+    private void Start()
+    {
+        transform.localPosition = new Vector3(0, -0.705f, 0.115f);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        transform.GetChild(0).gameObject.SetActive(false);
+        transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
         Hit();
     }
 }
