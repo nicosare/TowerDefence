@@ -39,5 +39,6 @@ public class UnitCell : MonoBehaviour, IPointerDownHandler
     public void ChooseUnit()
     {
         interact.UnitToSpawn = unit;
+        Destroy(interact.UnitToPreview);
     }
 }

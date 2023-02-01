@@ -25,6 +25,8 @@ public abstract class Unit : MonoBehaviour
     protected List<Enemy> targets;
     protected Enemy target;
     [SerializeField] protected bool canAttack = true;
+    [SerializeField] private GameObject upgradeStar;
+    private Transform starsField;
 
     public bool IsMaxLevel { get => levelUnit == maxLevelUnit; }
     public int BuyPrice { get => buyPrice; }
@@ -50,6 +52,7 @@ public abstract class Unit : MonoBehaviour
 
     private void Start()
     {
+        starsField = transform.GetChild(1);
         GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x * 2 * attackRange + 1,
                                                        GetComponent<BoxCollider>().size.y,
                                                        GetComponent<BoxCollider>().size.z * 2 * attackRange + 1);
@@ -59,6 +62,7 @@ public abstract class Unit : MonoBehaviour
     {
         if (EconomicModel.Instance.countCoins >= UpgradePrice)
         {
+            Instantiate(upgradeStar, starsField);
             EconomicModel.Instance.Reduce—ountCoin(UpgradePrice);
             levelUnit++;
             Damage = Mathf.CeilToInt(Damage * upgradeCoef);
@@ -92,9 +96,15 @@ public abstract class Unit : MonoBehaviour
     {
         if (canAttack && target != null)
             StartCoroutine(Attacking());
+    }
 
-        targets = FindTargets();
-        target = targets.FirstOrDefault();
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Enemy")
+        {
+            targets = FindTargets();
+            target = targets.FirstOrDefault();
+        }
     }
 
     private List<Enemy> FindTargets()
