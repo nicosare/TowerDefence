@@ -22,7 +22,7 @@ public abstract class Unit : MonoBehaviour
 
     protected abstract void Attack();
 
-    protected Queue<Enemy> targets;
+    protected List<Enemy> targets;
     protected Enemy target;
     [SerializeField] protected bool canAttack = true;
 
@@ -44,7 +44,7 @@ public abstract class Unit : MonoBehaviour
     private void Awake()
     {
         target = null;
-        targets = new Queue<Enemy>();
+        targets = new List<Enemy>();
         SetPrices();
     }
 
@@ -92,32 +92,18 @@ public abstract class Unit : MonoBehaviour
     {
         if (canAttack && target != null)
             StartCoroutine(Attacking());
-        target = FindTarget();
+
+        targets = FindTargets();
+        target = targets.FirstOrDefault();
     }
 
-    private Enemy FindTarget()
+    private List<Enemy> FindTargets()
     {
         return Physics.OverlapBox(transform.position, GetComponent<BoxCollider>().size / 2)
                                     .Where(target => target.tag == "Enemy")
                                     .Select(target => target.gameObject.GetComponent<Enemy>())
                                     .OrderBy(target => target.way.Count)
-                                    .FirstOrDefault();
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Enemy")
-        {
-            targets.Enqueue(other.gameObject.GetComponent<Enemy>());
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Enemy")
-        {
-            targets.Dequeue();
-        }
+                                    .ToList();
     }
 
     IEnumerator Attacking()

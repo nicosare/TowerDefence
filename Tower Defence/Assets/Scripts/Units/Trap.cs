@@ -22,8 +22,7 @@ public class Trap : RoadUnit
     protected override void Attack()
     {
         foreach (var target in targets)
-        {
             target.GetDamage(Damage, isPiercingAttack);
-        }
     }
 }
+

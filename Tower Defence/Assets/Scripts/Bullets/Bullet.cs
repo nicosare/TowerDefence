@@ -53,9 +53,9 @@ public abstract class Bullet : MonoBehaviour
 
             foreach (var damagedEnemy in damagedEnemies)
             {
+                damagedEnemy.GetDamage(damage, isPiercingAttack);
                 if (isStunning)
                     damagedEnemy.StopMove(stunTime);
-                damagedEnemy.GetDamage(damage, isPiercingAttack);
             }
             if (hitCount == 1)
             {

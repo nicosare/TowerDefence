@@ -26,6 +26,8 @@ public abstract class Enemy : MonoBehaviour
     private IHealth attackTarget;
     private bool isShowHealthBar;
 
+    private Animator animator;
+
     private void Start()
     {
         var wayPoints = transform.parent.GetComponent<WaveSpawner>().WayPoints;
@@ -37,12 +39,15 @@ public abstract class Enemy : MonoBehaviour
         healthBar.maxValue = health;
         healthBar.value = health;
         healthBar.gameObject.SetActive(false);
+
+        animator = transform.GetComponentInChildren<Animator>();
     }
 
     public void GetDamage(int damage, bool isPiercingAttack)
     {
         if (!isArmored || isPiercingAttack)
         {
+            animator.SetTrigger("GetDamage");
             health -= damage;
             if (!isShowHealthBar)
                 StartCoroutine(ShowHealthBar());
@@ -51,7 +56,10 @@ public abstract class Enemy : MonoBehaviour
         else
             Message.Instance.LoadMessage("Броня не пробита");
         if (health <= 0)
-            Die();
+        {
+            StopMove();
+            animator.SetTrigger("Die");
+        }
     }
 
     IEnumerator ShowHealthBar()
@@ -62,7 +70,7 @@ public abstract class Enemy : MonoBehaviour
         healthBar.gameObject.SetActive(false);
         isShowHealthBar = false;
     }
-    private void Die()
+    public void Die()
     {
         Destroy(gameObject);
         EconomicModel.Instance.IncreaseCountCoin(coinKill);
@@ -100,23 +108,27 @@ public abstract class Enemy : MonoBehaviour
     IEnumerator Attacking()
     {
         canAttack = false;
+        animator.SetBool("Attack", true);
         if (attackTarget != null)
         {
             Attack();
             yield return new WaitForSeconds(1 / attackSpeed);
         }
         canAttack = true;
+        animator.SetBool("Attack", false);
     }
 
-    public void StopMove(int timeStoppingInSeconds)
+    public void StopMove(int timeStoppingInSeconds = 1)
     {
         isStun = true;
+        animator.SetBool("IsStun", true);
         StartCoroutine(Stopping(timeStoppingInSeconds));
     }
 
     IEnumerator Stopping(int timeStoppingInSeconds)
     {
         yield return new WaitForSeconds(timeStoppingInSeconds);
+        animator.SetBool("IsStun", false);
         isStun = false;
     }
 

@@ -4839,7 +4839,7 @@ Transform:
   m_GameObject: {fileID: 4284491466576374893}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2534174065540837649}
@@ -4921,8 +4921,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8091036875839873726}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7500604993983889346}
@@ -4945,7 +4945,7 @@ MonoBehaviour:
   radiusAttack: 2
   hitCount: 1
   isStunning: 1
-  stunTime: 1
+  stunTime: 3
   areaParticles: {fileID: 0}
 --- !u!135 &990816880067395959
 SphereCollider:

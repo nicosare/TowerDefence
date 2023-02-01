@@ -24,7 +24,7 @@ public class AreaUnit : Unit
         for (int i = 0; i < bulletCount; i++)
         {
             foreach (var target in targets)
-                Shoot(target);
+                    Shoot(target);
             yield return new WaitForSeconds(1 / attackSpeed);
         }
         yield return new WaitForSeconds(reloadTime);
