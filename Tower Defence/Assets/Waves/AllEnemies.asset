@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f4d2198647686b46824d65a95a9f5ae, type: 3}
+  m_Name: AllEnemies
+  m_EditorClassIdentifier: 
+  Enemies:
+  - {fileID: 2852118012260197534, guid: aaf38c4257859a444b8ebc8a3af74835, type: 3}
+  - {fileID: 2852118012260197534, guid: cae2180cffafd0b419bb0b64d1a902a1, type: 3}
+  - {fileID: 2852118012260197534, guid: 995c1847b7e866a4a9fd41e0f3df7929, type: 3}
+  - {fileID: 2852118012260197534, guid: dfac2f245424ece4c94b151117c2e6b6, type: 3}
+  - {fileID: 2852118012260197534, guid: c1d29e4b456726e42b701658e5c7b9bb, type: 3}
+  - {fileID: 2852118012260197534, guid: bd559ee316d181846b9168225dc7c6ff, type: 3}
+  - {fileID: 2852118012260197534, guid: cced208960ae6c448892580c28460247, type: 3}
+  - {fileID: 2852118012260197534, guid: b0ac08d70d61f58449e47e3b3c0fe0c5, type: 3}
+  - {fileID: 2852118012260197534, guid: dcd89fd039d36a044a41612e00b84512, type: 3}
+  - {fileID: 2852118012260197534, guid: 48d46117006ca9e42b9d763aa8b61339, type: 3}
+  - {fileID: 2852118012260197534, guid: 1366ead1f255b484784a944e5885af6f, type: 3}
+  - {fileID: 2852118012260197534, guid: de89c5a4162d8214d8d4a11e52ea80ab, type: 3}
+  - {fileID: 2852118012260197534, guid: 888cc29b1c1c03d4bb378295e2b3119e, type: 3}
+  - {fileID: 2852118012260197534, guid: 44c7872b0e28e404181009ded5b43b57, type: 3}
+  - {fileID: 2852118012260197534, guid: c2dc144bf640b6a4baaabe1994895b9d, type: 3}
+  - {fileID: 2852118012260197534, guid: 2028e22cb90364243874760bfce426f9, type: 3}
+  - {fileID: 2852118012260197534, guid: d0df201abd4e8cb49b8ab8b33f0072c9, type: 3}
+  - {fileID: 2852118012260197534, guid: 8fcbb6e435cc65d4bab0855b31e04b48, type: 3}
+  - {fileID: 2852118012260197534, guid: d30546decc6280c4b83606ae47fc3358, type: 3}
+  - {fileID: 2852118012260197534, guid: f8c2529110b98b24daa083f2fba18786, type: 3}
+  - {fileID: 2852118012260197534, guid: 463a93f1425ce18499a533b183ef4ceb, type: 3}
+  TimeBetweenSpawn: 2

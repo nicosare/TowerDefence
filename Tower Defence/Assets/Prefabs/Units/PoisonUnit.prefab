@@ -426,7 +426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameUnit: "\u041B\u0443\u0447\u043D\u0438\u043A \u0441 \u044F\u0434\u043E\u043C"
-  damage: 0
+  damage: 1
   buyPrice: 10
   isRoadUnit: 0
   attackSpeed: 0.75
