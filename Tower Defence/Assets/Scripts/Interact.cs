@@ -19,7 +19,6 @@ public class Interact : MonoBehaviour
     [SerializeField] private Material previewMaterial;
 
     public GameObject UnitToPreview;
-    private Vector3 previewPoint;
 
     private void Update()
     {
@@ -37,9 +36,7 @@ public class Interact : MonoBehaviour
     private void Interactive()
     {
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, placeLayerMask))
-        {
-            previewPoint = hit.point;
-            
+        {   
             if (UnitToSpawn != null)
             {
                 if (!UnitToSpawn.IsRoadUnit)
@@ -93,7 +90,7 @@ public class Interact : MonoBehaviour
                 model.GetComponent<Renderer>().materials = mats;
             }
 
-        UnitToPreview.transform.position = previewPoint;
+        UnitToPreview.transform.position = hit.point;
     }
 
     private void OpenMenu()
