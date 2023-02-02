@@ -25,7 +25,7 @@ public class MainCastle : MonoBehaviour, IHealth
 
     public void Die()
     {
-        Debug.Log("Вы прогирали");
+        Time.timeScale = 0;
     }
 
     public void GetDamage(int damage)
