@@ -24,6 +24,8 @@ public class WaveSpawner : MonoBehaviour
     private List<GameObject> enemies;
     public List<Transform> WayPoints;
 
+    public GameObject WinMenu;
+
     private void Awake()
     {
         WayPoints = Way.WayPoints;
@@ -43,8 +45,16 @@ public class WaveSpawner : MonoBehaviour
 
     private void Update()
     {
+        CheckPlayerWin();
+    }
+
+    private void CheckPlayerWin()
+    {
         if (enemies.Count == enemiesCounter && enemies.All(enemy => enemy.IsDestroyed()))
-            Message.Instance.LoadMessage("Победа!");
+        {
+            Time.timeScale = 0;
+            WinMenu.SetActive(true);
+        }
     }
 
     IEnumerator SpawnWaves(List<Wave> waves, int timeBetweenSpawn)
