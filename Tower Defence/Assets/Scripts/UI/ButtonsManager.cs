@@ -12,6 +12,7 @@ public class ButtonsManager : MonoBehaviour
     public Sprite BoostGameOff;
 
     public GameObject PauseMenu;
+    public GameObject DefeatMenu;
     public void GoToScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
@@ -58,6 +59,7 @@ public class ButtonsManager : MonoBehaviour
     {
         Time.timeScale = 1;
         PauseMenu.SetActive(false);
+        DefeatMenu.SetActive(false);
     }
 
 }

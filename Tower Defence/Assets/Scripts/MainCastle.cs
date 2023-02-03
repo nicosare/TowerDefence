@@ -13,19 +13,19 @@ public class MainCastle : MonoBehaviour, IHealth
     public List<Transform> WayPoints;
     [SerializeField] private UltimateBullet ultimateBullet;
     [SerializeField] private int cooldownTime;
-    private bool isCooldown;
+    public GameObject DefeatMenu;
 
     private void Start()
     {
         PrintHealthInUI();
         WayPoints = Way.WayPoints;
-        isCooldown = false;
     }
     public int Health { get => health; set => health = value; }
 
     public void Die()
     {
         Time.timeScale = 0;
+        DefeatMenu.SetActive(true);
     }
 
     public void GetDamage(int damage)
