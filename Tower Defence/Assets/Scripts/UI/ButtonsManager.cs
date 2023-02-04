@@ -28,7 +28,7 @@ public class ButtonsManager : MonoBehaviour
     public void StartPlayAfterChooseUnit()
     {
         if (FactionsManager.Instance.ChoosenFaction != null)
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("Level2");
         else
             Message.Instance.LoadMessage("Выбери фракцию!");
     }
