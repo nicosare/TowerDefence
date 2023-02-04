@@ -1434,9 +1434,9 @@ TextureImporter:
       name: Button_62
       rect:
         serializedVersion: 2
-        x: 189
+        x: 193
         y: 2992
-        width: 183
+        width: 179
         height: 185
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1455,9 +1455,9 @@ TextureImporter:
       name: Button_63
       rect:
         serializedVersion: 2
-        x: 382
+        x: 386
         y: 2992
-        width: 183
+        width: 179
         height: 185
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
