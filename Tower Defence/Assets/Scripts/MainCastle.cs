@@ -13,7 +13,7 @@ public class MainCastle : MonoBehaviour, IHealth
     public List<Transform> WayPoints;
     [SerializeField] private UltimateBullet ultimateBullet;
     [SerializeField] private int cooldownTime;
-    public GameObject DefeatMenu;
+    public WindowsController windowsController;
 
     private void Start()
     {
@@ -25,7 +25,7 @@ public class MainCastle : MonoBehaviour, IHealth
     public void Die()
     {
         Time.timeScale = 0;
-        DefeatMenu.SetActive(true);
+        windowsController.SetActiveDefeatMenu(true);
     }
 
     public void GetDamage(int damage)

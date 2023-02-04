@@ -8,11 +8,12 @@ public class ButtonsManager : MonoBehaviour
 {
     public Button BoostGameButton;
     private bool isBoostGame;
+    private float timeScaleBeforePause;
     public Sprite BoostGameOn;
     public Sprite BoostGameOff;
 
-    public GameObject PauseMenu;
-    public GameObject DefeatMenu;
+    public WindowsController windowsController;
+
     public void GoToScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
@@ -51,15 +52,16 @@ public class ButtonsManager : MonoBehaviour
 
     public void PauseGame()
     {
+        timeScaleBeforePause = Time.timeScale;
         Time.timeScale = 0;
-        PauseMenu.SetActive(true);    
+        windowsController.SetActivePauseMenu(true);
     }
 
     public void PlayGame()
     {
-        Time.timeScale = 1;
-        PauseMenu.SetActive(false);
-        DefeatMenu.SetActive(false);
+        Time.timeScale = timeScaleBeforePause;
+        windowsController.SetActivePauseMenu(false);
+        windowsController.SetInactiveAllWindows();
     }
 
 }

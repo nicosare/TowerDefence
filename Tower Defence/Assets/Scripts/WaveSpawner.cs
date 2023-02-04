@@ -24,7 +24,7 @@ public class WaveSpawner : MonoBehaviour
     private List<GameObject> enemies;
     public List<Transform> WayPoints;
 
-    public GameObject WinMenu;
+    public WindowsController windowsController;
 
     private void Awake()
     {
@@ -53,7 +53,7 @@ public class WaveSpawner : MonoBehaviour
         if (enemies.Count == enemiesCounter && enemies.All(enemy => enemy.IsDestroyed()))
         {
             Time.timeScale = 0;
-            WinMenu.SetActive(true);
+            windowsController.SetActiveWinMenu(true);
         }
     }
 

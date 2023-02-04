@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.17757879, g: 0.22232285, b: 0.30451733, a: 1}
+  m_IndirectSpecularColor: {r: 0.17757899, g: 0.22232303, b: 0.30451778, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6473,7 +6473,7 @@ MonoBehaviour:
   Way: {fileID: 1070251112}
   WaveText: {fileID: 939091652}
   WayPoints: []
-  WinMenu: {fileID: 1854372201}
+  windowsController: {fileID: 1269829513}
 --- !u!1001 &602851708
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7537,7 +7537,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: f09e431fa23491f409618b03e5edb52d, type: 3}
     m_FontSize: 14
     m_FontStyle: 1
     m_BestFit: 1
@@ -9314,7 +9314,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: f09e431fa23491f409618b03e5edb52d, type: 3}
     m_FontSize: 14
     m_FontStyle: 1
     m_BestFit: 1
@@ -9844,7 +9844,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: f09e431fa23491f409618b03e5edb52d, type: 3}
     m_FontSize: 14
     m_FontStyle: 1
     m_BestFit: 1
@@ -9986,8 +9986,8 @@ RectTransform:
   m_Father: {fileID: 1190342750}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: -0.1, y: 0.5}
-  m_AnchorMax: {x: 0.3, y: 1.2}
+  m_AnchorMin: {x: -0.15, y: 0.5}
+  m_AnchorMax: {x: 0.25, y: 1.3}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -13231,8 +13231,8 @@ RectTransform:
   m_Father: {fileID: 1135376579}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.8, y: 0.2}
-  m_AnchorMax: {x: 0.9, y: 0.3}
+  m_AnchorMin: {x: 0.8, y: 0.25}
+  m_AnchorMax: {x: 0.9, y: 0.35}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -13257,12 +13257,12 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_NormalColor: {r: 0.19254991, g: 0.5377358, b: 0.063412234, a: 1}
+    m_HighlightedColor: {r: 0.27444252, g: 0.6037736, b: 0.1509434, a: 1}
+    m_PressedColor: {r: 0.19215688, g: 0.5372549, b: 0.0627451, a: 1}
+    m_SelectedColor: {r: 0.19215688, g: 0.5372549, b: 0.0627451, a: 1}
     m_DisabledColor: {r: 0.5943396, g: 0.23829654, b: 0.23829654, a: 0.5019608}
-    m_ColorMultiplier: 2
+    m_ColorMultiplier: 2.5
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
@@ -13276,7 +13276,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1190342752}
+  m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -13914,7 +13914,7 @@ MonoBehaviour:
   WayPoints: []
   ultimateBullet: {fileID: 3064311776625512654, guid: 4dfab607f51b6ea42af49d21a63d0af1, type: 3}
   cooldownTime: 10
-  DefeatMenu: {fileID: 1040066574}
+  windowsController: {fileID: 1269829513}
 --- !u!1 &1241914470
 GameObject:
   m_ObjectHideFlags: 0
@@ -14212,6 +14212,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1180663508862672816, guid: 80d8a0721e518344cba31f4128527aa4, type: 3}
   m_PrefabInstance: {fileID: 1269593190}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1269829512
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1269829514}
+  - component: {fileID: 1269829513}
+  m_Layer: 0
+  m_Name: WindowsController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1269829513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269829512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67b4545dede0b104c9c92681a45be295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 565149725}
+  defeatMenu: {fileID: 1040066574}
+  winMenu: {fileID: 1854372201}
+  buttonsNeedDisable:
+  - {fileID: 1061295314}
+  - {fileID: 1763909792}
+--- !u!4 &1269829514
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269829512}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 486.5, y: 256.575, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 137
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1274090641
 GameObject:
   m_ObjectHideFlags: 0
@@ -14255,7 +14305,7 @@ MonoBehaviour:
   Way: {fileID: 497262539}
   WaveText: {fileID: 939091652}
   WayPoints: []
-  WinMenu: {fileID: 1854372201}
+  windowsController: {fileID: 0}
 --- !u!65 &1274090643
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14485,7 +14535,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: f09e431fa23491f409618b03e5edb52d, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -15683,7 +15733,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: f09e431fa23491f409618b03e5edb52d, type: 3}
     m_FontSize: 14
     m_FontStyle: 1
     m_BestFit: 1
@@ -18297,8 +18347,7 @@ MonoBehaviour:
   BoostGameButton: {fileID: 1061295314}
   BoostGameOn: {fileID: 1263753790, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
   BoostGameOff: {fileID: -2077952571, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
-  PauseMenu: {fileID: 565149725}
-  DefeatMenu: {fileID: 0}
+  windowsController: {fileID: 1269829513}
 --- !u!4 &1547513154
 Transform:
   m_ObjectHideFlags: 0
@@ -18658,8 +18707,8 @@ RectTransform:
   m_Father: {fileID: 1190342750}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.8, y: -0.2}
-  m_AnchorMax: {x: 1.2, y: 0.5}
+  m_AnchorMin: {x: 0.85, y: -0.3}
+  m_AnchorMax: {x: 1.25, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -18869,7 +18918,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: f09e431fa23491f409618b03e5edb52d, type: 3}
     m_FontSize: 14
     m_FontStyle: 1
     m_BestFit: 1
@@ -23658,7 +23707,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: f09e431fa23491f409618b03e5edb52d, type: 3}
     m_FontSize: 14
     m_FontStyle: 1
     m_BestFit: 1
@@ -24225,7 +24274,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: f09e431fa23491f409618b03e5edb52d, type: 3}
     m_FontSize: 10
     m_FontStyle: 1
     m_BestFit: 1
@@ -24670,7 +24719,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: f09e431fa23491f409618b03e5edb52d, type: 3}
     m_FontSize: 10
     m_FontStyle: 1
     m_BestFit: 1
