@@ -17,7 +17,19 @@ public class ButtonsManager : MonoBehaviour
     public void GoToScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
-        Time.timeScale = 1;
+    }
+
+    public void GoToNextLevelScene()
+    {
+        var nameActiveSceneWithHerNumber = SceneManager.GetActiveScene().name.Split("_");
+        var nameNextLevel = string.Format("{0}_{1}", nameActiveSceneWithHerNumber[0], int.Parse(nameActiveSceneWithHerNumber[1]) + 1);
+        GoToScene(nameNextLevel);
+    }
+
+    public void GoToMainMenuScene()
+    {
+        var nameMainMenuScene = "StartMenu";
+        GoToScene(nameMainMenuScene);
     }
 
     public void Restart()
