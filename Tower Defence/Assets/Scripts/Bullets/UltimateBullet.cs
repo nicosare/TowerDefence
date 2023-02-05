@@ -14,12 +14,12 @@ public class UltimateBullet : MonoBehaviour
     [Range(1, 10)]
     [SerializeField] protected float RadiusAttack;
 
+    public List<Transform> WayPoints;
 
     private void Start()
     {
-        var wayPoints = transform.parent.GetComponent<MainCastle>().WayPoints;
         way = new Stack<Transform>();
-        foreach (var point in wayPoints)
+        foreach (var point in WayPoints)
             way.Push(point);
         wayPointTarget = way.Pop();
     }

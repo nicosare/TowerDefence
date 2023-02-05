@@ -5,12 +5,11 @@ using UnityEngine.UI;
 
 public class MainCastle : MonoBehaviour, IHealth
 {
-    [Range(0,500)]
+    [Range(0, 500)]
     [SerializeField] private int health;
     [SerializeField] private Text healthUIText;
     [SerializeField] private Button UltimateAttackButton;
-    [SerializeField] private Way Way;
-    public List<Transform> WayPoints;
+    [SerializeField] private Way[] Ways;
     [SerializeField] private UltimateBullet ultimateBullet;
     [SerializeField] private int cooldownTime;
     public WindowsController windowsController;
@@ -18,7 +17,6 @@ public class MainCastle : MonoBehaviour, IHealth
     private void Start()
     {
         PrintHealthInUI();
-        WayPoints = Way.WayPoints;
     }
     public int Health { get => health; set => health = value; }
 
@@ -43,11 +41,15 @@ public class MainCastle : MonoBehaviour, IHealth
 
     public void UltimateAttack()
     {
-        var bullet = Instantiate(ultimateBullet.gameObject);
-        bullet.transform.position = new Vector3(transform.position.x,
-                                                         .35f,
-                                                         transform.position.z);
-        bullet.transform.SetParent(transform);
+        foreach (var way in Ways)
+        {
+            var bullet = Instantiate(ultimateBullet.gameObject);
+            bullet.transform.position = new Vector3(transform.position.x,
+                                                             .35f,
+                                                             transform.position.z);
+            bullet.transform.SetParent(transform);
+            bullet.GetComponent<UltimateBullet>().WayPoints = way.WayPoints;
+        }
         StartCoroutine(Cooldown());
     }
 
