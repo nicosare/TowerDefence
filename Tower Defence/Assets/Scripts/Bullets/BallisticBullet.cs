@@ -44,4 +44,15 @@ public class BallisticBullet : Bullet
             Hit();
         }
     }
+
+    protected override void Hit()
+    {
+        if (isHitting)
+            StartCoroutine(HittingAround());
+    }
+
+    protected override void Hit(Collider other)
+    {
+        throw new System.NotImplementedException();
+    }
 }

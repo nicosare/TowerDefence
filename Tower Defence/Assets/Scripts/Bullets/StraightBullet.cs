@@ -22,6 +22,17 @@ public class StraightBullet : Bullet
     private void OnTriggerEnter(Collider other)
     {
         transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
-        Hit();
+        Hit(other);
+    }
+
+    protected override void Hit(Collider other)
+    {
+        if (isHitting)
+            StartCoroutine(Hitting(other));
+    }
+
+    protected override void Hit()
+    {
+        throw new System.NotImplementedException();
     }
 }

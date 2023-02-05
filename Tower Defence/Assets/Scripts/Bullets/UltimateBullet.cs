@@ -45,18 +45,13 @@ public class UltimateBullet : MonoBehaviour
         }
     }
 
-    protected void Hit()
+    protected void Hit(Collider other)
     {
-        var damagedEnemies = Physics.OverlapBox(transform.position, transform.lossyScale * RadiusAttack / 2)
-                                    .Where(damagedEnemy => damagedEnemy.tag == "Enemy")
-                                    .Select(damagedEnemy => damagedEnemy.gameObject.GetComponent<Enemy>());
-
-        foreach (var damagedEnemy in damagedEnemies)
-            damagedEnemy.GetDamage(damage, isPiercingAttack);
+        other.gameObject.GetComponent<Enemy>().GetDamage(damage, isPiercingAttack);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Hit();
+        Hit(other);
     }
 }

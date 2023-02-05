@@ -9,13 +9,13 @@ public abstract class Bullet : MonoBehaviour
     protected bool isPiercingAttack;
     protected Transform target;
     protected float shootSpeed;
-    private bool isHitting = true;
+    protected bool isHitting = true;
 
     [Range(0.1f, 10)]
     [SerializeField] protected float radiusAttack;
     [Range(1, 3)]
     [SerializeField] protected int hitCount;
-    [SerializeField] private bool isStunning;
+    [SerializeField] protected bool isStunning;
     [Range(1, 3)]
     [SerializeField] protected int stunTime;
     public void ApplyUnitParameters(int damage, bool isPiercingAttack, Transform target, float shootSpeed)
@@ -36,13 +36,10 @@ public abstract class Bullet : MonoBehaviour
             Destroy(gameObject);
     }
 
-    protected void Hit()
-    {
-        if (isHitting)
-            StartCoroutine(Hitting());
-    }
+    protected abstract void Hit();
+    protected abstract void Hit(Collider other);
 
-    IEnumerator Hitting()
+    protected IEnumerator HittingAround()
     {
         isHitting = false;
         for (var i = 0; i < hitCount; i++)
@@ -57,6 +54,25 @@ public abstract class Bullet : MonoBehaviour
                 if (isStunning)
                     damagedEnemy.StopMove(stunTime);
             }
+            if (hitCount == 1)
+            {
+                Destroy(gameObject);
+            }
+            else
+                yield return new WaitForSeconds(1);
+        }
+        Destroy(gameObject);
+    }
+
+    protected IEnumerator Hitting(Collider other)
+    {
+        isHitting = false;
+        var damagedEnemy = other.gameObject.GetComponent<Enemy>();
+        for (var i = 0; i < hitCount; i++)
+        {
+            damagedEnemy.GetDamage(damage, isPiercingAttack);
+            if (isStunning)
+                damagedEnemy.StopMove(stunTime);
             if (hitCount == 1)
             {
                 Destroy(gameObject);
