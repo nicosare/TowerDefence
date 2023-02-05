@@ -34,6 +34,7 @@ public class WaveSpawner : MonoBehaviour
         enemiesCounter = waves.Sum(wave => wave.Enemies.Count);
         countWave = waves.Count();
         PrintNumberWave();
+        Time.timeScale = 1;
     }
 
     private void Start()
