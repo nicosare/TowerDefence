@@ -6449,6 +6449,7 @@ MonoBehaviour:
   spawners:
   - {fileID: 597876308}
   waves:
+  - {fileID: 11400000, guid: 742b1628ab830f747aef1a05014e36ca, type: 2}
   - {fileID: 11400000, guid: 8f63c6f945bb5974296a6924ef5a8163, type: 2}
   - {fileID: 11400000, guid: 18e5c90df9560b94fa598a0834dc4485, type: 2}
   - {fileID: 11400000, guid: b76b524217cded244b9f468c6a0bac59, type: 2}

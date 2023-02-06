@@ -47,7 +47,6 @@ public abstract class Enemy : MonoBehaviour
     {
         if (!isArmored || isPiercingAttack)
         {
-            animator.SetTrigger("GetDamage");
             health -= damage;
             if (!isShowHealthBar)
                 StartCoroutine(ShowHealthBar());
