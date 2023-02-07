@@ -10,10 +10,19 @@ public class ShootingUnit : Unit
     [SerializeField] private int bulletSpeed;
     [SerializeField] private Bullet bulletPrefab;
 
+    private Vector3 bulletSpawnPoint;
+
+    private void Awake()
+    {
+        bulletSpawnPoint = transform.GetChild(2).position;
+    }
+
     protected override void Attack()
     {
+
         var newBullet = Instantiate(bulletPrefab.gameObject).GetComponent<Bullet>();
         newBullet.transform.SetParent(transform);
+        newBullet.transform.localPosition = bulletSpawnPoint;
         newBullet.transform.GetChild(0).localRotation = transform.GetChild(0).rotation;
         newBullet.ApplyUnitParameters(Damage, isPiercingAttack, target.transform, bulletSpeed);
 
@@ -28,8 +37,8 @@ public class ShootingUnit : Unit
     {
         if (target != null)
         {
-            var newDir = Vector3.RotateTowards(transform.GetChild(0).forward, (target.transform.position - transform.GetChild(0).position), 1, 0);
-            transform.GetChild(0).rotation = Quaternion.LookRotation(newDir);
+            var newDir = new Vector3(target.transform.position.x, transform.GetChild(0).position.y, target.transform.position.z);
+            transform.GetChild(0).LookAt(newDir);
         }
     }
 }

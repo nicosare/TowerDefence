@@ -80,15 +80,18 @@ public class Interact : MonoBehaviour
         if (UnitToPreview.TryGetComponent(out Renderer renderer))
             renderer.material = previewMaterial;
         else
+        {
             foreach (Transform model in UnitToPreview.transform)
             {
-                var mats = new Material[model.GetComponent<Renderer>().materials.Length];
-                for (var i = 0; i < mats.Length; i++)
+                if (model.TryGetComponent(out Renderer render))
                 {
-                    mats[i] = previewMaterial;
+                    var materials = new Material[render.materials.Length];
+                    for (int i = 0; i < materials.Length; i++)
+                        materials[i] = previewMaterial;
+                    render.materials = materials;
                 }
-                model.GetComponent<Renderer>().materials = mats;
             }
+        }
 
         UnitToPreview.transform.position = hit.point;
     }

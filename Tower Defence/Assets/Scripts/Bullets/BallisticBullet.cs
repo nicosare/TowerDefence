@@ -16,7 +16,6 @@ public class BallisticBullet : Bullet
 
     private void Start()
     {
-        transform.localPosition = new Vector3(0, -0.55f, 0.175f);
         step = shootSpeed * 0.01f;
         targetPosition = target.position;
         middlePoint = Vector3.Lerp(transform.position, targetPosition, .5f) + 2 * Vector3.up.normalized;

@@ -12,10 +12,20 @@ public class AreaUnit : Unit
     [SerializeField] private int bulletCount;
     [SerializeField] private Bullet bulletPrefab;
     private bool canShoot = true;
+    private Animator animator;
+    private void Awake()
+    {
+        animator = GetComponentInChildren<Animator>();
+    }
+
     protected override void Attack()
     {
-        if (canShoot)
-            StartCoroutine(Shooting());
+        animator.SetBool("Attack", canShoot);
+    }
+
+    public void StartShooting()
+    {
+        StartCoroutine(Shooting());
     }
 
     private IEnumerator Shooting()
@@ -24,7 +34,7 @@ public class AreaUnit : Unit
         for (int i = 0; i < bulletCount; i++)
         {
             foreach (var target in targets)
-                    Shoot(target);
+                Shoot(target);
             yield return new WaitForSeconds(1 / attackSpeed);
         }
         yield return new WaitForSeconds(reloadTime);
@@ -42,6 +52,19 @@ public class AreaUnit : Unit
             newBullet.transform.SetParent(transform);
             newBullet.transform.localPosition = Vector3.zero;
             newBullet.ApplyUnitParameters(Damage, isPiercingAttack, target.transform, bulletSpeed);
+        }
+    }
+    private void LateUpdate()
+    {
+        Rotating();
+    }
+
+    private void Rotating()
+    {
+        if (target != null)
+        {
+            var newDir = new Vector3(target.transform.position.x, transform.GetChild(0).position.y, target.transform.position.z);
+            transform.GetChild(0).LookAt(newDir);
         }
     }
 }

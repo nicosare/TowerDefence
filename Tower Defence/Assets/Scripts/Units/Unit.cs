@@ -47,11 +47,11 @@ public abstract class Unit : MonoBehaviour
     {
         target = null;
         targets = new List<Enemy>();
-        SetPrices();
     }
 
     private void Start()
     {
+        SetPrices();
         starsField = transform.GetChild(1);
         GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x * 2 * attackRange + 1,
                                                        GetComponent<BoxCollider>().size.y,

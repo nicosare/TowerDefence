@@ -14,10 +14,6 @@ public class StraightBullet : Bullet
         transform.GetChild(0).rotation = Quaternion.LookRotation(rotateDir);
     }
 
-    private void Start()
-    {
-        transform.localPosition = new Vector3(0, -0.705f, 0.115f);
-    }
 
     private void OnTriggerEnter(Collider other)
     {
