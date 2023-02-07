@@ -36,7 +36,7 @@ public class Interact : MonoBehaviour
     private void Interactive()
     {
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, placeLayerMask))
-        {   
+        {
             if (UnitToSpawn != null)
             {
                 if (!UnitToSpawn.IsRoadUnit)
@@ -77,8 +77,8 @@ public class Interact : MonoBehaviour
             Destroy(UnitToPreview.GetComponent<Collider>());
         }
 
-        if (UnitToPreview.transform.childCount == 0)
-            UnitToPreview.transform.GetComponent<Renderer>().material = previewMaterial;
+        if (UnitToPreview.TryGetComponent(out Renderer renderer))
+            renderer.material = previewMaterial;
         else
             foreach (Transform model in UnitToPreview.transform)
             {

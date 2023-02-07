@@ -5,6 +5,12 @@ using UnityEngine;
 public class Trap : RoadUnit
 {
     private bool isWaitSecond = false;
+
+    private Animator animator;
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
     private void LateUpdate()
     {
         if (!isWaitSecond)
@@ -21,6 +27,7 @@ public class Trap : RoadUnit
 
     protected override void Attack()
     {
+        animator.SetTrigger("Attack");
         foreach (var target in targets)
             target.GetDamage(Damage, isPiercingAttack);
     }

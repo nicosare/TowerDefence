@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.GraphicsBuffer;
+
 public abstract class Enemy : MonoBehaviour
 {
     [SerializeField] protected int health;
@@ -41,6 +43,7 @@ public abstract class Enemy : MonoBehaviour
         healthBar.gameObject.SetActive(false);
 
         animator = transform.GetComponentInChildren<Animator>();
+        animator.speed = speed;
     }
 
     public void GetDamage(int damage, bool isPiercingAttack)
@@ -156,3 +159,4 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 }
+

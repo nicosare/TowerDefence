@@ -21,10 +21,8 @@ public class Place : MonoBehaviour
     public void SetUnit(Unit unit)
     {
         var newUnit = Instantiate(unit.gameObject);
-        newUnit.transform.position = new Vector3(spawnPoint.position.x,
-                                                 spawnPoint.position.y + newUnit.transform.GetChild(0).localScale.y,
-                                                 spawnPoint.position.z);
         newUnit.transform.SetParent(transform);
+        newUnit.transform.position = spawnPoint.position + Vector3.up * 0.5f;
         UnitOnPlace = newUnit.GetComponent<Unit>();
         isFree = false;
     }

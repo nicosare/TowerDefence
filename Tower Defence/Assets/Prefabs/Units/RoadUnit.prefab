@@ -232,6 +232,7 @@ MonoBehaviour:
   attackRange: 0
   isPiercingAttack: 1
   canAttack: 1
+  upgradeStar: {fileID: 0}
   health: 10
   healthBar: {fileID: 2426965272496243187}
 --- !u!65 &6150514722654142863
