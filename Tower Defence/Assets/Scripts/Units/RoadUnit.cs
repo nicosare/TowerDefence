@@ -11,8 +11,16 @@ public class RoadUnit : Unit, IHealth
 
     public int Health { get => health; set => health = value; }
 
+    protected Animator animator;
+    private void Awake()
+    {
+        if (TryGetComponent(out Animator anim))
+            animator = anim;
+    }
+
     protected override void Attack()
     {
+        animator.SetTrigger("Attack");
         target.GetDamage(Damage, isPiercingAttack);
     }
 
@@ -26,7 +34,12 @@ public class RoadUnit : Unit, IHealth
         health -= damage;
         healthBar.value = health;
         if (health <= 0)
-            Die();
+        {
+            if (animator == null)
+                Die();
+            else
+                animator.SetTrigger("Die");
+        }
     }
 
     public void Die()

@@ -27,18 +27,4 @@ public class ShootingUnit : Unit
         newBullet.ApplyUnitParameters(Damage, isPiercingAttack, target.transform, bulletSpeed);
 
     }
-
-    private void LateUpdate()
-    {
-        Rotating();
-    }
-
-    private void Rotating()
-    {
-        if (target != null)
-        {
-            var newDir = new Vector3(target.transform.position.x, transform.GetChild(0).position.y, target.transform.position.z);
-            transform.GetChild(0).LookAt(newDir);
-        }
-    }
 }

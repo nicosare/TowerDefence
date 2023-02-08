@@ -6,11 +6,6 @@ public class Trap : RoadUnit
 {
     private bool isWaitSecond = false;
 
-    private Animator animator;
-    private void Awake()
-    {
-        animator = GetComponent<Animator>();
-    }
     private void LateUpdate()
     {
         if (!isWaitSecond)

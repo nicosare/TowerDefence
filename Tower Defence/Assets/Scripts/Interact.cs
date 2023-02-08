@@ -77,23 +77,19 @@ public class Interact : MonoBehaviour
             Destroy(UnitToPreview.GetComponent<Collider>());
         }
 
-        if (UnitToPreview.TryGetComponent(out Renderer renderer))
-            renderer.material = previewMaterial;
-        else
-        {
-            foreach (Transform model in UnitToPreview.transform)
-            {
-                if (model.TryGetComponent(out Renderer render))
-                {
-                    var materials = new Material[render.materials.Length];
-                    for (int i = 0; i < materials.Length; i++)
-                        materials[i] = previewMaterial;
-                    render.materials = materials;
-                }
-            }
-        }
+        var renderers = UnitToPreview.GetComponentsInChildren<Renderer>();
+        foreach (var renderer in renderers)
+            ChangeMaterial(renderer);
 
         UnitToPreview.transform.position = hit.point;
+    }
+
+    private void ChangeMaterial(Renderer mainModel)
+    {
+        var materials = new Material[mainModel.materials.Length];
+        for (int i = 0; i < materials.Length; i++)
+            materials[i] = previewMaterial;
+        mainModel.materials = materials;
     }
 
     private void OpenMenu()

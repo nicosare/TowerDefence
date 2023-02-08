@@ -124,6 +124,21 @@ public abstract class Unit : MonoBehaviour
         canAttack = true;
     }
 
+
+    private void LateUpdate()
+    {
+        Rotating();
+    }
+
+    private void Rotating()
+    {
+        if (target != null)
+        {
+            var newDir = new Vector3(target.transform.position.x, transform.GetChild(0).position.y, target.transform.position.z);
+            transform.GetChild(0).LookAt(newDir);
+        }
+    }
+
     void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
