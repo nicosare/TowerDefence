@@ -167,6 +167,7 @@ MonoBehaviour:
   hitCount: 1
   isStunning: 0
   stunTime: 1
+  endingParticles: {fileID: 0}
 --- !u!65 &1891284975972211006
 BoxCollider:
   m_ObjectHideFlags: 0

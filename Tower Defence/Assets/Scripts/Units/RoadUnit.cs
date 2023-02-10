@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,13 +16,22 @@ public class RoadUnit : Unit, IHealth
     private void Awake()
     {
         if (TryGetComponent(out Animator anim))
+        {
             animator = anim;
+            animator.SetFloat("Speed", attackSpeed);
+        }
     }
 
     protected override void Attack()
     {
-        animator.SetTrigger("Attack");
-        target.GetDamage(Damage, isPiercingAttack);
+        if (target != null)
+            animator.SetTrigger("Attack");
+    }
+
+    public void StartAttacking()
+    {
+        if (target != null)
+            target.GetDamage(Damage, isPiercingAttack);
     }
 
     private void Start()
@@ -38,7 +48,10 @@ public class RoadUnit : Unit, IHealth
             if (animator == null)
                 Die();
             else
+            {
+                Destroy(transform.GetComponent<Collider>());
                 animator.SetTrigger("Die");
+            }
         }
     }
 

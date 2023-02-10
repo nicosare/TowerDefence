@@ -348,6 +348,7 @@ MonoBehaviour:
   upgradeStar: {fileID: 1625490056080182891, guid: 8d4cb0a1e4debea4683498c180a80d65, type: 3}
   bulletSpeed: 5
   bulletPrefab: {fileID: -3781357432163968571, guid: 96f94e331b34d23408ed2f89eb4a9844, type: 3}
+  bulletSpawnPoint: {fileID: 6775937865492800807}
 --- !u!65 &4346333169862521140
 BoxCollider:
   m_ObjectHideFlags: 0

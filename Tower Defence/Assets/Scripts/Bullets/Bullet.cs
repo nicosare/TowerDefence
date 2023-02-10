@@ -18,6 +18,8 @@ public abstract class Bullet : MonoBehaviour
     [SerializeField] protected bool isStunning;
     [Range(1, 3)]
     [SerializeField] protected int stunTime;
+
+    [SerializeField] protected ParticleSystem endingParticles;
     public void ApplyUnitParameters(int damage, bool isPiercingAttack, Transform target, float shootSpeed)
     {
         this.damage = damage;
@@ -56,11 +58,24 @@ public abstract class Bullet : MonoBehaviour
             }
             if (hitCount == 1)
             {
-                Destroy(gameObject);
+                if (endingParticles != null)
+                    StartCoroutine(DestroyWithParticles());
+                else
+                    Destroy(gameObject);
             }
             else
                 yield return new WaitForSeconds(1);
         }
+        if (endingParticles != null)
+            StartCoroutine(DestroyWithParticles());
+        else
+            Destroy(gameObject);
+    }
+
+    private IEnumerator DestroyWithParticles()
+    {
+        endingParticles.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2);
         Destroy(gameObject);
     }
 

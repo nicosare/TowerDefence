@@ -434,7 +434,7 @@ MonoBehaviour:
   isArmored: 0
   coinKill: 5
   rangeAttack: 0.2
-  attackSpeed: 2
+  attackSpeed: 1.5
   damage: 2
   layerMask:
     serializedVersion: 2

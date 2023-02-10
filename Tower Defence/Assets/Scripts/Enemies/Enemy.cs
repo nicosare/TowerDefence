@@ -43,7 +43,8 @@ public abstract class Enemy : MonoBehaviour
         healthBar.gameObject.SetActive(false);
 
         animator = transform.GetComponentInChildren<Animator>();
-        animator.speed = speed;
+        animator.SetFloat("AttackSpeed", attackSpeed);
+        animator.SetFloat("Speed", speed);
     }
 
     public void GetDamage(int damage, bool isPiercingAttack)
@@ -59,8 +60,10 @@ public abstract class Enemy : MonoBehaviour
             Message.Instance.LoadMessage("Броня не пробита");
         if (health <= 0)
         {
-            StopMove();
+            Destroy(transform.GetComponent<Collider>());
             animator.SetTrigger("Die");
+            canMove = false;
+            canAttack = false;
         }
     }
 
@@ -74,8 +77,8 @@ public abstract class Enemy : MonoBehaviour
     }
     public void Die()
     {
-        Destroy(gameObject);
         EconomicModel.Instance.IncreaseCountCoin(coinKill);
+        Destroy(gameObject);
     }
 
     private void MoveToPoints()
@@ -102,24 +105,11 @@ public abstract class Enemy : MonoBehaviour
             FindAttackTarget();
 
             if (canAttack && attackTarget != null)
-                StartCoroutine(Attacking());
+                animator.SetTrigger("Attack");
 
             if (canMove && !isEndWay)
                 MoveToPoints();
         }
-    }
-
-    IEnumerator Attacking()
-    {
-        canAttack = false;
-        animator.SetBool("Attack", true);
-        if (attackTarget != null)
-        {
-            Attack();
-            yield return new WaitForSeconds(1 / attackSpeed);
-        }
-        canAttack = true;
-        animator.SetBool("Attack", false);
     }
 
     public void StopMove(int timeStoppingInSeconds = 1)
@@ -136,9 +126,11 @@ public abstract class Enemy : MonoBehaviour
         isStun = false;
     }
 
-    private void Attack()
+    public void Attack()
     {
-        attackTarget.GetDamage(damage);
+        if (attackTarget != null)
+            attackTarget.GetDamage(damage);
+        canAttack = false;
     }
 
     private void FindAttackTarget()
@@ -149,12 +141,16 @@ public abstract class Enemy : MonoBehaviour
         RaycastHit raycastHit;
         if (Physics.Raycast(ray, out raycastHit, rangeAttack, layerMask))
         {
-            attackTarget = raycastHit.collider.gameObject.GetComponent<IHealth>();
+            canAttack = true;
             canMove = false;
+            animator.SetBool("CanMove", false);
+            attackTarget = raycastHit.collider.gameObject.GetComponent<IHealth>();
         }
         else
         {
+            canAttack = false;
             canMove = true;
+            animator.SetBool("CanMove", true);
             attackTarget = null;
         }
     }

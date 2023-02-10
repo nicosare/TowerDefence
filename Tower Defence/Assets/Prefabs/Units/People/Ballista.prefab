@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 2587485916891076603}
   - component: {fileID: 4346333169862521140}
   m_Layer: 0
-  m_Name: BasicArcher
+  m_Name: Ballista
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4390294bfa544c046a428794de010d0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameUnit: "\u041B\u0443\u0447\u043D\u0438\u043A"
+  nameUnit: "\u0411\u0430\u043B\u043B\u0438\u0441\u0442\u0430"
   damage: 1
   buyPrice: 10
   isRoadUnit: 0
@@ -226,6 +226,7 @@ MonoBehaviour:
   upgradeStar: {fileID: 1625490056080182891, guid: 8d4cb0a1e4debea4683498c180a80d65, type: 3}
   bulletSpeed: 10
   bulletPrefab: {fileID: 1152198129349464519, guid: e04e41b7cceee9f4db77493d71eef0b1, type: 3}
+  bulletSpawnPoint: {fileID: 6106201664627143235}
 --- !u!65 &4346333169862521140
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -276,7 +277,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -0.5}
+  m_AnchoredPosition: {x: 0, y: -0.45}
   m_SizeDelta: {x: 0.5, y: 0.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6557245674531855323
