@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 095cae74187dca341b91944fb9fc27b3, type: 3}
-  m_Name: TestFaction
+  m_Name: People
   m_EditorClassIdentifier: 
   IconFaction: {fileID: 21300000, guid: f2901efd8bb16bc408ad37f017fbf9bc, type: 3}
   NameFaction: "\u041B\u044E\u0434\u0438"
   Units:
-  - {fileID: 2587485916891076603, guid: 4aaed6268d28b054e929d89e91f0ac14, type: 3}
-  - {fileID: 6549081175648220340, guid: 7c358d932f004f144b3a1333324f1c37, type: 3}
-  - {fileID: 2770262205907409550, guid: 9d30581b4a0eb914fbca48370b099662, type: 3}
-  - {fileID: 2587485916891076603, guid: 971d235f0f735fb44a0462ffd7f53b09, type: 3}
+  - {fileID: 6549081175648220340, guid: 71016d4e409804c40a971385ffb760c0, type: 3}
   - {fileID: 6549081175648220340, guid: e04da88ef8e86ba44990b6db81de9a42, type: 3}
+  - {fileID: 2587485916891076603, guid: 192327254f1630946aa9c433c794b02c, type: 3}
+  - {fileID: 2587485916891076603, guid: 4aaed6268d28b054e929d89e91f0ac14, type: 3}
+  - {fileID: 2417192147633560973, guid: ef432a10ff67d264f887d0014b4a8ad5, type: 3}

@@ -23,8 +23,15 @@ public class BallisticBullet : Bullet
         point2 = middlePoint;
         transform.position = point1;
     }
+
+    private void RotateModel()
+    {
+        transform.GetChild(0).Rotate(new Vector3(45, 0, 0) * 5 * Time.deltaTime);
+    }
+
     protected override void MoveToTarget()
     {
+        RotateModel();
         point1 = Vector3.MoveTowards(point1, middlePoint, step);
         point2 = Vector3.MoveTowards(point2, targetPosition, step);
         transform.position = Vector3.MoveTowards(transform.position, point2, step);

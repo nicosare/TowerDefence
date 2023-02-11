@@ -96,24 +96,34 @@ public abstract class Unit : MonoBehaviour
     {
         if (canAttack && target != null)
             StartCoroutine(Attacking());
+
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Enemy")
-        {
-            targets = FindTargets();
-            target = targets.FirstOrDefault();
-        }
+        targets = FindTargets();
+        target = targets.FirstOrDefault();
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        targets = FindTargets();
+        target = targets.FirstOrDefault();
     }
 
     private List<Enemy> FindTargets()
     {
-        return Physics.OverlapBox(transform.position, GetComponent<BoxCollider>().size / 2)
-                                    .Where(target => target.tag == "Enemy")
-                                    .Select(target => target.gameObject.GetComponent<Enemy>())
-                                    .OrderBy(target => target.way.Count)
-                                    .ToList();
+        if (TryGetComponent(out BoxCollider boxCollider))
+            return Physics.OverlapBox(transform.position, boxCollider.size / 2)
+                                        .Where(target => target.tag == "Enemy")
+                                        .Select(target => target.gameObject.GetComponent<Enemy>())
+                                        .OrderBy(target => target.way.Count)
+                                        .ToList();
+        else
+        {
+            target = null;
+            return null;
+        }
     }
 
     IEnumerator Attacking()

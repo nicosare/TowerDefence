@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class AreaUnit : Unit
 {
-    [Range(1, 10)]
-    [SerializeField] private int reloadTime;
+    [SerializeField] private bool oneTarget;
+    [Range(0.01f, 10)]
+    [SerializeField] private float reloadTime;
     [Range(1, 100)]
     [SerializeField] private int bulletSpeed;
     [SerializeField] private int bulletCount;
     [SerializeField] private Bullet bulletPrefab;
+    [SerializeField] private Transform bulletSpawnPoint;
     private bool canShoot = true;
     private Animator animator;
     private void Awake()
@@ -25,7 +27,8 @@ public class AreaUnit : Unit
 
     public void StartShooting()
     {
-        StartCoroutine(Shooting());
+        if (target != null)
+            StartCoroutine(Shooting());
     }
 
     private IEnumerator Shooting()
@@ -33,8 +36,11 @@ public class AreaUnit : Unit
         canShoot = false;
         for (int i = 0; i < bulletCount; i++)
         {
-            foreach (var target in targets)
+            if (oneTarget)
                 Shoot(target);
+            else
+                foreach (var target in targets)
+                    Shoot(target);
             yield return new WaitForSeconds(1 / attackSpeed);
         }
         yield return new WaitForSeconds(reloadTime);
@@ -46,11 +52,9 @@ public class AreaUnit : Unit
         if (target != null)
         {
             var newBullet = Instantiate(bulletPrefab.gameObject).GetComponent<Bullet>();
-            newBullet.transform.position = new Vector3(transform.position.x,
-                                                     1f,
-                                                     transform.position.z);
             newBullet.transform.SetParent(transform);
-            newBullet.transform.localPosition = Vector3.zero;
+            newBullet.transform.position = bulletSpawnPoint.position;
+            newBullet.transform.GetChild(0).localRotation = transform.GetChild(0).rotation;
             newBullet.ApplyUnitParameters(Damage, isPiercingAttack, target.transform, bulletSpeed);
         }
     }

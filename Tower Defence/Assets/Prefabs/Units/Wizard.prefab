@@ -71,10 +71,12 @@ MonoBehaviour:
   isPiercingAttack: 0
   canAttack: 1
   upgradeStar: {fileID: 1625490056080182891, guid: 8d4cb0a1e4debea4683498c180a80d65, type: 3}
+  oneTarget: 0
   reloadTime: 2
   bulletSpeed: 10
   bulletCount: 5
   bulletPrefab: {fileID: 1152198129349464519, guid: 34b567e2758722443b3c82662876a706, type: 3}
+  bulletSpawnPoint: {fileID: 4900860544577973810}
 --- !u!95 &7943014583729656512
 Animator:
   serializedVersion: 4
