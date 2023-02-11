@@ -19,13 +19,30 @@ public class EconomicModel : MonoBehaviour
 
     public void IncreaseCountCoin(int coins)
     {
-        countCoins += coins;
-        textCountCoin.text = countCoins.ToString();
+        StartCoroutine(Counting(coins, true));
     }
 
-    public void Reduce—ountCoin(int coints)
+    IEnumerator Counting(int coins, bool isIncrease)
     {
-        countCoins -= coints;
-        textCountCoin.text = countCoins.ToString();
+        for (; coins > 0; coins--)
+        {
+            if (isIncrease)
+            {
+                countCoins += 1;
+                textCountCoin.text = countCoins.ToString();
+            }
+            else
+            {
+                countCoins -= 1;
+                textCountCoin.text = countCoins.ToString();
+            }
+
+            yield return new WaitForSeconds(0.05f);
+        }
+    }
+
+    public void Reduce—ountCoin(int coins)
+    {
+        StartCoroutine(Counting(coins, false));
     }
 }
