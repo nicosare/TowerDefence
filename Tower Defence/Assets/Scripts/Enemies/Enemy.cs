@@ -29,6 +29,7 @@ public abstract class Enemy : MonoBehaviour
     private bool isShowHealthBar;
 
     private Animator animator;
+    private ParticleSystem starsAroundHead;
 
     private void Start()
     {
@@ -45,6 +46,7 @@ public abstract class Enemy : MonoBehaviour
         animator = transform.GetComponentInChildren<Animator>();
         animator.SetFloat("AttackSpeed", attackSpeed);
         animator.SetFloat("Speed", speed);
+        starsAroundHead = transform.GetComponentInChildren<ParticleSystem>(true);
     }
 
     public void GetDamage(int damage, bool isPiercingAttack)
@@ -121,9 +123,11 @@ public abstract class Enemy : MonoBehaviour
 
     IEnumerator Stopping(int timeStoppingInSeconds)
     {
+        starsAroundHead.gameObject.SetActive(true);
         yield return new WaitForSeconds(timeStoppingInSeconds);
         animator.SetBool("IsStun", false);
         isStun = false;
+        starsAroundHead.gameObject.SetActive(false);
     }
 
     public void Attack()
