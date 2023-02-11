@@ -28,15 +28,25 @@ public class MainCastle : MonoBehaviour, IHealth
 
     public void GetDamage(int damage)
     {
-        Health -= damage;
-        PrintHealthInUI();
-        if (health <= 0)
-            Die();
+        StartCoroutine(Counting(damage));
     }
 
     private void PrintHealthInUI()
     {
         healthUIText.text = health.ToString();
+    }
+
+    IEnumerator Counting(int damage)
+    {
+        for (; damage > 0; damage--)
+        {
+            Health -= 1;
+            if (Health <= 0)
+                Die();
+            PrintHealthInUI();
+
+            yield return new WaitForSeconds(0.05f);
+        }
     }
 
     public void UltimateAttack()
