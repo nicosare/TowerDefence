@@ -235,8 +235,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 7555185752953191562, guid: 8efd82e08dc672449b91d9222bd0f65f, type: 3}
-  - {fileID: -8067726398312463513, guid: 8efd82e08dc672449b91d9222bd0f65f, type: 3}
+  - {fileID: 763599606711622024, guid: adcb99f93478f8b46b781557c7e8c85f, type: 3}
+  - {fileID: 2100000, guid: 014da2e14f70ab04eb30c08e479721d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -281,13 +281,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5109978409486651632}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.1, z: 0.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.38268343, y: -0, z: -0, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 0.444, z: 0}
+  m_LocalScale: {x: 1.4285713, y: 1.4285713, z: 1.4285713}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2384772261347970720}
-  m_RootOrder: 2
+  m_Father: {fileID: 4326876582263746216}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5238088668359076294
 GameObject:
@@ -321,7 +321,6 @@ Transform:
   m_Children:
   - {fileID: 1204041139499875529}
   - {fileID: 2294878771340001393}
-  - {fileID: 6775937865492800807}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -337,16 +336,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4390294bfa544c046a428794de010d0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameUnit: "\u041A\u0430\u0442\u0430\u043F\u0443\u043B\u044C\u0442\u0430"
+  nameUnit: "\u041F\u0443\u0448\u043A\u0430"
   damage: 10
   buyPrice: 20
   isRoadUnit: 0
   attackSpeed: 0.2
+  reloadTime: 0.01
   attackRange: 2
   isPiercingAttack: 1
   canAttack: 1
   upgradeStar: {fileID: 1625490056080182891, guid: 8d4cb0a1e4debea4683498c180a80d65, type: 3}
-  bulletSpeed: 5
+  bulletSpeed: 2
   bulletPrefab: {fileID: -3781357432163968571, guid: 96f94e331b34d23408ed2f89eb4a9844, type: 3}
   bulletSpawnPoint: {fileID: 6775937865492800807}
 --- !u!65 &4346333169862521140
@@ -387,14 +387,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9047599928680552326}
-  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
   m_LocalPosition: {x: -0, y: 0.261364, z: -0.019924}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6775937865492800807}
   m_Father: {fileID: 1204041139499875529}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
 --- !u!33 &4626145259501686931
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -423,7 +424,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4231637370832951941, guid: 8efd82e08dc672449b91d9222bd0f65f, type: 3}
+  - {fileID: 763599606711622024, guid: adcb99f93478f8b46b781557c7e8c85f, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -356,7 +356,8 @@ MonoBehaviour:
   damage: 5
   buyPrice: 5
   isRoadUnit: 1
-  attackSpeed: 2
+  attackSpeed: 1
+  reloadTime: 1
   attackRange: 0
   isPiercingAttack: 1
   canAttack: 1

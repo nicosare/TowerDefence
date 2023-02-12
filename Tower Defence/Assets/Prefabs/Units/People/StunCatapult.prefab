@@ -220,6 +220,7 @@ MonoBehaviour:
   buyPrice: 50
   isRoadUnit: 0
   attackSpeed: 0.15
+  reloadTime: 0.01
   attackRange: 2
   isPiercingAttack: 1
   canAttack: 1

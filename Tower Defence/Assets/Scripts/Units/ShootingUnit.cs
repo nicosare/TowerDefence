@@ -16,7 +16,6 @@ public class ShootingUnit : Unit
     {
         if (TryGetComponent(out Animator anim))
             animator = anim;
-
     }
 
     protected override void Attack()

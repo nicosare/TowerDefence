@@ -6,8 +6,6 @@ using UnityEngine;
 public class AreaUnit : Unit
 {
     [SerializeField] private bool oneTarget;
-    [Range(0.01f, 10)]
-    [SerializeField] private float reloadTime;
     [Range(1, 100)]
     [SerializeField] private int bulletSpeed;
     [SerializeField] private int bulletCount;

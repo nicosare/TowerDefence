@@ -380,7 +380,7 @@ Transform:
   m_GameObject: {fileID: 1399460223547765947}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.1, z: 0.5}
+  m_LocalScale: {x: 0.4, y: 0.1, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4750265275728164835}
@@ -415,7 +415,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5dc99f8363f26e44cb381711e5b0f133, type: 2}
+  - {fileID: 2100000, guid: 48a5cca5fe82f7c499533b48c352219c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -606,6 +606,7 @@ MonoBehaviour:
   buyPrice: 10
   isRoadUnit: 1
   attackSpeed: 0.25
+  reloadTime: 0.01
   attackRange: 0
   isPiercingAttack: 1
   canAttack: 1

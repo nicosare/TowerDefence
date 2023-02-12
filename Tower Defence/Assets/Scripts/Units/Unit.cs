@@ -14,6 +14,8 @@ public abstract class Unit : MonoBehaviour
     [SerializeField] private bool isRoadUnit;
     [Range(0.1f, 100)]
     public float attackSpeed;
+    [Range(0.01f, 10)]
+    [SerializeField] protected float reloadTime;
     [Range(0, 10)]
     [SerializeField] protected int attackRange;
     [SerializeField] protected bool isPiercingAttack;
@@ -67,6 +69,7 @@ public abstract class Unit : MonoBehaviour
             levelUnit++;
             Damage = Mathf.CeilToInt(Damage * upgradeCoef);
             attackSpeed = attackSpeed * upgradeCoef;
+            reloadTime = reloadTime / upgradeCoef;
             SetPrices();
         }
         else
