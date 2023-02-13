@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 095cae74187dca341b91944fb9fc27b3, type: 3}
-  m_Name: TestFaction2
+  m_Name: Goblins
   m_EditorClassIdentifier: 
   IconFaction: {fileID: 21300000, guid: 70632ddfe8e71b04b8f90ef7e29a9e98, type: 3}
   NameFaction: "\u0413\u043E\u0431\u043B\u0438\u043D\u044B"
   Units:
-  - {fileID: 2417192147633560973, guid: 09f70e6c587b19f438d1acce8fe3f8d5, type: 3}
-  - {fileID: 2417192147633560973, guid: ef432a10ff67d264f887d0014b4a8ad5, type: 3}
-  - {fileID: 2417192147633560973, guid: e490c376d725a894e9ce2daa4f1e97c1, type: 3}
-  - {fileID: 2417192147633560973, guid: d139a3f82cc0f504d87ebc7d5bef1423, type: 3}
+  - {fileID: 2417192147633560973, guid: a087d07c6ce728740bca4b8a3160e2a9, type: 3}
+  - {fileID: 2417192147633560973, guid: a1445f2f55f4cad438f7d8365ebb928c, type: 3}
+  - {fileID: 6549081175648220340, guid: 78570603d6c0bc14e8fed07c3b530dd5, type: 3}
+  - {fileID: 2587485916891076603, guid: ebe1148999166e54ea78e0b8efa3138c, type: 3}
+  - {fileID: 2417192147633560973, guid: dfd3559502a6abe42be96700acd98bc3, type: 3}

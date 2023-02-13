@@ -20,18 +20,20 @@ public class AreaUnit : Unit
 
     protected override void Attack()
     {
-        animator.SetBool("Attack", canShoot);
+        if (target != null)
+            animator.SetBool("Attack", canShoot);
     }
 
     public void StartShooting()
     {
-        if (target != null)
-            StartCoroutine(Shooting());
+        StartCoroutine(Shooting());
     }
 
     private IEnumerator Shooting()
     {
         canShoot = false;
+        if (bulletCount > 1)
+            animator.speed = 0;
         for (int i = 0; i < bulletCount; i++)
         {
             if (oneTarget)
@@ -41,6 +43,7 @@ public class AreaUnit : Unit
                     Shoot(target);
             yield return new WaitForSeconds(1 / attackSpeed);
         }
+        animator.speed = 1;
         yield return new WaitForSeconds(reloadTime);
         canShoot = true;
     }

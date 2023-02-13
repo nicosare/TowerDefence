@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class Bullet : MonoBehaviour
@@ -36,6 +37,7 @@ public abstract class Bullet : MonoBehaviour
             MoveToTarget();
         else
             Destroy(gameObject);
+
     }
 
     protected abstract void Hit();
@@ -74,7 +76,6 @@ public abstract class Bullet : MonoBehaviour
 
     private IEnumerator DestroyWithParticles()
     {
-        endingParticles.gameObject.SetActive(true);
         yield return new WaitForSeconds(2);
         Destroy(gameObject);
     }

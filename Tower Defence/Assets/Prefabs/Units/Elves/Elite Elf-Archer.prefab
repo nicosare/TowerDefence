@@ -353,13 +353,13 @@ MonoBehaviour:
   damage: 2
   buyPrice: 20
   isRoadUnit: 0
-  attackSpeed: 10
+  attackSpeed: 2
+  reloadTime: 1
   attackRange: 2
   isPiercingAttack: 0
   canAttack: 1
   upgradeStar: {fileID: 1625490056080182891, guid: 8d4cb0a1e4debea4683498c180a80d65, type: 3}
   oneTarget: 1
-  reloadTime: 1
   bulletSpeed: 10
   bulletCount: 3
   bulletPrefab: {fileID: 1152198129349464519, guid: 5f0577b2c6e024b4a9fc4d49c3c61a2c, type: 3}

@@ -759,7 +759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abca6aa3db248964193822da5cbd8e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameUnit: "\u041C\u0435\u0447\u043D\u0438\u043A"
+  nameUnit: "\u0413\u043D\u043E\u043C \u0449\u0438\u0442\u043E\u0432\u0438\u043A"
   damage: 5
   buyPrice: 5
   isRoadUnit: 1
@@ -977,7 +977,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5343360877162429486}
-  - component: {fileID: 3092478267298756488}
   m_Layer: 0
   m_Name: Dwarf
   m_TagString: Untagged
@@ -1002,19 +1001,6 @@ Transform:
   m_Father: {fileID: 5193261476682579483}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &3092478267298756488
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4714352662585026196}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 1}
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &4812499303695560741
 GameObject:
   m_ObjectHideFlags: 0

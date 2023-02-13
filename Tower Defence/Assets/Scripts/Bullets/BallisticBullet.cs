@@ -38,6 +38,10 @@ public class BallisticBullet : Bullet
 
         if (transform.position == targetPosition)
         {
+            if (endingParticles != null)
+            {
+                endingParticles.gameObject.SetActive(true);
+            }
             if (areaParticles != null)
             {
                 areaParticles.gameObject.SetActive(true);

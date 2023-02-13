@@ -96,7 +96,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 763599606711622024, guid: adcb99f93478f8b46b781557c7e8c85f, type: 3}
+  - {fileID: 2100000, guid: 48a5cca5fe82f7c499533b48c352219c, type: 2}
   - {fileID: 2100000, guid: 014da2e14f70ab04eb30c08e479721d1, type: 2}
   - {fileID: 2100000, guid: 67332775a9f471f4997a09bf03ffe2cc, type: 2}
   m_StaticBatchInfo:
@@ -358,6 +358,7 @@ MonoBehaviour:
   buyPrice: 10
   isRoadUnit: 1
   attackSpeed: 0.1
+  reloadTime: 0
   attackRange: 0
   isPiercingAttack: 1
   canAttack: 0
@@ -822,7 +823,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 67332775a9f471f4997a09bf03ffe2cc, type: 2}
-  - {fileID: 2100000, guid: 014da2e14f70ab04eb30c08e479721d1, type: 2}
+  - {fileID: 2100000, guid: 48a5cca5fe82f7c499533b48c352219c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

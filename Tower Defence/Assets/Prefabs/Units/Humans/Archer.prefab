@@ -451,12 +451,12 @@ MonoBehaviour:
   buyPrice: 20
   isRoadUnit: 0
   attackSpeed: 50
+  reloadTime: 0.01
   attackRange: 2
   isPiercingAttack: 0
   canAttack: 1
   upgradeStar: {fileID: 1625490056080182891, guid: 8d4cb0a1e4debea4683498c180a80d65, type: 3}
   oneTarget: 1
-  reloadTime: 0.01
   bulletSpeed: 10
   bulletCount: 1
   bulletPrefab: {fileID: 1152198129349464519, guid: 5f0577b2c6e024b4a9fc4d49c3c61a2c, type: 3}
@@ -1150,7 +1150,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: -8067726398312463513, guid: fb0636fa56ac5944bbbbd153755024bb, type: 3}
   - {fileID: -4231637370832951941, guid: eb776556a146df8438f958888e7faf6a, type: 3}
-  - {fileID: 2100000, guid: 17a2b4b76598de046924ceecf83951f2, type: 2}
+  - {fileID: 2100000, guid: 2aeaab0604995d6428230759a2fdb6e6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
