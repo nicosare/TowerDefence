@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.PlayerSettings;
 using static UnityEngine.GraphicsBuffer;
+using Random = UnityEngine.Random;
 
 public abstract class Enemy : MonoBehaviour
 {
@@ -23,19 +26,19 @@ public abstract class Enemy : MonoBehaviour
     public LayerMask layerMask;
     [SerializeField] private Slider healthBar;
 
-    public Queue<Transform> way;
-    private Transform wayPointTarget;
+    public Queue<Vector3> way;
+    private Vector3 wayPointTarget;
     private IHealth attackTarget;
     private bool isShowHealthBar;
 
     private Animator animator;
-    
+
     private void Start()
     {
         var wayPoints = transform.parent.GetChild(0);
-        way = new Queue<Transform>();
+        way = new Queue<Vector3>();
         foreach (Transform point in wayPoints)
-            way.Enqueue(point);
+            way.Enqueue(point.position);
         wayPointTarget = way.Dequeue();
         attackTarget = null;
         healthBar.maxValue = health;
@@ -83,42 +86,44 @@ public abstract class Enemy : MonoBehaviour
 
     private void MoveToPoints()
     {
-        var dir = wayPointTarget.position - transform.position;
+        var dir = wayPointTarget - transform.position;
         transform.Translate(dir.normalized * speed * Time.deltaTime);
         transform.GetChild(0).rotation = Quaternion.Slerp(transform.GetChild(0).rotation,
-                                                          Quaternion.LookRotation(wayPointTarget.position - transform.position),
+                                                          Quaternion.LookRotation(wayPointTarget - transform.position),
                                                           5 * Time.deltaTime);
 
-        if (Vector3.Distance(transform.position, wayPointTarget.position) <= 0.1f)
+        if (Vector3.Distance(transform.position, wayPointTarget) <= 0.1f)
         {
             if (way.Count > 0)
-                wayPointTarget = way.Dequeue();
+                wayPointTarget = MoveRandomPoint();
             else
                 isEndWay = true;
         }
     }
 
+    private Vector3 MoveRandomPoint()
+    {
+        var center = way.Dequeue();
+        var newTarget = center + new Vector3(Random.Range(-0.25f, 0.25f), 0, Random.Range(-0.25f, 0.25f));
+        return newTarget;
+    }
     private void Update()
     {
         if (!isStun)
         {
             FindAttackTarget();
-
             if (canAttack && attackTarget != null)
                 animator.SetTrigger("Attack");
-
             if (canMove && !isEndWay)
                 MoveToPoints();
         }
     }
-
     public void StopMove(int timeStoppingInSeconds = 1)
     {
         isStun = true;
         animator.SetBool("IsStun", true);
         StartCoroutine(Stopping(timeStoppingInSeconds));
     }
-
     IEnumerator Stopping(int timeStoppingInSeconds)
     {
         yield return new WaitForSeconds(timeStoppingInSeconds);
@@ -136,7 +141,7 @@ public abstract class Enemy : MonoBehaviour
     private void FindAttackTarget()
     {
         var ray = new Ray(transform.position, transform.GetChild(0).forward * rangeAttack);
-        Debug.DrawRay(transform.position, transform.GetChild(0).forward * rangeAttack, Color.red);
+        Debug.DrawRay(transform.position, transform.GetChild(0).forward * rangeAttack, UnityEngine.Color.red);
 
         RaycastHit raycastHit;
         if (Physics.Raycast(ray, out raycastHit, rangeAttack, layerMask))
