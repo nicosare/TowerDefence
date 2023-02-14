@@ -10,12 +10,13 @@ public class MainCastle : MonoBehaviour, IHealth
     [SerializeField] private Text healthUIText;
     [SerializeField] private Button UltimateAttackButton;
     [SerializeField] private Way[] Ways;
-    [SerializeField] private UltimateBullet ultimateBullet;
     [SerializeField] private int cooldownTime;
     public WindowsController windowsController;
+    private UltimateBullet ultimateBullet;
 
     private void Start()
     {
+        ultimateBullet = FactionsManager.Instance.ChoosenFaction.UltimateBullet;
         PrintHealthInUI();
     }
     public int Health { get => health; set => health = value; }

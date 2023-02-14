@@ -9,4 +9,5 @@ public class Faction : ScriptableObject
     public Sprite IconFaction;
     public string NameFaction;
     public List<Unit> Units;
+    public UltimateBullet UltimateBullet;
 }
