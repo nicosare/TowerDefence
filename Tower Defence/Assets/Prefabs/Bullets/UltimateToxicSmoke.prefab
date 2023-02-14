@@ -4827,7 +4827,7 @@ GameObject:
   - component: {fileID: 990816880067395959}
   - component: {fileID: 3064311776625512654}
   m_Layer: 0
-  m_Name: UltimateBullet 2
+  m_Name: UltimateToxicSmoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
