@@ -21,6 +21,7 @@ public abstract class Bullet : MonoBehaviour
     [SerializeField] protected int stunTime;
 
     [SerializeField] protected ParticleSystem endingParticles;
+    [SerializeField] protected ParticleSystem areaParticles;
     public void ApplyUnitParameters(int damage, bool isPiercingAttack, Transform target, float shootSpeed)
     {
         this.damage = damage;
@@ -52,12 +53,18 @@ public abstract class Bullet : MonoBehaviour
                                     .Where(damagedEnemy => damagedEnemy.tag == "Enemy")
                                     .Select(damagedEnemy => damagedEnemy.gameObject.GetComponent<Enemy>());
 
+            if (areaParticles != null)
+            {
+                SetAreaParticles();
+            }
+
             foreach (var damagedEnemy in damagedEnemies)
             {
                 damagedEnemy.GetDamage(damage, isPiercingAttack);
                 if (isStunning)
                     damagedEnemy.StopMove(stunTime);
             }
+
             if (hitCount == 1)
             {
                 if (endingParticles != null)
@@ -66,12 +73,25 @@ public abstract class Bullet : MonoBehaviour
                     Destroy(gameObject);
             }
             else
+            {
                 yield return new WaitForSeconds(1);
+                if (areaParticles != null)
+                    areaParticles.gameObject.SetActive(false);
+            }
         }
         if (endingParticles != null)
             StartCoroutine(DestroyWithParticles());
         else
             Destroy(gameObject);
+    }
+
+    private void SetAreaParticles()
+    {
+        areaParticles.gameObject.SetActive(true);
+        var particlesShape = areaParticles.shape;
+        var particlesCount = areaParticles.emission.GetBurst(0);
+        particlesShape.scale = new Vector3(radiusAttack, radiusAttack);
+        particlesCount.count = 100 * radiusAttack * radiusAttack;
     }
 
     private IEnumerator DestroyWithParticles()
@@ -86,15 +106,18 @@ public abstract class Bullet : MonoBehaviour
         var damagedEnemy = other.gameObject.GetComponent<Enemy>();
         for (var i = 0; i < hitCount; i++)
         {
-            damagedEnemy.GetDamage(damage, isPiercingAttack);
-            if (isStunning)
-                damagedEnemy.StopMove(stunTime);
-            if (hitCount == 1)
+            if (damagedEnemy != null)
             {
-                Destroy(gameObject);
+                damagedEnemy.GetDamage(damage, isPiercingAttack);
+                if (isStunning)
+                    damagedEnemy.StopMove(stunTime);
+                if (hitCount == 1)
+                {
+                    Destroy(gameObject);
+                }
+                else
+                    yield return new WaitForSeconds(1);
             }
-            else
-                yield return new WaitForSeconds(1);
         }
         Destroy(gameObject);
     }
