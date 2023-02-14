@@ -15824,7 +15824,7 @@ MonoBehaviour:
   UltimateAttackButton: {fileID: 1190342751}
   Ways:
   - {fileID: 1070251112}
-  ultimateBullet: {fileID: 3064311776625512654, guid: 23d140f4b0f5dfc47b6de3361f630188, type: 3}
+  ultimateBullet: {fileID: 3064311776625512654, guid: 2b8a2cb5694b722408cd92153aeb2713, type: 3}
   cooldownTime: 10
   windowsController: {fileID: 2106366961}
 --- !u!1001 &1244142024

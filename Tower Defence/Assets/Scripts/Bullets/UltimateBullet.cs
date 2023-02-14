@@ -52,7 +52,7 @@ public class UltimateBullet : MonoBehaviour
     IEnumerator WaitAndDistroy(int seconds)
     {
         GetComponent<Collider>().enabled = false;
-        if(transform.GetChild(0).name == "ParticleSystem")
+        if(transform.GetChild(0).name == "Particle System")
             transform.GetChild(0).GetComponent<ParticleSystem>().startSize = 0;
         yield return new WaitForSeconds(seconds);
         Destroy(gameObject);

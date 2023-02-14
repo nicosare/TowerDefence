@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.17757879, g: 0.22232285, b: 0.30451733, a: 1}
+  m_IndirectSpecularColor: {r: 0.17757899, g: 0.22232303, b: 0.30451778, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -15707,7 +15707,7 @@ MonoBehaviour:
   - {fileID: 1070251112}
   - {fileID: 1791487088}
   - {fileID: 1351297383}
-  ultimateBullet: {fileID: 3064311776625512654, guid: 4dfab607f51b6ea42af49d21a63d0af1, type: 3}
+  ultimateBullet: {fileID: 3064311776625512654, guid: 621d9e5ee80c053458f61d7268e0ecbd, type: 3}
   cooldownTime: 10
   windowsController: {fileID: 1571339097}
 --- !u!1001 &1235109692
