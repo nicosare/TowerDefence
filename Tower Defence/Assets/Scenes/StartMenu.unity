@@ -303,6 +303,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eb74e6ccb1a973498ea150369e164e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BoostGameButton: {fileID: 0}
+  BoostGameOn: {fileID: 0}
+  BoostGameOff: {fileID: 0}
+  windowsController: {fileID: 0}
 --- !u!114 &1165221331
 MonoBehaviour:
   m_ObjectHideFlags: 0

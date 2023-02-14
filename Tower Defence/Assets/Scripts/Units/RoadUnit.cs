@@ -10,6 +10,7 @@ public class RoadUnit : Unit, IHealth
     [SerializeField] protected int health;
     [SerializeField] private Slider healthBar;
 
+    private bool canSlash = true;
     public int Health { get => health; set => health = value; }
 
     protected Animator animator;
@@ -25,13 +26,21 @@ public class RoadUnit : Unit, IHealth
     protected override void Attack()
     {
         if (target != null)
-            animator.SetTrigger("Attack");
+            animator.SetBool("Attack", canSlash);
     }
 
     public void StartAttacking()
     {
         if (target != null)
-            target.GetDamage(Damage, isPiercingAttack);
+            StartCoroutine(Slashing());
+    }
+
+    private IEnumerator Slashing()
+    {
+        canSlash = false;
+        target.GetDamage(Damage, isPiercingAttack);
+        yield return new WaitForSeconds(reloadTime);
+        canSlash = true;
     }
 
     private void Start()
