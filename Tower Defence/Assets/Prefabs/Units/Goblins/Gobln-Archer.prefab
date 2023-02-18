@@ -603,6 +603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b8c1a7d3254ede4f8f5181e0734b12b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Icon: {fileID: 21300000, guid: 9068845e50c00e34daf9bd6b7616faee, type: 3}
   nameUnit: "\u0413\u043E\u0431\u043B\u0438\u043D \u043B\u0443\u0447\u043D\u0438\u043A"
   damage: 2
   buyPrice: 20

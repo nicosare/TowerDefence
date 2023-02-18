@@ -5087,6 +5087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4390294bfa544c046a428794de010d0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Icon: {fileID: 21300000, guid: 840624a1f5ccd8647b078009077af998, type: 3}
   nameUnit: "\u0411\u0430\u043B\u043B\u0438\u0441\u0442\u0430"
   damage: 1
   buyPrice: 10

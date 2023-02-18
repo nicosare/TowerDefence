@@ -655,6 +655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b8c1a7d3254ede4f8f5181e0734b12b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Icon: {fileID: 21300000, guid: b72493b16a296f84a8ba0fa85c6c4294, type: 3}
   nameUnit: "\u0428\u0430\u043C\u0430\u043D"
   damage: 2
   buyPrice: 20

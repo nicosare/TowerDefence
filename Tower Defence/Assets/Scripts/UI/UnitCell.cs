@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class UnitCell : MonoBehaviour, IPointerDownHandler
 {
+    [SerializeField] private GameObject icon;
+    [SerializeField] private GameObject nameUnit;
+    [SerializeField] private GameObject buyPrice;
     private Interact interact;
     public UnityEvent OnPointerDown;
     private Unit unit;
@@ -14,9 +17,9 @@ public class UnitCell : MonoBehaviour, IPointerDownHandler
     private void Start()
     {
         interact = FindObjectOfType<Interact>();
-
-        transform.GetChild(0).GetComponent<Text>().text = unit.NameUnit;
-        transform.GetChild(1).GetComponent<Text>().text = unit.BuyPrice.ToString();
+        icon.GetComponent<Image>().sprite = unit.Icon;
+        nameUnit.GetComponent<Text>().text = unit.NameUnit;
+        buyPrice.GetComponent<Text>().text = unit.BuyPrice.ToString();
     }
 
     public void ApplyParameters(Unit unitFromFraction)

@@ -8,6 +8,7 @@ using static UnityEngine.UI.CanvasScaler;
 
 public abstract class Unit : MonoBehaviour
 {
+    public Sprite Icon;
     [SerializeField] private string nameUnit;
     [SerializeField] private int damage;
     [SerializeField] private int buyPrice;

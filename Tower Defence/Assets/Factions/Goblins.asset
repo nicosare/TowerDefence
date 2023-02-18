@@ -20,3 +20,4 @@ MonoBehaviour:
   - {fileID: 6549081175648220340, guid: 78570603d6c0bc14e8fed07c3b530dd5, type: 3}
   - {fileID: 2587485916891076603, guid: ebe1148999166e54ea78e0b8efa3138c, type: 3}
   - {fileID: 2417192147633560973, guid: dfd3559502a6abe42be96700acd98bc3, type: 3}
+  UltimateBullet: {fileID: 3064311776625512654, guid: 20ad42506f75d614788183dc4da068cc, type: 3}
