@@ -5,7 +5,7 @@ using UnityEngine;
 public class FactionsManager : MonoBehaviour
 {
     public Faction ChoosenFaction;
-
+    public Faction[] Factions; 
     public static FactionsManager Instance;
 
     private void Awake()

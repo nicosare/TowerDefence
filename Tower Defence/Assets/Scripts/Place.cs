@@ -21,6 +21,7 @@ public class Place : MonoBehaviour
     public void SetUnit(Unit unit)
     {
         var newUnit = Instantiate(unit.gameObject);
+        
         newUnit.transform.SetParent(transform);
         newUnit.transform.position = spawnPoint.position + Vector3.up * 0.5f;
         UnitOnPlace = newUnit.GetComponent<Unit>();

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095cae74187dca341b91944fb9fc27b3, type: 3}
   m_Name: Humans
   m_EditorClassIdentifier: 
-  IconFaction: {fileID: 21300000, guid: f2901efd8bb16bc408ad37f017fbf9bc, type: 3}
+  IconFaction: {fileID: 21300000, guid: 6536cba04e6f06c49ac5ffefa9e1d408, type: 3}
   NameFaction: "\u041B\u044E\u0434\u0438"
   Units:
   - {fileID: 6549081175648220340, guid: 71016d4e409804c40a971385ffb760c0, type: 3}

@@ -10,4 +10,5 @@ public class Faction : ScriptableObject
     public string NameFaction;
     public List<Unit> Units;
     public UltimateBullet UltimateBullet;
+    public Color MainColor;
 }

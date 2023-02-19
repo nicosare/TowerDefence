@@ -20,8 +20,8 @@ public class AreaUnit : Unit
 
     protected override void Attack()
     {
-        if (target != null)
-            animator.SetBool("Attack", canShoot);
+        if (target != null && canShoot)
+            animator.SetBool("Attack", true);
     }
 
     public void StartShooting()
@@ -44,6 +44,7 @@ public class AreaUnit : Unit
             yield return new WaitForSeconds(1 / attackSpeed);
         }
         animator.speed = 1;
+        animator.SetBool("Attack", false);
         yield return new WaitForSeconds(reloadTime);
         canShoot = true;
     }
