@@ -12,9 +12,12 @@ public class BallisticBullet : Bullet
     private float step;
 
     private Vector3 targetPosition;
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip soundLandingBullet;
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         step = shootSpeed * 0.01f;
         targetPosition = target.position;
         middlePoint = Vector3.Lerp(transform.position, targetPosition, .5f) + 2 * Vector3.up.normalized;
@@ -50,6 +53,7 @@ public class BallisticBullet : Bullet
     {
         if (isHitting)
         {
+            audioSource.PlayOneShot(soundLandingBullet);
             StartCoroutine(HittingAround());
         }
     }

@@ -25,6 +25,9 @@ public abstract class Enemy : MonoBehaviour
     public int damage;
     public LayerMask layerMask;
     [SerializeField] private Slider healthBar;
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip hurtSound;
+    [SerializeField] private AudioClip deathSound;
 
     public Queue<Vector3> way;
     private Vector3 wayPointTarget;
@@ -35,6 +38,8 @@ public abstract class Enemy : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = 0.1f;
         var wayPoints = transform.parent.GetChild(0);
         way = new Queue<Vector3>();
         foreach (Transform point in wayPoints)
@@ -55,6 +60,7 @@ public abstract class Enemy : MonoBehaviour
         if (!isArmored || isPiercingAttack)
         {
             health -= damage;
+            audioSource.PlayOneShot(hurtSound);
             if (!isShowHealthBar)
                 StartCoroutine(ShowHealthBar());
             healthBar.value = health;
@@ -63,6 +69,8 @@ public abstract class Enemy : MonoBehaviour
             Message.Instance.LoadMessage("Броня не пробита");
         if (health <= 0)
         {
+            audioSource.volume = 1;
+            audioSource.PlayOneShot(deathSound);
             Destroy(transform.GetComponent<Collider>());
             animator.SetTrigger("Die");
             canMove = false;

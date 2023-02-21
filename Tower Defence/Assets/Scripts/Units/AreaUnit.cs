@@ -13,6 +13,8 @@ public class AreaUnit : Unit
     [SerializeField] private Transform bulletSpawnPoint;
     private bool canShoot = true;
     private Animator animator;
+    [SerializeField] private AudioClip soundAttack;
+
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
@@ -31,6 +33,8 @@ public class AreaUnit : Unit
 
     private IEnumerator Shooting()
     {
+        if(!gameObject.name.Contains("Elite Elf-Archer"))
+            audioSource.PlayOneShot(soundAttack);
         canShoot = false;
         if (bulletCount > 1)
             animator.speed = 0;
@@ -53,6 +57,8 @@ public class AreaUnit : Unit
     {
         if (target != null)
         {
+            if (gameObject.name.Contains("Elite Elf-Archer"))
+                audioSource.PlayOneShot(soundAttack);
             var newBullet = Instantiate(bulletPrefab.gameObject).GetComponent<Bullet>();
             newBullet.transform.SetParent(transform);
             newBullet.transform.position = bulletSpawnPoint.position;

@@ -11468,7 +11468,6 @@ MonoBehaviour:
   Ways:
   - {fileID: 1070251112}
   - {fileID: 497262539}
-  ultimateBullet: {fileID: 3064311776625512654, guid: 23d140f4b0f5dfc47b6de3361f630188, type: 3}
   cooldownTime: 10
   windowsController: {fileID: 1571339097}
 --- !u!1 &1241914470

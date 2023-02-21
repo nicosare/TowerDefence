@@ -11,6 +11,7 @@ public class ShootingUnit : Unit
     [SerializeField] private Bullet bulletPrefab;
     [SerializeField] private Transform bulletSpawnPoint;
     private Animator animator;
+    [SerializeField] private AudioClip soundAttack;
 
     private void Awake()
     {
@@ -22,7 +23,7 @@ public class ShootingUnit : Unit
     {
         if (animator != null)
             animator.SetTrigger("Attack");
-
+        audioSource.PlayOneShot(soundAttack);
         var newBullet = Instantiate(bulletPrefab.gameObject).GetComponent<Bullet>();
         newBullet.transform.SetParent(transform);
         newBullet.transform.position = bulletSpawnPoint.position;
