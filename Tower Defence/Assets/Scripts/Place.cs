@@ -24,6 +24,7 @@ public class Place : MonoBehaviour
         newUnit.transform.SetParent(transform);
         newUnit.transform.position = spawnPoint.position + Vector3.up * 0.5f;
         UnitOnPlace = newUnit.GetComponent<Unit>();
+        UnitOnPlace.PlaySoundInstallation();
         isFree = false;
     }
 

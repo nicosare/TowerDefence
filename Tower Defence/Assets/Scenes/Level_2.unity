@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.17757879, g: 0.22232285, b: 0.30451733, a: 1}
+  m_IndirectSpecularColor: {r: 0.17757899, g: 0.22232303, b: 0.30451778, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -14277,7 +14277,6 @@ MonoBehaviour:
   UltimateAttackButton: {fileID: 2071162677}
   Ways:
   - {fileID: 1070251112}
-  ultimateBullet: {fileID: 3064311776625512654, guid: 4dfab607f51b6ea42af49d21a63d0af1, type: 3}
   cooldownTime: 10
   windowsController: {fileID: 1530097734}
 --- !u!1001 &1243888204

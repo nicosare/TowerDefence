@@ -9,6 +9,8 @@ public class RoadUnit : Unit, IHealth
 {
     [SerializeField] protected int health;
     [SerializeField] private Slider healthBar;
+    [SerializeField] private AudioClip soundDeath;
+    [SerializeField] private AudioClip soundDamage;
 
     private bool canSlash = true;
     public int Health { get => health; set => health = value; }
@@ -52,8 +54,10 @@ public class RoadUnit : Unit, IHealth
     {
         health -= damage;
         healthBar.value = health;
+        audioSource.PlayOneShot(soundDamage);
         if (health <= 0)
         {
+            audioSource.PlayOneShot(soundDeath);
             if (animator == null)
                 Die();
             else

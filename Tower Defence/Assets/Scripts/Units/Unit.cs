@@ -21,6 +21,9 @@ public abstract class Unit : MonoBehaviour
     [SerializeField] protected bool isPiercingAttack;
     private int levelUnit = 0;
     private int maxLevelUnit = 3;
+    protected AudioSource audioSource;
+    [SerializeField] protected AudioClip soundInstallation;
+    [SerializeField] protected AudioClip soundUpLevel;
 
     protected abstract void Attack();
 
@@ -64,6 +67,7 @@ public abstract class Unit : MonoBehaviour
     {
         if (EconomicModel.Instance.countCoins >= UpgradePrice)
         {
+            audioSource.PlayOneShot(soundUpLevel);
             Instantiate(upgradeStar, starsField);
             EconomicModel.Instance.Reduce—ountCoin(UpgradePrice);
             levelUnit++;
@@ -88,6 +92,27 @@ public abstract class Unit : MonoBehaviour
             EconomicModel.Instance.Reduce—ountCoin(BuyPrice);
     }
 
+    public void PlaySoundInstallation()
+    {
+        audioSource = GetComponent<AudioSource>();
+        if (gameObject.name.Contains("Stone Wall"))
+        {
+            StartCoroutine(PlaySoundWallInstallation());
+        }
+        else
+            audioSource.PlayOneShot(soundInstallation);
+    }
+
+    IEnumerator PlaySoundWallInstallation()
+    {
+        var countSound = 3;
+        while (countSound > 0)
+        {
+            audioSource.PlayOneShot(soundInstallation);
+            countSound--;
+            yield return new WaitForSeconds(0.3f);
+        }
+    }
     public void SellUnit()
     {
         EconomicModel.Instance.IncreaseCountCoin(SellPrice);
