@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5dc7d34c-f4a2-4bce-91e7-1771d8cdaa73" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/AudioMixer.mixer" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioMixer.mixer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Factions/Elves.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Factions/Elves.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Factions/Gnomes.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Factions/Gnomes.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Factions/Goblins.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Factions/Goblins.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Factions/Humans.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Factions/Humans.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/UnitPreview.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/UnitPreview.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/AttackWood.flac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/AttackWood.flac.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/CoinsDeath.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/CoinsDeath.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/Death.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/Death.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/DestroyWood.flac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/DestroyWood.flac.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/DruidAttack.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/DruidAttack.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/FireSpell.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/FireSpell.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/GlassBullet.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/GlassBullet.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/HailArrows.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/HailArrows.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/Hurt.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/Hurt.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/MainBattleMusic.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/MainBattleMusic.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/MainMenuMusic.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/MainMenuMusic.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/ToxicSmoke.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/ToxicSmoke.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/WallDestroy.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/WallDestroy.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/WallHurt (3).mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/WallHurt (3).mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/WallHurt (4).mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/WallHurt (4).mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/archer'sShoot.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/archer'sShoot.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/archersShot.flac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/archersShot.flac.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/big-stone-ball-slow-rolling-sound-effect-033382716_nw_prev.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/big-stone-ball-slow-rolling-sound-effect-033382716_nw_prev.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/boulder_drop.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/boulder_drop.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/building.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/building.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/cannonFire.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/cannonFire.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/catapult.flac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/catapult.flac.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/crossbow .wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/crossbow .wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/plantGrowth.flac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/plantGrowth.flac.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/soundButton.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/soundButton.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/unitInstallation.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/unitInstallation.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/upgrade.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MusicAndSound/upgrade.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bullets/CannonBallisticBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bullets/CannonBallisticBullet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bullets/PoisonBallisticBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bullets/PoisonBallisticBullet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bullets/StunBallisticBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bullets/StunBallisticBullet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bullets/UltimateBoulder.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bullets/UltimateBoulder.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bullets/UltimateBullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bullets/UltimateBullet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bullets/UltimateHailofArrows.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bullets/UltimateHailofArrows.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bullets/UltimateStarfall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bullets/UltimateStarfall.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bullets/UltimateToxicSmoke.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bullets/UltimateToxicSmoke.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Alien.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Alien.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Alien_Tall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Alien_Tall.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Bat.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Bat.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Bee.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Bee.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Cactus.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Cactus.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Chicken.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Chicken.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Crab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Crab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Cthulhu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Cthulhu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Cyclops.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Cyclops.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Deer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Deer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Demon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Demon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Ghost.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Ghost.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/GreenDemon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/GreenDemon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Mushroom.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Mushroom.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Panda.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Panda.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Penguin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Penguin.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Pig.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Pig.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Skull.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Skull.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Tree.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Tree.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/YellowDragon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/YellowDragon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Yeti.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/BasicEnemies/Yeti.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Boss.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Boss.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Elves/Druid.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Elves/Druid.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Elves/Elf-Archer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Elves/Elf-Archer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Elves/Elf-Warrior.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Elves/Elf-Warrior.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Elves/Elite Elf-Archer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Elves/Elite Elf-Archer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Elves/Grass Wall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Elves/Grass Wall.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Gnomes/Cannon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Gnomes/Cannon.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Gnomes/Dwarf-Archer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Gnomes/Dwarf-Archer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Gnomes/Shield-Dwarf.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Gnomes/Shield-Dwarf.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Gnomes/Stone Wall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Gnomes/Stone Wall.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Gnomes/Trap.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Gnomes/Trap.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Goblins/Goblin-Warrior.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Goblins/Goblin-Warrior.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Goblins/Gobln-Archer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Goblins/Gobln-Archer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Goblins/Poison Gobln-Archer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Goblins/Poison Gobln-Archer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Goblins/PoisonCatapult.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Goblins/PoisonCatapult.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Goblins/Shaman.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Goblins/Shaman.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Humans/Archer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Humans/Archer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Humans/Ballista.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Humans/Ballista.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Humans/Peasant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Humans/Peasant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Humans/StunCatapult.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Humans/StunCatapult.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Units/Humans/Warrior.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Units/Humans/Warrior.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_3.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_4.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_4.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level_5.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level_5.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SelectFactionMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SelectFactionMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BackgroundMusicController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BackgroundMusicController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bullets/BallisticBullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bullets/BallisticBullet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Place.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Place.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/AreaUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/AreaUnit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/RoadUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/RoadUnit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/ShootingUnit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/ShootingUnit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Units/Unit.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2M2mtFCKxKp8Vb2D6hivn9XJOdA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;rider.run.widget.enabled.cache&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;D:\Unity\TowerDefence\Tower Defence&quot; -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="D:\Unity\TowerDefence\Tower Defence" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5dc7d34c-f4a2-4bce-91e7-1771d8cdaa73" name="Changes" comment="" />
+      <created>1676974266955</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1676974266955</updated>
+      <workItem from="1676974305519" duration="122000" />
+      <workItem from="1676974981229" duration="1163000" />
+      <workItem from="1676978781607" duration="121000" />
+      <workItem from="1676978930087" duration="22000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
