@@ -13,6 +13,8 @@ public class FactionMenuController : MonoBehaviour
     public float scaleOffset;
     [Range(1f, 20f)]
     public float scaleSpeed;
+    [Range(1f, 500f)]
+    public float sensitivity;
     [Header("Other Objects")]
     public GameObject panPrefab;
     public ScrollRect scrollRect;
@@ -54,7 +56,6 @@ public class FactionMenuController : MonoBehaviour
 
     private void Update()
     {
-        ScrollWithWheel();
         if (contentRect.anchoredPosition.x >= pansPos[0].x && !isScrolling || contentRect.anchoredPosition.x <= pansPos[pansPos.Length - 1].x && !isScrolling)
             scrollRect.inertia = false;
         float nearestPos = float.MaxValue;
@@ -75,8 +76,8 @@ public class FactionMenuController : MonoBehaviour
             instPans[i].transform.localScale = pansScale[i];
         }
         float scrollVelocity = Mathf.Abs(scrollRect.velocity.y);
-        if (scrollVelocity < 400 && !isScrolling) scrollRect.inertia = false;
-        if (isScrolling || scrollVelocity > 400) return;
+        if (scrollVelocity < sensitivity && !isScrolling) scrollRect.inertia = false;
+        if (isScrolling || scrollVelocity > sensitivity) return;
         contentVector.y = Mathf.SmoothStep(contentRect.anchoredPosition.y, pansPos[selectedPanID].y, snapSpeed * Time.fixedDeltaTime);
         contentRect.anchoredPosition = contentVector;
     }
@@ -100,18 +101,27 @@ public class FactionMenuController : MonoBehaviour
 
     public void Scrolling(bool scroll)
     {
-        isScrolling = scroll;
-        if (scroll)
-            scrollRect.inertia = true;
-    }
-
-    public void ScrollWithWheel()
-    {
-        if (Input.GetAxis("Mouse ScrollWheel") != 0)
+        if (Input.GetAxis("Mouse ScrollWheel") == 0)
         {
-            scrollRect.inertia = true;
+            isScrolling = scroll;
+            if (scroll)
+                scrollRect.inertia = true;
         }
         else
-            scrollRect.inertia = false;
+        {
+            isScrolling = scroll;
+            if (scroll)
+            {
+                scrollRect.inertia = false;
+                StartCoroutine(Snap());
+            }
+        }
+    }
+
+    private IEnumerator Snap()
+    {
+        yield return new WaitForSeconds(0.5f);
+        scrollRect.inertia = true;
+        isScrolling = false;
     }
 }

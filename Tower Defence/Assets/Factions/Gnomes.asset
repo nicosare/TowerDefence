@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095cae74187dca341b91944fb9fc27b3, type: 3}
   m_Name: Gnomes
   m_EditorClassIdentifier: 
-  IconFaction: {fileID: 21300000, guid: c5302cea09432944b8fb48ddaa2bacfe, type: 3}
+  IconFaction: {fileID: 21300000, guid: 1b1395baff725874b877313dc020f888, type: 3}
   NameFaction: "\u0413\u043D\u043E\u043C\u044B"
   Units:
   - {fileID: 2587485916891076603, guid: 971d235f0f735fb44a0462ffd7f53b09, type: 3}
@@ -21,3 +21,4 @@ MonoBehaviour:
   - {fileID: 6549081175648220340, guid: ad4b7eeaee2f85140b9de03fea8aae00, type: 3}
   - {fileID: 2417192147633560973, guid: 09f70e6c587b19f438d1acce8fe3f8d5, type: 3}
   UltimateBullet: {fileID: 3064311776625512654, guid: 2a916a12a86dd7d4fb121b238ab61b1d, type: 3}
+  MainColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
