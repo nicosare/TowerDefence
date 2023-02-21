@@ -33,6 +33,7 @@ public abstract class Unit : MonoBehaviour
     [SerializeField] protected bool canAttack = true;
     [SerializeField] private GameObject upgradeStar;
     private Transform starsField;
+    [SerializeField] protected bool isWall;
 
     public bool IsMaxLevel { get => levelUnit == maxLevelUnit; }
     public int BuyPrice { get => buyPrice; }
@@ -166,7 +167,8 @@ public abstract class Unit : MonoBehaviour
 
     private void LateUpdate()
     {
-        Rotating();
+        if (!isWall)
+            Rotating();
     }
 
     private void Rotating()

@@ -32,6 +32,7 @@ public class FactionMenuController : MonoBehaviour
     private int panCount;
     private int selectedPanID;
     private bool isScrolling;
+    private bool canMove = false;
 
     private void Start()
     {
@@ -56,6 +57,17 @@ public class FactionMenuController : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+            SnapToPanel((selectedPanID + 1) % 4);
+
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        {
+            if (selectedPanID != 0)
+                SnapToPanel((selectedPanID - 1) % 4);
+            else
+                SnapToPanel(panCount - 1);
+        }
+
         if (contentRect.anchoredPosition.x >= pansPos[0].x && !isScrolling || contentRect.anchoredPosition.x <= pansPos[pansPos.Length - 1].x && !isScrolling)
             scrollRect.inertia = false;
         float nearestPos = float.MaxValue;
@@ -82,6 +94,12 @@ public class FactionMenuController : MonoBehaviour
         contentRect.anchoredPosition = contentVector;
     }
 
+    public void SnapToPanel(int panelID)
+    {
+        contentVector.y = pansPos[panelID].y;
+        contentRect.anchoredPosition = contentVector;
+    }
+
     private void UpdateIndicator()
     {
         for (int i = 0; i < panCount; i++)
@@ -101,27 +119,8 @@ public class FactionMenuController : MonoBehaviour
 
     public void Scrolling(bool scroll)
     {
-        if (Input.GetAxis("Mouse ScrollWheel") == 0)
-        {
-            isScrolling = scroll;
-            if (scroll)
-                scrollRect.inertia = true;
-        }
-        else
-        {
-            isScrolling = scroll;
-            if (scroll)
-            {
-                scrollRect.inertia = false;
-                StartCoroutine(Snap());
-            }
-        }
-    }
-
-    private IEnumerator Snap()
-    {
-        yield return new WaitForSeconds(0.5f);
-        scrollRect.inertia = true;
-        isScrolling = false;
+        isScrolling = scroll;
+        if (scroll)
+            scrollRect.inertia = true;
     }
 }
