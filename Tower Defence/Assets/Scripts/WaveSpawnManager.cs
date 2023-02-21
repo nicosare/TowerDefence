@@ -22,6 +22,7 @@ public class WaveSpawnManager : MonoBehaviour
     private int countWave;
     private int timer;
     private List<GameObject> enemies;
+    private bool isWin;
 
     public WindowsController windowsController;
 
@@ -37,6 +38,7 @@ public class WaveSpawnManager : MonoBehaviour
 
     private void Start()
     {
+        isWin = false;
         Debug.Log(enemiesCounter);
         enemies = new List<GameObject>();
         StartCoroutine(SpawnWaves(waves, timeBetweenSpawn));
@@ -44,13 +46,15 @@ public class WaveSpawnManager : MonoBehaviour
 
     private void Update()
     {
-        CheckPlayerWin();
+        if(!isWin)
+            CheckPlayerWin();
     }
 
     private void CheckPlayerWin()
     {
         if (enemies.Count == enemiesCounter && enemies.All(enemy => enemy.IsDestroyed()))
         {
+            isWin = true;
             Time.timeScale = 0;
             windowsController.SetActiveWinMenu(true);
         }

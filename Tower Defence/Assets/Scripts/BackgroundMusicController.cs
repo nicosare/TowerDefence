@@ -21,6 +21,11 @@ public class BackgroundMusicController : MonoBehaviour
         isFirstLaunch = true;
     }
 
+    private void Start()
+    {
+        audioSource.volume = 0.2f;
+    }
+
     private void ChangePlayedMusic(Scene currentScene, Scene nextScene)
     {
         var nameNextScene = nextScene.name.Split("_");
@@ -33,7 +38,9 @@ public class BackgroundMusicController : MonoBehaviour
                 audioSource.Play();
             }
             else if (nameCurrentScene[0] == "Level" && nameNextScene[0] != "Level")
+            {
                 audioSource.clip = menuMusic;
+            }
         }
         else
             isFirstLaunch = false;
