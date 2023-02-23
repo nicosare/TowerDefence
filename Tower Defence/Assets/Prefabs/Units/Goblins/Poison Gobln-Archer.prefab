@@ -609,6 +609,8 @@ MonoBehaviour:
     \u043B\u0443\u0447\u043D\u0438\u043A"
   damage: 2
   buyPrice: 20
+  description: 
+  Type: 1
   isRoadUnit: 0
   attackSpeed: 50
   reloadTime: 2
@@ -618,6 +620,7 @@ MonoBehaviour:
   soundUpLevel: {fileID: 8300000, guid: d7cef6909b71bda45905c69d5abbe605, type: 3}
   canAttack: 1
   upgradeStar: {fileID: 1625490056080182891, guid: 8d4cb0a1e4debea4683498c180a80d65, type: 3}
+  isWall: 0
   oneTarget: 1
   bulletSpeed: 10
   bulletCount: 1

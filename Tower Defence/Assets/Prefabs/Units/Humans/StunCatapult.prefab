@@ -5091,6 +5091,11 @@ MonoBehaviour:
   nameUnit: "\u041A\u0430\u0442\u0430\u043F\u0443\u043B\u044C\u0442\u0430"
   damage: 30
   buyPrice: 50
+  description: "\u0417\u0430\u043F\u0443\u0441\u043A\u0430\u0435\u0442 \u043A\u0430\u043C\u0435\u043D\u044C
+    \u0432\u043E \u0432\u0440\u0430\u0433\u043E\u0432 \u0438 \u043D\u0430\u043D\u043E\u0441\u0438\u0442
+    \u043E\u0433\u043B\u0443\u0448\u0430\u044E\u0449\u0438\u0439 \u0443\u0440\u043E\u043D
+    \u043F\u043E \u043F\u043B\u043E\u0449\u0430\u0434\u0438"
+  Type: 1
   isRoadUnit: 0
   attackSpeed: 0.15
   reloadTime: 0.01
@@ -5100,6 +5105,7 @@ MonoBehaviour:
   soundUpLevel: {fileID: 8300000, guid: d7cef6909b71bda45905c69d5abbe605, type: 3}
   canAttack: 1
   upgradeStar: {fileID: 1625490056080182891, guid: 8d4cb0a1e4debea4683498c180a80d65, type: 3}
+  isWall: 0
   bulletSpeed: 2
   bulletPrefab: {fileID: -3781357432163968571, guid: fac1c9075027ef44292fb5142cde0e84, type: 3}
   bulletSpawnPoint: {fileID: 9189593058783473782}

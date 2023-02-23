@@ -12,6 +12,16 @@ public abstract class Unit : MonoBehaviour
     [SerializeField] private string nameUnit;
     [SerializeField] private int damage;
     [SerializeField] private int buyPrice;
+    [SerializeField] private string description;
+    public enum TypeUnit
+    {
+        Melee,
+        Ranged,
+        Wall,
+        Magician
+    };
+    public TypeUnit Type;
+    protected abstract void Attack();
     [SerializeField] private bool isRoadUnit;
     [Range(0.1f, 100)]
     public float attackSpeed;
@@ -25,8 +35,6 @@ public abstract class Unit : MonoBehaviour
     protected AudioSource audioSource;
     [SerializeField] protected AudioClip soundInstallation;
     [SerializeField] protected AudioClip soundUpLevel;
-
-    protected abstract void Attack();
 
     protected List<Enemy> targets;
     protected Enemy target;
@@ -42,6 +50,7 @@ public abstract class Unit : MonoBehaviour
     public int Damage { get => damage; private set => damage = value; }
     public string NameUnit { get => nameUnit; }
     public bool IsRoadUnit { get => isRoadUnit; }
+    public string Description { get => description; }
 
     private int upgradePrice;
     private int sellPrice;
