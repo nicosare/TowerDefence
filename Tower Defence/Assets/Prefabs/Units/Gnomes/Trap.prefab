@@ -623,9 +623,10 @@ MonoBehaviour:
   health: 60
   healthBar: {fileID: 4225388113473841727}
   soundDeath: {fileID: 0}
-  soundDamage: {fileID: 0}
+  soundGetDamage: {fileID: 0}
   isStunning: 0
   stunTime: 1
+  soundAttack: {fileID: 8300000, guid: 6540d11cdf678cc4792d88343b7324b5, type: 3}
 --- !u!65 &6150514722654142863
 BoxCollider:
   m_ObjectHideFlags: 0

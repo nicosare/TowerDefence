@@ -8,6 +8,7 @@ public class Trap : RoadUnit
     [SerializeField] protected bool isStunning;
     [Range(1, 3)]
     [SerializeField] protected int stunTime;
+    [SerializeField] private AudioClip soundAttack;
 
     private void LateUpdate()
     {
@@ -25,6 +26,7 @@ public class Trap : RoadUnit
 
     protected override void Attack()
     {
+        audioSource.PlayOneShot(soundAttack);
         animator.SetTrigger("Attack");
         foreach (var target in targets)
         {

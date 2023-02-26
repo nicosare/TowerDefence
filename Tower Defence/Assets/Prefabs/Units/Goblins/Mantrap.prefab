@@ -195,17 +195,19 @@ MonoBehaviour:
   reloadTime: 0.01
   attackRange: 0
   isPiercingAttack: 1
-  soundInstallation: {fileID: 8300000, guid: 72d637a073e848144a28d0b9425101a9, type: 3}
+  soundInstallation: {fileID: 8300000, guid: 00522e2925065944db817710e00616bd, type: 3}
   soundUpLevel: {fileID: 8300000, guid: d7cef6909b71bda45905c69d5abbe605, type: 3}
+  soundSellUnit: {fileID: 0}
   canAttack: 1
   upgradeStar: {fileID: 0}
   noRotating: 1
   health: 60
   healthBar: {fileID: 4225388113473841727}
   soundDeath: {fileID: 0}
-  soundDamage: {fileID: 0}
+  soundGetDamage: {fileID: 0}
   isStunning: 1
   stunTime: 3
+  soundAttack: {fileID: 8300000, guid: aa9cdd66b9b6144419fbecf562363ed7, type: 3}
 --- !u!65 &6150514722654142863
 BoxCollider:
   m_ObjectHideFlags: 0
