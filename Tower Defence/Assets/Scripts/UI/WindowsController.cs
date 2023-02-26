@@ -28,14 +28,14 @@ public class WindowsController : MonoBehaviour
 
     public void SetActiveDefeatMenu(bool isActive)
     {
-        audioSourceBackground.volume = 0.1f;
+        audioSourceBackground.volume = 0.05f;
         SetActive(defeatMenu, isActive);
         audioSource.PlayOneShot(soundLose);
     }
 
     public void SetActiveWinMenu(bool isActive)
     {
-        audioSourceBackground.volume = 0.1f;
+        audioSourceBackground.volume = 0.05f;
         SetActive(winMenu, isActive);
         audioSource.PlayOneShot(soundWin);
     }

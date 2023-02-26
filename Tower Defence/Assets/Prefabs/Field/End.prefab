@@ -121,6 +121,7 @@ MonoBehaviour:
   cooldownTime: 10
   windowsController: {fileID: 0}
   hurtSound: {fileID: 8300000, guid: 6aae3a4210a690043a945b4e96fd3994, type: 3}
+  sound: {fileID: 0}
 --- !u!82 &3608799810843464916
 AudioSource:
   m_ObjectHideFlags: 0

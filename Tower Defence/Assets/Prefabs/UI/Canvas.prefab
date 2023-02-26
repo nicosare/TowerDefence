@@ -2428,6 +2428,7 @@ MonoBehaviour:
   BoostGameButton: {fileID: 8296306755032628968}
   BoostGameOn: {fileID: -2077952571, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
   BoostGameOff: {fileID: -2108197130, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
+  sound: {fileID: 2063188220567988102}
   windowsController: {fileID: 8296306756144476619}
 --- !u!1 &8296306755605397448
 GameObject:

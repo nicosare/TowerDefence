@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using System;
 
 public class SoundButton : MonoBehaviour
 {
@@ -10,28 +11,44 @@ public class SoundButton : MonoBehaviour
     public Sprite SoundGameOn;
     public Sprite SoundGameOff;
     private bool isSoundOff;
-
-    private void Start()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
+    private bool isSoundsEffectOff;
 
     public void ChangeVolumeMusic()
     {
         if (isSoundOff)
-            SoundOn();
+            AllSoundsOn();
         else
-            SoundOff();
+            AllSoundsOff();
     }
 
-    private void SoundOn()
+    public void ChangeSoundsEffect()
+    {
+        if (isSoundsEffectOff)
+            SoundsEffectOn();
+        else
+            SoundsEffectOff();
+    }
+
+    private void SoundsEffectOff()
+    {
+        isSoundsEffectOff = true;
+        Mixer.audioMixer.SetFloat("EffectsVolume", -80);
+    }
+
+    private void SoundsEffectOn()
+    {
+        isSoundsEffectOff = false;
+        Mixer.audioMixer.SetFloat("EffectsVolume", 0);
+    }
+
+    private void AllSoundsOn()
     {
         isSoundOff = false;
         GetComponent<Image>().sprite = SoundGameOn;
         Mixer.audioMixer.SetFloat("MasterVolume", 0);
     }
 
-    private void SoundOff()
+    private void AllSoundsOff()
     {
         isSoundOff = true;
         GetComponent<Image>().sprite = SoundGameOff;

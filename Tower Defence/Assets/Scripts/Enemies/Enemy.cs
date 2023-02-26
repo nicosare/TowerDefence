@@ -69,7 +69,7 @@ public abstract class Enemy : MonoBehaviour
             Message.Instance.LoadMessage("Броня не пробита");
         if (health <= 0)
         {
-            audioSource.volume = 0.7f;
+            audioSource.volume = 0.5f;
             audioSource.PlayOneShot(deathSound);
             Destroy(transform.GetComponent<Collider>());
             animator.SetTrigger("Die");
