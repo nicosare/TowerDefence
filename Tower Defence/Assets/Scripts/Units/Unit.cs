@@ -36,6 +36,7 @@ public abstract class Unit : MonoBehaviour
     protected AudioSource audioSource;
     [SerializeField] protected AudioClip soundInstallation;
     [SerializeField] protected AudioClip soundUpLevel;
+    [SerializeField] protected AudioClip soundSellUnit;
 
     protected List<Enemy> targets;
     protected Enemy target;
@@ -108,25 +109,32 @@ public abstract class Unit : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         if (gameObject.name.Contains("Stone Wall"))
-        {
-            StartCoroutine(PlaySoundWallInstallation());
-        }
+            StartCoroutine(PlaySoundRepeatInstallation(3, 0.3f));
+        else if (gameObject.name.Contains("Trap"))
+            StartCoroutine(PlaySoundRepeatInstallation(9, 0.1f));
         else
             audioSource.PlayOneShot(soundInstallation);
     }
 
-    IEnumerator PlaySoundWallInstallation()
+    IEnumerator PlaySoundRepeatInstallation(int countRepeatSound, float deltaTime)
     {
-        var countSound = 3;
-        while (countSound > 0)
+        while (countRepeatSound > 0)
         {
             audioSource.PlayOneShot(soundInstallation);
-            countSound--;
-            yield return new WaitForSeconds(0.3f);
+            countRepeatSound--;
+            yield return new WaitForSeconds(deltaTime);
         }
     }
+
     public void SellUnit()
     {
+        StartCoroutine(PlaySoundSellUnit());
+    }
+
+    IEnumerator PlaySoundSellUnit()
+    {
+        audioSource.PlayOneShot(soundSellUnit);
+        yield return new WaitForSeconds(0.25f);
         EconomicModel.Instance.IncreaseCountCoin(SellPrice);
         transform.parent.GetComponent<Place>().isFree = true;
         Destroy(gameObject);

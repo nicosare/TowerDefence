@@ -14790,6 +14790,7 @@ MonoBehaviour:
   stunTime: 1
   endingParticles: {fileID: 7160273414342320028}
   areaParticles: {fileID: 5050804551557853311}
+  soundDamage: {fileID: 8300000, guid: b66e06b2f3f120043bdfe6bb10ccff6e, type: 3}
   soundLandingBullet: {fileID: 8300000, guid: 5fd5d385fc8473141b17d77e89cf3805, type: 3}
 --- !u!135 &990816880067395959
 SphereCollider:

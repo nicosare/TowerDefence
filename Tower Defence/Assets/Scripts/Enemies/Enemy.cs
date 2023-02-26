@@ -39,7 +39,7 @@ public abstract class Enemy : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        audioSource.volume = 0.1f;
+        audioSource.volume = 0.2f;
         var wayPoints = transform.parent.GetChild(0);
         way = new Queue<Vector3>();
         foreach (Transform point in wayPoints)

@@ -13,9 +13,12 @@ public class MainCastle : MonoBehaviour, IHealth
     [SerializeField] private int cooldownTime;
     public WindowsController windowsController;
     private UltimateBullet ultimateBullet;
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip hurtSound;
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         ultimateBullet = FactionsManager.Instance.ChoosenFaction.UltimateBullet;
         PrintHealthInUI();
     }
@@ -29,6 +32,7 @@ public class MainCastle : MonoBehaviour, IHealth
 
     public void GetDamage(int damage)
     {
+        audioSource.PlayOneShot(hurtSound);
         StartCoroutine(Counting(damage));
     }
 
