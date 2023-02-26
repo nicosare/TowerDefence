@@ -54,9 +54,11 @@ public class RoadUnit : Unit, IHealth
     {
         health -= damage;
         healthBar.value = health;
+        audioSource.volume = 0.2f;
         audioSource.PlayOneShot(soundDamage);
         if (health <= 0)
         {
+            audioSource.volume = 1f;
             audioSource.PlayOneShot(soundDeath);
             if (animator == null)
                 Die();

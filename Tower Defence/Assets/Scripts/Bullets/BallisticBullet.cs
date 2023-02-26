@@ -14,6 +14,7 @@ public class BallisticBullet : Bullet
     private Vector3 targetPosition;
     private AudioSource audioSource;
     [SerializeField] private AudioClip soundLandingBullet;
+    [SerializeField] private AudioClip soundDamage;
 
     private void Start()
     {
@@ -54,7 +55,10 @@ public class BallisticBullet : Bullet
         if (isHitting)
         {
             audioSource.PlayOneShot(soundLandingBullet);
-            StartCoroutine(HittingAround());
+            if (gameObject.name.Contains("Poison"))
+                StartCoroutine(HittingAround(audioSource, soundDamage));
+            else
+                StartCoroutine(HittingAround());
         }
     }
 

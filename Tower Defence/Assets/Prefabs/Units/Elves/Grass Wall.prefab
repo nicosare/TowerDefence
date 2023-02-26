@@ -816,12 +816,13 @@ MonoBehaviour:
   isPiercingAttack: 1
   soundInstallation: {fileID: 8300000, guid: 079bbd49f0b351a4bb492465ac2fb204, type: 3}
   soundUpLevel: {fileID: 8300000, guid: d7cef6909b71bda45905c69d5abbe605, type: 3}
+  soundSellUnit: {fileID: 8300000, guid: b75244d18b2734d4bb96f26c46222f5d, type: 3}
   canAttack: 0
   upgradeStar: {fileID: 0}
   isWall: 1
   health: 100
   healthBar: {fileID: 4225388113473841727}
-  soundDeath: {fileID: 8300000, guid: a543f9409a0408349a27a2668c0a05d4, type: 3}
+  soundDeath: {fileID: 8300000, guid: ecc1abbac982fd54c9a0b687c08f7632, type: 3}
   soundDamage: {fileID: 8300000, guid: e1a9d504c761b6c46815f98e5bfc4976, type: 3}
 --- !u!65 &6150514722654142863
 BoxCollider:

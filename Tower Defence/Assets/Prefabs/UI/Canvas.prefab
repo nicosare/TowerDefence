@@ -1375,6 +1375,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2612089876035880393}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8296306755208453272
 GameObject:
   m_ObjectHideFlags: 0
@@ -1694,7 +1706,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 5843595205185452679, guid: e7a1c0e90ec02cb409a39aa183c1bf59, type: 2}
-  m_audioClip: {fileID: 8300000, guid: ce266b26d0d9fc84a8e9562c588b1e2e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6bf0adcbd95cc0a48ad6a009122c6ef0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3668,11 +3680,31 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3860993352830351075, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860993352830351075, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: -288466647, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
+    - target: {fileID: 3860993352830351075, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
+      propertyPath: m_SpriteState.m_DisabledSprite
+      value: 
+      objectReference: {fileID: -992854334, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
+    - target: {fileID: 3860993352830351075, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: -928314992, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
+    - target: {fileID: 3860993352830351075, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3860993352830351075, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860993352830351075, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3860993352830351075, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
@@ -3680,7 +3712,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2612089876035880393}
     - target: {fileID: 3860993352830351075, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2063188220567988102}
+    - target: {fileID: 3860993352830351075, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860993352830351075, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3860993352830351075, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
@@ -3688,11 +3728,23 @@ PrefabInstance:
       value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 3860993352830351075, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ChangeVolumeMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860993352830351075, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.AudioSource, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3860993352830351075, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SoundButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860993352830351075, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3860993352830351075, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3708,6 +3760,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8296306755556192434 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3860993352830351073, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
+  m_PrefabInstance: {fileID: 5095655812387391059}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2063188220567988102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296306755556192434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 100bd811bc21d23438630edff415d735, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mixer: {fileID: 24300002, guid: e7a1c0e90ec02cb409a39aa183c1bf59, type: 2}
+  SoundGameOn: {fileID: -894986013, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
+  SoundGameOff: {fileID: -992854334, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
 --- !u!114 &8296306755932359322 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3860993352032111817, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
