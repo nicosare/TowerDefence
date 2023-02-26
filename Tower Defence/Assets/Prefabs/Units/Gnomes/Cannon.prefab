@@ -5212,6 +5212,8 @@ MonoBehaviour:
   nameUnit: "\u041F\u0443\u0448\u043A\u0430"
   damage: 10
   buyPrice: 20
+  description: 
+  Type: 1
   isRoadUnit: 0
   attackSpeed: 0.2
   reloadTime: 0.01

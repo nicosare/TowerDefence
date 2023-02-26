@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class RoadUnit : Unit, IHealth
 {
-    [SerializeField] protected int health;
+    public int health;
     [SerializeField] private Slider healthBar;
     [SerializeField] private AudioClip soundDeath;
     [SerializeField] private AudioClip soundDamage;

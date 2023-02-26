@@ -12,6 +12,17 @@ public abstract class Unit : MonoBehaviour
     [SerializeField] private string nameUnit;
     [SerializeField] private int damage;
     [SerializeField] private int buyPrice;
+    [SerializeField] private string description;
+    public enum TypeUnit
+    {
+        Melee,
+        Ranged,
+        Wall,
+        Trap,
+        Magician
+    };
+    public TypeUnit Type;
+    protected abstract void Attack();
     [SerializeField] private bool isRoadUnit;
     [Range(0.1f, 100)]
     public float attackSpeed;
@@ -27,14 +38,12 @@ public abstract class Unit : MonoBehaviour
     [SerializeField] protected AudioClip soundUpLevel;
     [SerializeField] protected AudioClip soundSellUnit;
 
-    protected abstract void Attack();
-
     protected List<Enemy> targets;
     protected Enemy target;
     [SerializeField] protected bool canAttack = true;
     [SerializeField] private GameObject upgradeStar;
     private Transform starsField;
-    [SerializeField] protected bool isWall;
+    [SerializeField] protected bool noRotating;
 
     public bool IsMaxLevel { get => levelUnit == maxLevelUnit; }
     public int BuyPrice { get => buyPrice; }
@@ -43,6 +52,7 @@ public abstract class Unit : MonoBehaviour
     public int Damage { get => damage; private set => damage = value; }
     public string NameUnit { get => nameUnit; }
     public bool IsRoadUnit { get => isRoadUnit; }
+    public string Description { get => description; }
 
     private int upgradePrice;
     private int sellPrice;
@@ -175,7 +185,7 @@ public abstract class Unit : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (!isWall)
+        if (!noRotating)
             Rotating();
     }
 

@@ -608,6 +608,8 @@ MonoBehaviour:
   nameUnit: "\u0413\u043E\u0431\u043B\u0438\u043D \u043B\u0443\u0447\u043D\u0438\u043A"
   damage: 2
   buyPrice: 20
+  description: 
+  Type: 1
   isRoadUnit: 0
   attackSpeed: 50
   reloadTime: 0.01

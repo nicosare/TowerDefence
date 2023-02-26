@@ -5,6 +5,9 @@ using UnityEngine;
 public class Trap : RoadUnit
 {
     private bool isWaitSecond = false;
+    [SerializeField] protected bool isStunning;
+    [Range(1, 3)]
+    [SerializeField] protected int stunTime;
 
     private void LateUpdate()
     {
@@ -24,7 +27,20 @@ public class Trap : RoadUnit
     {
         animator.SetTrigger("Attack");
         foreach (var target in targets)
+        {
             target.GetDamage(Damage, isPiercingAttack);
+            if (isStunning)
+            {
+                StartCoroutine(StunAnim(stunTime));
+                target.StopMove(stunTime);
+            }
+        }
+    }
+
+    private IEnumerator StunAnim(int stunTime)
+    {
+        yield return new WaitForSeconds(stunTime);
+        animator.SetTrigger("EndAttack");
     }
 }
 

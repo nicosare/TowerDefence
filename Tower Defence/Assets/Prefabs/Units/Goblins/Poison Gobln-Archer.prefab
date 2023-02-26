@@ -609,6 +609,8 @@ MonoBehaviour:
     \u043B\u0443\u0447\u043D\u0438\u043A"
   damage: 2
   buyPrice: 20
+  description: 
+  Type: 1
   isRoadUnit: 0
   attackSpeed: 50
   reloadTime: 2

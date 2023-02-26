@@ -8,6 +8,7 @@ public class Faction : ScriptableObject
 {
     public Sprite IconFaction;
     public string NameFaction;
+    public string DescriptionFaction;
     public List<Unit> Units;
     public UltimateBullet UltimateBullet;
     public Color MainColor;
