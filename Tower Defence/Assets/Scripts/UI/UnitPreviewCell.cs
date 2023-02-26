@@ -36,6 +36,8 @@ public class UnitPreviewCell : MonoBehaviour
                 return "Ближний бой";
             case TypeUnit.Wall:
                 return "Стена";
+            case TypeUnit.Trap:
+                return "Ловушка";
             case TypeUnit.Ranged:
                 return "Дальний бой";
             case TypeUnit.Magician:

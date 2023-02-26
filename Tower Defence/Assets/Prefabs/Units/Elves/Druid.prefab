@@ -577,7 +577,7 @@ MonoBehaviour:
   damage: 2
   buyPrice: 20
   description: 
-  Type: 3
+  Type: 4
   isRoadUnit: 0
   attackSpeed: 50
   reloadTime: 2
