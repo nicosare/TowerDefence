@@ -10,10 +10,17 @@ public class BackgroundMusicController : MonoBehaviour
     [SerializeField] private AudioClip fightMusic;
     private string[] nameCurrentScene;
     private bool isFirstLaunch;
+    public static BackgroundMusicController Instance;
 
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        if (Instance != null && Instance != this)
+            Destroy(gameObject);
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
         audioSource = GetComponent<AudioSource>();
         SceneManager.activeSceneChanged += ChangePlayedMusic;
         audioSource.clip = menuMusic;

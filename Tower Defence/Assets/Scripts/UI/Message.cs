@@ -11,18 +11,14 @@ public class Message : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
+        if (Instance != null && Instance != this)
+            Destroy(gameObject);
+        else
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
-        else if (Instance == this)
-        {
-            Destroy(gameObject);
-        }
-
-        DontDestroyOnLoad(gameObject);
         messageText.gameObject.SetActive(false);
-
     }
 
     public void LoadMessage(string message, float seconds = 1)
