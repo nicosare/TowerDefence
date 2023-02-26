@@ -824,8 +824,8 @@ MonoBehaviour:
   noRotating: 1
   health: 100
   healthBar: {fileID: 4225388113473841727}
-  soundDeath: {fileID: 8300000, guid: ecc1abbac982fd54c9a0b687c08f7632, type: 3}
-  soundGetDamage: {fileID: 8300000, guid: e1a9d504c761b6c46815f98e5bfc4976, type: 3}
+  soundDeath: {fileID: 8300000, guid: e1a9d504c761b6c46815f98e5bfc4976, type: 3}
+  soundGetDamage: {fileID: 8300000, guid: b66e06b2f3f120043bdfe6bb10ccff6e, type: 3}
 --- !u!65 &6150514722654142863
 BoxCollider:
   m_ObjectHideFlags: 0
