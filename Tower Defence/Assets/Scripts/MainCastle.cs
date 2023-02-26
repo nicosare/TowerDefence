@@ -15,6 +15,7 @@ public class MainCastle : MonoBehaviour, IHealth
     private UltimateBullet ultimateBullet;
     private AudioSource audioSource;
     [SerializeField] private AudioClip hurtSound;
+    public SoundButton sound;
 
     private void Start()
     {
@@ -26,6 +27,7 @@ public class MainCastle : MonoBehaviour, IHealth
 
     public void Die()
     {
+        sound.ChangeSoundsEffect();
         Time.timeScale = 0;
         windowsController.SetActiveDefeatMenu(true);
     }

@@ -11,6 +11,7 @@ public class ButtonsManager : MonoBehaviour
     private float timeScaleBeforePause;
     public Sprite BoostGameOn;
     public Sprite BoostGameOff;
+    public SoundButton sound;
 
     public WindowsController windowsController;
 
@@ -21,6 +22,7 @@ public class ButtonsManager : MonoBehaviour
 
     public void GoToNextLevelScene()
     {
+        sound.ChangeSoundsEffect();
         var nameActiveSceneWithHerNumber = SceneManager.GetActiveScene().name.Split("_");
         var nameNextLevel = string.Format("{0}_{1}", nameActiveSceneWithHerNumber[0], int.Parse(nameActiveSceneWithHerNumber[1]) + 1);
         GoToScene(nameNextLevel);
@@ -28,12 +30,14 @@ public class ButtonsManager : MonoBehaviour
 
     public void GoToMainMenuScene()
     {
+        sound.ChangeSoundsEffect();
         var nameMainMenuScene = "StartMenu";
         GoToScene(nameMainMenuScene);
     }
 
     public void Restart()
     {
+        sound.ChangeSoundsEffect();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1;
     }
@@ -64,6 +68,7 @@ public class ButtonsManager : MonoBehaviour
 
     public void PauseGame()
     {
+        sound.ChangeSoundsEffect();
         timeScaleBeforePause = Time.timeScale;
         Time.timeScale = 0;
         windowsController.SetActivePauseMenu(true);
@@ -71,6 +76,7 @@ public class ButtonsManager : MonoBehaviour
 
     public void PlayGame()
     {
+        sound.ChangeSoundsEffect();
         Time.timeScale = timeScaleBeforePause;
         windowsController.SetActivePauseMenu(false);
         windowsController.SetInactiveAllWindows();

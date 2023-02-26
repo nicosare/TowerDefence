@@ -25,6 +25,7 @@ public class WaveSpawnManager : MonoBehaviour
     private bool isWin;
 
     public WindowsController windowsController;
+    public SoundButton sound;
 
     private void Awake()
     {
@@ -54,6 +55,7 @@ public class WaveSpawnManager : MonoBehaviour
     {
         if (enemies.Count == enemiesCounter && enemies.All(enemy => enemy.IsDestroyed()))
         {
+            sound.ChangeSoundsEffect();
             isWin = true;
             Time.timeScale = 0;
             windowsController.SetActiveWinMenu(true);
