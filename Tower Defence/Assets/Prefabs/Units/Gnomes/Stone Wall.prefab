@@ -375,7 +375,7 @@ MonoBehaviour:
   health: 100
   healthBar: {fileID: 4225388113473841727}
   soundDeath: {fileID: 8300000, guid: 13982402a7a92564ea2745fe741fd69e, type: 3}
-  soundDamage: {fileID: 8300000, guid: c85f4101e43fe0043b9f7f09867e6c1c, type: 3}
+  soundGetDamage: {fileID: 8300000, guid: dd03b0919e9c56d4998c2ea015651da2, type: 3}
 --- !u!65 &6150514722654142863
 BoxCollider:
   m_ObjectHideFlags: 0
