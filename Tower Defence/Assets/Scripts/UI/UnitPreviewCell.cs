@@ -21,7 +21,7 @@ public class UnitPreviewCell : MonoBehaviour
         if (unit.Damage != 0)
             unitDescription.Append("\r\nХ ”рон: " + unit.Damage);
         if (unit.TryGetComponent(out RoadUnit roadUnit))
-            unitDescription.Append("\r\nХ «доровье: " + roadUnit.health);
+            unitDescription.Append(roadUnit is Trap ? "\r\nХ ¬рем€ жизни: " + roadUnit.health : "\r\nХ «доровье: " + roadUnit.health);
         unitDescription.Append("\r\nХ —тоимость: " + unit.BuyPrice);
         unitDescription.Append("\r\nХ ќписание: " + unit.Description);
 
