@@ -5215,16 +5215,16 @@ MonoBehaviour:
   description: 
   Type: 1
   isRoadUnit: 0
-  attackSpeed: 0.2
+  AttackSpeed: 0.5
   reloadTime: 0.01
-  attackRange: 2
+  AttackRange: 2
   isPiercingAttack: 1
   soundInstallation: {fileID: 8300000, guid: 72d637a073e848144a28d0b9425101a9, type: 3}
   soundUpLevel: {fileID: 8300000, guid: d7cef6909b71bda45905c69d5abbe605, type: 3}
   soundSellUnit: {fileID: 8300000, guid: b75244d18b2734d4bb96f26c46222f5d, type: 3}
   canAttack: 1
   upgradeStar: {fileID: 1625490056080182891, guid: 8d4cb0a1e4debea4683498c180a80d65, type: 3}
-  isWall: 0
+  noRotating: 0
   bulletSpeed: 2
   bulletPrefab: {fileID: -3781357432163968571, guid: 96f94e331b34d23408ed2f89eb4a9844, type: 3}
   bulletSpawnPoint: {fileID: 6775937865492800807}

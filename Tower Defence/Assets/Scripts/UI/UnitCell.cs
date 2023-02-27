@@ -43,5 +43,6 @@ public class UnitCell : MonoBehaviour, IPointerDownHandler
     {
         interact.UnitToSpawn = unit;
         Destroy(interact.UnitToPreview);
+        interact.CanClear = false;
     }
 }

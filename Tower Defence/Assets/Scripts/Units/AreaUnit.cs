@@ -45,7 +45,7 @@ public class AreaUnit : Unit
             else
                 foreach (var target in targets)
                     Shoot(target);
-            yield return new WaitForSeconds(1 / attackSpeed);
+            yield return new WaitForSeconds(1 / AttackSpeed);
         }
         animator.speed = 1;
         animator.SetBool("Attack", false);

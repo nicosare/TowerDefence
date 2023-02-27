@@ -25,11 +25,11 @@ public abstract class Unit : MonoBehaviour
     protected abstract void Attack();
     [SerializeField] private bool isRoadUnit;
     [Range(0.1f, 100)]
-    public float attackSpeed;
+    public float AttackSpeed;
     [Range(0.01f, 10)]
     [SerializeField] protected float reloadTime;
     [Range(0, 10)]
-    [SerializeField] protected int attackRange;
+    public int AttackRange;
     [SerializeField] protected bool isPiercingAttack;
     private int levelUnit = 0;
     private int maxLevelUnit = 3;
@@ -60,7 +60,6 @@ public abstract class Unit : MonoBehaviour
     private float upgradePriceCoef = 0.6f;
     private float upgradeCoef = 1.5f;
 
-
     private void Awake()
     {
         target = null;
@@ -71,9 +70,9 @@ public abstract class Unit : MonoBehaviour
     {
         SetPrices();
         starsField = transform.GetChild(1);
-        GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x * 2 * attackRange + 1,
+        GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x * 2 * AttackRange + 1,
                                                        GetComponent<BoxCollider>().size.y,
-                                                       GetComponent<BoxCollider>().size.z * 2 * attackRange + 1);
+                                                       GetComponent<BoxCollider>().size.z * 2 * AttackRange + 1);
     }
 
     public void UpLevel()
@@ -85,7 +84,7 @@ public abstract class Unit : MonoBehaviour
             EconomicModel.Instance.Reduce—ountCoin(UpgradePrice);
             levelUnit++;
             Damage = Mathf.CeilToInt(Damage * upgradeCoef);
-            attackSpeed = attackSpeed * upgradeCoef;
+            AttackSpeed = AttackSpeed * upgradeCoef;
             reloadTime = reloadTime / upgradeCoef;
             SetPrices();
         }
@@ -178,7 +177,7 @@ public abstract class Unit : MonoBehaviour
     {
         canAttack = false;
         Attack();
-        yield return new WaitForSeconds(1 / attackSpeed);
+        yield return new WaitForSeconds(1 / AttackSpeed);
         canAttack = true;
     }
 
