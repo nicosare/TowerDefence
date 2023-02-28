@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: e5b6fe971319235459d089cff424b257, type: 3}
-  nameUnit: "\u041A\u0430\u0442\u0430\u043F\u0443\u043B\u044C\u0442\u0430"
+  nameUnit: "\u042F\u0434\u043E\u0432\u0438\u0442\u0430\u044F \u043A\u0430\u0442\u0430\u043F\u0443\u043B\u044C\u0442\u0430"
   damage: 30
   buyPrice: 50
   description: 
@@ -235,7 +235,7 @@ MonoBehaviour:
   soundSellUnit: {fileID: 8300000, guid: b75244d18b2734d4bb96f26c46222f5d, type: 3}
   canAttack: 1
   upgradeStar: {fileID: 1625490056080182891, guid: 8d4cb0a1e4debea4683498c180a80d65, type: 3}
-  isWall: 0
+  noRotating: 0
   bulletSpeed: 2
   bulletPrefab: {fileID: -3781357432163968571, guid: 08011ead420d0da4ca96c17e8b265745, type: 3}
   bulletSpawnPoint: {fileID: 9189593058783473782}
