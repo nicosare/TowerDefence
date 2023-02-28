@@ -7,6 +7,7 @@ public class WindowsController : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject defeatMenu;
+    [SerializeField] private GameObject BackgroundBlackout;
     [SerializeField] private GameObject winMenu;
     [SerializeField] private Button[] buttonsNeedDisable;
     private AudioSource audioSourceBackground;
@@ -24,12 +25,14 @@ public class WindowsController : MonoBehaviour
     public void SetActivePauseMenu(bool isActive)
     {
         SetActive(pauseMenu, isActive);
+        SetActive(BackgroundBlackout, isActive);
     }
 
     public void SetActiveDefeatMenu(bool isActive)
     {
         audioSourceBackground.volume = 0.1f;
         SetActive(defeatMenu, isActive);
+        SetActive(BackgroundBlackout, isActive);
         audioSource.PlayOneShot(soundLose);
     }
 
@@ -37,12 +40,13 @@ public class WindowsController : MonoBehaviour
     {
         audioSourceBackground.volume = 0.1f;
         SetActive(winMenu, isActive);
+        SetActive(BackgroundBlackout, isActive);
         audioSource.PlayOneShot(soundWin);
     }
 
     public void SetInactiveAllWindows()
     {
-        SetActive(new[] { pauseMenu, defeatMenu, winMenu }, false);
+        SetActive(new[] { pauseMenu, defeatMenu, winMenu, BackgroundBlackout }, false);
     }
 
     private void SetActive(GameObject menu, bool isActive)

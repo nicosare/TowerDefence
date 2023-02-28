@@ -5,12 +5,17 @@ using UnityEngine;
 public class FactionsManager : MonoBehaviour
 {
     public Faction ChoosenFaction;
-    public Faction[] Factions; 
+    public Faction[] Factions;
     public static FactionsManager Instance;
 
     private void Awake()
     {
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
+        if (Instance != null && Instance != this)
+            Destroy(gameObject);
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
 }

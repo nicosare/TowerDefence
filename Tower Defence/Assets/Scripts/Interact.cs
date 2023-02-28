@@ -16,10 +16,11 @@ public class Interact : MonoBehaviour
     public Unit UnitToSpawn;
     [SerializeField] private LayerMask placeLayerMask;
     [SerializeField] private LayerMask UnitLayerMask;
+    [SerializeField] private LayerMask UILayerMask;
     [SerializeField] private Material previewMaterial;
 
     public GameObject UnitToPreview;
-
+    public bool CanClear;
     private void Update()
     {
         Ray();
@@ -66,7 +67,14 @@ public class Interact : MonoBehaviour
             Setunit(UnitToSpawn);
         }
         else
+        {
             previewMaterial.color = new Color(1, 0, 0, .25f);
+            if (CanClear && Input.GetMouseButtonDown(0))
+            {
+                ClearUnitToSet();
+            }
+            CanClear = true;
+        }
     }
 
     public void PreviewUnit(Unit unit)
@@ -96,6 +104,7 @@ public class Interact : MonoBehaviour
     {
         var unit = hit.transform.parent.GetComponent<Unit>();
         UnitOnFieldMenu.Instance.Open(unit);
+        unit.transform.parent.GetComponent<Place>().Preview(unit);
     }
 
     private void Setunit(Unit unit)
@@ -105,23 +114,26 @@ public class Interact : MonoBehaviour
         if (place.isFree)
         {
             previewMaterial.color = new Color(0, 1, 0, .25f);
-            //place.Preview();
+            place.Preview(unit);
 
             if (Input.GetMouseButtonDown(0))
             {
                 unit.BuyUnit();
                 place.SetUnit(unit);
-                UnitToSpawn = null;
-                Destroy(UnitToPreview);
+                ClearUnitToSet();
             }
         }
         else if (Input.GetMouseButtonDown(0))
         {
-            Message.Instance.LoadMessage("Место занято!");
-            UnitToSpawn = null;
-            Destroy(UnitToPreview);
+            ClearUnitToSet();
         }
         else
             previewMaterial.color = new Color(1, 0, 0, .25f);
+    }
+
+    public void ClearUnitToSet()
+    {
+        UnitToSpawn = null;
+        Destroy(UnitToPreview);
     }
 }

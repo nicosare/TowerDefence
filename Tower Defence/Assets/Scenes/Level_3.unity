@@ -14911,6 +14911,9 @@ MonoBehaviour:
   UnitLayerMask:
     serializedVersion: 2
     m_Bits: 256
+  UILayerMask:
+    serializedVersion: 2
+    m_Bits: 32
   previewMaterial: {fileID: 2100000, guid: d8bdc27e2dc65b949957fffed2be9e05, type: 2}
   UnitToPreview: {fileID: 0}
 --- !u!4 &966155068 stripped
@@ -26832,13 +26835,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 284273657}
     - target: {fileID: 8953297834433197010, guid: 3d85cae549ee35d43b1d4bb5fcfc4a79, type: 3}
+      propertyPath: Ways.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953297834433197010, guid: 3d85cae549ee35d43b1d4bb5fcfc4a79, type: 3}
       propertyPath: windowsController
       value: 
       objectReference: {fileID: 284273652}
     - target: {fileID: 8953297834433197010, guid: 3d85cae549ee35d43b1d4bb5fcfc4a79, type: 3}
       propertyPath: Ways.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1070251112}
+    - target: {fileID: 8953297834433197010, guid: 3d85cae549ee35d43b1d4bb5fcfc4a79, type: 3}
+      propertyPath: Ways.Array.data[1]
+      value: 
+      objectReference: {fileID: 497262539}
     - target: {fileID: 8953297834433197010, guid: 3d85cae549ee35d43b1d4bb5fcfc4a79, type: 3}
       propertyPath: UltimateAttackButton
       value: 

@@ -610,9 +610,9 @@ MonoBehaviour:
   description: 
   Type: 3
   isRoadUnit: 1
-  attackSpeed: 0.25
+  AttackSpeed: 0.2
   reloadTime: 0.01
-  attackRange: 0
+  AttackRange: 0
   isPiercingAttack: 1
   soundInstallation: {fileID: 8300000, guid: 23c5358553079be45951413f288b6faa, type: 3}
   soundUpLevel: {fileID: 8300000, guid: d7cef6909b71bda45905c69d5abbe605, type: 3}

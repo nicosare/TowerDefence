@@ -14,6 +14,7 @@ public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler
 
     [SerializeField] private Button sellButton;
     [SerializeField] private Button upgradeButton;
+    public bool isOpened = false;
 
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler
         if (!menu.gameObject.activeSelf)
         {
             menu.gameObject.SetActive(true);
+            isOpened = true;
             transform.position = Input.mousePosition;
             unitOnPlace = unit;
             UpdateMenu();
@@ -35,12 +37,14 @@ public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler
     public void OnPointerExit(PointerEventData eventData)
     {
         menu.gameObject.SetActive(false);
+        isOpened = false;
     }
 
     public void SellUnit()
     {
-        menu.gameObject.SetActive(false);
         unitOnPlace.SellUnit();
+        menu.gameObject.SetActive(false);
+        isOpened = false;
         UpdateMenu();
     }
     private void UpdateMenu()

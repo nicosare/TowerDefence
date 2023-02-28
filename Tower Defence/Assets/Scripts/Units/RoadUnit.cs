@@ -21,7 +21,7 @@ public class RoadUnit : Unit, IHealth
         if (TryGetComponent(out Animator anim))
         {
             animator = anim;
-            animator.SetFloat("Speed", attackSpeed);
+            animator.SetFloat("Speed", AttackSpeed);
         }
     }
 

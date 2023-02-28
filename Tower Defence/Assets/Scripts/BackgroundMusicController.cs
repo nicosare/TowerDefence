@@ -18,14 +18,15 @@ public class BackgroundMusicController : MonoBehaviour
             Destroy(gameObject);
         else
         {
+            isFirstLaunch = true;
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+            audioSource = GetComponent<AudioSource>();
+            SceneManager.activeSceneChanged += ChangePlayedMusic;
+            audioSource.clip = menuMusic;
+            audioSource.Play();
         }
-        audioSource = GetComponent<AudioSource>();
-        SceneManager.activeSceneChanged += ChangePlayedMusic;
-        audioSource.clip = menuMusic;
-        audioSource.Play();
-        isFirstLaunch = true;
     }
 
     private void ChangePlayedMusic(Scene currentScene, Scene nextScene)
@@ -42,6 +43,7 @@ public class BackgroundMusicController : MonoBehaviour
             else if (nameCurrentScene[0] == "Level" && nameNextScene[0] != "Level")
             {
                 audioSource.clip = menuMusic;
+                audioSource.Play();
             }
         }
         else

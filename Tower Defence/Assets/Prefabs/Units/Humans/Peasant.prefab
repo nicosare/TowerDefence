@@ -492,9 +492,9 @@ MonoBehaviour:
     \u0434\u043E\u0440\u043E\u0436\u043D\u044B\u0439 \u044E\u043D\u0438\u0442"
   Type: 0
   isRoadUnit: 1
-  attackSpeed: 1
+  AttackSpeed: 1
   reloadTime: 2
-  attackRange: 0
+  AttackRange: 0
   isPiercingAttack: 1
   soundInstallation: {fileID: 8300000, guid: 72d637a073e848144a28d0b9425101a9, type: 3}
   soundUpLevel: {fileID: 8300000, guid: d7cef6909b71bda45905c69d5abbe605, type: 3}
