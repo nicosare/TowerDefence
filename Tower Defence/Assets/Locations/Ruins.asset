@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa5e587eced82bf48b97f509472f93f9, type: 3}
+  m_Name: Ruins
+  m_EditorClassIdentifier: 
+  LocationName: "\u0420\u0443\u0438\u043D\u044B"
+  BGColor: {r: 0.6, g: 0.3011765, b: 0, a: 1}

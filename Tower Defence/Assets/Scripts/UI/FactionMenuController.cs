@@ -52,8 +52,8 @@ public class FactionMenuController : MonoBehaviour
     {
         ScrollWithWheel();
 
-        if ((contentRect.anchoredPosition.x >= pansPos[0].x
-            || contentRect.anchoredPosition.x <= pansPos[pansPos.Length - 1].x)
+        if ((contentRect.anchoredPosition.y >= pansPos[0].y
+            || contentRect.anchoredPosition.y <= pansPos[pansPos.Length - 1].y)
             && !isScrolling)
             scrollRect.inertia = false;
 

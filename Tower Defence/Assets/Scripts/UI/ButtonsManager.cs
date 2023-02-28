@@ -33,6 +33,7 @@ public class ButtonsManager : MonoBehaviour
         sound.ChangeSoundsEffect();
         var nameMainMenuScene = "StartMenu";
         GoToScene(nameMainMenuScene);
+        Time.timeScale = 1;
     }
 
     public void Restart()

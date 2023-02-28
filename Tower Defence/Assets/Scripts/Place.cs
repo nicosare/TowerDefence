@@ -6,17 +6,14 @@ using UnityEngine.EventSystems;
 public class Place : MonoBehaviour
 {
     public bool isFree;
-    private Transform glow;
     private Transform spawnPoint;
     public Unit UnitOnPlace;
     private Transform unitPreviewOutline;
     private void Awake()
     {
         isFree = true;
-        glow = transform.GetChild(0);
-        glow.gameObject.SetActive(false);
         spawnPoint = transform.GetChild(1).transform;
-        unitPreviewOutline = transform.GetChild(3);
+        unitPreviewOutline = transform.GetChild(0);
         unitPreviewOutline.gameObject.SetActive(false);
     }
 

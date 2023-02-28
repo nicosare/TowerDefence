@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class WaveSpawnManager : MonoBehaviour
@@ -59,6 +60,7 @@ public class WaveSpawnManager : MonoBehaviour
             isWin = true;
             Time.timeScale = 0;
             windowsController.SetActiveWinMenu(true);
+            LevelManager.Instance.UnblockLevel(SceneManager.GetActiveScene());
         }
     }
 
