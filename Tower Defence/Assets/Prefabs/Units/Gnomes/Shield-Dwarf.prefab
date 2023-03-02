@@ -761,7 +761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: f81dfccd75fcaf24db705629c2f9cb12, type: 3}
-  nameUnit: "\u0413\u043D\u043E\u043C \u0449\u0438\u0442\u043E\u0432\u0438\u043A"
+  nameUnit: "\u0413\u043D\u043E\u043C \u0449\u0438\u0442\u043E\u043D\u043E\u0441\u0435\u0446"
   damage: 5
   buyPrice: 5
   description: 

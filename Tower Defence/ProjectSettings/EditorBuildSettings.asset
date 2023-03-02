@@ -44,4 +44,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Winter/Level_10.unity
     guid: af00de0b33127da438be5dd5057bc04c
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 31b16420b47664d478bd0c4635f80d6d, type: 2}
