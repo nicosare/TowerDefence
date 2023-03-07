@@ -43,6 +43,11 @@ public class ButtonsManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void OpenURL(string URL)
+    {
+        Application.OpenURL(URL);
+    }
+
     public void StartPlayAfterChooseUnit()
     {
         if (FactionsManager.Instance.ChoosenFaction != null)
