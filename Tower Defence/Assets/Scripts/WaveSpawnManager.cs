@@ -8,6 +8,7 @@ using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Localization.Settings;
 
 public class WaveSpawnManager : MonoBehaviour
 {
@@ -102,7 +103,10 @@ public class WaveSpawnManager : MonoBehaviour
             timerText.text = i.ToString();
 
             if (i == 0)
-                timerText.text = wavesCounter == waves.Count ? "Финальная волна!" : wavesCounter + "-я волна!";
+                if (LocalizationSettings.Instance.GetSelectedLocale() == LocalizationSettings.AvailableLocales.Locales[0])
+                    timerText.text = wavesCounter == waves.Count ? "Final wave!" : wavesCounter + " wave!";
+                else
+                    timerText.text = wavesCounter == waves.Count ? "Финальная волна!" : wavesCounter + "-я волна!";
             yield return new WaitForSeconds(1);
         }
     }

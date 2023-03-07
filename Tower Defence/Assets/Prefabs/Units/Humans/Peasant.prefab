@@ -485,11 +485,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: 9d05d69afbcd4274f8d75e413df4e4f1, type: 3}
-  nameUnit: "\u041A\u0440\u0435\u0441\u0442\u044C\u044F\u043D\u0438\u043D"
+  nameUnitRu: "\u041A\u0440\u0435\u0441\u0442\u044C\u044F\u043D\u0438\u043D"
+  nameUnitEn: Peasant
   damage: 5
   buyPrice: 5
-  description: "\u0421\u0442\u0430\u043D\u0434\u0430\u0440\u0442\u043D\u044B\u0439
-    \u0434\u043E\u0440\u043E\u0436\u043D\u044B\u0439 \u044E\u043D\u0438\u0442"
+  descriptionRu: "\u041E\u0431\u044B\u0447\u043D\u044B\u0439 \u0434\u0435\u0440\u0435\u0432\u0435\u043D\u0441\u043A\u0438\u0439
+    \u043C\u0443\u0436\u0438\u043A, \u0432\u0437\u044F\u0432\u0448\u0438\u0439 \u0432
+    \u0440\u0443\u043A\u0438 \u0432\u0438\u043B\u044B."
+  descriptionEn: An ordinary village man who picked up a pitchfork.
   Type: 0
   isRoadUnit: 1
   AttackSpeed: 1

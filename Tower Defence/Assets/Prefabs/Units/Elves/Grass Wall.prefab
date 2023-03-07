@@ -806,15 +806,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: 231d87f45851d0a48858fec637a69adc, type: 3}
-  nameUnit: "\u0417\u0430\u0440\u043E\u0441\u043B\u0438"
+  nameUnitRu: "\u0417\u0430\u0440\u043E\u0441\u043B\u0438"
+  nameUnitEn: Thickets
   damage: 0
   buyPrice: 10
-  description: 
+  descriptionRu: "\u0414\u0443\u0445\u0438 \u043B\u0435\u0441\u0430 \u0432\u0441\u0435\u0433\u0434\u0430
+    \u0431\u0443\u0434\u0443\u0442 \u043D\u0430 \u0441\u0442\u043E\u0440\u043E\u043D\u0435
+    \u044D\u043B\u044C\u0444\u043E\u0432, \u043E\u043D\u0438 \u043F\u043E\u043C\u043E\u0433\u0430\u044E\u0442
+    \u0438\u043C, \u0432\u043E\u0437\u0432\u043E\u0434\u044F \u043D\u0435\u043F\u0440\u043E\u0445\u043E\u0434\u0438\u043C\u044B\u0435
+    \u0437\u0430\u0440\u043E\u0441\u043B\u0438."
+  descriptionEn: The spirits of the forest will always be on the side of the elves,
+    they help them by erecting impenetrable thickets.
   Type: 2
   isRoadUnit: 1
-  attackSpeed: 0.1
+  AttackSpeed: 0
   reloadTime: 0
-  attackRange: 0
+  AttackRange: 0
   isPiercingAttack: 1
   soundInstallation: {fileID: 8300000, guid: 079bbd49f0b351a4bb492465ac2fb204, type: 3}
   soundUpLevel: {fileID: 8300000, guid: d7cef6909b71bda45905c69d5abbe605, type: 3}

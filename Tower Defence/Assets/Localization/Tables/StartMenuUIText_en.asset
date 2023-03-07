@@ -18,8 +18,12 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 441812406272
+  - m_Id: 2558311015796736
     m_Localized: Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2559240209321984
+    m_Localized: How to play?
     m_Metadata:
       m_Items: []
   references:

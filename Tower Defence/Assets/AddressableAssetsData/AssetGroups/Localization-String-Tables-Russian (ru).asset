@@ -23,6 +23,24 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-ru
     - Preload
+  - m_GUID: 7205e6dace8bbea42a61da92f1f0a30e
+    m_Address: SelectFactionMenu_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    - Preload
+  - m_GUID: 015fa7bd20fb3d24aa4de97898e03fb1
+    m_Address: SelectLevelMenu_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    - Preload
+  - m_GUID: 021a8df16b215ee4fa399794ffd09a38
+    m_Address: Level_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    - Preload
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: a70df4726841e1441a0d9dcc055d8706, type: 2}
   m_SchemaSet:

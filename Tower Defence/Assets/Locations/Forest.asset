@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa5e587eced82bf48b97f509472f93f9, type: 3}
   m_Name: Forest
   m_EditorClassIdentifier: 
-  LocationName: "\u041B\u0435\u0441"
+  locationNameRu: "\u041B\u0435\u0441"
+  locationNameEn: Forest
   BGColor: {r: 0.041666627, g: 0.5, b: 0, a: 1}

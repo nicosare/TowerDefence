@@ -15,8 +15,12 @@ MonoBehaviour:
   m_TableCollectionName: StartMenuUIText
   m_TableCollectionNameGuidString: e615e3f86d5823143910ece27ead3ee9
   m_Entries:
-  - m_Id: 441812406272
+  - m_Id: 2558311015796736
     m_Key: Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2559240209321984
+    m_Key: How Play
     m_Metadata:
       m_Items: []
   m_Metadata:

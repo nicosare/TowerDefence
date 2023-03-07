@@ -517,10 +517,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: d19e237b10551354d9ab2b10bec38b13, type: 3}
-  nameUnit: "\u0413\u043E\u0431\u043B\u0438\u043D \u043C\u0435\u0447\u043D\u0438\u043A"
+  nameUnitRu: "\u0413\u043E\u0431\u043B\u0438\u043D \u043C\u0435\u0447\u043D\u0438\u043A"
+  nameUnitEn: Goblin swordsman
   damage: 5
   buyPrice: 5
-  description: 
+  descriptionRu: "\u0413\u043E\u0431\u043B\u0438\u043D \u0441 \u043A\u043B\u0438\u043D\u043A\u043E\u043C
+    \u0441 \u0440\u0430\u0434\u043E\u0441\u0442\u044C\u044E \u0432\u0441\u0442\u0430\u043D\u0435\u0442
+    \u043D\u0430 \u043F\u0443\u0442\u0438 \u0432\u0440\u0430\u0433\u043E\u0432 \u0438
+    \u0437\u0430\u0434\u0435\u0440\u0436\u0438\u0442 \u0438\u0445."
+  descriptionEn: A goblin with a blade will gladly stand in the way of enemies and
+    delay them.
   Type: 0
   isRoadUnit: 1
   AttackSpeed: 1

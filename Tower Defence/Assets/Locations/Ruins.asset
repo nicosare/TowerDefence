@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa5e587eced82bf48b97f509472f93f9, type: 3}
   m_Name: Ruins
   m_EditorClassIdentifier: 
-  LocationName: "\u0420\u0443\u0438\u043D\u044B"
+  locationNameRu: "\u0420\u0443\u0438\u043D\u044B"
+  locationNameEn: Ruins
   BGColor: {r: 0.6, g: 0.3011765, b: 0, a: 1}

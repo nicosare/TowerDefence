@@ -25,7 +25,6 @@ public class LevelMenuController : MonoBehaviour
     private GameObject[] instPans;
     private Vector2[] pansPos;
     private Vector2[] pansScale;
-    private Transform[] snapPanels;
 
     private RectTransform contentRect;
     private Vector2 contentVector;

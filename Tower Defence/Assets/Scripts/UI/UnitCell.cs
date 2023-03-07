@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 
 public class UnitCell : MonoBehaviour, IPointerDownHandler
@@ -34,7 +35,10 @@ public class UnitCell : MonoBehaviour, IPointerDownHandler
             OnPointerDown?.Invoke();
         else
         {
-            Message.Instance.LoadMessage("Недостаточно денег!");
+            if (LocalizationSettings.Instance.GetSelectedLocale() == LocalizationSettings.AvailableLocales.Locales[0])
+                Message.Instance.LoadMessage("Not enough money!");
+            else
+                Message.Instance.LoadMessage("Недостаточно денег!");
             interact.UnitToSpawn = null;
         }
     }

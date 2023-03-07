@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 
 public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler
@@ -49,17 +50,35 @@ public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler
     }
     private void UpdateMenu()
     {
-        if (!unitOnPlace.IsMaxLevel)
+        if (LocalizationSettings.Instance.GetSelectedLocale() == LocalizationSettings.AvailableLocales.Locales[1])
         {
-            sellButton.transform.GetChild(0).GetComponent<Text>().text = "Продать (" + unitOnPlace.SellPrice.ToString() + ")";
-            upgradeButton.interactable = true;
-            upgradeButton.transform.GetChild(0).GetComponent<Text>().text = "Улучшить (" + unitOnPlace.UpgradePrice.ToString() + ")";
+            if (!unitOnPlace.IsMaxLevel)
+            {
+                sellButton.transform.GetChild(0).GetComponent<Text>().text = "Продать\n(" + unitOnPlace.SellPrice.ToString() + ")";
+                upgradeButton.interactable = true;
+                upgradeButton.transform.GetChild(0).GetComponent<Text>().text = "Улучшить\n(" + unitOnPlace.UpgradePrice.ToString() + ")";
+            }
+            else
+            {
+                sellButton.transform.GetChild(0).GetComponent<Text>().text = "Продать\n(" + unitOnPlace.SellPrice.ToString() + ")";
+                upgradeButton.interactable = false;
+                upgradeButton.transform.GetChild(0).GetComponent<Text>().text = "Максимальный\nуровень";
+            }    
         }
         else
         {
-            sellButton.transform.GetChild(0).GetComponent<Text>().text = "Продать (" + unitOnPlace.SellPrice.ToString() + ")";
-            upgradeButton.interactable = false;
-            upgradeButton.transform.GetChild(0).GetComponent<Text>().text = "Максимальный \n уровень";
+            if (!unitOnPlace.IsMaxLevel)
+            {
+                sellButton.transform.GetChild(0).GetComponent<Text>().text = "Sell\n(" + unitOnPlace.SellPrice.ToString() + ")";
+                upgradeButton.interactable = true;
+                upgradeButton.transform.GetChild(0).GetComponent<Text>().text = "Up\n(" + unitOnPlace.UpgradePrice.ToString() + ")";
+            }
+            else
+            {
+                sellButton.transform.GetChild(0).GetComponent<Text>().text = "Sell\n(" + unitOnPlace.SellPrice.ToString() + ")";
+                upgradeButton.interactable = false;
+                upgradeButton.transform.GetChild(0).GetComponent<Text>().text = "Max\nlevel";
+            }
         }
     }
     public void UpgradeUnit()

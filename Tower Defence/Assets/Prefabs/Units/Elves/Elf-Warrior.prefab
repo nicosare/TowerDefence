@@ -354,10 +354,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: 783794eac8f7ec346baf82917926590c, type: 3}
-  nameUnit: "\u042D\u043B\u044C\u0444 \u043C\u0435\u0447\u043D\u0438\u043A"
+  nameUnitRu: "\u042D\u043B\u044C\u0444 \u043C\u0435\u0447\u043D\u0438\u043A"
+  nameUnitEn: Elf swordsman
   damage: 5
   buyPrice: 5
-  description: 
+  descriptionRu: "\u042D\u043B\u044C\u0444 \u0441 \u043C\u0435\u0447\u043E\u043C
+    \u043D\u0435 \u0442\u0430\u043A \u0445\u043E\u0440\u043E\u0448, \u043A\u0430\u043A
+    \u0441 \u043B\u0443\u043A\u043E\u043C, \u043D\u043E \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C\u0441\u044F
+    \u0438\u043C \u0443\u043C\u0435\u0435\u0442."
+  descriptionEn: An elf with a sword is not as good as with a bow, but he can use
+    it.
   Type: 0
   isRoadUnit: 1
   AttackSpeed: 1

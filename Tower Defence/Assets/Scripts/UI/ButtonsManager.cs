@@ -48,14 +48,6 @@ public class ButtonsManager : MonoBehaviour
         Application.OpenURL(URL);
     }
 
-    public void StartPlayAfterChooseUnit()
-    {
-        if (FactionsManager.Instance.ChoosenFaction != null)
-            SceneManager.LoadScene("Level4");
-        else
-            Message.Instance.LoadMessage("Выбери фракцию!");
-    }
-
     public void BoostGame()
     {
         if (!isBoostGame)

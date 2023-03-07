@@ -21,6 +21,18 @@ MonoBehaviour:
     m_Address: Assets/Localization/Tables/StartMenuUIText Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
+  - m_GUID: 9c17427c2bcdef04881d6052975b1d3c
+    m_Address: Assets/Localization/Tables/SelectFactionMenu Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: c3b068cb1c421354cb3e74e3c4e1f81e
+    m_Address: Assets/Localization/Tables/SelectLevelMenu Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: fe7a1fa7f01a0ff47a687cfbc7cc4e98
+    m_Address: Assets/Localization/Tables/Level Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: a70df4726841e1441a0d9dcc055d8706, type: 2}
   m_SchemaSet:

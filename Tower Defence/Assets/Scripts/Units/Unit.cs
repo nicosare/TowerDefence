@@ -5,14 +5,17 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 using static UnityEngine.UI.CanvasScaler;
+using UnityEngine.Localization.Settings;
 
 public abstract class Unit : MonoBehaviour
 {
     public Sprite Icon;
-    [SerializeField] private string nameUnit;
+    [SerializeField] private string nameUnitRu;
+    [SerializeField] private string nameUnitEn;
     [SerializeField] private int damage;
     [SerializeField] private int buyPrice;
-    [SerializeField] private string description;
+    [SerializeField] private string descriptionRu;
+    [SerializeField] private string descriptionEn;
     public enum TypeUnit
     {
         Melee,
@@ -50,9 +53,9 @@ public abstract class Unit : MonoBehaviour
     public int UpgradePrice { get => upgradePrice; private set => upgradePrice = value; }
     public int SellPrice { get => sellPrice; private set => sellPrice = value; }
     public int Damage { get => damage; private set => damage = value; }
-    public string NameUnit { get => nameUnit; }
+    public string NameUnit { get => LocalizationSettings.Instance.GetSelectedLocale() == LocalizationSettings.AvailableLocales.Locales[0] ? nameUnitEn : nameUnitRu; }
     public bool IsRoadUnit { get => isRoadUnit; }
-    public string Description { get => description; }
+    public string Description { get => LocalizationSettings.Instance.GetSelectedLocale() == LocalizationSettings.AvailableLocales.Locales[0] ? descriptionEn : descriptionRu; }
 
     private int upgradePrice;
     private int sellPrice;
@@ -89,7 +92,12 @@ public abstract class Unit : MonoBehaviour
             SetPrices();
         }
         else
-            Message.Instance.LoadMessage("Недостаточно денег!");
+        {
+            if (LocalizationSettings.Instance.GetSelectedLocale() == LocalizationSettings.AvailableLocales.Locales[0])
+                Message.Instance.LoadMessage("Not enough money!");
+            else
+                Message.Instance.LoadMessage("Недостаточно денег!");
+        }
     }
 
     private void SetPrices()

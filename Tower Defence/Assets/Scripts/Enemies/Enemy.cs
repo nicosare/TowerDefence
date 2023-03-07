@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 using static UnityEditor.PlayerSettings;
 using static UnityEngine.GraphicsBuffer;
@@ -66,7 +67,12 @@ public abstract class Enemy : MonoBehaviour
             healthBar.value = health;
         }
         else
-            Message.Instance.LoadMessage("Броня не пробита");
+        {
+            if (LocalizationSettings.Instance.GetSelectedLocale() == LocalizationSettings.AvailableLocales.Locales[0])
+                Message.Instance.LoadMessage("Armor is not pierced");
+            else
+                Message.Instance.LoadMessage("Броня не пробита");
+        }
         if (health <= 0)
         {
             audioSource.volume = 0.5f;

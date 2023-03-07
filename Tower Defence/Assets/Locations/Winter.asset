@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa5e587eced82bf48b97f509472f93f9, type: 3}
   m_Name: Winter
   m_EditorClassIdentifier: 
-  LocationName: "\u0417\u0438\u043C\u0430"
+  locationNameRu: "\u0417\u0438\u043C\u0430"
+  locationNameEn: Winter
   BGColor: {r: 0.53999996, g: 0.7799999, b: 0.9, a: 1}
