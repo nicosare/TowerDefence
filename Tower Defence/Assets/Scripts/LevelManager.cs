@@ -12,7 +12,6 @@ public class LevelManager : MonoBehaviour
     public Location[] Locations;
 
     public List<Button> buttons;
-    public List<int> UnblockedLevels;
 
     private void Awake()
     {
@@ -28,20 +27,13 @@ public class LevelManager : MonoBehaviour
 
     public void UpdateButtons()
     {
+        var unblockedLevels = Progress.Instance.GetUnblockedLevelsByNameFraction(FactionsManager.Instance.ChoosenFaction.NameFaction);
         for (int i = 0; i < buttons.Count; i++)
         {
             buttons[i].GetComponent<Button>().onClick.AddListener(ChooseLevel);
-            
-            //if (i == 0 || UnblockedLevels.Contains(i))
-            //{
-            //    buttons[i].interactable = true;
-            //    buttons[i].transform.GetChild(0).gameObject.SetActive(true);
-            //}
-            //else
-            //{
-            //    buttons[i].interactable = false;
-            //    buttons[i].transform.GetChild(0).gameObject.SetActive(false);
-            //}
+
+            buttons[i].interactable = unblockedLevels[i];
+            buttons[i].transform.GetChild(0).gameObject.SetActive(unblockedLevels[i]);
         }
     }
     private void ChooseLevel()
@@ -53,7 +45,6 @@ public class LevelManager : MonoBehaviour
     public void UnblockLevel(Scene scene)
     {
         var levelIndex = int.Parse(scene.name.Split('_')[1]);
-        if (!UnblockedLevels.Contains(levelIndex))
-            UnblockedLevels.Add(levelIndex);
+        Progress.Instance.UnblockLevelByNameFraction(FactionsManager.Instance.ChoosenFaction.NameFaction, levelIndex);
     }
 }
