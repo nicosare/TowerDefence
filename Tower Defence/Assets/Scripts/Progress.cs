@@ -132,4 +132,28 @@ public class Progress : MonoBehaviour
             }
         }
     }
+
+    public bool CheckBanFractionByName(string nameFraction)
+    {
+        switch (nameFraction)
+        {
+            case "Люди":
+                return !UnblockedHumans;
+            case "Humans":
+                return !UnblockedHumans;
+            case "Эльфы":
+                return !UnblockedElves;
+            case "Elves":
+                return !UnblockedElves;
+            case "Гномы":
+                return !UnblockedGnomes;
+            case "Dwarves":
+                return !UnblockedGnomes;
+            case "Гоблины":
+                return !UnblockedGoblins;
+            case "Goblins":
+                return !UnblockedGoblins;
+        }
+        throw new System.Exception("incorrent nameFraction");
+    }
 }

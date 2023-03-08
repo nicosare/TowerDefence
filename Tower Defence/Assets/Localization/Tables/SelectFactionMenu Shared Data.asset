@@ -27,6 +27,10 @@ MonoBehaviour:
     m_Key: Faction description
     m_Metadata:
       m_Items: []
+  - m_Id: 477743126040576
+    m_Key: This fraction is not available
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
