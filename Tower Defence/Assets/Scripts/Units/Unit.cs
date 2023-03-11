@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using static UnityEngine.UI.CanvasScaler;
 using UnityEngine.Localization.Settings;
+using UnityEngine.SceneManagement;
 
 public abstract class Unit : MonoBehaviour
 {
@@ -90,6 +91,9 @@ public abstract class Unit : MonoBehaviour
             AttackSpeed = AttackSpeed * upgradeCoef;
             reloadTime = reloadTime / upgradeCoef;
             SetPrices();
+
+            if (IsMaxLevel)
+                isPiercingAttack = true;
         }
         else
         {
@@ -110,6 +114,9 @@ public abstract class Unit : MonoBehaviour
     {
         if (EconomicModel.Instance.countCoins >= BuyPrice)
             EconomicModel.Instance.Reduce—ountCoin(BuyPrice);
+
+        if (SceneManager.GetActiveScene().name == "HowToPlayLevel")
+            FindObjectOfType<HowToPlayLevelManager>().NextSlideWithUnitCell();
     }
 
     public void PlaySoundInstallation()
@@ -151,6 +158,11 @@ public abstract class Unit : MonoBehaviour
     {
         if (canAttack && target != null)
             StartCoroutine(Attacking());
+        if (SceneManager.GetActiveScene().name == "HowToPlayLevel")
+        {
+            if (target == null)
+                FindObjectOfType<HowToPlayLevelManager>().NextSlideWithEnemyIsGone();
+        }
 
     }
 

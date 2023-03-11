@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class Place : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class Place : MonoBehaviour
         UnitOnPlace = newUnit.GetComponent<Unit>();
         UnitOnPlace.PlaySoundInstallation();
         isFree = false;
+        if (SceneManager.GetActiveScene().name == "HowToPlayLevel")
+            FindObjectOfType<HowToPlayLevelManager>().NextSlideWithPlace();
     }
 
     public void Preview(Unit unit)

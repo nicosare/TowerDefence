@@ -49,7 +49,7 @@ public class WaveSpawnManager : MonoBehaviour
 
     private void Update()
     {
-        if(!isWin)
+        if (!isWin)
             CheckPlayerWin();
     }
 
@@ -61,7 +61,8 @@ public class WaveSpawnManager : MonoBehaviour
             isWin = true;
             Time.timeScale = 0;
             windowsController.SetActiveWinMenu(true);
-            LevelManager.Instance.UnblockLevel(SceneManager.GetActiveScene());
+            if (SceneManager.GetActiveScene().name != "HowToPlayLevel")
+                LevelManager.Instance.UnblockLevel(SceneManager.GetActiveScene());
         }
     }
 

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.Localization.Settings;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UnitCell : MonoBehaviour, IPointerDownHandler
@@ -48,5 +49,8 @@ public class UnitCell : MonoBehaviour, IPointerDownHandler
         interact.UnitToSpawn = unit;
         Destroy(interact.UnitToPreview);
         interact.CanClear = false;
+
+        if (SceneManager.GetActiveScene().name == "HowToPlayLevel")
+            FindObjectOfType<HowToPlayLevelManager>().NextSlideWithUnitCell();
     }
 }

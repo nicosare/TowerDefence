@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.Localization.Settings;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler
@@ -47,6 +48,8 @@ public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler
         menu.gameObject.SetActive(false);
         isOpened = false;
         UpdateMenu();
+        if (SceneManager.GetActiveScene().name == "HowToPlayLevel")
+            FindObjectOfType<HowToPlayLevelManager>().NextSlideWithSell();
     }
     private void UpdateMenu()
     {
@@ -63,7 +66,7 @@ public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler
                 sellButton.transform.GetChild(0).GetComponent<Text>().text = "Продать\n(" + unitOnPlace.SellPrice.ToString() + ")";
                 upgradeButton.interactable = false;
                 upgradeButton.transform.GetChild(0).GetComponent<Text>().text = "Максимальный\nуровень";
-            }    
+            }
         }
         else
         {
@@ -86,5 +89,7 @@ public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler
         if (!unitOnPlace.IsMaxLevel)
             unitOnPlace.UpLevel();
         UpdateMenu();
+        if (SceneManager.GetActiveScene().name == "HowToPlayLevel")
+            FindObjectOfType<HowToPlayLevelManager>().NextSlideWithUpgrade();
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class UltimateBullet : MonoBehaviour
 {
@@ -52,9 +53,11 @@ public class UltimateBullet : MonoBehaviour
     IEnumerator WaitAndDistroy(int seconds)
     {
         GetComponent<Collider>().enabled = false;
-        if(transform.GetChild(0).name == "Particle System")
+        if (transform.GetChild(0).name == "Particle System")
             transform.GetChild(0).GetComponent<ParticleSystem>().startSize = 0;
         yield return new WaitForSeconds(seconds);
+        if (SceneManager.GetActiveScene().name == "HowToPlayLevel")
+            FindObjectOfType<HowToPlayLevelManager>().NextSlideWithEndUltimate();
         Destroy(gameObject);
     }
 

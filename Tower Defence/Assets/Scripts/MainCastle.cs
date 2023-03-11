@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainCastle : MonoBehaviour, IHealth
@@ -58,6 +59,9 @@ public class MainCastle : MonoBehaviour, IHealth
 
     public void UltimateAttack()
     {
+        if (SceneManager.GetActiveScene().name == "HowToPlayLevel")
+            FindObjectOfType<HowToPlayLevelManager>().NextSlideWithUltimateAttack();
+
         foreach (var way in Ways)
         {
             var bullet = Instantiate(ultimateBullet.gameObject);

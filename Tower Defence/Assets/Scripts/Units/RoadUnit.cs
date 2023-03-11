@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class RoadUnit : Unit, IHealth
@@ -72,6 +73,8 @@ public class RoadUnit : Unit, IHealth
 
     public void Die()
     {
+        if (SceneManager.GetActiveScene().name == "HowToPlayLevel")
+            FindObjectOfType<HowToPlayLevelManager>().NextSlideWithUnitDeath();
         Destroy(gameObject);
         transform.parent.GetComponent<Place>().isFree = true;
     }
