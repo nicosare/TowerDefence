@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -78,6 +79,16 @@ public class ButtonsManager : MonoBehaviour
         Time.timeScale = timeScaleBeforePause;
         windowsController.SetActivePauseMenu(false);
         windowsController.SetInactiveAllWindows();
+    }
+
+    public void ShowMessageAboutBlockFraction()
+    {
+        var textRu = "Данная фракция закрыта, чтобы открыть ее, пройдите за открытую фракцию все уровни или купите желаемую фракцию";
+        var textEn = "This faction is closed, to open it, go through all the levels for the open faction or buy the desired faction";
+        if (LocalizationSettings.Instance.GetSelectedLocale() == LocalizationSettings.AvailableLocales.Locales[0])
+            Message.Instance.LoadMessage(textEn, 5);
+        else
+            Message.Instance.LoadMessage(textRu, 5);
     }
 
 }

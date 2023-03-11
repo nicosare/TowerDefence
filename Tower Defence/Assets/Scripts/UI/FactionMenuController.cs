@@ -23,6 +23,10 @@ public class FactionMenuController : MonoBehaviour
     [SerializeField] private Text description;
     [SerializeField] private Transform unitPreviewPanel;
     [SerializeField] private GameObject unitPreviewCell;
+    [SerializeField] private GameObject startGameButton;
+    [SerializeField] private GameObject BanText;
+    [SerializeField] private GameObject InformationButton;
+    [SerializeField] private GameObject BuyFractionButton;
     private GameObject[] instPans;
     private Vector2[] pansPos;
     private Vector2[] pansScale;
@@ -121,6 +125,7 @@ public class FactionMenuController : MonoBehaviour
     {
         factionsManager.ChoosenFaction = factionsManager.Factions[selectedPanID];
         mainTheme.color = factionsManager.ChoosenFaction.MainColor;
+        BanOrAllowFaction();
         UpdateIndicator();
         UpdateDescription();
     }
@@ -180,5 +185,24 @@ public class FactionMenuController : MonoBehaviour
         isScrolling = scroll;
         if (scroll)
             scrollRect.inertia = true;
+    }
+
+    private void BanOrAllowFaction()
+    {
+        if (Progress.Instance.CheckBanFractionByName(factionsManager.ChoosenFaction.NameFaction))
+        {
+            startGameButton.SetActive(false);
+            BanText.SetActive(true);
+            InformationButton.SetActive(true);
+            BuyFractionButton.SetActive(true);
+        }
+        else
+        {
+            startGameButton.SetActive(true);
+            BanText.SetActive(false);
+            InformationButton.SetActive(false);
+            BuyFractionButton.SetActive(false);
+        }
+
     }
 }
