@@ -90,5 +90,4 @@ public class ButtonsManager : MonoBehaviour
         else
             Message.Instance.LoadMessage(textRu, 5);
     }
-
 }

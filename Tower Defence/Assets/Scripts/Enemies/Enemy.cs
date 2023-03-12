@@ -5,8 +5,6 @@ using System.Drawing;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
-using static UnityEditor.PlayerSettings;
-using static UnityEngine.GraphicsBuffer;
 using Random = UnityEngine.Random;
 
 public abstract class Enemy : MonoBehaviour

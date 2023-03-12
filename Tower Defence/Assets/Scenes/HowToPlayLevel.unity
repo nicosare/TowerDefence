@@ -1865,7 +1865,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.17, y: 0.65}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 12.5, y: 25.000092}
+  m_AnchoredPosition: {x: 12.5, y: 25.000061}
   m_SizeDelta: {x: -25, y: -100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &196403126
@@ -6145,7 +6145,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ce53c339da2860f4b8e4d341b7bdbfef, type: 2}
   - {fileID: 11400000, guid: 3228e6f34c29e52488e88b2935b50d82, type: 2}
   - {fileID: 11400000, guid: ce53c339da2860f4b8e4d341b7bdbfef, type: 2}
-  timeBetweenSpawn: 14
+  timeBetweenSpawn: 15
   startTime: 3
   timerText: {fileID: 2094780800}
   WaveText: {fileID: 939091652}
@@ -13566,7 +13566,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.17, y: 0.65}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 12.5, y: 24.999847}
+  m_AnchoredPosition: {x: 12.5, y: 24.999817}
   m_SizeDelta: {x: -25, y: -100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1383960668
@@ -14245,7 +14245,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.17, y: 0.65}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 12.5, y: 25.000092}
+  m_AnchoredPosition: {x: 12.5, y: 25.000061}
   m_SizeDelta: {x: -25, y: -100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1453727553

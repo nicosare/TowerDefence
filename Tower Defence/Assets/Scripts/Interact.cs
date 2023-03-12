@@ -1,13 +1,4 @@
-using Palmmedia.ReportGenerator.Core.Reporting.Builders.Rendering;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using Unity.Mathematics;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Interact : MonoBehaviour
 {
@@ -22,7 +13,7 @@ public class Interact : MonoBehaviour
 
     public GameObject UnitToPreview;
     public bool CanClear;
-    private void Update()
+    private void LateUpdate()
     {
         Ray();
         Interactive();

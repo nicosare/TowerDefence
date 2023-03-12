@@ -39,9 +39,12 @@ public class FactionMenuController : MonoBehaviour
     private int selectedPanID;
     private bool isScrolling;
     private bool canScrollWithWheel;
+    private int previousPanID;
+
 
     private void Start()
     {
+        previousPanID = -1;
         factionsManager = FactionsManager.Instance;
         panCount = factionsManager.Factions.Length;
         contentRect = GetComponent<RectTransform>();
@@ -55,7 +58,7 @@ public class FactionMenuController : MonoBehaviour
     private void Update()
     {
         ScrollWithWheel();
-
+        
         if ((contentRect.anchoredPosition.y >= pansPos[0].y
             || contentRect.anchoredPosition.y <= pansPos[pansPos.Length - 1].y)
             && !isScrolling)
@@ -70,13 +73,18 @@ public class FactionMenuController : MonoBehaviour
             {
                 nearestPos = distance;
                 selectedPanID = i;
-                UpdateInfo();
             }
 
             var scale = Mathf.Clamp(1 / (distance / panOffset) * scaleOffset, 0.5f, 1f);
             pansScale[i].x = Mathf.SmoothStep(instPans[i].transform.localScale.x, scale + 0.3f, scaleSpeed * Time.fixedDeltaTime);
             pansScale[i].y = Mathf.SmoothStep(instPans[i].transform.localScale.y, scale + 0.3f, scaleSpeed * Time.fixedDeltaTime);
             instPans[i].transform.localScale = pansScale[i];
+        }
+
+        if (selectedPanID != previousPanID)
+        {
+            previousPanID = selectedPanID;
+            UpdateInfo();
         }
 
         var scrollVelocity = Mathf.Abs(scrollRect.velocity.y);

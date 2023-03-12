@@ -10,8 +10,10 @@ public class Place : MonoBehaviour
     private Transform spawnPoint;
     public Unit UnitOnPlace;
     private Transform unitPreviewOutline;
+    private Interact interact;
     private void Awake()
     {
+        interact = FindObjectOfType<Interact>();
         isFree = true;
         spawnPoint = transform.GetChild(1).transform;
         unitPreviewOutline = transform.GetChild(0);
@@ -42,7 +44,7 @@ public class Place : MonoBehaviour
 
     private void Update()
     {
-        if (!UnitOnFieldMenu.Instance.isOpened)
+        if (!UnitOnFieldMenu.Instance.isOpened || (!UnitOnFieldMenu.Instance.isOpened && interact.UnitToPreview == null))
             unitPreviewOutline.gameObject.SetActive(false);
     }
 }

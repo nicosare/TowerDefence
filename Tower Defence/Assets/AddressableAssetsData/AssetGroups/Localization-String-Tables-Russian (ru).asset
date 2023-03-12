@@ -41,6 +41,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-ru
     - Preload
+  - m_GUID: 50d4d3b97489e5544b16dc1fd2692712
+    m_Address: Tutorial_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    - Preload
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: a70df4726841e1441a0d9dcc055d8706, type: 2}
   m_SchemaSet:
