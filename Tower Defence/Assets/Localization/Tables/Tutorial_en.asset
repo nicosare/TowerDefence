@@ -17,7 +17,174 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 8a7c8ec9ab50bac45b15debaa6b23658, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 444347679133696
+    m_Localized: '- Current tower health
+
+
+
+
+
+      - Current coin balance
+
+
+
+
+
+      -
+      Number of completed waves'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 457948682932224
+    m_Localized: (Click to continue)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 458409200734208
+    m_Localized: 'Wow!
+
+      This is your first victory over the enemy!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 459078980751360
+    m_Localized: 'Now we can upgrade our archer.
+
+      Click on a unit on the playing
+      field and buy an upgrade.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 459517998551040
+    m_Localized: Let's upgrade the unit for the next wave.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 460062645702656
+    m_Localized: 'Enemy bosses are immune to normal attacks.
+
+      A unit with
+      the maximum level can break through their defense.
+
+      Time to upgrade
+      your archer to the max!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 461246383149056
+    m_Localized: Game boost button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 461712554872832
+    m_Localized: '
+
+      (disabled in training mode)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 462063622311936
+    m_Localized: Pause button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 462500211609600
+    m_Localized: Mute button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 462764968660992
+    m_Localized: Time to wave start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 463016803061760
+    m_Localized: 'The enemy is coming!
+
+      For defense in the game, there are
+      2 main types of units: melee and ranged.
+
+      Let''s bring an archer to
+      the battlefield to protect our tower from the enemy.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 463440473903104
+    m_Localized: "- Click on the unit icon\r\n\r\n    - Here is its value"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 463710855516160
+    m_Localized: 'Each unit has its own attack radius.
+
+      Set the archer to
+      a free place so that the enemy stays in the affected area for as long as possible.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 464053823754240
+    m_Localized: 'This is not the time to get upset!
+
+      Let''s try to replace
+      the archer with another unit.
+
+      (To do this, click on the archer on the
+      playing field and sell it)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 464474655051776
+    m_Localized: 'Oh!
+
+      It seems the enemy managed to escape from the arrows
+      of our archer!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 464753303638016
+    m_Localized: 'Now let''s buy a swordsman.
+
+      Units of this type can only
+      be placed on the road.
+
+      Great choice to stop the enemy!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 465074448912384
+    m_Localized: 'Melee units cannot be upgraded or sold, but they can always penetrate
+      protected enemies.
+
+      Place the swordsman in the path of the enemy!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 465426090971136
+    m_Localized: 'The new wave is coming!
+
+      Don''t forget that road units don''t
+      have infinite health, and enemies can kill them too.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 465765078814720
+    m_Localized: 'There were too many enemies!
+
+      There must be another way
+      to protect the tower!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 466076916928512
+    m_Localized: 'It''s time for a super attack!
+
+      Click the button below!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 466452609126400
+    m_Localized: 'Wow! All enemies are defeated!
+
+      Remember, the super attack
+      has a cooldown time, and you won''t be able to use it often.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 466905304551424
+    m_Localized: And now it's time to deal with a new wave of enemies on your own!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467345857466368
+    m_Localized: Now you can try to speed up the game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 467690490843136
+    m_Localized: '- Your balance is also replenished for the sold unit.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 468045366710272
+    m_Localized: '- For each enemy you kill, you get coins'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

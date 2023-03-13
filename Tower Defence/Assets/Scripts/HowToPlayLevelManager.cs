@@ -16,6 +16,7 @@ public class HowToPlayLevelManager : MonoBehaviour
     [SerializeField] private List<GameObject> unitCells;
     [SerializeField] private GameObject unitOnFieldMenu;
     [SerializeField] private Button boostButton;
+    [SerializeField] private GameObject clickText;
     private bool canUpdateUnitCells = true;
 
     private void Awake()
@@ -93,6 +94,7 @@ public class HowToPlayLevelManager : MonoBehaviour
 
     private void Update()
     {
+        clickText.SetActive(slides[currentSlideIndex].ShowClickText);
         if (currentSlideIndex < 33)
         {
             boostButton.interactable = false;

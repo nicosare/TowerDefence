@@ -19,6 +19,7 @@ public class Slide : MonoBehaviour
     public int NextTime;
     public bool AfterMessage;
     public bool AfterEnemyGo;
+    public bool ShowClickText;
 
     public void SetParameters()
     {
