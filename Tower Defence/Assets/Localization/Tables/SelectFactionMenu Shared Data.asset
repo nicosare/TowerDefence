@@ -31,6 +31,14 @@ MonoBehaviour:
     m_Key: This fraction is not available
     m_Metadata:
       m_Items: []
+  - m_Id: 2210611004923904
+    m_Key: HowOpen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2215181550575616
+    m_Key: FractionOpenInfo
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -34,6 +34,15 @@ MonoBehaviour:
     m_Localized: This fraction is not available
     m_Metadata:
       m_Items: []
+  - m_Id: 2210611004923904
+    m_Localized: How do I open a faction?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2215181550575616
+    m_Localized: This faction is closed, to open it, go through all the levels for
+      the existing faction or buy the desired faction.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

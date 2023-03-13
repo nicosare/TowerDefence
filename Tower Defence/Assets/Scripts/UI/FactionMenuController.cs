@@ -24,9 +24,8 @@ public class FactionMenuController : MonoBehaviour
     [SerializeField] private Transform unitPreviewPanel;
     [SerializeField] private GameObject unitPreviewCell;
     [SerializeField] private GameObject startGameButton;
-    [SerializeField] private GameObject BanText;
-    [SerializeField] private GameObject InformationButton;
-    [SerializeField] private GameObject BuyFractionButton;
+    [SerializeField] private GameObject infoAndBuyButton;
+
     private GameObject[] instPans;
     private Vector2[] pansPos;
     private Vector2[] pansScale;
@@ -121,6 +120,11 @@ public class FactionMenuController : MonoBehaviour
             instPans[i].GetComponent<Image>().sprite = factionsManager.Factions[i].IconFaction;
             instPans[i].transform.GetChild(0).GetComponent<Text>().text = factionsManager.Factions[i].NameFaction;
 
+            if (Progress.Instance.CheckBanFractionByName(factionsManager.Factions[i].NameFaction))
+                instPans[i].transform.GetChild(1).gameObject.SetActive(true);
+            else
+                instPans[i].transform.GetChild(1).gameObject.SetActive(false);
+
             if (i == 0)
                 continue;
             instPans[i].transform.localPosition = new Vector2(instPans[i].transform.localPosition.x,
@@ -133,7 +137,7 @@ public class FactionMenuController : MonoBehaviour
     {
         factionsManager.ChoosenFaction = factionsManager.Factions[selectedPanID];
         mainTheme.color = factionsManager.ChoosenFaction.MainColor;
-        BanOrAllowFaction();
+        ChangeButtons();
         UpdateIndicator();
         UpdateDescription();
     }
@@ -195,21 +199,17 @@ public class FactionMenuController : MonoBehaviour
             scrollRect.inertia = true;
     }
 
-    private void BanOrAllowFaction()
+    private void ChangeButtons()
     {
         if (Progress.Instance.CheckBanFractionByName(factionsManager.ChoosenFaction.NameFaction))
         {
             startGameButton.SetActive(false);
-            BanText.SetActive(true);
-            InformationButton.SetActive(true);
-            BuyFractionButton.SetActive(true);
+            infoAndBuyButton.SetActive(true);
         }
         else
         {
             startGameButton.SetActive(true);
-            BanText.SetActive(false);
-            InformationButton.SetActive(false);
-            BuyFractionButton.SetActive(false);
+            infoAndBuyButton.SetActive(false);
         }
 
     }

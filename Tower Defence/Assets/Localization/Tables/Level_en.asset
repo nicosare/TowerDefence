@@ -30,6 +30,26 @@ MonoBehaviour:
     m_Localized: You win!
     m_Metadata:
       m_Items: []
+  - m_Id: 2218994340683776
+    m_Localized: Open a faction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2231041518428160
+    m_Localized: Humans
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2231307990949888
+    m_Localized: Elves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2231536626655232
+    m_Localized: Dwarves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2231776201105408
+    m_Localized: Goblins
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

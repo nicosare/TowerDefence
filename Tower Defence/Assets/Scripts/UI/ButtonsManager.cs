@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class ButtonsManager : MonoBehaviour
 {
     public Button BoostGameButton;
+    public GameObject ChooseNextFarction;
     private bool isBoostGame;
     private float timeScaleBeforePause;
     public Sprite BoostGameOn;
@@ -27,6 +28,18 @@ public class ButtonsManager : MonoBehaviour
         var nameActiveSceneWithHerNumber = SceneManager.GetActiveScene().name.Split("_");
         var nameNextLevel = string.Format("{0}_{1}", nameActiveSceneWithHerNumber[0], int.Parse(nameActiveSceneWithHerNumber[1]) + 1);
         GoToScene(nameNextLevel);
+    }
+
+    public void GoToMainMenuWithCkeckIsCompleted()
+    {
+        if (Progress.Instance.CheckIsCompletedFractionByName(FactionsManager.Instance.ChoosenFaction.NameFaction))
+            GoToMainMenuScene();
+        else
+        {
+            Progress.Instance.SetIsCompletedFractionByName(FactionsManager.Instance.ChoosenFaction.NameFaction);
+            ChooseNextFarction.SetActive(true);
+        }
+
     }
 
     public void GoToMainMenuScene()
@@ -79,15 +92,5 @@ public class ButtonsManager : MonoBehaviour
         Time.timeScale = timeScaleBeforePause;
         windowsController.SetActivePauseMenu(false);
         windowsController.SetInactiveAllWindows();
-    }
-
-    public void ShowMessageAboutBlockFraction()
-    {
-        var textRu = "Данная фракция закрыта, чтобы открыть ее, пройдите за открытую фракцию все уровни или купите желаемую фракцию";
-        var textEn = "This faction is closed, to open it, go through all the levels for the open faction or buy the desired faction";
-        if (LocalizationSettings.Instance.GetSelectedLocale() == LocalizationSettings.AvailableLocales.Locales[0])
-            Message.Instance.LoadMessage(textEn, 5);
-        else
-            Message.Instance.LoadMessage(textRu, 5);
     }
 }

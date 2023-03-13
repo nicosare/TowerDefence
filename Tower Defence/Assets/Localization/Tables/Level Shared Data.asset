@@ -27,6 +27,26 @@ MonoBehaviour:
     m_Key: You win!
     m_Metadata:
       m_Items: []
+  - m_Id: 2218994340683776
+    m_Key: OpenFraction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2231041518428160
+    m_Key: Humans
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2231307990949888
+    m_Key: Elves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2231536626655232
+    m_Key: Dwarves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2231776201105408
+    m_Key: Goblins
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

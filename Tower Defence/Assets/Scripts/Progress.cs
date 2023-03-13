@@ -5,18 +5,18 @@ using UnityEngine;
 public class Progress : MonoBehaviour
 {
     public static Progress Instance;
-    public bool[] UnblockedLevelsElves;
-    public bool[] UnblockedLevelsGnomes;
-    public bool[] UnblockedLevelsGoblins;
-    public bool[] UnblockedLevelsHumans;
-    public bool UnblockedHumans = true;
-    public bool UnblockedElves;
-    public bool UnblockedGnomes;
-    public bool UnblockedGoblins;
-    public bool IsComletedHumans;
-    public bool IsComletedElves;
-    public bool IsComletedGnomes;
-    public bool IsComletedGoblins;
+    private bool[] unblockedLevelsElves;
+    private bool[] unblockedLevelsGnomes;
+    private bool[] unblockedLevelsGoblins;
+    private bool[] unblockedLevelsHumans;
+    private bool unblockedHumans = true;
+    private bool unblockedElves;
+    private bool unblockedGnomes;
+    private bool unblockedGoblins;
+    private bool isComletedHumans;
+    private bool isComletedElves;
+    private bool isComletedGnomes;
+    private bool isComletedGoblins;
 
 
     private void Awake()
@@ -29,15 +29,15 @@ public class Progress : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
 
-        UnblockedLevelsElves = new bool[15];
-        UnblockedLevelsGnomes = new bool[15];
-        UnblockedLevelsGoblins = new bool[15];
-        UnblockedLevelsHumans = new bool[15];
+        unblockedLevelsElves = new bool[15];
+        unblockedLevelsGnomes = new bool[15];
+        unblockedLevelsGoblins = new bool[15];
+        unblockedLevelsHumans = new bool[15];
 
-        UnblockedLevelsElves[0] = true;
-        UnblockedLevelsGnomes[0] = true;
-        UnblockedLevelsGoblins[0] = true;
-        UnblockedLevelsHumans[0] = true;
+        unblockedLevelsElves[0] = true;
+        unblockedLevelsGnomes[0] = true;
+        unblockedLevelsGoblins[0] = true;
+        unblockedLevelsHumans[0] = true;
     }
 
 
@@ -46,21 +46,21 @@ public class Progress : MonoBehaviour
         switch (nameFraction)
         {
             case "Люди":
-                return UnblockedLevelsHumans;
+                return unblockedLevelsHumans;
             case "Humans":
-                return UnblockedLevelsHumans;
+                return unblockedLevelsHumans;
             case "Эльфы":
-                return UnblockedLevelsElves;
+                return unblockedLevelsElves;
             case "Elves":
-                return UnblockedLevelsElves;
+                return unblockedLevelsElves;
             case "Гномы":
-                return UnblockedLevelsGnomes;
+                return unblockedLevelsGnomes;
             case "Dwarves":
-                return UnblockedLevelsGnomes;
+                return unblockedLevelsGnomes;
             case "Гоблины":
-                return UnblockedLevelsGoblins;
+                return unblockedLevelsGoblins;
             case "Goblins":
-                return UnblockedLevelsGoblins;
+                return unblockedLevelsGoblins;
         }
         throw new System.Exception("incorrent nameFraction");
     }
@@ -72,60 +72,28 @@ public class Progress : MonoBehaviour
             switch (nameFraction)
             {
                 case "Люди":
-                    UnblockedLevelsHumans[level] = true;
+                    unblockedLevelsHumans[level] = true;
                     break;
                 case "Humans":
-                    UnblockedLevelsHumans[level] = true;
+                    unblockedLevelsHumans[level] = true;
                     break;
                 case "Эльфы":
-                    UnblockedLevelsElves[level] = true;
+                    unblockedLevelsElves[level] = true;
                     break;
                 case "Elves":
-                    UnblockedLevelsElves[level] = true;
+                    unblockedLevelsElves[level] = true;
                     break;
                 case "Гномы":
-                    UnblockedLevelsGnomes[level] = true;
+                    unblockedLevelsGnomes[level] = true;
                     break;
                 case "Dwarves":
-                    UnblockedLevelsGnomes[level] = true;
+                    unblockedLevelsGnomes[level] = true;
                     break;
                 case "Гоблины":
-                    UnblockedLevelsGoblins[level] = true;
+                    unblockedLevelsGoblins[level] = true;
                     break;
                 case "Goblins":
-                    UnblockedLevelsGoblins[level] = true;
-                    break;
-                default:
-                    throw new System.Exception("incorrent nameFraction");
-            }
-        }
-        else
-        {
-            switch (nameFraction)
-            {
-                case "Люди":
-                    IsComletedHumans = true;
-                    break;
-                case "Humans":
-                    IsComletedHumans = true;
-                    break;
-                case "Эльфы":
-                    IsComletedElves = true;
-                    break;
-                case "Elves":
-                    IsComletedElves = true;
-                    break;
-                case "Гномы":
-                    IsComletedGnomes = true;
-                    break;
-                case "Dwarves":
-                    IsComletedGnomes = true;
-                    break;
-                case "Гоблины":
-                    IsComletedGoblins = true;
-                    break;
-                case "Goblins":
-                    IsComletedGoblins = true;
+                    unblockedLevelsGoblins[level] = true;
                     break;
                 default:
                     throw new System.Exception("incorrent nameFraction");
@@ -138,22 +106,110 @@ public class Progress : MonoBehaviour
         switch (nameFraction)
         {
             case "Люди":
-                return !UnblockedHumans;
+                return !unblockedHumans;
             case "Humans":
-                return !UnblockedHumans;
+                return !unblockedHumans;
             case "Эльфы":
-                return !UnblockedElves;
+                return !unblockedElves;
             case "Elves":
-                return !UnblockedElves;
+                return !unblockedElves;
             case "Гномы":
-                return !UnblockedGnomes;
+                return !unblockedGnomes;
             case "Dwarves":
-                return !UnblockedGnomes;
+                return !unblockedGnomes;
             case "Гоблины":
-                return !UnblockedGoblins;
+                return !unblockedGoblins;
             case "Goblins":
-                return !UnblockedGoblins;
+                return !unblockedGoblins;
         }
         throw new System.Exception("incorrent nameFraction");
+    }
+
+    public bool CheckIsCompletedFractionByName(string nameFraction)
+    {
+        switch (nameFraction)
+        {
+            case "Люди":
+                return isComletedHumans;
+            case "Humans":
+                return isComletedHumans;
+            case "Эльфы":
+                return isComletedElves;
+            case "Elves":
+                return isComletedElves;
+            case "Гномы":
+                return isComletedGnomes;
+            case "Dwarves":
+                return isComletedGnomes;
+            case "Гоблины":
+                return isComletedGoblins;
+            case "Goblins":
+                return isComletedGoblins;
+        }
+        throw new System.Exception("incorrent nameFraction");
+    }
+
+    public void UnblockFractionByNameFraction(string nameFraction)
+    {
+        switch (nameFraction)
+        {
+            case "Люди":
+                unblockedHumans = true;
+                break;
+            case "Humans":
+                unblockedHumans = true;
+                break;
+            case "Эльфы":
+                unblockedElves = true;
+                break;
+            case "Elves":
+                unblockedElves = true;
+                break;
+            case "Гномы":
+                unblockedGnomes = true;
+                break;
+            case "Dwarves":
+                unblockedGnomes = true;
+                break;
+            case "Гоблины":
+                unblockedGoblins = true;
+                break;
+            case "Goblins":
+                unblockedGoblins = true;
+                break;
+        }
+    }
+
+    public void SetIsCompletedFractionByName(string nameFraction)
+    {
+        switch (nameFraction)
+        {
+            case "Люди":
+                isComletedHumans = true;
+                break;
+            case "Humans":
+                isComletedHumans = true;
+                break;
+            case "Эльфы":
+                isComletedElves = true;
+                break;
+            case "Elves":
+                isComletedElves = true;
+                break;
+            case "Гномы":
+                isComletedGnomes = true;
+                break;
+            case "Dwarves":
+                isComletedGnomes = true;
+                break;
+            case "Гоблины":
+                isComletedGoblins = true;
+                break;
+            case "Goblins":
+                isComletedGoblins = true;
+                break;
+            default:
+                throw new System.Exception("incorrent nameFraction");
+        }
     }
 }
