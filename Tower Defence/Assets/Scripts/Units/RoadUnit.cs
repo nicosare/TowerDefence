@@ -73,7 +73,7 @@ public class RoadUnit : Unit, IHealth
 
     public void Die()
     {
-        if (SceneManager.GetActiveScene().name == "HowToPlayLevel")
+        if (SceneManager.GetActiveScene().name == "Level_Tutorial")
             FindObjectOfType<HowToPlayLevelManager>().NextSlideWithUnitDeath();
         Destroy(gameObject);
         transform.parent.GetComponent<Place>().isFree = true;

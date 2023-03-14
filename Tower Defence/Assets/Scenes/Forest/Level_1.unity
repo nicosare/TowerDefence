@@ -12305,6 +12305,7 @@ MonoBehaviour:
     m_Bits: 32
   previewMaterial: {fileID: 2100000, guid: d8bdc27e2dc65b949957fffed2be9e05, type: 2}
   UnitToPreview: {fileID: 0}
+  CanClear: 0
 --- !u!4 &964374005 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1180663508862672816, guid: 80d8a0721e518344cba31f4128527aa4, type: 3}

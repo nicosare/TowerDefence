@@ -59,7 +59,7 @@ public class MainCastle : MonoBehaviour, IHealth
 
     public void UltimateAttack()
     {
-        if (SceneManager.GetActiveScene().name == "HowToPlayLevel")
+        if (SceneManager.GetActiveScene().name == "Level_Tutorial")
             FindObjectOfType<HowToPlayLevelManager>().NextSlideWithUltimateAttack();
 
         foreach (var way in Ways)

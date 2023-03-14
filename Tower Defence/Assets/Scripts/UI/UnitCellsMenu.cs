@@ -10,13 +10,13 @@ public class UnitCellsMenu : MonoBehaviour
 
     private void Awake()
     {
-        if (SceneManager.GetActiveScene().name != "HowToPlayLevel")
+        if (SceneManager.GetActiveScene().name != "Level_Tutorial")
             SetCells();
     }
 
     private void Start()
     {
-        if (SceneManager.GetActiveScene().name == "HowToPlayLevel")
+        if (SceneManager.GetActiveScene().name == "Level_Tutorial")
             SetCells();
     }
 

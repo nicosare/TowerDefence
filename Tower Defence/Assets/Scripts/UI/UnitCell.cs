@@ -50,7 +50,7 @@ public class UnitCell : MonoBehaviour, IPointerDownHandler
         Destroy(interact.UnitToPreview);
         interact.CanClear = false;
 
-        if (SceneManager.GetActiveScene().name == "HowToPlayLevel")
+        if (SceneManager.GetActiveScene().name == "Level_Tutorial")
             FindObjectOfType<HowToPlayLevelManager>().NextSlideWithUnitCell();
     }
 }

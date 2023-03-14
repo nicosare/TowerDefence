@@ -1265,7 +1265,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.7}
   m_AnchorMax: {x: 0.15, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -15}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8296306755123007255
@@ -2574,6 +2574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BoostGameButton: {fileID: 8296306755032628968}
+  ChooseNextFarction: {fileID: 0}
   BoostGameOn: {fileID: -2077952571, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
   BoostGameOff: {fileID: -2108197130, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
   sound: {fileID: 2063188220567988102}
@@ -3920,7 +3921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3860993352278374013, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -25
       objectReference: {fileID: 0}
     - target: {fileID: 3860993352278374013, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

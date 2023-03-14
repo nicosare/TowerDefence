@@ -35,12 +35,12 @@ public class BackgroundMusicController : MonoBehaviour
 
         if (!isFirstLaunch)
         {
-            if (nameCurrentScene[0] != "Level" && nameNextScene[0] == "Level")
+            if (nameCurrentScene[0] != "Level" && nameNextScene[0] == "Level" && nameNextScene[1] != "Tutorial")
             {
                 audioSource.clip = fightMusic;
                 audioSource.Play();
             }
-            else if (nameCurrentScene[0] == "Level" && nameNextScene[0] != "Level")
+            else if ((nameCurrentScene[0] == "Level" && nameNextScene[0] != "Level") || (nameCurrentScene[0] == "Level" && nameNextScene[1] == "Tutorial"))
             {
                 audioSource.clip = menuMusic;
                 audioSource.Play();
@@ -57,5 +57,6 @@ public class BackgroundMusicController : MonoBehaviour
             audioSource.clip = menuMusic;
         else
             audioSource.clip = fightMusic;
+        audioSource.Play();
     }
 }

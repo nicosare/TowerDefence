@@ -2783,7 +2783,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: HowToPlayLevel
+          m_StringArgument: Level_Tutorial
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &693078503
@@ -4215,6 +4215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BoostGameButton: {fileID: 0}
+  ChooseNextFarction: {fileID: 0}
   BoostGameOn: {fileID: 0}
   BoostGameOff: {fileID: 0}
   sound: {fileID: 0}
@@ -6396,18 +6397,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a25eb6ac660812469c1cd4078a7a302, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UnblockedLevelsElves: 
-  UnblockedLevelsGnomes: 
-  UnblockedLevelsGoblins: 
-  UnblockedLevelsHumans: 
-  UnblockedHumans: 1
-  UnblockedElves: 0
-  UnblockedGnomes: 0
-  UnblockedGoblins: 0
-  IsComletedHumans: 0
-  IsComletedElves: 0
-  IsComletedGnomes: 0
-  IsComletedGoblins: 0
 --- !u!4 &1815649163
 Transform:
   m_ObjectHideFlags: 0
