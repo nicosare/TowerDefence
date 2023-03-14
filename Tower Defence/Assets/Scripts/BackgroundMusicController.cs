@@ -50,4 +50,12 @@ public class BackgroundMusicController : MonoBehaviour
             isFirstLaunch = false;
         nameCurrentScene = nextScene.name.Split("_");
     }
+
+    public void ChangeMainMusic()
+    {
+        if (audioSource.clip == fightMusic)
+            audioSource.clip = menuMusic;
+        else
+            audioSource.clip = fightMusic;
+    }
 }
