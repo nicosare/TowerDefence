@@ -18,6 +18,8 @@ public class Place : MonoBehaviour
         spawnPoint = transform.GetChild(1).transform;
         unitPreviewOutline = transform.GetChild(0);
         unitPreviewOutline.gameObject.SetActive(false);
+        if (SceneManager.GetActiveScene().name == "Level_Tutorial")
+            isFree = false;
     }
 
     public void SetUnit(Unit unit)
@@ -29,7 +31,7 @@ public class Place : MonoBehaviour
         UnitOnPlace = newUnit.GetComponent<Unit>();
         UnitOnPlace.PlaySoundInstallation();
         isFree = false;
-        if (SceneManager.GetActiveScene().name == "HowToPlayLevel")
+        if (SceneManager.GetActiveScene().name == "Level_Tutorial")
             FindObjectOfType<HowToPlayLevelManager>().NextSlideWithPlace();
     }
 

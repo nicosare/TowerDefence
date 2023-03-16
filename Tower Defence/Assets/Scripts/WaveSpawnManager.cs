@@ -63,7 +63,7 @@ public class WaveSpawnManager : MonoBehaviour
                 windowsController.SetActiveWinMenuWithAchievment(true);
             else
                 windowsController.SetActiveWinMenu(true);
-            if (SceneManager.GetActiveScene().name != "HowToPlayLevel")
+            if (SceneManager.GetActiveScene().name != "Level_Tutorial")
                 LevelManager.Instance.UnblockLevel(SceneManager.GetActiveScene());
         }
     }

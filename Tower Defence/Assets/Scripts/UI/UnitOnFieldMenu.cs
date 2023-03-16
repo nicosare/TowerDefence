@@ -48,7 +48,7 @@ public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler
         menu.gameObject.SetActive(false);
         isOpened = false;
         UpdateMenu();
-        if (SceneManager.GetActiveScene().name == "HowToPlayLevel")
+        if (SceneManager.GetActiveScene().name == "Level_Tutorial")
             FindObjectOfType<HowToPlayLevelManager>().NextSlideWithSell();
     }
     private void UpdateMenu()
@@ -89,7 +89,7 @@ public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler
         if (!unitOnPlace.IsMaxLevel)
             unitOnPlace.UpLevel();
         UpdateMenu();
-        if (SceneManager.GetActiveScene().name == "HowToPlayLevel")
+        if (SceneManager.GetActiveScene().name == "Level_Tutorial")
             FindObjectOfType<HowToPlayLevelManager>().NextSlideWithUpgrade();
     }
 }

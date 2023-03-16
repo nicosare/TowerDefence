@@ -115,7 +115,7 @@ public abstract class Unit : MonoBehaviour
         if (EconomicModel.Instance.countCoins >= BuyPrice)
             EconomicModel.Instance.Reduce—ountCoin(BuyPrice);
 
-        if (SceneManager.GetActiveScene().name == "HowToPlayLevel")
+        if (SceneManager.GetActiveScene().name == "Level_Tutorial")
             FindObjectOfType<HowToPlayLevelManager>().NextSlideWithUnitCell();
     }
 
@@ -158,7 +158,7 @@ public abstract class Unit : MonoBehaviour
     {
         if (canAttack && target != null)
             StartCoroutine(Attacking());
-        if (SceneManager.GetActiveScene().name == "HowToPlayLevel")
+        if (SceneManager.GetActiveScene().name == "Level_Tutorial")
         {
             if (target == null)
                 FindObjectOfType<HowToPlayLevelManager>().NextSlideWithEnemyIsGone();

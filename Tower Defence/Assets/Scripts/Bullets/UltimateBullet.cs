@@ -56,7 +56,7 @@ public class UltimateBullet : MonoBehaviour
         if (transform.GetChild(0).name == "Particle System")
             transform.GetChild(0).GetComponent<ParticleSystem>().startSize = 0;
         yield return new WaitForSeconds(seconds);
-        if (SceneManager.GetActiveScene().name == "HowToPlayLevel")
+        if (SceneManager.GetActiveScene().name == "Level_Tutorial")
             FindObjectOfType<HowToPlayLevelManager>().NextSlideWithEndUltimate();
         Destroy(gameObject);
     }

@@ -17,7 +17,10 @@ public class HowToPlayLevelManager : MonoBehaviour
     [SerializeField] private GameObject unitOnFieldMenu;
     [SerializeField] private Button boostButton;
     [SerializeField] private GameObject clickText;
+    [SerializeField] private GameObject placeArrow;
     private bool canUpdateUnitCells = true;
+    [SerializeField] private Place archerPlace;
+    [SerializeField] private Place swordsmanPlace;
 
     private void Awake()
     {
@@ -44,6 +47,15 @@ public class HowToPlayLevelManager : MonoBehaviour
             slides[currentSlideIndex].gameObject.SetActive(false);
             slides[currentSlideIndex + 1].gameObject.SetActive(true);
             slides[currentSlideIndex + 1].SetParameters();
+            if (currentSlideIndex + 1 == 7)
+                archerPlace.isFree = true;
+            if (currentSlideIndex + 1 == 23)
+                swordsmanPlace.isFree = true;
+            if (currentSlideIndex + 1 == 33)
+            {
+                BackgroundMusicController.Instance.ChangeMainMusic();
+                FindObjectsOfType<Place>().All(place => place.isFree = true);
+            }
             var time = slides[currentSlideIndex + 1].NextTime;
             if (time > 0)
                 StartCoroutine(NextSlideAfterTime(time));
@@ -94,6 +106,20 @@ public class HowToPlayLevelManager : MonoBehaviour
 
     private void Update()
     {
+        if (currentSlideIndex == 7)
+        {
+            placeArrow.SetActive(true);
+            placeArrow.transform.position = new Vector3(-3, 0.5f, -3.25f);
+
+        }
+        else if (currentSlideIndex == 23)
+        {
+            placeArrow.SetActive(true);
+            placeArrow.transform.position = new Vector3(2, 0.5f, -2.25f);
+        }
+        else
+            placeArrow.SetActive(false);
+
         clickText.SetActive(slides[currentSlideIndex].ShowClickText);
         if (currentSlideIndex < 33)
         {
