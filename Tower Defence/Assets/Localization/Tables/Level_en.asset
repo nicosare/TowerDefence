@@ -50,6 +50,10 @@ MonoBehaviour:
     m_Localized: Goblins
     m_Metadata:
       m_Items: []
+  - m_Id: 3315900311625728
+    m_Localized: A new achievement has been obtained!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

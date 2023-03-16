@@ -58,7 +58,11 @@ public class WaveSpawnManager : MonoBehaviour
             sound.ChangeSoundsEffect();
             isWin = true;
             Time.timeScale = 0;
-            windowsController.SetActiveWinMenu(true);
+            if (SceneManager.GetActiveScene().name.Contains("15")
+                && !Progress.Instance.CheckIsCompletedFractionByName(FactionsManager.Instance.ChoosenFaction.name))
+                windowsController.SetActiveWinMenuWithAchievment(true);
+            else
+                windowsController.SetActiveWinMenu(true);
             if (SceneManager.GetActiveScene().name != "HowToPlayLevel")
                 LevelManager.Instance.UnblockLevel(SceneManager.GetActiveScene());
         }

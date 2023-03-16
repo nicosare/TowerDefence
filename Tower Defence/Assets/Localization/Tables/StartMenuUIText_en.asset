@@ -19,11 +19,35 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 2558311015796736
-    m_Localized: Play
+    m_Localized: Achievments
     m_Metadata:
       m_Items: []
   - m_Id: 2559240209321984
     m_Localized: Tutorial
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5111251200860160
+    m_Localized: Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5115314873262080
+    m_Localized: Achievments!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5867949461037056
+    m_Localized: Defender of Humanity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5868406422069248
+    m_Localized: Mountain Guardian
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5870489477013504
+    m_Localized: Lord of Nature
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5871401134153728
+    m_Localized: Chief of the tribe
     m_Metadata:
       m_Items: []
   references:
