@@ -187,7 +187,7 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 7911a2296705061449db903070d3612c, type: 3}
   nameUnitRu: "\u041A\u0430\u043F\u043A\u0430\u043D"
   nameUnitEn: Bear trap
-  damage: 20
+  damage: 50
   buyPrice: 10
   descriptionRu: "\u041E\u0445\u043E\u0442\u0430, \u0442\u043E, \u0447\u0435\u043C
     \u043F\u0440\u043E\u043C\u044B\u0448\u043B\u044F\u044E\u0442 \u0433\u043E\u0431\u043B\u0438\u043D\u044B
@@ -200,7 +200,7 @@ MonoBehaviour:
     stop enemies are a frequent guest on the battlefield.
   Type: 3
   isRoadUnit: 1
-  AttackSpeed: 0.2
+  AttackSpeed: 0.5
   reloadTime: 0.01
   AttackRange: 0
   isPiercingAttack: 1
@@ -210,12 +210,12 @@ MonoBehaviour:
   canAttack: 1
   upgradeStar: {fileID: 0}
   noRotating: 1
-  health: 60
+  health: 5
   healthBar: {fileID: 4225388113473841727}
   soundDeath: {fileID: 0}
   soundGetDamage: {fileID: 0}
   isStunning: 1
-  stunTime: 3
+  stunTime: 1
   soundAttack: {fileID: 8300000, guid: b5fefb5a09b505047a3d515f784e1e71, type: 3}
 --- !u!65 &6150514722654142863
 BoxCollider:

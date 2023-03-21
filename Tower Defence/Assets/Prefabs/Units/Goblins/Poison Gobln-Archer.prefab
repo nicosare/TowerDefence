@@ -608,8 +608,8 @@ MonoBehaviour:
   nameUnitRu: "\u042F\u0434\u043E\u0432\u0438\u0442\u044B\u0439 \u0433\u043E\u0431\u043B\u0438\u043D
     \u043B\u0443\u0447\u043D\u0438\u043A"
   nameUnitEn: Poison goblin archer
-  damage: 2
-  buyPrice: 20
+  damage: 20
+  buyPrice: 30
   descriptionRu: "\u042F\u0434\u043E\u0432\u0438\u0442\u044B\u0435 \u0441\u0442\u0440\u0435\u043B\u044B
     \u043F\u043E\u043C\u043E\u0433\u0430\u044E\u0442 \u0433\u043E\u0431\u043B\u0438\u043D\u0430\u043C
     \u043D\u0438\u0432\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0438\u0445
@@ -618,7 +618,7 @@ MonoBehaviour:
   Type: 1
   isRoadUnit: 0
   AttackSpeed: 2
-  reloadTime: 2
+  reloadTime: 1.5
   AttackRange: 1
   isPiercingAttack: 0
   soundInstallation: {fileID: 8300000, guid: 72d637a073e848144a28d0b9425101a9, type: 3}

@@ -113,12 +113,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 132c4ebaf9191e243a3219980ce518f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 1000
   healthUIText: {fileID: 0}
   UltimateAttackButton: {fileID: 0}
   Ways:
   - {fileID: 0}
-  cooldownTime: 10
+  cooldownTime: 60
   windowsController: {fileID: 0}
   hurtSound: {fileID: 8300000, guid: 6aae3a4210a690043a945b4e96fd3994, type: 3}
   sound: {fileID: 0}

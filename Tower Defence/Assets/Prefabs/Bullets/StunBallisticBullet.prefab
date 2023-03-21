@@ -9830,6 +9830,7 @@ MonoBehaviour:
   endingParticles: {fileID: 8645047846411713862}
   areaParticles: {fileID: 0}
   soundLandingBullet: {fileID: 8300000, guid: c2287cb6255549343bcb9c08fc3441c0, type: 3}
+  soundDamage: {fileID: 0}
 --- !u!135 &990816880067395959
 SphereCollider:
   m_ObjectHideFlags: 0

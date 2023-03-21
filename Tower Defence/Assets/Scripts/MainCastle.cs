@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MainCastle : MonoBehaviour, IHealth
 {
-    [Range(0, 500)]
+    [Range(0, 2000)]
     [SerializeField] private int health;
     [SerializeField] private Text healthUIText;
     [SerializeField] private Button UltimateAttackButton;

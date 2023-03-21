@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,9 +11,9 @@ public class Progress : MonoBehaviour
     private bool[] unblockedLevelsGoblins;
     private bool[] unblockedLevelsHumans;
     private bool unblockedHumans = true;
-    private bool unblockedElves;
-    private bool unblockedGnomes;
-    private bool unblockedGoblins;
+    private bool unblockedElves = true;
+    private bool unblockedGnomes = true;
+    private bool unblockedGoblins = true;
     private bool isComletedHumans;
     private bool isComletedElves;
     private bool isComletedGnomes;
@@ -38,8 +39,22 @@ public class Progress : MonoBehaviour
         unblockedLevelsGnomes[0] = true;
         unblockedLevelsGoblins[0] = true;
         unblockedLevelsHumans[0] = true;
+
+        OpenAllLevelsAllFractions();
+    }
+    private void OpenAllLevelsAllFractions()
+    {
+        OpenAllLevels(unblockedLevelsHumans);
+        OpenAllLevels(unblockedLevelsGoblins);
+        OpenAllLevels(unblockedLevelsElves);
+        OpenAllLevels(unblockedLevelsGnomes);
     }
 
+    private void OpenAllLevels(bool[] fraction)
+    {
+        for (int i = 0; i < fraction.Length; i++)
+            fraction[i] = true;
+    }
 
     public bool[] GetUnblockedLevelsByNameFraction(string nameFraction)
     {

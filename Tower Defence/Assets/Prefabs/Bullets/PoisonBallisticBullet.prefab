@@ -14784,14 +14784,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 485fb16a7b9d2e64aa9ddc8ca06561e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radiusAttack: 2
+  radiusAttack: 3
   hitCount: 3
   isStunning: 0
   stunTime: 1
   endingParticles: {fileID: 7160273414342320028}
   areaParticles: {fileID: 5050804551557853311}
-  soundDamage: {fileID: 8300000, guid: b66e06b2f3f120043bdfe6bb10ccff6e, type: 3}
   soundLandingBullet: {fileID: 8300000, guid: 5fd5d385fc8473141b17d77e89cf3805, type: 3}
+  soundDamage: {fileID: 8300000, guid: b66e06b2f3f120043bdfe6bb10ccff6e, type: 3}
 --- !u!135 &990816880067395959
 SphereCollider:
   m_ObjectHideFlags: 0

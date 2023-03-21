@@ -38,10 +38,10 @@ MonoBehaviour:
     their home, and their most terrible weapon is guns, the roar of which can be
     heard for many kilometers.
   Units:
-  - {fileID: 2587485916891076603, guid: 971d235f0f735fb44a0462ffd7f53b09, type: 3}
-  - {fileID: 2770262205907409550, guid: 9d30581b4a0eb914fbca48370b099662, type: 3}
+  - {fileID: 2417192147633560973, guid: 09f70e6c587b19f438d1acce8fe3f8d5, type: 3}
   - {fileID: 6549081175648220340, guid: 3176e6308fc343643b5695878911044c, type: 3}
   - {fileID: 6549081175648220340, guid: ad4b7eeaee2f85140b9de03fea8aae00, type: 3}
-  - {fileID: 2417192147633560973, guid: 09f70e6c587b19f438d1acce8fe3f8d5, type: 3}
+  - {fileID: 2770262205907409550, guid: 9d30581b4a0eb914fbca48370b099662, type: 3}
+  - {fileID: 2587485916891076603, guid: 971d235f0f735fb44a0462ffd7f53b09, type: 3}
   UltimateBullet: {fileID: 3064311776625512654, guid: 2a916a12a86dd7d4fb121b238ab61b1d, type: 3}
   MainColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

@@ -223,7 +223,7 @@ MonoBehaviour:
   nameUnitRu: "\u042F\u0434\u043E\u0432\u0438\u0442\u0430\u044F \u043A\u0430\u0442\u0430\u043F\u0443\u043B\u044C\u0442\u0430"
   nameUnitEn: Poison catapult
   damage: 30
-  buyPrice: 50
+  buyPrice: 40
   descriptionRu: "\u0427\u0435\u0440\u0442\u0435\u0436\u0438 \u043A\u0430\u0442\u0430\u043F\u0443\u043B\u044C\u0442,
     \u0443\u043A\u0440\u0430\u0434\u0435\u043D\u043D\u044B\u0435 \u0443 \u043B\u044E\u0434\u0435\u0439,
     \u043F\u043E\u043C\u043E\u0433\u0430\u044E\u0442 \u0433\u043E\u0431\u043B\u0438\u043D\u0430\u043C
@@ -237,7 +237,7 @@ MonoBehaviour:
     to the area.
   Type: 1
   isRoadUnit: 0
-  AttackSpeed: 0.5
+  AttackSpeed: 0.3
   reloadTime: 0.01
   AttackRange: 2
   isPiercingAttack: 1
@@ -247,7 +247,7 @@ MonoBehaviour:
   canAttack: 1
   upgradeStar: {fileID: 1625490056080182891, guid: 8d4cb0a1e4debea4683498c180a80d65, type: 3}
   noRotating: 0
-  bulletSpeed: 2
+  bulletSpeed: 8
   bulletPrefab: {fileID: -3781357432163968571, guid: 08011ead420d0da4ca96c17e8b265745, type: 3}
   bulletSpawnPoint: {fileID: 9189593058783473782}
   soundAttack: {fileID: 8300000, guid: e43792d2488f6e947b398c5faadb6f63, type: 3}

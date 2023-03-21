@@ -4879,7 +4879,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1204041139499875529}
-  - component: {fileID: 8202800786305843811}
   m_Layer: 8
   m_Name: weapon_cannon
   m_TagString: Untagged
@@ -4904,19 +4903,6 @@ Transform:
   m_Father: {fileID: 2384772261347970720}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8202800786305843811
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2017135058005583475}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2248821262954241849
 GameObject:
   m_ObjectHideFlags: 0
@@ -5211,8 +5197,8 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 22fc684fb9ec0264d950665a39972749, type: 3}
   nameUnitRu: "\u041F\u0443\u0448\u043A\u0430"
   nameUnitEn: Cannon
-  damage: 10
-  buyPrice: 20
+  damage: 75
+  buyPrice: 0
   descriptionRu: "\u0421\u0442\u0440\u0430\u0448\u043D\u043E\u0435 \u043E\u0440\u0443\u0436\u0438\u0435
     \u0433\u043D\u043E\u043C\u044C\u0435\u0433\u043E \u0440\u043E\u0434\u0430, \u0432\u044B\u0441\u0442\u0440\u0435\u043B\u044B
     \u043A\u043E\u0442\u043E\u0440\u043E\u0433\u043E \u043D\u0430\u043D\u043E\u0441\u044F\u0442
@@ -5222,7 +5208,7 @@ MonoBehaviour:
     to the area.
   Type: 1
   isRoadUnit: 0
-  AttackSpeed: 0.5
+  AttackSpeed: 0.3
   reloadTime: 0.01
   AttackRange: 2
   isPiercingAttack: 1
@@ -5232,7 +5218,7 @@ MonoBehaviour:
   canAttack: 1
   upgradeStar: {fileID: 1625490056080182891, guid: 8d4cb0a1e4debea4683498c180a80d65, type: 3}
   noRotating: 0
-  bulletSpeed: 2
+  bulletSpeed: 8
   bulletPrefab: {fileID: -3781357432163968571, guid: 96f94e331b34d23408ed2f89eb4a9844, type: 3}
   bulletSpawnPoint: {fileID: 6775937865492800807}
   soundAttack: {fileID: 8300000, guid: 83ac4a98c9f25114f8b0e33beda18b46, type: 3}

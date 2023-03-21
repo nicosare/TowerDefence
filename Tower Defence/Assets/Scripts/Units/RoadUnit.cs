@@ -41,7 +41,8 @@ public class RoadUnit : Unit, IHealth
     private IEnumerator Slashing()
     {
         canSlash = false;
-        target.GetDamage(Damage, isPiercingAttack);
+        foreach (var target in targets)
+            target.GetDamage(Damage, isPiercingAttack);
         yield return new WaitForSeconds(reloadTime);
         canSlash = true;
     }

@@ -41,8 +41,8 @@ MonoBehaviour:
   Units:
   - {fileID: 2417192147633560973, guid: e490c376d725a894e9ce2daa4f1e97c1, type: 3}
   - {fileID: 2417192147633560973, guid: d139a3f82cc0f504d87ebc7d5bef1423, type: 3}
-  - {fileID: 6549081175648220340, guid: de7668f0e5affe84c8147eb2d430e19a, type: 3}
   - {fileID: 6549081175648220340, guid: 21f132d83bb66f84da587823cc9aff31, type: 3}
+  - {fileID: 6549081175648220340, guid: de7668f0e5affe84c8147eb2d430e19a, type: 3}
   - {fileID: 2417192147633560973, guid: cae082f87da9e8a4da535afe6ea5ceb3, type: 3}
   UltimateBullet: {fileID: 3064311776625512654, guid: 2b8a2cb5694b722408cd92153aeb2713, type: 3}
   MainColor: {r: 0.8, g: 0.73464054, b: 0.4, a: 1}

@@ -356,8 +356,8 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 783794eac8f7ec346baf82917926590c, type: 3}
   nameUnitRu: "\u042D\u043B\u044C\u0444 \u043C\u0435\u0447\u043D\u0438\u043A"
   nameUnitEn: Elf swordsman
-  damage: 5
-  buyPrice: 5
+  damage: 25
+  buyPrice: 25
   descriptionRu: "\u042D\u043B\u044C\u0444 \u0441 \u043C\u0435\u0447\u043E\u043C
     \u043D\u0435 \u0442\u0430\u043A \u0445\u043E\u0440\u043E\u0448, \u043A\u0430\u043A
     \u0441 \u043B\u0443\u043A\u043E\u043C, \u043D\u043E \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C\u0441\u044F
@@ -366,7 +366,7 @@ MonoBehaviour:
     it.
   Type: 0
   isRoadUnit: 1
-  AttackSpeed: 1
+  AttackSpeed: 2
   reloadTime: 1
   AttackRange: 0
   isPiercingAttack: 1
@@ -376,7 +376,7 @@ MonoBehaviour:
   canAttack: 1
   upgradeStar: {fileID: 0}
   noRotating: 0
-  health: 100
+  health: 300
   healthBar: {fileID: 2426965272496243187}
   soundDeath: {fileID: 8300000, guid: 1c7db48d06152534d8c6d9c172ac4e7c, type: 3}
   soundGetDamage: {fileID: 8300000, guid: 6aae3a4210a690043a945b4e96fd3994, type: 3}

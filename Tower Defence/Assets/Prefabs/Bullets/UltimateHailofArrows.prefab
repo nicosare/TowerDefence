@@ -9687,7 +9687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  damage: 10
+  damage: 100
   isPiercingAttack: 1
   waitSeconds: 1
   RadiusAttack: 1

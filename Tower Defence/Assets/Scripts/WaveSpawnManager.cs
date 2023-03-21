@@ -99,9 +99,10 @@ public class WaveSpawnManager : MonoBehaviour
     {
         for (var i = timer; i >= 0; i--)
         {
-            timerText.text = i.ToString();
+            var intTimer = Mathf.CeilToInt(i);
+            timerText.text = intTimer.ToString();
 
-            if (i == 0)
+            if (intTimer <= 0.5)
                 if (LocalizationSettings.Instance.GetSelectedLocale() == LocalizationSettings.AvailableLocales.Locales[0])
                     timerText.text = wavesCounter == waves.Count ? "Final wave!" : wavesCounter + " wave!";
                 else

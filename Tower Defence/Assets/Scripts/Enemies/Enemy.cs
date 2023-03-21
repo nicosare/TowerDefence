@@ -159,8 +159,21 @@ public abstract class Enemy : MonoBehaviour
         if (Physics.Raycast(ray, out raycastHit, rangeAttack, layerMask))
         {
             canAttack = true;
-            canMove = false;
-            animator.SetBool("CanMove", false);
+            if (name.Contains("Ghost"))
+            {
+                if (raycastHit.collider.name == "End")
+                {
+                    canMove = false; 
+                    animator.SetBool("CanMove", false);
+                }
+                else
+                    canMove = true;
+            }
+            else
+            {
+                canMove = false;
+                animator.SetBool("CanMove", false);
+            }
             attackTarget = raycastHit.collider.gameObject.GetComponent<IHealth>();
         }
         else

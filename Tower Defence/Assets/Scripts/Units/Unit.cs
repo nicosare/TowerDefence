@@ -62,7 +62,7 @@ public abstract class Unit : MonoBehaviour
     private int sellPrice;
     private float sellPriceCoef = 0.5f;
     private float upgradePriceCoef = 0.6f;
-    private float upgradeCoef = 1.5f;
+    private float upgradeCoef = 1.3f;
 
     private void Awake()
     {

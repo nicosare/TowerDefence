@@ -13,5 +13,14 @@ MonoBehaviour:
   m_Name: Boss
   m_EditorClassIdentifier: 
   Enemies:
-  - {fileID: 6222996009916038953, guid: 2e228597689a53746bacd69e109ff5b6, type: 3}
-  TimeBetweenSpawn: 5
+  - {fileID: 2852118012260197534, guid: dfac2f245424ece4c94b151117c2e6b6, type: 3}
+  - {fileID: 2852118012260197534, guid: dfac2f245424ece4c94b151117c2e6b6, type: 3}
+  - {fileID: 2852118012260197534, guid: dfac2f245424ece4c94b151117c2e6b6, type: 3}
+  - {fileID: 2852118012260197534, guid: dfac2f245424ece4c94b151117c2e6b6, type: 3}
+  - {fileID: 2852118012260197534, guid: dfac2f245424ece4c94b151117c2e6b6, type: 3}
+  - {fileID: 2852118012260197534, guid: dfac2f245424ece4c94b151117c2e6b6, type: 3}
+  - {fileID: 2852118012260197534, guid: dfac2f245424ece4c94b151117c2e6b6, type: 3}
+  - {fileID: 2852118012260197534, guid: dfac2f245424ece4c94b151117c2e6b6, type: 3}
+  - {fileID: 2852118012260197534, guid: dfac2f245424ece4c94b151117c2e6b6, type: 3}
+  - {fileID: 2852118012260197534, guid: dfac2f245424ece4c94b151117c2e6b6, type: 3}
+  TimeBetweenSpawn: 1

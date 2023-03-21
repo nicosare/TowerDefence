@@ -5124,6 +5124,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1912016077792204249, guid: e6fb9bca5f20356429125756988930b1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6311362125745682345, guid: e6fb9bca5f20356429125756988930b1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5653,11 +5657,13 @@ MonoBehaviour:
   spawners:
   - {fileID: 597876308}
   waves:
-  - {fileID: 11400000, guid: 8f63c6f945bb5974296a6924ef5a8163, type: 2}
-  - {fileID: 11400000, guid: 18e5c90df9560b94fa598a0834dc4485, type: 2}
-  - {fileID: 11400000, guid: b76b524217cded244b9f468c6a0bac59, type: 2}
-  - {fileID: 11400000, guid: 18e5c90df9560b94fa598a0834dc4485, type: 2}
-  timeBetweenSpawn: 3
+  - {fileID: 11400000, guid: b1276667685b09349bde35603407b11b, type: 2}
+  - {fileID: 11400000, guid: 2a872148bbc5faf499300f71ac0b4b0b, type: 2}
+  - {fileID: 11400000, guid: f722ac73585f0b244bdf6e26b9f50654, type: 2}
+  - {fileID: 11400000, guid: 545c642639aafdd4a8eae92fe3b1b0ed, type: 2}
+  - {fileID: 11400000, guid: 5b8b3616d04a4684c87ca86e505e8dbf, type: 2}
+  - {fileID: 11400000, guid: a63f1eb1741e15648b259364626d81b1, type: 2}
+  timeBetweenSpawn: 15
   startTime: 5
   timerText: {fileID: 743755833}
   WaveText: {fileID: 1130829746}
@@ -11650,6 +11656,7 @@ MonoBehaviour:
     m_Bits: 32
   previewMaterial: {fileID: 2100000, guid: d8bdc27e2dc65b949957fffed2be9e05, type: 2}
   UnitToPreview: {fileID: 0}
+  CanClear: 0
 --- !u!1001 &964473448
 PrefabInstance:
   m_ObjectHideFlags: 0
