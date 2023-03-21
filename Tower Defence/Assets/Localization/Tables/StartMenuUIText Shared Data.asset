@@ -16,11 +16,35 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: e615e3f86d5823143910ece27ead3ee9
   m_Entries:
   - m_Id: 2558311015796736
-    m_Key: Play
+    m_Key: AchievmentPlayer
     m_Metadata:
       m_Items: []
   - m_Id: 2559240209321984
     m_Key: How Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5111251200860160
+    m_Key: PlayGame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5115314873262080
+    m_Key: AchievmentWindow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5867949461037056
+    m_Key: Defender of Humanity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5868406422069248
+    m_Key: Mountain Guardian
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5870489477013504
+    m_Key: LordOfNature
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5871401134153728
+    m_Key: Chief of the tribe
     m_Metadata:
       m_Items: []
   m_Metadata:
