@@ -5099,7 +5099,7 @@ MonoBehaviour:
   descriptionEn: A powerful weapon, the shells of which stun all the wounded enemies.
   Type: 1
   isRoadUnit: 0
-  AttackSpeed: 0.2
+  AttackSpeed: 0.25
   reloadTime: 0.01
   AttackRange: 2
   isPiercingAttack: 1
@@ -5109,7 +5109,7 @@ MonoBehaviour:
   canAttack: 1
   upgradeStar: {fileID: 1625490056080182891, guid: 8d4cb0a1e4debea4683498c180a80d65, type: 3}
   noRotating: 0
-  bulletSpeed: 8
+  bulletSpeed: 6
   bulletPrefab: {fileID: -3781357432163968571, guid: fac1c9075027ef44292fb5142cde0e84, type: 3}
   bulletSpawnPoint: {fileID: 9189593058783473782}
   soundAttack: {fileID: 8300000, guid: e43792d2488f6e947b398c5faadb6f63, type: 3}

@@ -7,11 +7,16 @@ public class StraightBullet : Bullet
 {
     protected override void MoveToTarget()
     {
-        var moveDir = target.position - transform.position;
-        transform.Translate(moveDir.normalized * shootSpeed * Time.deltaTime);
+        if (target != null)
+        {
+            var moveDir = target.position - transform.position;
+            transform.Translate(moveDir.normalized * shootSpeed * Time.deltaTime);
 
-        var rotateDir = Vector3.RotateTowards(transform.GetChild(0).forward, (target.transform.position - transform.GetChild(0).position), 1, 0);
-        transform.GetChild(0).rotation = Quaternion.LookRotation(rotateDir);
+            var rotateDir = Vector3.RotateTowards(transform.GetChild(0).forward, (target.transform.position - transform.GetChild(0).position), 1, 0);
+            transform.GetChild(0).rotation = Quaternion.LookRotation(rotateDir);
+        }
+        else
+            Destroy(gameObject);
     }
 
 

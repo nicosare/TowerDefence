@@ -763,8 +763,8 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: f81dfccd75fcaf24db705629c2f9cb12, type: 3}
   nameUnitRu: "\u0413\u043D\u043E\u043C \u0449\u0438\u0442\u043E\u043D\u043E\u0441\u0435\u0446"
   nameUnitEn: Shield dwarf
-  damage: 40
-  buyPrice: 20
+  damage: 50
+  buyPrice: 25
   descriptionRu: "\u0413\u043D\u043E\u043C, \u0432\u0437\u044F\u0432\u0448\u0438\u0439
     \u043E\u0433\u0440\u043E\u043C\u043D\u044B\u0439 \u0449\u0438\u0442 \u2013 \u044D\u0442\u043E
     \u043E\u0434\u0438\u043D \u0438\u0437 \u0441\u0430\u043C\u044B\u0445 \u0441\u0442\u043E\u0439\u043A\u0438\u0445

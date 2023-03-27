@@ -439,7 +439,7 @@ MonoBehaviour:
   nameUnitRu: "\u042D\u043B\u044C\u0444 \u043B\u0443\u0447\u043D\u0438\u043A"
   nameUnitEn: Elf archer
   damage: 50
-  buyPrice: 40
+  buyPrice: 30
   descriptionRu: "\u0417\u043D\u0430\u043C\u0435\u043D\u0438\u0442\u044B\u0439 \u044D\u043B\u044C\u0444\u0438\u0439\u0441\u043A\u0438\u0439
     \u043B\u0443\u0447\u043D\u0438\u043A, \u043E\u0431 \u044D\u0444\u0444\u0435\u043A\u0442\u0438\u0432\u043D\u043E\u0441\u0442\u0438
     \u043A\u043E\u0442\u043E\u0440\u043E\u0433\u043E \u043D\u0435 \u0437\u0440\u044F
@@ -448,8 +448,8 @@ MonoBehaviour:
     are legends.
   Type: 1
   isRoadUnit: 0
-  AttackSpeed: 10
-  reloadTime: 1
+  AttackSpeed: 1
+  reloadTime: 0.5
   AttackRange: 1
   isPiercingAttack: 0
   soundInstallation: {fileID: 8300000, guid: 72d637a073e848144a28d0b9425101a9, type: 3}

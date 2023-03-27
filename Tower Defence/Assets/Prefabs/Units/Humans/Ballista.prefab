@@ -5091,7 +5091,7 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 840624a1f5ccd8647b078009077af998, type: 3}
   nameUnitRu: "\u0411\u0430\u043B\u043B\u0438\u0441\u0442\u0430"
   nameUnitEn: Ballista
-  damage: 50
+  damage: 75
   buyPrice: 60
   descriptionRu: "\u0411\u0430\u043B\u043B\u0438\u0441\u0442\u0430 \u043E\u0442\u043B\u0438\u0447\u0430\u0435\u0442\u0441\u044F
     \u043E\u0442 \u043B\u0443\u0447\u043D\u0438\u043A\u043E\u0432 \u043E\u0433\u0440\u043E\u043C\u043D\u044B\u043C
@@ -5101,7 +5101,7 @@ MonoBehaviour:
     inferior in rate of fire.
   Type: 1
   isRoadUnit: 0
-  AttackSpeed: 0.5
+  AttackSpeed: 0.25
   reloadTime: 0.01
   AttackRange: 2
   isPiercingAttack: 0

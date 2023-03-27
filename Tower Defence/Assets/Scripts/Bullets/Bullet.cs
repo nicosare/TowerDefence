@@ -14,10 +14,10 @@ public abstract class Bullet : MonoBehaviour
 
     [Range(0.1f, 10)]
     [SerializeField] protected float radiusAttack;
-    [Range(1, 3)]
+    [Range(1, 10)]
     [SerializeField] protected int hitCount;
     [SerializeField] protected bool isStunning;
-    [Range(1, 3)]
+    [Range(1, 10)]
     [SerializeField] protected int stunTime;
 
     [SerializeField] protected ParticleSystem endingParticles;
@@ -34,11 +34,7 @@ public abstract class Bullet : MonoBehaviour
 
     private void Update()
     {
-        if (target != null)
-            MoveToTarget();
-        else
-            Destroy(gameObject);
-
+        MoveToTarget();
     }
 
     protected abstract void Hit();

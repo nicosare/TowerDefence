@@ -11,7 +11,7 @@ public class EconomicModel : MonoBehaviour
 
     private void Start()
     {
-        countCoins = 100;
+        countCoins = 150;
         Instance = this;
         textCountCoin = GameObject.FindGameObjectWithTag("textCountCoint").GetComponent<Text>();
         textCountCoin.text = countCoins.ToString();
@@ -32,7 +32,7 @@ public class EconomicModel : MonoBehaviour
             else
                 textCountCoin.text = (int.Parse(textCountCoin.text) - 1).ToString();
 
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.01f);
         }
     }
 

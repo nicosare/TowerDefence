@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: HTPWave 3
   m_EditorClassIdentifier: 
   Enemies:
-  - {fileID: 2852118012260197534, guid: 60d05ff3cf9130b4daf0c7b36c3344f0, type: 3}
-  TimeBetweenSpawn: 0
+  - {fileID: 2852118012260197534, guid: e1cd308410441894eb8d23b94fae6581, type: 3}
+  TimeBetweenSpawn: 10

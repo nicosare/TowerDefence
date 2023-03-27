@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.17757899, g: 0.22232303, b: 0.30451778, a: 1}
+  m_IndirectSpecularColor: {r: 0.17757879, g: 0.22232285, b: 0.30451733, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6616,7 +6616,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5b8b3616d04a4684c87ca86e505e8dbf, type: 2}
   - {fileID: 11400000, guid: a63f1eb1741e15648b259364626d81b1, type: 2}
   timeBetweenSpawn: 15
-  startTime: 5
+  startTime: 10
   timerText: {fileID: 743755833}
   WaveText: {fileID: 1130829746}
   windowsController: {fileID: 1530097734}

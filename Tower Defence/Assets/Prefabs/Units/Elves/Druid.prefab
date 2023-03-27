@@ -575,7 +575,7 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: edc4b89f57cbbaf42ab8dbf5a7fa5e22, type: 3}
   nameUnitRu: "\u0414\u0440\u0443\u0438\u0434"
   nameUnitEn: Druid
-  damage: 10
+  damage: 50
   buyPrice: 0
   descriptionRu: "\u041C\u043E\u0433\u0443\u0447\u0438\u0435 \u0434\u0440\u0443\u0438\u0434\u044B
     \u0441\u043F\u043E\u0441\u043E\u0431\u043D\u044B\u0435 \u0430\u0442\u0430\u043A\u043E\u0432\u0430\u0442\u044C
@@ -586,7 +586,7 @@ MonoBehaviour:
   AttackSpeed: 50
   reloadTime: 2
   AttackRange: 2
-  isPiercingAttack: 0
+  isPiercingAttack: 1
   soundInstallation: {fileID: 8300000, guid: 72d637a073e848144a28d0b9425101a9, type: 3}
   soundUpLevel: {fileID: 8300000, guid: d7cef6909b71bda45905c69d5abbe605, type: 3}
   soundSellUnit: {fileID: 8300000, guid: b75244d18b2734d4bb96f26c46222f5d, type: 3}
@@ -595,7 +595,7 @@ MonoBehaviour:
   noRotating: 0
   oneTarget: 0
   bulletSpeed: 10
-  bulletCount: 5
+  bulletCount: 1
   bulletPrefab: {fileID: 1152198129349464519, guid: d57f3e99e892a30479c1e4fc978dd00a, type: 3}
   bulletSpawnPoint: {fileID: 4900860544577973810}
   soundAttack: {fileID: 8300000, guid: 7340277aed009c044a718fea50823837, type: 3}

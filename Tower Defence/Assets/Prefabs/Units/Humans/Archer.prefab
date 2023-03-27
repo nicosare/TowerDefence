@@ -459,7 +459,7 @@ MonoBehaviour:
   Type: 1
   isRoadUnit: 0
   AttackSpeed: 1
-  reloadTime: 0.5
+  reloadTime: 1
   AttackRange: 1
   isPiercingAttack: 0
   soundInstallation: {fileID: 8300000, guid: 72d637a073e848144a28d0b9425101a9, type: 3}

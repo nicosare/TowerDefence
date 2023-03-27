@@ -9,8 +9,6 @@ public class BallisticBullet : Bullet
     private Vector3 middlePoint;
     private Vector3 point1;
     private Vector3 point2;
-    private float step;
-
     private Vector3 targetPosition;
     private AudioSource audioSource;
     [SerializeField] private AudioClip soundLandingBullet;
@@ -19,12 +17,10 @@ public class BallisticBullet : Bullet
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        step = shootSpeed * 0.01f;
         targetPosition = target.position;
-        middlePoint = Vector3.Lerp(transform.position, targetPosition, .5f) + 2 * Vector3.up.normalized;
+        middlePoint = Vector3.Lerp(transform.position, targetPosition, .5f) + 3 * Vector3.up.normalized;
         point1 = transform.position;
         point2 = middlePoint;
-        transform.position = point1;
     }
 
     private void RotateModel()
@@ -35,9 +31,9 @@ public class BallisticBullet : Bullet
     protected override void MoveToTarget()
     {
         RotateModel();
-        point1 = Vector3.MoveTowards(point1, middlePoint, step);
-        point2 = Vector3.MoveTowards(point2, targetPosition, step);
-        transform.position = Vector3.MoveTowards(transform.position, point2, step);
+        point1 = Vector3.MoveTowards(point1, middlePoint, shootSpeed * Time.deltaTime);
+        point2 = Vector3.MoveTowards(point2, targetPosition, shootSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, point2, shootSpeed * Time.deltaTime);
 
         if (transform.position == targetPosition)
         {

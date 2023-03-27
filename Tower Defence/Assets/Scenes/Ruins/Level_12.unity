@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.17757899, g: 0.22232303, b: 0.30451778, a: 1}
+  m_IndirectSpecularColor: {r: 0.17757879, g: 0.22232285, b: 0.30451733, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5526,13 +5526,14 @@ MonoBehaviour:
   - {fileID: 597876308}
   - {fileID: 947731791}
   waves:
-  - {fileID: 11400000, guid: 742b1628ab830f747aef1a05014e36ca, type: 2}
-  - {fileID: 11400000, guid: 8f63c6f945bb5974296a6924ef5a8163, type: 2}
-  - {fileID: 11400000, guid: 18e5c90df9560b94fa598a0834dc4485, type: 2}
-  - {fileID: 11400000, guid: b76b524217cded244b9f468c6a0bac59, type: 2}
-  - {fileID: 11400000, guid: 18e5c90df9560b94fa598a0834dc4485, type: 2}
-  timeBetweenSpawn: 3
-  startTime: 5
+  - {fileID: 11400000, guid: 7bc5c6627ffdc854ba63c6a57807d5b0, type: 2}
+  - {fileID: 11400000, guid: 499ce084b31ed054c87fccd8b4ac2b27, type: 2}
+  - {fileID: 11400000, guid: 8f39472740b7fce4694baa2e9448e312, type: 2}
+  - {fileID: 11400000, guid: 25166b216e6601c41ad1b3f9061c3e29, type: 2}
+  - {fileID: 11400000, guid: cd5958d61ae754c4d872e0091bda23be, type: 2}
+  - {fileID: 11400000, guid: 118f61b8be017a04dabc39a1c9fa681d, type: 2}
+  timeBetweenSpawn: 20
+  startTime: 10
   timerText: {fileID: 2094780800}
   WaveText: {fileID: 939091652}
   windowsController: {fileID: 2106366961}

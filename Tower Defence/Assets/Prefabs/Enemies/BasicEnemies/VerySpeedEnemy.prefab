@@ -433,7 +433,7 @@ MonoBehaviour:
   health: 100
   speed: 4
   isArmored: 0
-  coinKill: 20
+  coinKill: 15
   rangeAttack: 0.2
   attackSpeed: 5
   damage: 2

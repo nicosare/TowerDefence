@@ -12,5 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f4d2198647686b46824d65a95a9f5ae, type: 3}
   m_Name: Wave 6
   m_EditorClassIdentifier: 
-  Enemies: []
-  TimeBetweenSpawn: 0
+  Enemies:
+  - {fileID: 2852118012260197534, guid: f8c2529110b98b24daa083f2fba18786, type: 3}
+  - {fileID: 2852118012260197534, guid: 8fcbb6e435cc65d4bab0855b31e04b48, type: 3}
+  - {fileID: 2852118012260197534, guid: aaf38c4257859a444b8ebc8a3af74835, type: 3}
+  - {fileID: 2852118012260197534, guid: dcd89fd039d36a044a41612e00b84512, type: 3}
+  - {fileID: 2852118012260197534, guid: cced208960ae6c448892580c28460247, type: 3}
+  - {fileID: 2852118012260197534, guid: c1d29e4b456726e42b701658e5c7b9bb, type: 3}
+  - {fileID: 2852118012260197534, guid: c1d29e4b456726e42b701658e5c7b9bb, type: 3}
+  - {fileID: 2852118012260197534, guid: c1d29e4b456726e42b701658e5c7b9bb, type: 3}
+  - {fileID: 2852118012260197534, guid: c1d29e4b456726e42b701658e5c7b9bb, type: 3}
+  - {fileID: 2852118012260197534, guid: c1d29e4b456726e42b701658e5c7b9bb, type: 3}
+  TimeBetweenSpawn: 4

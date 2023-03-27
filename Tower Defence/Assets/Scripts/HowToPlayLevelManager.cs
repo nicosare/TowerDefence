@@ -49,9 +49,9 @@ public class HowToPlayLevelManager : MonoBehaviour
             slides[currentSlideIndex + 1].SetParameters();
             if (currentSlideIndex + 1 == 7)
                 archerPlace.isFree = true;
-            if (currentSlideIndex + 1 == 23)
+            if (currentSlideIndex + 1 == 24)
                 swordsmanPlace.isFree = true;
-            if (currentSlideIndex + 1 == 33)
+            if (currentSlideIndex + 1 == 34)
             {
                 BackgroundMusicController.Instance.ChangeMainMusic();
                 FindObjectsOfType<Place>().All(place => place.isFree = true);
@@ -112,7 +112,7 @@ public class HowToPlayLevelManager : MonoBehaviour
             placeArrow.transform.position = new Vector3(-3, 0.5f, -3.25f);
 
         }
-        else if (currentSlideIndex == 23)
+        else if (currentSlideIndex == 24)
         {
             placeArrow.SetActive(true);
             placeArrow.transform.position = new Vector3(2, 0.5f, -2.25f);
@@ -121,14 +121,14 @@ public class HowToPlayLevelManager : MonoBehaviour
             placeArrow.SetActive(false);
 
         clickText.SetActive(slides[currentSlideIndex].ShowClickText);
-        if (currentSlideIndex < 33)
+        if (currentSlideIndex < 34)
         {
             boostButton.interactable = false;
             if (currentSlideIndex != 11 && currentSlideIndex != 14 && currentSlideIndex != 17)
             {
                 unitOnFieldMenu.transform.GetChild(1).GetComponent<Button>().interactable = false;
             }
-            if (currentSlideIndex != 20)
+            if (currentSlideIndex != 21)
                 unitOnFieldMenu.transform.GetChild(0).GetComponent<Button>().interactable = false;
             else
                 unitOnFieldMenu.transform.GetChild(0).GetComponent<Button>().interactable = true;

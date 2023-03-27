@@ -659,7 +659,7 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: b72493b16a296f84a8ba0fa85c6c4294, type: 3}
   nameUnitRu: "\u0428\u0430\u043C\u0430\u043D"
   nameUnitEn: Shaman
-  damage: 5
+  damage: 25
   buyPrice: 0
   descriptionRu: "\u0413\u043E\u0431\u043B\u0438\u043D\u044B, \u043E\u0442\u0434\u0430\u0432\u0448\u0438\u0435
     \u0431\u043E\u043B\u044C\u0448\u0443\u044E \u0447\u0430\u0441\u0442\u044C \u0436\u0438\u0437\u043D\u0438
@@ -676,7 +676,7 @@ MonoBehaviour:
   AttackSpeed: 50
   reloadTime: 2
   AttackRange: 1
-  isPiercingAttack: 0
+  isPiercingAttack: 1
   soundInstallation: {fileID: 8300000, guid: 72d637a073e848144a28d0b9425101a9, type: 3}
   soundUpLevel: {fileID: 8300000, guid: d7cef6909b71bda45905c69d5abbe605, type: 3}
   soundSellUnit: {fileID: 8300000, guid: b75244d18b2734d4bb96f26c46222f5d, type: 3}
@@ -685,7 +685,7 @@ MonoBehaviour:
   noRotating: 0
   oneTarget: 0
   bulletSpeed: 10
-  bulletCount: 5
+  bulletCount: 1
   bulletPrefab: {fileID: 1152198129349464519, guid: 34b567e2758722443b3c82662876a706, type: 3}
   bulletSpawnPoint: {fileID: 4900860544577973810}
   soundAttack: {fileID: 8300000, guid: 1200655a796dcc04abdacb1b9de5a3e4, type: 3}
