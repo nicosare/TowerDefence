@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Wave 1
   m_EditorClassIdentifier: 
   Enemies:
-  - {fileID: 2852118012260197534, guid: 8fcbb6e435cc65d4bab0855b31e04b48, type: 3}
-  - {fileID: 2852118012260197534, guid: 8fcbb6e435cc65d4bab0855b31e04b48, type: 3}
-  - {fileID: 2852118012260197534, guid: 8fcbb6e435cc65d4bab0855b31e04b48, type: 3}
+  - {fileID: 2852118012260197534, guid: f8c2529110b98b24daa083f2fba18786, type: 3}
+  - {fileID: 2852118012260197534, guid: f8c2529110b98b24daa083f2fba18786, type: 3}
+  - {fileID: 2852118012260197534, guid: f8c2529110b98b24daa083f2fba18786, type: 3}
   - {fileID: 2852118012260197534, guid: 8fcbb6e435cc65d4bab0855b31e04b48, type: 3}
   - {fileID: 2852118012260197534, guid: 8fcbb6e435cc65d4bab0855b31e04b48, type: 3}
   TimeBetweenSpawn: 4

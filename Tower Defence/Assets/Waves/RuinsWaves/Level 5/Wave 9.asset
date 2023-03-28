@@ -40,4 +40,4 @@ MonoBehaviour:
   - {fileID: 2852118012260197534, guid: 1366ead1f255b484784a944e5885af6f, type: 3}
   - {fileID: 2852118012260197534, guid: 1366ead1f255b484784a944e5885af6f, type: 3}
   - {fileID: 2852118012260197534, guid: 1366ead1f255b484784a944e5885af6f, type: 3}
-  TimeBetweenSpawn: 5
+  TimeBetweenSpawn: 3

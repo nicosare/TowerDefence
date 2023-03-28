@@ -52,6 +52,5 @@ MonoBehaviour:
   - {fileID: 2417192147633560973, guid: a1445f2f55f4cad438f7d8365ebb928c, type: 3}
   - {fileID: 2587485916891076603, guid: ebe1148999166e54ea78e0b8efa3138c, type: 3}
   - {fileID: 2770262205907409550, guid: 0a51c6889343b4e4c8a0a5fd042a0485, type: 3}
-  - {fileID: 2417192147633560973, guid: dfd3559502a6abe42be96700acd98bc3, type: 3}
   UltimateBullet: {fileID: 3064311776625512654, guid: 20ad42506f75d614788183dc4da068cc, type: 3}
   MainColor: {r: 0.3825, g: 0.45, b: 0.17999998, a: 1}

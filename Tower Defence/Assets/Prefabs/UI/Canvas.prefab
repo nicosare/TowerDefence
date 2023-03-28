@@ -1318,7 +1318,7 @@ GameObject:
   - component: {fileID: 8296306754906475774}
   m_Layer: 5
   m_Name: CountWaveText
-  m_TagString: textCountCoint
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3322,11 +3322,16 @@ MonoBehaviour:
   defeatMenu: {fileID: 8296306755073770036}
   BackgroundBlackout: {fileID: 4750835656891992382}
   winMenu: {fileID: 8296306755825161043}
+  winMenuWithAchievment: {fileID: 0}
   buttonsNeedDisable:
   - {fileID: 8296306755032628968}
   - {fileID: 8296306755932359322}
   soundWin: {fileID: 8300000, guid: d4a454650f5cde344b47e1f9a773dbd2, type: 3}
   soundLose: {fileID: 8300000, guid: c69f249a3c5f4314f9d860dc05dd64a3, type: 3}
+  achievmentHumans: {fileID: 0}
+  achievmentElves: {fileID: 0}
+  achievmentGnomes: {fileID: 0}
+  achievmentGoblins: {fileID: 0}
 --- !u!82 &5888470121358329784
 AudioSource:
   m_ObjectHideFlags: 0
