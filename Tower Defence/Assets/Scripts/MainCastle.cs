@@ -63,10 +63,13 @@ public class MainCastle : MonoBehaviour, IHealth
     {
         for (; damage > 0; damage--)
         {
-            Health -= 1;
-            if (Health <= 0)
-                Die();
-            PrintHealthInUI();
+            if (Health >= 1)
+            {
+                Health -= 1;
+                if (Health == 0)
+                    Die();
+                PrintHealthInUI();
+            }
 
             yield return new WaitForSeconds(0.05f);
         }

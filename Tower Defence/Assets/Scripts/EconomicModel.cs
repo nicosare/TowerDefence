@@ -9,7 +9,7 @@ public class EconomicModel : MonoBehaviour
     public int countCoins { get; private set; }
     private Text textCountCoin;
 
-    private void Start()
+    private void Awake()
     {
         countCoins = 150;
         Instance = this;
