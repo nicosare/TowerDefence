@@ -36,6 +36,7 @@ public class ButtonsManager : MonoBehaviour
             GoToMainMenuScene();
         else
         {
+            sound.ChangeSoundsEffect();
             Time.timeScale = 1;
             Progress.Instance.SetIsCompletedFractionByName(FactionsManager.Instance.ChoosenFaction.NameFaction);
             ChooseNextFarction.SetActive(true);
