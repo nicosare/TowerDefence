@@ -22,4 +22,7 @@ MonoBehaviour:
   - {fileID: 2852118012260197534, guid: de89c5a4162d8214d8d4a11e52ea80ab, type: 3}
   - {fileID: 2852118012260197534, guid: aaf38c4257859a444b8ebc8a3af74835, type: 3}
   - {fileID: 2852118012260197534, guid: dcd89fd039d36a044a41612e00b84512, type: 3}
+  - {fileID: 2852118012260197534, guid: de89c5a4162d8214d8d4a11e52ea80ab, type: 3}
+  - {fileID: 2852118012260197534, guid: aaf38c4257859a444b8ebc8a3af74835, type: 3}
+  - {fileID: 2852118012260197534, guid: dcd89fd039d36a044a41612e00b84512, type: 3}
   TimeBetweenSpawn: 2

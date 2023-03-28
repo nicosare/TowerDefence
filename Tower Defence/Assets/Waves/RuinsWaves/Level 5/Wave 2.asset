@@ -12,5 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f4d2198647686b46824d65a95a9f5ae, type: 3}
   m_Name: Wave 2
   m_EditorClassIdentifier: 
-  Enemies: []
+  Enemies:
+  - {fileID: 2852118012260197534, guid: f8c2529110b98b24daa083f2fba18786, type: 3}
+  - {fileID: 2852118012260197534, guid: f8c2529110b98b24daa083f2fba18786, type: 3}
+  - {fileID: 2852118012260197534, guid: f8c2529110b98b24daa083f2fba18786, type: 3}
+  - {fileID: 2852118012260197534, guid: f8c2529110b98b24daa083f2fba18786, type: 3}
+  - {fileID: 2852118012260197534, guid: f8c2529110b98b24daa083f2fba18786, type: 3}
+  - {fileID: 2852118012260197534, guid: f8c2529110b98b24daa083f2fba18786, type: 3}
+  - {fileID: 2852118012260197534, guid: f8c2529110b98b24daa083f2fba18786, type: 3}
+  - {fileID: 2852118012260197534, guid: f8c2529110b98b24daa083f2fba18786, type: 3}
+  - {fileID: 2852118012260197534, guid: f8c2529110b98b24daa083f2fba18786, type: 3}
+  - {fileID: 2852118012260197534, guid: f8c2529110b98b24daa083f2fba18786, type: 3}
   TimeBetweenSpawn: 0
