@@ -25,13 +25,6 @@ public class Progress : MonoBehaviour
 {
     public static Progress Instance;
     public PlayerInfo PlayerInfo;
-
-    [DllImport("__Internal")]
-    private static extern void SaveExtern(string date);
-
-    [DllImport("__Internal")]
-    private static extern void LoadExtern();
-
     private void Awake()
     {
         if (Instance != null && Instance != this)
