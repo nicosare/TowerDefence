@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Localization.Settings;
+using System.Runtime.InteropServices;
 
 public class WaveSpawnManager : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class WaveSpawnManager : MonoBehaviour
 
     public WindowsController windowsController;
     public SoundButton sound;
+
+    [DllImport("__Internal")]
+    private static extern string ShowAdv();
 
     private void Awake()
     {
@@ -55,6 +59,7 @@ public class WaveSpawnManager : MonoBehaviour
     {
         if (enemies.Count == enemiesCounter && enemies.All(enemy => enemy.IsDestroyed()))
         {
+            ShowAdv();
             sound.ChangeSoundsEffect();
             isWin = true;
             Time.timeScale = 0;
@@ -64,7 +69,10 @@ public class WaveSpawnManager : MonoBehaviour
             else
                 windowsController.SetActiveWinMenu(true);
             if (SceneManager.GetActiveScene().name != "Level_Tutorial")
+            {
                 LevelManager.Instance.UnblockLevel(SceneManager.GetActiveScene());
+                Progress.Instance.Save();
+            }
         }
     }
 

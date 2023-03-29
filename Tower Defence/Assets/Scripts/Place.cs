@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -11,6 +12,10 @@ public class Place : MonoBehaviour
     public Unit UnitOnPlace;
     private Transform unitPreviewOutline;
     private Interact interact;
+
+    [DllImport("__Internal")]
+    private static extern string AddUnitExtern();
+
     private void Awake()
     {
         interact = FindObjectOfType<Interact>();
@@ -24,6 +29,8 @@ public class Place : MonoBehaviour
 
     public void SetUnit(Unit unit)
     {
+        if (unit.BuyPrice == 0)
+            AddUnitExtern();
         var newUnit = Instantiate(unit.gameObject);
 
         newUnit.transform.SetParent(transform);

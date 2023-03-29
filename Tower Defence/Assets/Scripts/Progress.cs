@@ -7,10 +7,10 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerInfo
 {
-    public bool[] unblockedLevelsElves;
-    public bool[] unblockedLevelsGnomes;
-    public bool[] unblockedLevelsGoblins;
-    public bool[] unblockedLevelsHumans;
+    public int CountUnblockedLevelsElves;
+    public int CountUnblockedLevelsGnomes;
+    public int CountUnblockedLevelsGoblins;
+    public int CountUnblockedLevelsHumans;
     public bool unblockedHumans;
     public bool unblockedElves;
     public bool unblockedGnomes;
@@ -23,6 +23,17 @@ public class PlayerInfo
 
 public class Progress : MonoBehaviour
 {
+    private bool[] unblockedLevelsElves = new bool[15];
+    private bool[] unblockedLevelsGnomes = new bool[15];
+    private bool[] unblockedLevelsGoblins = new bool[15];
+    private bool[] unblockedLevelsHumans = new bool[15];
+
+    [DllImport("__Internal")]
+    private static extern void SaveExtern(string data);
+
+    [DllImport("__Internal")]
+    private static extern void LoadExtern();
+
     public static Progress Instance;
     public PlayerInfo PlayerInfo;
     private void Awake()
@@ -33,30 +44,31 @@ public class Progress : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            LoadExtern();
         }
-
-        PlayerInfo.unblockedLevelsElves = new bool[15];
-        PlayerInfo.unblockedLevelsGnomes = new bool[15];
-        PlayerInfo.unblockedLevelsGoblins = new bool[15];
-        PlayerInfo.unblockedLevelsHumans = new bool[15];
-
-        OpenAllLevels(PlayerInfo.unblockedLevelsHumans);
-        OpenAllLevels(PlayerInfo.unblockedLevelsGoblins);
-        OpenAllLevels(PlayerInfo.unblockedLevelsElves);
-        OpenAllLevels(PlayerInfo.unblockedLevelsGnomes);
-
-        PlayerInfo.unblockedLevelsElves[0] = true;
-        PlayerInfo.unblockedLevelsGnomes[0] = true;
-        PlayerInfo.unblockedLevelsGoblins[0] = true;
-        PlayerInfo.unblockedLevelsHumans[0] = true;
-
-        PlayerInfo.unblockedHumans = true;
     }
 
-    private void OpenAllLevels(bool[] fraction)
+    public void SetMinimumProgress()
     {
-        for (int i = 0; i < fraction.Length; i++)
-            fraction[i] = true;
+        if (PlayerInfo.CountUnblockedLevelsHumans == 0)
+        {
+            PlayerInfo.CountUnblockedLevelsHumans = 1;
+            PlayerInfo.CountUnblockedLevelsElves = 1;
+            PlayerInfo.CountUnblockedLevelsGnomes = 1;
+            PlayerInfo.CountUnblockedLevelsGoblins = 1;
+
+            PlayerInfo.unblockedHumans = true;
+        }
+        openLevels(PlayerInfo.CountUnblockedLevelsHumans, unblockedLevelsHumans);
+        openLevels(PlayerInfo.CountUnblockedLevelsElves, unblockedLevelsElves);
+        openLevels(PlayerInfo.CountUnblockedLevelsGnomes, unblockedLevelsGnomes);
+        openLevels(PlayerInfo.CountUnblockedLevelsGoblins, unblockedLevelsGoblins);
+    }
+
+    private void openLevels(int countLevels, bool[] fractionLevels)
+    {
+        for (int i = 0; i < countLevels; i++)
+            fractionLevels[i] = true;
     }
 
     public bool[] GetUnblockedLevelsByNameFraction(string nameFraction)
@@ -64,21 +76,21 @@ public class Progress : MonoBehaviour
         switch (nameFraction)
         {
             case "Люди":
-                return PlayerInfo.unblockedLevelsHumans;
+                return unblockedLevelsHumans;
             case "Humans":
-                return PlayerInfo.unblockedLevelsHumans;
+                return unblockedLevelsHumans;
             case "Эльфы":
-                return PlayerInfo.unblockedLevelsElves;
+                return unblockedLevelsElves;
             case "Elves":
-                return PlayerInfo.unblockedLevelsElves;
+                return unblockedLevelsElves;
             case "Гномы":
-                return PlayerInfo.unblockedLevelsGnomes;
+                return unblockedLevelsGnomes;
             case "Dwarves":
-                return PlayerInfo.unblockedLevelsGnomes;
+                return unblockedLevelsGnomes;
             case "Гоблины":
-                return PlayerInfo.unblockedLevelsGoblins;
+                return unblockedLevelsGoblins;
             case "Goblins":
-                return PlayerInfo.unblockedLevelsGoblins;
+                return unblockedLevelsGoblins;
         }
         throw new System.Exception("incorrent nameFraction");
     }
@@ -90,28 +102,36 @@ public class Progress : MonoBehaviour
             switch (nameFraction)
             {
                 case "Люди":
-                    PlayerInfo.unblockedLevelsHumans[level] = true;
+                    PlayerInfo.CountUnblockedLevelsHumans++;
+                    unblockedLevelsHumans[level] = true;
                     break;
                 case "Humans":
-                    PlayerInfo.unblockedLevelsHumans[level] = true;
+                    PlayerInfo.CountUnblockedLevelsHumans++;
+                    unblockedLevelsHumans[level] = true;
                     break;
                 case "Эльфы":
-                    PlayerInfo.unblockedLevelsElves[level] = true;
+                    PlayerInfo.CountUnblockedLevelsElves++;
+                    unblockedLevelsElves[level] = true;
                     break;
                 case "Elves":
-                    PlayerInfo.unblockedLevelsElves[level] = true;
+                    PlayerInfo.CountUnblockedLevelsElves++;
+                    unblockedLevelsElves[level] = true;
                     break;
                 case "Гномы":
-                    PlayerInfo.unblockedLevelsGnomes[level] = true;
+                    PlayerInfo.CountUnblockedLevelsGnomes++;
+                    unblockedLevelsGnomes[level] = true;
                     break;
                 case "Dwarves":
-                    PlayerInfo.unblockedLevelsGnomes[level] = true;
+                    PlayerInfo.CountUnblockedLevelsGnomes++;
+                    unblockedLevelsGnomes[level] = true;
                     break;
                 case "Гоблины":
-                    PlayerInfo.unblockedLevelsGoblins[level] = true;
+                    PlayerInfo.CountUnblockedLevelsGoblins++;
+                    unblockedLevelsGoblins[level] = true;
                     break;
                 case "Goblins":
-                    PlayerInfo.unblockedLevelsGoblins[level] = true;
+                    PlayerInfo.CountUnblockedLevelsGoblins++;
+                    unblockedLevelsGoblins[level] = true;
                     break;
                 default:
                     throw new System.Exception("incorrent nameFraction");
@@ -229,5 +249,16 @@ public class Progress : MonoBehaviour
             default:
                 throw new System.Exception("incorrent nameFraction");
         }
+    }
+
+    public void Save()
+    {
+        string jsonPlayerInfo = JsonUtility.ToJson(PlayerInfo);
+        SaveExtern(jsonPlayerInfo);
+    }
+
+    public void SetPlayerInfo(string data)
+    {
+        PlayerInfo = JsonUtility.FromJson<PlayerInfo>(data);
     }
 }

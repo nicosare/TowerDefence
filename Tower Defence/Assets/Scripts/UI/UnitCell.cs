@@ -12,9 +12,13 @@ public class UnitCell : MonoBehaviour, IPointerDownHandler
     [SerializeField] private GameObject icon;
     [SerializeField] private GameObject nameUnit;
     [SerializeField] private GameObject buyPrice;
+    [SerializeField] private GameObject videoIcon;
+    [SerializeField] private Slider progressBar;
     private Interact interact;
     public UnityEvent OnPointerDown;
     private Unit unit;
+    private bool isCooldownBuyUnit;
+    private int cooldownTime = 60;
 
     private void Start()
     {
@@ -22,6 +26,19 @@ public class UnitCell : MonoBehaviour, IPointerDownHandler
         icon.GetComponent<Image>().sprite = unit.Icon;
         nameUnit.GetComponent<Text>().text = unit.NameUnit;
         buyPrice.GetComponent<Text>().text = unit.BuyPrice.ToString();
+        if (unit.BuyPrice == 0)
+        {
+            buyPrice.SetActive(false);
+            videoIcon.SetActive(true);
+        }
+    }
+
+    private void Update()
+    {
+        if (progressBar.value != progressBar.minValue)
+            progressBar.value = progressBar.minValue + progressBar.maxValue - Time.time;
+        else if (isCooldownBuyUnit)
+            isCooldownBuyUnit = false;
     }
 
     public void ApplyParameters(Unit unitFromFraction)
@@ -31,16 +48,18 @@ public class UnitCell : MonoBehaviour, IPointerDownHandler
 
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
     {
-
-        if (EconomicModel.Instance.countCoins >= unit.BuyPrice)
-            OnPointerDown?.Invoke();
-        else
+        if (!isCooldownBuyUnit)
         {
-            if (LocalizationSettings.Instance.GetSelectedLocale() == LocalizationSettings.AvailableLocales.Locales[0])
-                Message.Instance.LoadMessage("Not enough money!");
+            if (EconomicModel.Instance.countCoins >= unit.BuyPrice)
+                OnPointerDown?.Invoke();
             else
-                Message.Instance.LoadMessage("Недостаточно денег!");
-            interact.UnitToSpawn = null;
+            {
+                if (LocalizationSettings.Instance.GetSelectedLocale() == LocalizationSettings.AvailableLocales.Locales[0])
+                    Message.Instance.LoadMessage("Not enough money!");
+                else
+                    Message.Instance.LoadMessage("Недостаточно денег!");
+                interact.UnitToSpawn = null;
+            }
         }
     }
 
@@ -52,5 +71,12 @@ public class UnitCell : MonoBehaviour, IPointerDownHandler
 
         if (SceneManager.GetActiveScene().name == "Level_Tutorial")
             FindObjectOfType<HowToPlayLevelManager>().NextSlideWithUnitCell();
+        if (unit.BuyPrice == 0)
+        {
+            isCooldownBuyUnit = true;
+            progressBar.minValue = Time.time;
+            progressBar.maxValue = Time.time + cooldownTime;
+            progressBar.value = progressBar.maxValue;
+        }
     }
 }
