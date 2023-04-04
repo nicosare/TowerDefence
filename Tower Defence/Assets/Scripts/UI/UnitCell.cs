@@ -35,10 +35,10 @@ public class UnitCell : MonoBehaviour, IPointerDownHandler
 
     private void Update()
     {
-        if (progressBar.value != progressBar.minValue)
-            progressBar.value = progressBar.minValue + progressBar.maxValue - Time.time;
-        else if (isCooldownBuyUnit)
+        if (progressBar.value == progressBar.minValue && isCooldownBuyUnit)
             isCooldownBuyUnit = false;
+        else if (isCooldownBuyUnit)
+            progressBar.value = progressBar.minValue + progressBar.maxValue - Time.time;
     }
 
     public void ApplyParameters(Unit unitFromFraction)

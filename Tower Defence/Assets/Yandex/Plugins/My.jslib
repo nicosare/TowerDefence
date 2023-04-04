@@ -53,14 +53,14 @@ mergeInto(LibraryManager.library, {
     callbacks: {
         onOpen: () => {
           console.log('Video ad open.');
-          myGameInstance.SendMessage("Canvas", "PauseGame");
+          myGameInstance.SendMessage("ButtonsManager", "PauseGame");
         },
         onRewarded: () => {
           console.log('Rewarded!');
         },
         onClose: () => {
           console.log('Video ad closed.');
-          myGameInstance.SendMessage("Canvas", "PlayGame");
+          myGameInstance.SendMessage("ButtonsManager", "PlayGame");
         }, 
         onError: (e) => {
           console.log('Error while open video ad:', e);
@@ -68,4 +68,16 @@ mergeInto(LibraryManager.library, {
     }
   })
   },
+
+  BuyFraction : function(){
+    payments.purchase({ id: 'fraction' }).then(purchase => {
+      // Покупка успешно совершена!
+      myGameInstance.SendMessage("InAPP", "OpenChooseNextFraction");
+    }).catch(err => {
+      // Покупка не удалась: в консоли разработчика не добавлен товар с таким id,
+      // пользователь не авторизовался, передумал и закрыл окно оплаты,
+      // истекло отведенное на покупку время, не хватило денег и т. д.
+    })
+  },
+
 });

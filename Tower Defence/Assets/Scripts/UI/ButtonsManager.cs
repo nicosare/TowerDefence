@@ -17,6 +17,11 @@ public class ButtonsManager : MonoBehaviour
 
     public WindowsController windowsController;
 
+    private void Start()
+    {
+        transform.parent = null;
+    }
+
     public void GoToScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
