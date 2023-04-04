@@ -25,6 +25,7 @@ public class FactionMenuController : MonoBehaviour
     [SerializeField] private GameObject unitPreviewCell;
     [SerializeField] private GameObject startGameButton;
     [SerializeField] private GameObject infoAndBuyButton;
+    [SerializeField] private GameObject separator;
 
     private GameObject[] instPans;
     private Vector2[] pansPos;
@@ -39,10 +40,13 @@ public class FactionMenuController : MonoBehaviour
     private bool isScrolling;
     private bool canScrollWithWheel;
     private int previousPanID;
+    private int targetPanel;
+    private bool canSkipPanel;
 
 
     private void Start()
     {
+        canSkipPanel = false;
         previousPanID = -1;
         factionsManager = FactionsManager.Instance;
         panCount = factionsManager.Factions.Length;
@@ -57,7 +61,7 @@ public class FactionMenuController : MonoBehaviour
     private void Update()
     {
         ScrollWithWheel();
-        
+
         if ((contentRect.anchoredPosition.y >= pansPos[0].y
             || contentRect.anchoredPosition.y <= pansPos[pansPos.Length - 1].y)
             && !isScrolling)
@@ -83,6 +87,10 @@ public class FactionMenuController : MonoBehaviour
         if (selectedPanID != previousPanID)
         {
             previousPanID = selectedPanID;
+            if (!canSkipPanel && targetPanel != selectedPanID)
+                targetPanel = selectedPanID;
+            if (targetPanel == selectedPanID)
+                canSkipPanel = false;
             UpdateInfo();
         }
 
@@ -91,7 +99,7 @@ public class FactionMenuController : MonoBehaviour
             scrollRect.inertia = false;
         if (isScrolling || scrollVelocity > sensitivity)
             return;
-        contentVector.y = Mathf.SmoothStep(contentRect.anchoredPosition.y, pansPos[selectedPanID].y, snapSpeed * Time.fixedDeltaTime);
+        contentVector.y = Mathf.SmoothStep(contentRect.anchoredPosition.y, pansPos[targetPanel].y, snapSpeed * Time.fixedDeltaTime);
         contentRect.anchoredPosition = contentVector;
     }
 
@@ -99,15 +107,12 @@ public class FactionMenuController : MonoBehaviour
     {
         if (canScrollWithWheel)
         {
-            if (Input.GetAxis("Mouse ScrollWheel") < 0)
-                SnapToPanel((selectedPanID + 1) % 4);
+            if (Input.GetAxis("Mouse ScrollWheel") < 0 && targetPanel != panCount - 1)
+                SnapToPanel(selectedPanID + 1);
 
-            if (Input.GetAxis("Mouse ScrollWheel") > 0)
+            if (Input.GetAxis("Mouse ScrollWheel") > 0 && targetPanel != 0)
             {
-                if (selectedPanID != 0)
-                    SnapToPanel((selectedPanID - 1) % 4);
-                else
-                    SnapToPanel(panCount - 1);
+                SnapToPanel(selectedPanID - 1);
             }
         }
     }
@@ -144,8 +149,8 @@ public class FactionMenuController : MonoBehaviour
 
     public void SnapToPanel(int panelID)
     {
-        contentVector.y = pansPos[panelID].y;
-        contentRect.anchoredPosition = contentVector;
+        canSkipPanel = true;
+        targetPanel = panelID;
     }
 
     private void UpdateIndicator()
@@ -176,9 +181,11 @@ public class FactionMenuController : MonoBehaviour
         ClearUnitCells();
         foreach (var unit in factionsManager.ChoosenFaction.Units)
         {
+            Instantiate(separator, unitPreviewPanel);
             var newUnitPreviewCell = Instantiate(unitPreviewCell, unitPreviewPanel);
             newUnitPreviewCell.GetComponent<UnitPreviewCell>().SetDescription(unit);
         }
+        Instantiate(separator, unitPreviewPanel);
     }
 
     private void ClearUnitCells()
@@ -211,6 +218,5 @@ public class FactionMenuController : MonoBehaviour
             startGameButton.SetActive(true);
             infoAndBuyButton.SetActive(false);
         }
-
     }
 }

@@ -32,25 +32,18 @@ MonoBehaviour:
     \u043F\u043E\u044D\u0442\u043E\u043C\u0443 \u043D\u0430\u043B\u0438\u0447\u0438\u0435
     \u043A\u0430\u043F\u043A\u0430\u043D\u043E\u0432 \u043D\u0430 \u0434\u043E\u0440\u043E\u0433\u0435
     \u043A \u043A\u0440\u0435\u043F\u043E\u0441\u0442\u0438 \u043D\u0438\u043A\u043E\u0433\u043E
-    \u043D\u0435 \u0443\u0434\u0438\u0432\u0438\u0442. \u0421\u0430\u043C\u044B\u0435
-    \u0441\u0438\u043B\u044C\u043D\u044B\u0435 \u0441\u0440\u0435\u0434\u0438 \u0433\u043E\u0431\u043B\u0438\u043D\u043E\u0432
-    \u2014 \u044D\u0442\u043E \u0448\u0430\u043C\u0430\u043D\u044B, \u043E\u0433\u043D\u0435\u043D\u043D\u044B\u0435
-    \u0430\u0442\u0430\u043A\u0438 \u043A\u043E\u0442\u043E\u0440\u044B\u0445 \u043D\u0430\u043D\u043E\u0441\u044F\u0442
-    \u0443\u0440\u043E\u043D \u0432\u0441\u0435\u043C \u0432\u0440\u0430\u0433\u0430\u043C,
-    \u0434\u043E \u043A\u043E\u0442\u043E\u0440\u044B\u0445 \u043E\u043D\u0438 \u043C\u043E\u0433\u0443\u0442
-    \u0434\u043E\u0442\u044F\u043D\u0443\u0442\u044C\u0441\u044F."
+    \u043D\u0435 \u0443\u0434\u0438\u0432\u0438\u0442."
   descriptionFactionEn: The treacherous goblins did not expect that they would have
     to defend themselves now. Their advantage is their abundance and ability to work
     with poisons, which is why, in addition to the usual goblins with a sword and
     bow, they have poisonous arrows and catapult shells in their arsenal. Goblins
     are excellent hunters, so the presence of traps on the road to the fortress will
-    not surprise anyone. The strongest among goblins are shamans, whose fire attacks
-    damage all enemies they can reach.
+    not surprise anyone.
   Units:
   - {fileID: 6549081175648220340, guid: 78570603d6c0bc14e8fed07c3b530dd5, type: 3}
   - {fileID: 2417192147633560973, guid: a087d07c6ce728740bca4b8a3160e2a9, type: 3}
   - {fileID: 2417192147633560973, guid: a1445f2f55f4cad438f7d8365ebb928c, type: 3}
-  - {fileID: 2587485916891076603, guid: ebe1148999166e54ea78e0b8efa3138c, type: 3}
   - {fileID: 2770262205907409550, guid: 0a51c6889343b4e4c8a0a5fd042a0485, type: 3}
+  - {fileID: 2587485916891076603, guid: ebe1148999166e54ea78e0b8efa3138c, type: 3}
   UltimateBullet: {fileID: 3064311776625512654, guid: 20ad42506f75d614788183dc4da068cc, type: 3}
   MainColor: {r: 0.3825, g: 0.45, b: 0.17999998, a: 1}

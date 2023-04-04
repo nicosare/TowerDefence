@@ -20,5 +20,5 @@ MonoBehaviour:
   Units:
   - {fileID: 2417192147633560973, guid: 14d9ba96cdf26e04db35e1a7a8f79537, type: 3}
   - {fileID: 6549081175648220340, guid: c03447896a3788648b407bf37d3fc192, type: 3}
-  UltimateBullet: {fileID: 3064311776625512654, guid: e5f12a13f594f4544aab9346f2a61b2c, type: 3}
+  UltimateBullet: {fileID: 3064311776625512654, guid: 8310586d4754d134dbbc1966ed527f4e, type: 3}
   MainColor: {r: 0, g: 0, b: 0, a: 0}
