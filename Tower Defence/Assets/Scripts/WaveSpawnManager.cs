@@ -71,7 +71,6 @@ public class WaveSpawnManager : MonoBehaviour
             if (SceneManager.GetActiveScene().name != "Level_Tutorial")
             {
                 LevelManager.Instance.UnblockLevel(SceneManager.GetActiveScene());
-                Progress.Instance.Save();
             }
         }
     }

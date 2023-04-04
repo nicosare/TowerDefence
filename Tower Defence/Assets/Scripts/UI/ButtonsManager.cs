@@ -37,16 +37,16 @@ public class ButtonsManager : MonoBehaviour
 
     public void GoToMainMenuWithCkeckIsCompleted()
     {
-        if (Progress.Instance.CheckIsCompletedFractionByName(FactionsManager.Instance.ChoosenFaction.NameFaction))
-            GoToMainMenuScene();
-        else
+        Progress.Instance.SetIsCompletedFractionByName(FactionsManager.Instance.ChoosenFaction.NameFaction);
+        if (!Progress.Instance.PlayerInfo.unblockedElves || !Progress.Instance.PlayerInfo.unblockedGnomes
+                || !Progress.Instance.PlayerInfo.unblockedGoblins || !Progress.Instance.PlayerInfo.unblockedHumans)
         {
             sound.ChangeSoundsEffect();
             Time.timeScale = 1;
-            Progress.Instance.SetIsCompletedFractionByName(FactionsManager.Instance.ChoosenFaction.NameFaction);
             ChooseNextFarction.SetActive(true);
         }
-
+        else
+            GoToMainMenuScene();
     }
 
     public void GoToMainMenuScene()

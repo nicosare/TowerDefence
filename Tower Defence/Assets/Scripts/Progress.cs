@@ -137,6 +137,7 @@ public class Progress : MonoBehaviour
                     throw new System.Exception("incorrent nameFraction");
             }
         }
+        Save();
     }
 
     public bool CheckBanFractionByName(string nameFraction)
@@ -216,6 +217,7 @@ public class Progress : MonoBehaviour
                 PlayerInfo.unblockedGoblins = true;
                 break;
         }
+        Save();
     }
 
     public void SetIsCompletedFractionByName(string nameFraction)
@@ -249,6 +251,7 @@ public class Progress : MonoBehaviour
             default:
                 throw new System.Exception("incorrent nameFraction");
         }
+        Save();
     }
 
     public void Save()

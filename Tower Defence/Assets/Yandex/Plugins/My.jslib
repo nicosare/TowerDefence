@@ -54,6 +54,7 @@ mergeInto(LibraryManager.library, {
         onOpen: () => {
           console.log('Video ad open.');
           myGameInstance.SendMessage("ButtonsManager", "PauseGame");
+          myGameInstance.SendMessage("BackgroundMusic", "SoundOff");
         },
         onRewarded: () => {
           console.log('Rewarded!');
@@ -61,6 +62,7 @@ mergeInto(LibraryManager.library, {
         onClose: () => {
           console.log('Video ad closed.');
           myGameInstance.SendMessage("ButtonsManager", "PlayGame");
+          myGameInstance.SendMessage("BackgroundMusic", "SoundOn");
         }, 
         onError: (e) => {
           console.log('Error while open video ad:', e);

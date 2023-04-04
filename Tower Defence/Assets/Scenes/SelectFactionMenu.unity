@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17757879, g: 0.22232285, b: 0.30451733, a: 1}
+  m_IndirectSpecularColor: {r: 0.17757899, g: 0.22232303, b: 0.30451778, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -822,8 +822,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 71865755}
   m_HandleRect: {fileID: 71865753}
   m_Direction: 2
-  m_Value: 0.5
-  m_Size: 0.899575
+  m_Value: 1
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1161,18 +1161,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1755154305}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2319,7 +2307,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0157d092f60c9b4da2af05587880ce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chooseNextFraction: {fileID: 0}
+  chooseNextFraction: {fileID: 1906759029}
+  infoAndBuyFractionWindow: {fileID: 1755154305}
 --- !u!1 &918014512
 GameObject:
   m_ObjectHideFlags: 0
@@ -4555,6 +4544,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4ef13ce0832ccf4aa2e43c040543291, type: 3}
+--- !u!1 &1906759029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4372131862064846128, guid: a4ef13ce0832ccf4aa2e43c040543291, type: 3}
+  m_PrefabInstance: {fileID: 1906759028}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1906759030 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4372131862064846129, guid: a4ef13ce0832ccf4aa2e43c040543291, type: 3}

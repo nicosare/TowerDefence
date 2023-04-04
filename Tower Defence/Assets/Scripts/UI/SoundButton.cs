@@ -13,12 +13,24 @@ public class SoundButton : MonoBehaviour
     private bool isSoundOff;
     private bool isSoundsEffectOff;
 
+    private void Start()
+    {
+        if (BackgroundMusicController.Instance.OnMusic == false)
+            ChangeVolumeMusic();
+    }
+
     public void ChangeVolumeMusic()
     {
         if (isSoundOff)
+        {
             AllSoundsOn();
+            BackgroundMusicController.Instance.OnMusic = true;
+        }
         else
+        {
             AllSoundsOff();
+            BackgroundMusicController.Instance.OnMusic = false;
+        }
     }
 
     public void ChangeSoundsEffect()

@@ -5,15 +5,33 @@ using UnityEngine.SceneManagement;
 
 public class BackgroundMusicController : MonoBehaviour
 {
+    public bool OnMusic;
     private AudioSource audioSource;
     [SerializeField] private AudioClip menuMusic;
     [SerializeField] private AudioClip fightMusic;
     private string[] nameCurrentScene;
     private bool isFirstLaunch;
     public static BackgroundMusicController Instance;
+    private SoundButton sound;
+
+    public void SoundOff()
+    {
+        if (!OnMusic)
+        {
+            sound = FindObjectOfType<SoundButton>();
+            sound.ChangeVolumeMusic();
+        }
+    }
+
+    public void SoundOn()
+    {
+        if (sound != null)
+            sound.ChangeVolumeMusic();
+    }
 
     private void Awake()
     {
+        OnMusic = true;
         if (Instance != null && Instance != this)
             Destroy(gameObject);
         else
