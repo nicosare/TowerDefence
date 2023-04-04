@@ -27,7 +27,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 16122679283712
-    m_Localized: Faction description
+    m_Localized: Fraction description
     m_Metadata:
       m_Items: []
   - m_Id: 477743126040576
@@ -35,7 +35,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2210611004923904
-    m_Localized: How do I open a faction?
+    m_Localized: How do I open a fraction?
     m_Metadata:
       m_Items: []
   - m_Id: 2215181550575616

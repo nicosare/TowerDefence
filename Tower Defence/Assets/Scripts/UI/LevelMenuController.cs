@@ -15,7 +15,7 @@ public class LevelMenuController : MonoBehaviour
     public float scaleOffset;
     [Range(1f, 20f)]
     public float scaleSpeed;
-    [Range(1f, 500f)]
+    [Range(1f, 1000f)]
     public float sensitivity;
     [Header("Other Objects")]
     public GameObject panPrefab;
@@ -32,9 +32,12 @@ public class LevelMenuController : MonoBehaviour
     private int selectedPanID;
     private bool isScrolling;
     private int panCount;
-
+    private int previousPanID;
+    private int targetPanel;
+    [SerializeField] private GameObject[] previews;
     private void Start()
     {
+        previousPanID = -1;
         panCount = LevelManager.Instance.Locations.Length;
         contentRect = GetComponent<RectTransform>();
         instPans = new GameObject[panCount];
@@ -67,9 +70,9 @@ public class LevelMenuController : MonoBehaviour
     {
         ScrollWithWheel();
 
-        if ((contentRect.anchoredPosition.y >= pansPos[0].y
-            || contentRect.anchoredPosition.y <= pansPos[pansPos.Length - 1].y)
-            && !isScrolling)
+        if ((contentRect.anchoredPosition.x >= pansPos[0].x
+        || contentRect.anchoredPosition.x <= pansPos[pansPos.Length - 1].x)
+        && !isScrolling)
             scrollRect.inertia = false;
 
         float nearestPos = float.MaxValue;
@@ -80,24 +83,32 @@ public class LevelMenuController : MonoBehaviour
             {
                 nearestPos = distance;
                 selectedPanID = i;
-                UpdateInfo();
             }
+
             float scale = Mathf.Clamp(1 / (distance / panOffset) * scaleOffset, 0.5f, 1f);
             pansScale[i].x = Mathf.SmoothStep(instPans[i].transform.localScale.x, scale, scaleSpeed * Time.fixedDeltaTime);
             pansScale[i].y = Mathf.SmoothStep(instPans[i].transform.localScale.y, scale, scaleSpeed * Time.fixedDeltaTime);
             instPans[i].transform.localScale = pansScale[i];
         }
-        float scrollVelocity = Mathf.Abs(scrollRect.velocity.x);
-        if (scrollVelocity < 400 && !isScrolling) scrollRect.inertia = false;
-        if (isScrolling || scrollVelocity > sensitivity) return;
-        contentVector.x = Mathf.SmoothStep(contentRect.anchoredPosition.x, pansPos[selectedPanID].x, snapSpeed * Time.fixedDeltaTime);
+
+        if (selectedPanID != previousPanID)
+        {
+            previousPanID = selectedPanID;
+            targetPanel = selectedPanID;
+            UpdateInfo();
+        }
+        var scrollVelocity = Mathf.Abs(scrollRect.velocity.x);
+        if (scrollVelocity < sensitivity && !isScrolling)
+            scrollRect.inertia = false;
+        if (isScrolling || scrollVelocity > sensitivity)
+            return;
+        contentVector.x = Mathf.SmoothStep(contentRect.anchoredPosition.x, pansPos[targetPanel].x, snapSpeed * Time.fixedDeltaTime);
         contentRect.anchoredPosition = contentVector;
     }
 
     public void SnapToPanel(int panelID)
     {
-        contentVector.x = pansPos[panelID].x;
-        contentRect.anchoredPosition = contentVector;
+        targetPanel = panelID;
     }
 
     public void SnapWithPanelsToPrevious()
@@ -113,27 +124,36 @@ public class LevelMenuController : MonoBehaviour
 
     private void ScrollWithWheel()
     {
-        if (Input.GetAxis("Mouse ScrollWheel") > 0)
-            SnapToPanel((selectedPanID + 1) % 3);
+        if (Input.GetAxis("Mouse ScrollWheel") > 0 && targetPanel != panCount - 1)
+            SnapToPanel(selectedPanID + 1);
 
-        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        if (Input.GetAxis("Mouse ScrollWheel") < 0 && targetPanel != 0)
         {
-            if (selectedPanID != 0)
-                SnapToPanel((selectedPanID - 1) % 3);
-            else
-                SnapToPanel(panCount - 1);
+                SnapToPanel(selectedPanID - 1);
         }
     }
 
     public void Scrolling(bool scroll)
     {
         isScrolling = scroll;
-        if (scroll) scrollRect.inertia = true;
+        if (scroll)
+            scrollRect.inertia = true;
     }
 
     private void UpdateInfo()
     {
-        mainTheme.color = LevelManager.Instance.Locations[selectedPanID].BGColor;
+        UpdatePreview();
         locationName.text = LevelManager.Instance.Locations[selectedPanID].LocationName;
+    }
+
+    private void UpdatePreview()
+    {
+        for (int i = 0; i < previews.Length; i++)
+        {
+            if (i == selectedPanID)
+                previews[i].SetActive(true);
+            else
+                previews[i].SetActive(false);
+        }
     }
 }
