@@ -607,7 +607,7 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 9068845e50c00e34daf9bd6b7616faee, type: 3}
   nameUnitRu: "\u0413\u043E\u0431\u043B\u0438\u043D \u043B\u0443\u0447\u043D\u0438\u043A"
   nameUnitEn: Goblin archer
-  damage: 20
+  damage: 25
   buyPrice: 20
   descriptionRu: "\u041E\u0431\u044B\u0447\u043D\u044B\u0439 \u0433\u043E\u0431\u043B\u0438\u043D\u0441\u043A\u0438\u0439
     \u043B\u0443\u0447\u043D\u0438\u043A, \u0441\u0438\u043B\u0430 \u043A\u043E\u0442\u043E\u0440\u044B\u0445
@@ -617,7 +617,7 @@ MonoBehaviour:
   isRoadUnit: 0
   AttackSpeed: 1
   reloadTime: 1
-  AttackRange: 1
+  AttackRange: 2
   isPiercingAttack: 0
   soundInstallation: {fileID: 8300000, guid: 72d637a073e848144a28d0b9425101a9, type: 3}
   soundUpLevel: {fileID: 8300000, guid: d7cef6909b71bda45905c69d5abbe605, type: 3}

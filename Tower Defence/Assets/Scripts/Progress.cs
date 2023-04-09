@@ -36,7 +36,7 @@ public class Progress : MonoBehaviour
 
     public static Progress Instance;
     public PlayerInfo PlayerInfo;
-    private void Awake()
+    private void Start()
     {
         if (Instance != null && Instance != this)
             Destroy(gameObject);

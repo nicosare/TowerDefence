@@ -12,6 +12,7 @@ TagManager:
   - Road
   - BackgroundMusic
   - ClickText
+  - LanguageButton
   layers:
   - Default
   - TransparentFX

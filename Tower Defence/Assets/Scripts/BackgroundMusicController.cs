@@ -16,7 +16,7 @@ public class BackgroundMusicController : MonoBehaviour
 
     public void SoundOff()
     {
-        if (!OnMusic)
+        if (OnMusic)
         {
             sound = FindObjectOfType<SoundButton>();
             sound.ChangeVolumeMusic();

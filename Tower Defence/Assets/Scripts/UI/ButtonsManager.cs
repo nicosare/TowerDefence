@@ -73,7 +73,7 @@ public class ButtonsManager : MonoBehaviour
     {
         if (!isBoostGame)
         {
-            Time.timeScale = 2;
+            Time.timeScale = 1.5f;
             isBoostGame = true;
             BoostGameButton.GetComponent<Image>().sprite = BoostGameOn;
         }

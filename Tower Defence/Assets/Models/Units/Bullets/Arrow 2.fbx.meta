@@ -3,7 +3,12 @@ guid: 6142ae79c2da21a42b02333a39084743
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LightSteel
+    second: {fileID: 2100000, guid: 1699edf1b3393e6478a6aec2adbea8fb, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
