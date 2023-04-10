@@ -7,7 +7,7 @@ using UnityEngine.Localization.Settings;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler
+public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
 {
     private Unit unitOnPlace;
 
@@ -17,11 +17,22 @@ public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler
     [SerializeField] private Button sellButton;
     [SerializeField] private Button upgradeButton;
     public bool isOpened = false;
+    private bool canClose = true;
 
     private void Awake()
     {
         menu.gameObject.SetActive(false);
         Instance = this;
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0) && canClose)
+        {
+            menu.gameObject.SetActive(false);
+            isOpened = false;
+            canClose = false;
+        }
     }
 
     public void Open(Unit unit)
@@ -38,8 +49,11 @@ public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        menu.gameObject.SetActive(false);
-        isOpened = false;
+        canClose = true;
+    }
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        canClose = false;
     }
 
     public void SellUnit()

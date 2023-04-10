@@ -95,8 +95,9 @@ public class Interact : MonoBehaviour
     private void OpenMenu()
     {
         var unit = hit.transform.parent.GetComponent<Unit>();
+        if (!UnitOnFieldMenu.Instance.isOpened)
+            unit.transform.parent.GetComponent<Place>().Preview(unit);
         UnitOnFieldMenu.Instance.Open(unit);
-        unit.transform.parent.GetComponent<Place>().Preview(unit);
     }
 
     private void Setunit(Unit unit)
