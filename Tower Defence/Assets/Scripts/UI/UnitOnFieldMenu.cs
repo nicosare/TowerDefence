@@ -27,11 +27,18 @@ public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler, IPointerEnter
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && canClose)
+        if (Input.touchCount > 0)
+            canClose = true;
+        if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
         {
-            menu.gameObject.SetActive(false);
-            isOpened = false;
-            canClose = false;
+            if (canClose)
+            {
+                isOpened = false;
+                canClose = false;
+                menu.gameObject.SetActive(false);
+            }
+            else
+                canClose = true;
         }
     }
 
@@ -105,5 +112,6 @@ public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler, IPointerEnter
         UpdateMenu();
         if (SceneManager.GetActiveScene().name == "Level_Tutorial")
             FindObjectOfType<HowToPlayLevelManager>().NextSlideWithUpgrade();
+        canClose = false;
     }
 }
