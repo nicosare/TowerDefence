@@ -14,13 +14,14 @@ public class HowToPlayLevelManager : MonoBehaviour
     [SerializeField] private Transform unitCellsMenu;
     [SerializeField] private int currentSlideIndex;
     [SerializeField] private List<GameObject> unitCells;
-    [SerializeField] private GameObject unitOnFieldMenu;
+    [SerializeField] private UnitOnFieldMenu unitOnFieldMenu;
     [SerializeField] private Button boostButton;
     [SerializeField] private GameObject clickText;
     [SerializeField] private GameObject placeArrow;
     private bool canUpdateUnitCells = true;
     [SerializeField] private Place archerPlace;
     [SerializeField] private Place swordsmanPlace;
+    private BoxCollider archerCollider;
 
     private void Awake()
     {
@@ -73,10 +74,13 @@ public class HowToPlayLevelManager : MonoBehaviour
         if (slides[currentSlideIndex].InGameInputSell)
             NextSlide();
     }
-    public void NextSlideWithPlace()
+    public void NextSlideWithPlace(Transform unit)
     {
         if (slides[currentSlideIndex].InGameInputPlace)
+        {
+            archerCollider = unit.GetChild(0).GetComponent<BoxCollider>();
             NextSlide();
+        }
     }
     public void NextSlideWithUnitCell()
     {
@@ -124,19 +128,27 @@ public class HowToPlayLevelManager : MonoBehaviour
         if (currentSlideIndex < 34)
         {
             boostButton.interactable = false;
-            if (currentSlideIndex != 11 && currentSlideIndex != 14 && currentSlideIndex != 17)
+            if (archerCollider != null
+                && currentSlideIndex != 11
+                && currentSlideIndex != 14
+                && currentSlideIndex != 17
+                && currentSlideIndex != 21)
             {
-                unitOnFieldMenu.transform.GetChild(1).GetComponent<Button>().interactable = false;
+                unitOnFieldMenu.MenuSetActive(false);
+                archerCollider.enabled = false;
             }
+            else if (archerCollider != null)
+                archerCollider.enabled = true;
+
             if (currentSlideIndex != 21)
-                unitOnFieldMenu.transform.GetChild(0).GetComponent<Button>().interactable = false;
+                unitOnFieldMenu.transform.GetChild(0).GetChild(0).GetComponent<Button>().interactable = false;
             else
-                unitOnFieldMenu.transform.GetChild(0).GetComponent<Button>().interactable = true;
+                unitOnFieldMenu.transform.GetChild(0).GetChild(0).GetComponent<Button>().interactable = true;
         }
         else
         {
             boostButton.interactable = true;
-            unitOnFieldMenu.transform.GetChild(0).GetComponent<Button>().interactable = true;
+            unitOnFieldMenu.transform.GetChild(0).GetChild(0).GetComponent<Button>().interactable = true;
         }
         if (canUpdateUnitCells)
             if (currentSlideIndex == 0)

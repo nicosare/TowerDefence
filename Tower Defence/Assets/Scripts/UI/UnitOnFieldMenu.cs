@@ -7,7 +7,7 @@ using UnityEngine.Localization.Settings;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class UnitOnFieldMenu : MonoBehaviour
+public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler
 {
     private Unit unitOnPlace;
 
@@ -17,7 +17,7 @@ public class UnitOnFieldMenu : MonoBehaviour
     [SerializeField] private Button sellButton;
     [SerializeField] private Button upgradeButton;
     public bool isOpened;
-    private bool canClose = true;
+    //private bool canClose = true;
 
     private void Awake()
     {
@@ -26,11 +26,11 @@ public class UnitOnFieldMenu : MonoBehaviour
 
     }
 
-    private void Update()
-    {
-        if ((Input.GetMouseButtonDown(0) || Input.touchCount > 0) && canClose)
-            MenuSetActive(false);
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetMouseButtonDown(0) && canClose)
+    //        MenuSetActive(false);
+    //}
 
 
     public void Open(Unit unit)
@@ -44,10 +44,10 @@ public class UnitOnFieldMenu : MonoBehaviour
         }
     }
 
-    public void OnTap()
-    {
-        canClose = false;
-    }
+    //public void OnTap()
+    //{
+    //    canClose = false;
+    //}
 
     public void SellUnit()
     {
@@ -58,7 +58,7 @@ public class UnitOnFieldMenu : MonoBehaviour
             FindObjectOfType<HowToPlayLevelManager>().NextSlideWithSell();
     }
 
-    private void MenuSetActive(bool active)
+    public void MenuSetActive(bool active)
     {
         menu.gameObject.SetActive(active);
         isOpened = active;
@@ -99,11 +99,16 @@ public class UnitOnFieldMenu : MonoBehaviour
     }
     public void UpgradeUnit()
     {
-        canClose = true;
+        //canClose = true;
         if (!unitOnPlace.IsMaxLevel)
             unitOnPlace.UpLevel();
         UpdateMenu();
         if (SceneManager.GetActiveScene().name == "Level_Tutorial")
             FindObjectOfType<HowToPlayLevelManager>().NextSlideWithUpgrade();
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        MenuSetActive(false);
     }
 }

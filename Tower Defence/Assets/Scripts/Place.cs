@@ -39,7 +39,7 @@ public class Place : MonoBehaviour
         UnitOnPlace.PlaySoundInstallation();
         isFree = false;
         if (SceneManager.GetActiveScene().name == "Level_Tutorial")
-            FindObjectOfType<HowToPlayLevelManager>().NextSlideWithPlace();
+            FindObjectOfType<HowToPlayLevelManager>().NextSlideWithPlace(newUnit.transform);
     }
 
     public void Preview(Unit unit)
