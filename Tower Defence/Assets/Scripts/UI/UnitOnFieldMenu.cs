@@ -7,7 +7,7 @@ using UnityEngine.Localization.Settings;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
+public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler
 {
     private Unit unitOnPlace;
 
@@ -17,28 +17,23 @@ public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler, IPointerEnter
     [SerializeField] private Button sellButton;
     [SerializeField] private Button upgradeButton;
     public bool isOpened = false;
-    private bool canClose = true;
+    private DeviceType deviceType;
+
 
     private void Awake()
     {
+        deviceType = SystemInfo.deviceType;
         menu.gameObject.SetActive(false);
         Instance = this;
+
     }
 
     private void Update()
     {
-        if (Input.touchCount > 0)
-            canClose = true;
-        if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
+        if (deviceType == DeviceType.Handheld && Input.touchCount > 0)
         {
-            if (canClose)
-            {
-                isOpened = false;
-                canClose = false;
-                menu.gameObject.SetActive(false);
-            }
-            else
-                canClose = true;
+            if (!EventSystem.current.IsPointerOverGameObject())
+                MenuSetActive(false);
         }
     }
 
@@ -46,32 +41,28 @@ public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler, IPointerEnter
     {
         if (!menu.gameObject.activeSelf)
         {
-            menu.gameObject.SetActive(true);
-            isOpened = true;
+            MenuSetActive(true);
             transform.position = Input.mousePosition;
             unitOnPlace = unit;
             UpdateMenu();
         }
     }
 
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        canClose = true;
-    }
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        canClose = false;
-    }
-
     public void SellUnit()
     {
         unitOnPlace.SellUnit();
-        menu.gameObject.SetActive(false);
-        isOpened = false;
+        MenuSetActive(false);
         UpdateMenu();
         if (SceneManager.GetActiveScene().name == "Level_Tutorial")
             FindObjectOfType<HowToPlayLevelManager>().NextSlideWithSell();
     }
+
+    private void MenuSetActive(bool active)
+    {
+        menu.gameObject.SetActive(active);
+        isOpened = active;
+    }
+
     private void UpdateMenu()
     {
         if (LocalizationSettings.Instance.GetSelectedLocale() == LocalizationSettings.AvailableLocales.Locales[1])
@@ -112,6 +103,11 @@ public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler, IPointerEnter
         UpdateMenu();
         if (SceneManager.GetActiveScene().name == "Level_Tutorial")
             FindObjectOfType<HowToPlayLevelManager>().NextSlideWithUpgrade();
-        canClose = false;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (deviceType == DeviceType.Desktop)
+            MenuSetActive(false);
     }
 }
