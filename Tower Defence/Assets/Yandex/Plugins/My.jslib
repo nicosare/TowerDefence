@@ -63,11 +63,12 @@ mergeInto(LibraryManager.library, {
   })
   },
 
-  BuyFraction : function(){
+  BuyFraction : function(nameFraction){
     payments.purchase({ id: 'fraction' }).then(purchase => {
       // Покупка успешно совершена!
-      myGameInstance.SendMessage("InAPP", "OpenChooseNextFraction");
+      myGameInstance.SendMessage("InAPP", "OpenFractionSuccessful", nameFraction);
     }).catch(err => {
+      myGameInstance.SendMessage("InAPP", "OpenFractionUnsuccessful");
       // Покупка не удалась: в консоли разработчика не добавлен товар с таким id,
       // пользователь не авторизовался, передумал и закрыл окно оплаты,
       // истекло отведенное на покупку время, не хватило денег и т. д.
