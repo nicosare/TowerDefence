@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abca6aa3db248964193822da5cbd8e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: 8e5d1d3fc710e6d4db241232013fb257, type: 3}
+  Icon: {fileID: -838491099, guid: 5f6c184eec3e4fb448309ba4cd4871e2, type: 3}
   nameUnitRu: "\u041C\u0435\u0447\u043D\u0438\u043A"
   nameUnitEn: Swordsman
   damage: 20

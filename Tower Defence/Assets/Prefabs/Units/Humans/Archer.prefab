@@ -447,7 +447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b8c1a7d3254ede4f8f5181e0734b12b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: 1046b91bc5034e7449949e85a12c6f56, type: 3}
+  Icon: {fileID: 1088923287, guid: 5f6c184eec3e4fb448309ba4cd4871e2, type: 3}
   nameUnitRu: "\u041B\u0443\u0447\u043D\u0438\u043A"
   nameUnitEn: Archer
   damage: 50

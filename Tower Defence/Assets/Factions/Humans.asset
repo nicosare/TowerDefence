@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095cae74187dca341b91944fb9fc27b3, type: 3}
   m_Name: Humans
   m_EditorClassIdentifier: 
-  IconFaction: {fileID: 21300000, guid: 16944ba8a902e6b4b96dc57fb69a9acc, type: 3}
+  IconFaction: {fileID: -14962644, guid: 5f6c184eec3e4fb448309ba4cd4871e2, type: 3}
   nameFactionRu: "\u041B\u044E\u0434\u0438"
   nameFactionEn: Humans
   descriptionFactionRu: "\u041B\u044E\u0434\u0438 \u2013 \u044D\u0442\u043E \u0441\u0431\u0430\u043B\u0430\u043D\u0441\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u0430\u044F

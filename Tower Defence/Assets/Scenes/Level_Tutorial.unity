@@ -1854,22 +1854,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3860993352830351075, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
-      propertyPath: m_Transition
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3860993352830351075, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
-      propertyPath: m_SpriteState.m_PressedSprite
-      value: 
-      objectReference: {fileID: -288466647, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
-    - target: {fileID: 3860993352830351075, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
-      propertyPath: m_SpriteState.m_DisabledSprite
-      value: 
-      objectReference: {fileID: -992854334, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
-    - target: {fileID: 3860993352830351075, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
-      propertyPath: m_SpriteState.m_HighlightedSprite
-      value: 
-      objectReference: {fileID: -928314992, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
-    - target: {fileID: 3860993352830351075, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -1933,11 +1917,10 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3860993352830351073, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
   m_PrefabInstance: {fileID: 184999602}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &184999605
+--- !u!114 &184999605 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 7257048041913819142, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
+  m_PrefabInstance: {fileID: 184999602}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 184999604}
   m_Enabled: 1
@@ -1945,9 +1928,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 100bd811bc21d23438630edff415d735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mixer: {fileID: 24300002, guid: e7a1c0e90ec02cb409a39aa183c1bf59, type: 2}
-  SoundGameOn: {fileID: -894986013, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
-  SoundGameOff: {fileID: -992854334, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
 --- !u!114 &184999606 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3860993351199619259, guid: 3a692520b0389a54eaa362342dabfedd, type: 3}
@@ -2356,7 +2336,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 873390287, guid: 296b3de1834f95b4cab221a2c0abec3e, type: 3}
+  m_Sprite: {fileID: 1274580299, guid: 41151e0b842438341bbfa7998ac22ff2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4085,7 +4065,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -992125413, guid: 296b3de1834f95b4cab221a2c0abec3e, type: 3}
+  m_Sprite: {fileID: 1826557989, guid: 41151e0b842438341bbfa7998ac22ff2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5440,7 +5420,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 798903336, guid: 296b3de1834f95b4cab221a2c0abec3e, type: 3}
+  m_Sprite: {fileID: 935377226, guid: 41151e0b842438341bbfa7998ac22ff2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8230,7 +8210,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1808652961, guid: 296b3de1834f95b4cab221a2c0abec3e, type: 3}
+  m_Sprite: {fileID: -2061512239, guid: 41151e0b842438341bbfa7998ac22ff2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9192,7 +9172,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 323331546, guid: 296b3de1834f95b4cab221a2c0abec3e, type: 3}
+  m_Sprite: {fileID: -545417263, guid: 41151e0b842438341bbfa7998ac22ff2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13639,7 +13619,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1808652961, guid: 296b3de1834f95b4cab221a2c0abec3e, type: 3}
+  m_Sprite: {fileID: -2061512239, guid: 41151e0b842438341bbfa7998ac22ff2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14875,7 +14855,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6d6be3cc428ae6849a55d0091f372a24, type: 3}
+  m_Sprite: {fileID: -171196632, guid: 5f6c184eec3e4fb448309ba4cd4871e2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16328,8 +16308,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BoostGameButton: {fileID: 184999606}
   ChooseNextFarction: {fileID: 0}
-  BoostGameOn: {fileID: -2077952571, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
-  BoostGameOff: {fileID: -2108197130, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
+  BoostGameOn: {fileID: 313702061, guid: f2cc4de7788657a4f8f37a443bb4cfc1, type: 3}
+  BoostGameOff: {fileID: 1310594582, guid: f2cc4de7788657a4f8f37a443bb4cfc1, type: 3}
   sound: {fileID: 184999605}
   windowsController: {fileID: 2106366961}
 --- !u!4 &1547513154
@@ -19837,7 +19817,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 323331546, guid: 296b3de1834f95b4cab221a2c0abec3e, type: 3}
+  m_Sprite: {fileID: -545417263, guid: 41151e0b842438341bbfa7998ac22ff2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -23924,7 +23904,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -924531747, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
+  m_Sprite: {fileID: -993913334, guid: f2cc4de7788657a4f8f37a443bb4cfc1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -24171,7 +24151,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -924531747, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
+  m_Sprite: {fileID: -993913334, guid: f2cc4de7788657a4f8f37a443bb4cfc1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -24854,6 +24834,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 9222982121275823563, guid: ef6a48d1cef095640b61c76bb1efa2c0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -363587703, guid: 41151e0b842438341bbfa7998ac22ff2, type: 3}
     - target: {fileID: 9222982121602898379, guid: ef6a48d1cef095640b61c76bb1efa2c0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
