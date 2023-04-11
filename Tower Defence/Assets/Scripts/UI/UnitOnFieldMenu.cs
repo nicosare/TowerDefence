@@ -7,7 +7,7 @@ using UnityEngine.Localization.Settings;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler
+public class UnitOnFieldMenu : MonoBehaviour
 {
     private Unit unitOnPlace;
 
@@ -16,26 +16,22 @@ public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler
 
     [SerializeField] private Button sellButton;
     [SerializeField] private Button upgradeButton;
-    public bool isOpened = false;
-    private DeviceType deviceType;
-
+    public bool isOpened;
+    private bool canClose = true;
 
     private void Awake()
     {
-        deviceType = SystemInfo.deviceType;
-        menu.gameObject.SetActive(false);
+        MenuSetActive(false);
         Instance = this;
 
     }
 
     private void Update()
     {
-        if (deviceType == DeviceType.Handheld && Input.touchCount > 0)
-        {
-            if (!EventSystem.current.IsPointerOverGameObject())
-                MenuSetActive(false);
-        }
+        if ((Input.GetMouseButtonDown(0) || Input.touchCount > 0) && canClose)
+            MenuSetActive(false);
     }
+
 
     public void Open(Unit unit)
     {
@@ -46,6 +42,11 @@ public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler
             unitOnPlace = unit;
             UpdateMenu();
         }
+    }
+
+    public void OnTap()
+    {
+        canClose = false;
     }
 
     public void SellUnit()
@@ -98,16 +99,11 @@ public class UnitOnFieldMenu : MonoBehaviour, IPointerExitHandler
     }
     public void UpgradeUnit()
     {
+        canClose = true;
         if (!unitOnPlace.IsMaxLevel)
             unitOnPlace.UpLevel();
         UpdateMenu();
         if (SceneManager.GetActiveScene().name == "Level_Tutorial")
             FindObjectOfType<HowToPlayLevelManager>().NextSlideWithUpgrade();
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        if (deviceType == DeviceType.Desktop)
-            MenuSetActive(false);
     }
 }
