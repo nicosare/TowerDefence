@@ -45,10 +45,6 @@ public class Progress : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             LoadExtern();
         }
-        openLevels(PlayerInfo.CountUnblockedLevelsHumans, unblockedLevelsHumans);
-        openLevels(PlayerInfo.CountUnblockedLevelsElves, unblockedLevelsElves);
-        openLevels(PlayerInfo.CountUnblockedLevelsGnomes, unblockedLevelsGnomes);
-        openLevels(PlayerInfo.CountUnblockedLevelsGoblins, unblockedLevelsGoblins);
     }
 
     private void openLevels(int countLevels, bool[] fractionLevels)
@@ -243,5 +239,9 @@ public class Progress : MonoBehaviour
     public void SetPlayerInfo(string data)
     {
         PlayerInfo = JsonUtility.FromJson<PlayerInfo>(data);
+        openLevels(PlayerInfo.CountUnblockedLevelsHumans, unblockedLevelsHumans);
+        openLevels(PlayerInfo.CountUnblockedLevelsElves, unblockedLevelsElves);
+        openLevels(PlayerInfo.CountUnblockedLevelsGnomes, unblockedLevelsGnomes);
+        openLevels(PlayerInfo.CountUnblockedLevelsGoblins, unblockedLevelsGoblins);
     }
 }
