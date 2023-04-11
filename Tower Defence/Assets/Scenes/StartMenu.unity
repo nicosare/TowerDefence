@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17757855, g: 0.22232185, b: 0.3045176, a: 1}
+  m_IndirectSpecularColor: {r: 0.17757872, g: 0.2223221, b: 0.30451828, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1836,7 +1836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnMusic: 0
   menuMusic: {fileID: 8300000, guid: b2d081ac991e50f49a76a803c14241ed, type: 3}
-  fightMusic: {fileID: 8300000, guid: 41db4b2773946c041b73630002b83506, type: 3}
+  fightMusic: {fileID: 8300000, guid: 1ce6561ce93478540bbd9b10c6a4597e, type: 3}
 --- !u!1001 &322578486
 PrefabInstance:
   m_ObjectHideFlags: 0
