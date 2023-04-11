@@ -43,6 +43,10 @@ public class Progress : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            openLevels(PlayerInfo.CountUnblockedLevelsHumans, unblockedLevelsHumans);
+            openLevels(PlayerInfo.CountUnblockedLevelsElves, unblockedLevelsElves);
+            openLevels(PlayerInfo.CountUnblockedLevelsGnomes, unblockedLevelsGnomes);
+            openLevels(PlayerInfo.CountUnblockedLevelsGoblins, unblockedLevelsGoblins);
             LoadExtern();
         }
     }
