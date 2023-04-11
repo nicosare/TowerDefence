@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abca6aa3db248964193822da5cbd8e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: 39eddbaf79337fa4e92f8fe52ad856eb, type: 3}
+  Icon: {fileID: 1038191051, guid: 5f6c184eec3e4fb448309ba4cd4871e2, type: 3}
   nameUnitRu: "\u0421\u0442\u0435\u043D\u0430"
   nameUnitEn: Wall
   damage: 0

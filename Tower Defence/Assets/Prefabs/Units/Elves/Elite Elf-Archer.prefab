@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b8c1a7d3254ede4f8f5181e0734b12b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: b46348fcfab10ed46935b082b6f14cfc, type: 3}
+  Icon: {fileID: -1751630563, guid: 5f6c184eec3e4fb448309ba4cd4871e2, type: 3}
   nameUnitRu: "\u042D\u043B\u0438\u0442\u043D\u044B\u0439 \u044D\u043B\u044C\u0444
     \u043B\u0443\u0447\u043D\u0438\u043A"
   nameUnitEn: Elite elf archer

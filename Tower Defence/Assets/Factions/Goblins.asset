@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095cae74187dca341b91944fb9fc27b3, type: 3}
   m_Name: Goblins
   m_EditorClassIdentifier: 
-  IconFaction: {fileID: 21300000, guid: 2d3d964ec62147c4c8419231c7eeff96, type: 3}
+  IconFaction: {fileID: -1947915106, guid: 5f6c184eec3e4fb448309ba4cd4871e2, type: 3}
   nameFactionRu: "\u0413\u043E\u0431\u043B\u0438\u043D\u044B"
   nameFactionEn: Goblins
   descriptionFactionRu: "\u041A\u043E\u0432\u0430\u0440\u043D\u044B\u0435 \u0433\u043E\u0431\u043B\u0438\u043D\u044B

@@ -572,7 +572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b8c1a7d3254ede4f8f5181e0734b12b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: edc4b89f57cbbaf42ab8dbf5a7fa5e22, type: 3}
+  Icon: {fileID: 1071884972, guid: 5f6c184eec3e4fb448309ba4cd4871e2, type: 3}
   nameUnitRu: "\u0414\u0440\u0443\u0438\u0434"
   nameUnitEn: Druid
   damage: 50

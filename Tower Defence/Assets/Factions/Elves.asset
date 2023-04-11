@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095cae74187dca341b91944fb9fc27b3, type: 3}
   m_Name: Elves
   m_EditorClassIdentifier: 
-  IconFaction: {fileID: 21300000, guid: a029874745a7cee41b4db3bffabc741d, type: 3}
+  IconFaction: {fileID: -1350716175, guid: 5f6c184eec3e4fb448309ba4cd4871e2, type: 3}
   nameFactionRu: "\u042D\u043B\u044C\u0444\u044B"
   nameFactionEn: Elves
   descriptionFactionRu: "\u041E\u0434\u043D\u0430 \u0438\u0437 \u0441\u0430\u043C\u044B\u0445

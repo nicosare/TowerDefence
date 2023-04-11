@@ -484,7 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abca6aa3db248964193822da5cbd8e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: 9d05d69afbcd4274f8d75e413df4e4f1, type: 3}
+  Icon: {fileID: 2108901349, guid: 5f6c184eec3e4fb448309ba4cd4871e2, type: 3}
   nameUnitRu: "\u041A\u0440\u0435\u0441\u0442\u044C\u044F\u043D\u0438\u043D"
   nameUnitEn: Peasant
   damage: 20

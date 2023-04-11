@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abca6aa3db248964193822da5cbd8e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: 783794eac8f7ec346baf82917926590c, type: 3}
+  Icon: {fileID: 121837950, guid: 5f6c184eec3e4fb448309ba4cd4871e2, type: 3}
   nameUnitRu: "\u042D\u043B\u044C\u0444 \u043C\u0435\u0447\u043D\u0438\u043A"
   nameUnitEn: Elf swordsman
   damage: 25

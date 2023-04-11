@@ -760,7 +760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abca6aa3db248964193822da5cbd8e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: f81dfccd75fcaf24db705629c2f9cb12, type: 3}
+  Icon: {fileID: -1007226520, guid: 5f6c184eec3e4fb448309ba4cd4871e2, type: 3}
   nameUnitRu: "\u0413\u043D\u043E\u043C \u0449\u0438\u0442\u043E\u043D\u043E\u0441\u0435\u0446"
   nameUnitEn: Shield dwarf
   damage: 50

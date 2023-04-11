@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2108197130, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
+  m_Sprite: {fileID: 1310594582, guid: f2cc4de7788657a4f8f37a443bb4cfc1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -106,10 +106,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 1263753790, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
+    m_HighlightedSprite: {fileID: -1559464001, guid: f2cc4de7788657a4f8f37a443bb4cfc1, type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: -822417376, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
+    m_DisabledSprite: {fileID: -1008445648, guid: f2cc4de7788657a4f8f37a443bb4cfc1, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -318515294, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
+  m_Sprite: {fileID: -1514257164, guid: f2cc4de7788657a4f8f37a443bb4cfc1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -239,10 +239,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: -1621433530, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
-    m_PressedSprite: {fileID: -1502933740, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
+    m_HighlightedSprite: {fileID: -1714598334, guid: f2cc4de7788657a4f8f37a443bb4cfc1, type: 3}
+    m_PressedSprite: {fileID: -2144803999, guid: f2cc4de7788657a4f8f37a443bb4cfc1, type: 3}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: -1124489141, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
+    m_DisabledSprite: {fileID: 1873299415, guid: f2cc4de7788657a4f8f37a443bb4cfc1, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -317,6 +317,7 @@ GameObject:
   - component: {fileID: 3860993352830351077}
   - component: {fileID: 3860993352830351074}
   - component: {fileID: 3860993352830351075}
+  - component: {fileID: 7257048041913819142}
   m_Layer: 5
   m_Name: SoundButton
   m_TagString: Untagged
@@ -372,7 +373,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -894986013, guid: 57d072fcf5b03224f961abdaf6c573c9, type: 3}
+  m_Sprite: {fileID: 1382542692, guid: f2cc4de7788657a4f8f37a443bb4cfc1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -401,7 +402,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -411,10 +412,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 601067352, guid: f2cc4de7788657a4f8f37a443bb4cfc1, type: 3}
+    m_PressedSprite: {fileID: 428759214, guid: f2cc4de7788657a4f8f37a443bb4cfc1, type: 3}
     m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: -1184806045, guid: f2cc4de7788657a4f8f37a443bb4cfc1, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -426,3 +427,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7257048041913819142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3860993352830351073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 100bd811bc21d23438630edff415d735, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mixer: {fileID: 24300002, guid: e7a1c0e90ec02cb409a39aa183c1bf59, type: 2}
+  SoundGameOn: {fileID: 1382542692, guid: f2cc4de7788657a4f8f37a443bb4cfc1, type: 3}
+  SoundGameOff: {fileID: -1184806045, guid: f2cc4de7788657a4f8f37a443bb4cfc1, type: 3}
