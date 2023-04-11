@@ -6,18 +6,37 @@ using UnityEngine;
 public class InAPP : MonoBehaviour
 {
     [SerializeField] private GameObject chooseNextFraction;
-    [SerializeField] private GameObject infoAndBuyFractionWindow;
+    [SerializeField] private OpenFractionController openFractionController;
     [DllImport("__Internal")]
-    private static extern string BuyFraction();
+    private static extern string BuyFraction(string nameFraction);
 
-    public void BuyFractionButton()
+    public void BuyFractionButton(string nameFraction)
     {
-        BuyFraction();
+        BuyFraction(nameFraction);
     }
 
-    public void OpenChooseNextFraction()
+    public void OpenFractionSuccessful(string nameFraction)
     {
-        infoAndBuyFractionWindow.SetActive(false);
-        chooseNextFraction.SetActive(true);
+        switch (nameFraction)
+        {
+            case "Люди":
+                openFractionController.UnblockHumans();
+                break;
+            case "Эльфы":
+                openFractionController.UnblockElves();
+                break;
+            case "Гномы":
+                openFractionController.UnblockGnomes();
+                break;
+            case "Гоблины":
+                openFractionController.UnblockGoblins();
+                break;
+        }
+        chooseNextFraction.SetActive(false);
+    }
+
+    public void OpenFractionUnsuccessful()
+    {
+        chooseNextFraction.SetActive(false);
     }
 }

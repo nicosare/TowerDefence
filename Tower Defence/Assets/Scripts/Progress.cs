@@ -11,7 +11,6 @@ public class PlayerInfo
     public int CountUnblockedLevelsGnomes;
     public int CountUnblockedLevelsGoblins;
     public int CountUnblockedLevelsHumans;
-    public bool unblockedHumans;
     public bool unblockedElves;
     public bool unblockedGnomes;
     public bool unblockedGoblins;
@@ -36,7 +35,7 @@ public class Progress : MonoBehaviour
 
     public static Progress Instance;
     public PlayerInfo PlayerInfo;
-    private void Start()
+    private void Awake()
     {
         if (Instance != null && Instance != this)
             Destroy(gameObject);
@@ -46,19 +45,6 @@ public class Progress : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             LoadExtern();
         }
-    }
-
-    public void SetMinimumProgress()
-    {
-        if (PlayerInfo.CountUnblockedLevelsHumans == 0)
-        {
-            PlayerInfo.CountUnblockedLevelsHumans = 1;
-            PlayerInfo.CountUnblockedLevelsElves = 1;
-            PlayerInfo.CountUnblockedLevelsGnomes = 1;
-            PlayerInfo.CountUnblockedLevelsGoblins = 1;
-
-            PlayerInfo.unblockedHumans = true;
-        }
         openLevels(PlayerInfo.CountUnblockedLevelsHumans, unblockedLevelsHumans);
         openLevels(PlayerInfo.CountUnblockedLevelsElves, unblockedLevelsElves);
         openLevels(PlayerInfo.CountUnblockedLevelsGnomes, unblockedLevelsGnomes);
@@ -67,7 +53,7 @@ public class Progress : MonoBehaviour
 
     private void openLevels(int countLevels, bool[] fractionLevels)
     {
-        for (int i = 0; i < countLevels; i++)
+        for (int i = 0; i <= countLevels; i++)
             fractionLevels[i] = true;
     }
 
@@ -145,9 +131,9 @@ public class Progress : MonoBehaviour
         switch (nameFraction)
         {
             case "Ëþäè":
-                return !PlayerInfo.unblockedHumans;
+                return false;
             case "Humans":
-                return !PlayerInfo.unblockedHumans;
+                return false;
             case "Ýëüôû":
                 return !PlayerInfo.unblockedElves;
             case "Elves":
@@ -192,12 +178,6 @@ public class Progress : MonoBehaviour
     {
         switch (nameFraction)
         {
-            case "Ëþäè":
-                PlayerInfo.unblockedHumans = true;
-                break;
-            case "Humans":
-                PlayerInfo.unblockedHumans = true;
-                break;
             case "Ýëüôû":
                 PlayerInfo.unblockedElves = true;
                 break;

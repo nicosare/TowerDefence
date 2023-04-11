@@ -19,7 +19,7 @@ public class ButtonsManager : MonoBehaviour
 
     private void Start()
     {
-        transform.parent = null;
+        transform.SetParent(null);
     }
 
     public void GoToScene(string sceneName)
@@ -39,7 +39,7 @@ public class ButtonsManager : MonoBehaviour
     {
         Progress.Instance.SetIsCompletedFractionByName(FactionsManager.Instance.ChoosenFaction.NameFaction);
         if (!Progress.Instance.PlayerInfo.unblockedElves || !Progress.Instance.PlayerInfo.unblockedGnomes
-                || !Progress.Instance.PlayerInfo.unblockedGoblins || !Progress.Instance.PlayerInfo.unblockedHumans)
+                || !Progress.Instance.PlayerInfo.unblockedGoblins)
         {
             sound.ChangeSoundsEffect();
             Time.timeScale = 1;
