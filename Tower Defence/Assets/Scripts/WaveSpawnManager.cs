@@ -59,6 +59,7 @@ public class WaveSpawnManager : MonoBehaviour
     {
         if (enemies.Count == enemiesCounter && enemies.All(enemy => enemy.IsDestroyed()))
         {
+            BackgroundMusicController.Instance.SoundOff();
             ShowAdv();
             sound.ChangeSoundsEffect();
             isWin = true;

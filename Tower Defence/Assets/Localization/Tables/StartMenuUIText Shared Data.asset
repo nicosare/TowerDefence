@@ -47,6 +47,10 @@ MonoBehaviour:
     m_Key: Chief of the tribe
     m_Metadata:
       m_Items: []
+  - m_Id: 17745883151286272
+    m_Key: NameGame
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

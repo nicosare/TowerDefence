@@ -47,6 +47,15 @@ public class Progress : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            PlayerInfo = new PlayerInfo();
+            Save();
+        }
+    }
+
     private void openLevels(int countLevels, bool[] fractionLevels)
     {
         for (int i = 0; i <= countLevels; i++)

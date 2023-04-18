@@ -6,6 +6,7 @@ mergeInto(LibraryManager.library, {
             if (value) {
                 ysdk.feedback.requestReview()
                     .then(({ feedbackSent }) => {
+                        myGameInstance.SendMessage('Yandex', 'DisableRateButton');
                         console.log(feedbackSent);
                     })
             } else {
@@ -20,7 +21,11 @@ mergeInto(LibraryManager.library, {
     player.setData(myobj);
   },
 
-  LoadExtern: function(date) {
+  RemoveRateGame: function() {
+    myGameInstance.SendMessage('Yandex', 'RemoveRateGameButton');
+  },
+
+  LoadExtern: function() {
     player.getData().then(_date =>{
       const myJSON = JSON.stringify(_date);
       myGameInstance.SendMessage('Progress', 'SetPlayerInfo', myJSON);
@@ -31,6 +36,7 @@ mergeInto(LibraryManager.library, {
     ysdk.adv.showFullscreenAdv({
     callbacks: {
         onClose: function(wasShown) {
+          myGameInstance.SendMessage("BackgroundMusic", "SoundOn");
           // some action after close
         },
         onError: function(error) {
@@ -63,10 +69,10 @@ mergeInto(LibraryManager.library, {
   })
   },
 
-  BuyFraction : function(nameFraction){
+  BuyFraction : function(){
     payments.purchase({ id: 'fraction' }).then(purchase => {
       // Покупка успешно совершена!
-      myGameInstance.SendMessage("InAPP", "OpenFractionSuccessful", nameFraction);
+      myGameInstance.SendMessage("InAPP", "OpenFractionSuccessful");
     }).catch(err => {
       myGameInstance.SendMessage("InAPP", "OpenFractionUnsuccessful");
       // Покупка не удалась: в консоли разработчика не добавлен товар с таким id,
